@@ -7,9 +7,13 @@ import ToDoList from "./ToDoList"
 import RegisterCustomer from "./RegisterCustomer";
 import DeleteCustomerNew from "./DeleteCustomerNew";
 import LoginCustomer from "./LoginCustomer";
+import {Link} from "react-router-dom";
+import FormCreateList from "./FormCreateList";
 /* Class Contact uses for display and read a data from database, data is imported from other classes */
 //props are data inside the divs
-export default class Login extends Component{
+
+
+export default class CreateList extends Component{
     constructor(props){
         super(props);
         this.state= {
@@ -17,9 +21,16 @@ export default class Login extends Component{
         };
         }
 
+
+
+
         componentDidMount(){
         /*fetch('http://localhost:8080/api/v1/student').then(response => response.json()).then(data => this.setState({contacts: data}));*/
-            fetch('http://localhost:8080/api/v1/customer').then(response => response.json()).then(data => this.setState({contacts: data}));
+            fetch('http://localhost:8080/api/v1/customer').then
+            (response => response.json()).then(data => this.setState({contacts: data}));
+
+
+
 
         }
 
@@ -29,8 +40,12 @@ export default class Login extends Component{
             <div>
 
 
+
+
+
+
                 <div className="row">
-                    <LoginCustomer />
+                    <FormCreateList />
 
                 </div>
 
@@ -48,11 +63,11 @@ export default class Login extends Component{
 
                 {/*</div>*/}
 
-      {/*          //display what is inside the to do list
-                <div className="row">
-                    <ToDoList />
+               //display what is inside crateList javascript link on web is CreteCustomerList
+                {/*<div className="row">*/}
+                {/*    <ToDoList />*/}
 
-                </div>*/}
+                {/*</div>*/}
 
 
 

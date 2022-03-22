@@ -27,7 +27,7 @@ const DeleteCustomerNew = ({item}) => {
 
 
     return (
-        //this part display card with detail inside
+        // this part display card with detail inside
         <div className="row">
             <form className="col s12" onSubmit={() => deleteCustomer()}>
 
@@ -36,18 +36,20 @@ const DeleteCustomerNew = ({item}) => {
                         <div className="card blue-grey darken-1">
                             <div className="card-content white-text">
                                 <span className="card-title">
+                                    <p>It is a detail a customer with ID: {item.id}</p>
                                     Name: {item.name}
                                     <p> Surname:  {item.surname}  </p>
                                     <p> Email: {item.email} </p>
                                     <p> Phone Number: {item.phoneNumber} </p>
                                     <p> Date of birth: {item.dob} </p>
                                     <p> Sex: {item.sex} </p>
+                                    <p>Age: {item.age}</p>
                                         Password: {item.customerPassword}    </span>
 
                             </div>
 
                             <div className="card-action">
-                                <p>Customer ID: {item.id}</p>
+                                <p> If you want delete user input user id and then press delete button </p>
                                 {/*<a href="#">This is a link</a>*/}
                                 {/*<a href="#">This is a link</a>*/}
                                 {/*<button onSubmit={()=>deleteCustomer(item.id)} >Delete Student</button>*/}
@@ -57,12 +59,12 @@ const DeleteCustomerNew = ({item}) => {
                     </div>
                 </div>
 
-                <p> Insert index id and then press delete button </p>
+
                 <div className="row">
                     <div className="input-field col s6">
-                        <input placeholder="Placeholder" value={id} type="text"
+                        <input placeholder="Input user ID that you want to delete"  type="text"
                                onChange={(event => setId(event.target.value))} className="validate"/>
-                        <label htmlFor="What Id want you delete">Id</label>
+                        {/*<label htmlFor="What Id want you delete">Id</label>*/}
                     </div>
                 </div>
 

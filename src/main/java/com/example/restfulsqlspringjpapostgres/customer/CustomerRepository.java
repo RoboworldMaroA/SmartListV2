@@ -14,7 +14,7 @@ import java.util.Optional;
 public interface CustomerRepository
         extends JpaRepository<Customer, Long> {//customer class and long because ID is long
 
-    //we want ot find student using email to do that we have can use Optional imported from Java package
+    //we want to find customer using specific email - to do that we have can use Optional imported from Java package
     //equivalent in sql SELECT * FROM student WHERE email = ?
     @Query("SELECT s FROM Customer s WHERE s.email = ?1")
     Optional<Customer> findCustomerByEmail(String email);

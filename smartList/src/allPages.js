@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom"
 import './allPages.css';
+import CreateList from "./components/CreateList";
 
 
 
@@ -16,9 +17,11 @@ export function Home() {
                         className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
                         <li><Link to="Register"> Register</Link></li>
-                        <li><a href="badges.html">Register</a></li>
-                        <li><a href="collapsible.html">Pay</a></li>
-                        <li>  <Link to="Register"> Help</Link></li>
+                        <li><a href="/login">CreateCustomerList</a></li>
+                        <li><a href="/pay">Pay</a></li>
+                        <li>  <Link to="/help"> Help</Link></li>
+                        <li><Link to="LoginAdmin"> Administrator Account </Link></li>
+
                     </ul>
                 </div>
             </nav>
@@ -49,9 +52,23 @@ export function Home() {
                            </Link>
                        </div>
 
-                        <div id="createList"><Link to="createList">  <button class="btn waves-effect waves-light #8d6e63 brown lighten-1">   <i className="medium material-icons">build</i>  Create list</button> </Link></div>
+                        <div id="createCustomerList">
+                            <Link to="CreateCustomerList">
+                            <button class="btn waves-effect waves-light #8d6e63 brown lighten-1">
+                                <i className="medium material-icons">build</i>
+                                Create list
+                            </button>
+                            </Link>
+                        </div>
 
-                        <div id="pay"><Link to="pay">  <button class="btn waves-effect waves-light #8d6e63 brown lighten-1">   <i className="medium material-icons">credit_card</i>  Pay    </button> </Link> </div>
+                        <div id="pay">
+                            <Link to="pay">
+                                <button class="btn waves-effect waves-light #8d6e63 brown lighten-1">
+                                    <i className="medium material-icons">credit_card</i>
+                                    Pay
+                                </button>
+                            </Link>
+                        </div>
                    </div>
                    <div class="col s2"></div>
                </div>
@@ -72,6 +89,10 @@ export function Home() {
 
 }
 
+
+
+
+
 export function ContactsList() {
     return(
         <div>
@@ -81,25 +102,10 @@ export function ContactsList() {
 
 }
 
-export function CreateList() {
+export function CreateCustomerList() {
     return(
         <div>
-            <h1> [Create List]</h1>
-
-            POST /v2/translate?auth_key=92e7243f-6a39-7595-3e57-5fca1ef99da0:fx> HTTP/1.0
-            Host: api-free.deepl.com
-            User-Agent: YourApp
-            Accept: */*
-            Content-Length: [length]
-            Content-Type: application/x-www-form-urlencoded
-
-            auth_key=92e7243f-6a39-7595-3e57-5fca1ef99da0:fx&text=Hello, world&target_lang=DE
-
-            curl https://api-free.deepl.com/v2/translate \
-            -d auth_key=92e7243f-6a39-7595-3e57-5fca1ef99da0:fx \
-            -d "text=Hello, world!"  \
-            -d "target_lang=DE"
-
+            <h1> [Create List display if there is an error with my link to this functionality]</h1>
 
         </div>
 
@@ -109,15 +115,28 @@ export function CreateList() {
 
 }
 
-
+// zamiast w app w tej funkcji powinienem zaimplementowac prawdopodobnie, jaka zaleta nie jestem pewny
+// ponoc wszystko mialo sie wyswietlac wtedy w jednym oknie, pororbic testy
 export function Pay() {
     return(
         <div>
-            <h1> [Pay] </h1>
+            <h1> [Pay is not implemented yet]  </h1>
+            <CreateList />
         </div>
     );
 
 }
+
+
+export function LoginAdmin() {
+    return(
+        <div>
+            <h1> [CreateCustomerList Admin]</h1>
+        </div>
+    );
+
+}
+
 
 
 export function PageNotExist() {

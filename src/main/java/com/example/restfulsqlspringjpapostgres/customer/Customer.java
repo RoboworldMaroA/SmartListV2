@@ -25,6 +25,7 @@ public class Customer {
     private String phoneNumber;
     private LocalDate dob;
     private String sex;
+    private String address;
     private String customerPassword;
     private String customerPasswordAgain;
 
@@ -35,7 +36,7 @@ public class Customer {
 
     }
     //public Student(Long id, String name, String email, LocalDate dob, Integer age) {
-    public Customer(Long id, String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String customerPassword, String customerPasswordAgain) {
+    public Customer(Long id, String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address, String customerPassword, String customerPasswordAgain) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -43,6 +44,7 @@ public class Customer {
         this.phoneNumber = phoneNumber;
         this.dob = dob;
         this.sex = sex;
+        this.address=address;
         this.customerPassword = customerPassword;
         //this.age = age;
         this.customerPasswordAgain = customerPasswordAgain;
@@ -50,23 +52,29 @@ public class Customer {
     //constructor without id because it will automatically create id for us
     //public Student(String name, String email, LocalDate dob, Integer age) {//delete age from here because we want to calculate age
 
-    public Customer(String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String customerPassword, String customerPasswordAgain) {
+    public Customer(String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address,String customerPassword, String customerPasswordAgain) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.dob = dob;
         this.sex = sex;
+        this.address=address;
         this.customerPassword = customerPassword;
         //this.age = age;
         this.customerPasswordAgain = customerPasswordAgain;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
 
-
-
-    //getters and setters
+//getters and setters
 
 
     public Long getId() {
@@ -160,6 +168,7 @@ public class Customer {
                 ", email='" + email + '\'' +
                 ", dob=" + dob +
                 ", age=" + age +
+                ", age=" + address +
                 '}';
     }
 }///end class student
