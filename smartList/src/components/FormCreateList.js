@@ -1,9 +1,17 @@
 import React, {useState}  from 'react';
 import {Link} from "react-router-dom";
+import 'materialize-css';
 import ReactDOM from "react-dom";
     /* useState is used to set a value  */
 //this  function add customer detail during a registration
 import './FormCreateList.css';
+import M from 'materialize-css';
+import {Component} from "react";
+import { Button, Card, Row, Col } from 'react-materialize';
+
+
+
+
 
     const AddCreateListDetail = ({setCreateListInfo: setCreateListInfo}) => {
 
@@ -16,14 +24,17 @@ import './FormCreateList.css';
         const [customerPassword, setCustomerPassword] = useState('');
         const [customerPasswordAgain, setCustomerPasswordAgain] = useState('');
 
-        const [ListName, setListName] = useState('');
+        const [listName, setListName] = useState('');
         const [departureDay, setDepartureDay] = useState('');
+        const [destination, setDestination] = useState('');
+
+
 
         //change fetch to customer database not a student
         const validateCustomer = async () => {
             const result = await fetch("http://localhost:8080/api/v1/customer", {
                 method: "POST",
-                body: JSON.stringify({name, surname,email, phoneNumber, dob,sex, customerPassword, customerPasswordAgain, ListName,departureDay}),
+                body: JSON.stringify({name, surname,email, phoneNumber, dob,sex, customerPassword, customerPasswordAgain, ListName: listName,departureDay}),
                 headers: {
                     "Content-Type": "application/json",
                 }
@@ -51,7 +62,7 @@ import './FormCreateList.css';
                     <div className="row">
                         <div id ="ListNameInFormCreateList" className="input-field col s6">
                             <i className="material-icons prefix">account_circle</i>
-                            <input placeholder="Your unique name of the list." value={ListName} type="email" onChange={(event => setListName(event.target.value))}
+                            <input placeholder="Your unique name of the list." value={listName} type="email" onChange={(event => setListName(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="List Name">List Name</label>
                         </div>
@@ -63,10 +74,9 @@ import './FormCreateList.css';
 
 
                     <div className="row">
-
                         <div id ="PasswordInFormCreateList" className="input-field col s6">
                             <i className="material-icons prefix">account_circle</i>
-                            <input placeholder="Password" value={customerPassword} type="text" onChange={(event =>
+                            <input placeholder="Destination" value={customerPassword} type="text" onChange={(event =>
                                 setCustomerPassword(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="customerPassword">Password</label>
@@ -97,7 +107,7 @@ import './FormCreateList.css';
                         <div className="row">
                         <div id ="PasswordInFormCreateList" className="input-field col s6">
 
-                            <select className="browser-default">
+                            <select multiple>
                                 <option value="" disabled selected>Photo/Video Equipment</option>
                                 <option value="1">Camera</option>
                                 <option value="2">Video Recorder</option>
@@ -113,7 +123,7 @@ import './FormCreateList.css';
                     <div className="row">
                         <div id ="PasswordInFormCreateList" className="input-field col s6">
 
-                            <select className="browser-default">
+                            <select multiple>
                                 <option value="" disabled selected>Luggage</option>
                                 <option value="1">Small</option>
                                 <option value="2">Medium</option>
@@ -131,7 +141,7 @@ import './FormCreateList.css';
                     <div className="row">
                         <div id ="PasswordInFormCreateList" className="input-field col s6">
 
-                            <select className="browser-default">
+                            <select multiple>
                                 <option value="" disabled selected>Transport</option>
                                 <option value="1">Train</option>
                                 <option value="2">Bus</option>

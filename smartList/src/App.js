@@ -189,7 +189,7 @@ function App() {
 
 
 
-              <Route path ='/createCustomerList' element={<CreateCustomerList/>}/>
+              {/*<Route path ='/createCustomerList' element={<CreateCustomerList/>}/>*/}
 
               <Route path ='/pay' element={<Pay/>}/>
 
