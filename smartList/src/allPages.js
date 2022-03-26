@@ -2,6 +2,10 @@ import React from "react";
 import {Link} from "react-router-dom"
 import './allPages.css';
 import CreateList from "./components/CreateList";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import DisplayList from "./components/DisplayList";
+import LoginAdmin from "./components/LoginAdmin";
 
 
 
@@ -20,8 +24,7 @@ export function Home() {
                         <li><a href="/login">CreateCustomerList</a></li>
                         <li><a href="/pay">Pay</a></li>
                         <li>  <Link to="/help"> Help</Link></li>
-                        <li><Link to="LoginAdmin"> Administrator Account </Link></li>
-
+                        <li><Link to="LoginAdminPage"> Administrator Account </Link></li>
                     </ul>
                 </div>
             </nav>
@@ -29,7 +32,7 @@ export function Home() {
             <ul className="sidenav" id="mobile-demo">
                 <li><Link to="DisplayList">Display Lists</Link></li>
                 <li><a href="badges.html">User Detail</a></li>
-                <li><a href="collapsible.html">Administrator</a></li>
+                <li><Link to="LoginAdminPage"> Administrator Account </Link></li>
                 <li><a href="">  <Link to="Register"> Register  </Link> </a></li>
             </ul>
             <div className="container">
@@ -48,7 +51,6 @@ export function Home() {
                            <button className="btn waves-effect waves-light #8d6e63 brown lighten-1">
                                <i className="medium material-icons">account_box</i> Login
                            </button>
-
                            </Link>
                        </div>
 
@@ -82,48 +84,178 @@ export function Home() {
 
 }
 
-
-
-
-export function DisplayList() {
+export function LoginPage() {
     return(
-        <div>
-            <h1> This page is for diplay list routed from app.js </h1>
+        <body>
+        <div className="container-fluid">
+            <nav>
+                <div className="nav-wrapper #795548 brown">
+                    <a href="/" className="brand-logo">Smart List </a>
+                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
+                        className="material-icons">menu</i></a>
+                    <ul className="right hide-on-med-and-down">
+                        <li>  <Link to="Register"> Register</Link></li>
+                        <li>  <Link to="CreateCustomerList"> CreateCustomerList</Link></li>
+                        <li><Link to="../LoginAdminPage"> Administrator Account </Link></li>
+                        <li><a href="collapsible.html">Pay</a></li>
+                        <li>  <Link to="Help"> Help</Link></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul className="sidenav" id="mobile-demo">
+                <li><a href="">  <Link to="MyLists"> My Lists  </Link> </a></li>
+                <li><Link to="Register">User Detail Register Test</Link></li>
+                <li><Link to="../LoginAdminPage"> Administrator Account </Link></li>
+                <li><Link to="CreateCustomerList"> CreateCustomerList  </Link> </li>
+            </ul>
+
+
+            <div className="container">
+                <div className="row">
+                    <div className="col s2"></div>
+                    <div className="col s8">
+                        <p id="PageTitle"> LOGIN</p>
+                    </div>
+                    <div className="col s2"></div>
+                </div>
+            </div>
+
+            <div className="row">
+                <Login />
+            </div>
         </div>
+        </body>
     );
 
 }
 
 
-
-
-
-
-
-
-
-
-export function ContactsList() {
+export function RegisterPage() {
     return(
-        <div>
-            <h1> [Register Page]</h1>
+        <div className="container-fluid">
+            <nav>
+                <div className="nav-wrapper #795548 brown">
+                    <a href="/" className="brand-logo">Smart List </a>
+                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
+                        className="material-icons">menu</i></a>
+                    <ul className="right hide-on-med-and-down">
+                        <li><a href="sass.html">Register </a></li>
+                        <li><a href="collapsible.html">Pay</a></li>
+                        <li>  <Link to="Register"> Help</Link></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul className="sidenav" id="mobile-demo">
+                <li><a href="sass.html">Lists</a></li>
+                <li><a href="badges.html">User Detail</a></li>
+                <li><a href="">  <Link to="Register"> Register  </Link> </a></li>
+            </ul>
+
+
+            <div className="container">
+                <div className="row">
+                    <div className="col s2"></div>
+                    <div className="col s8">
+                        <p id="PageTitle"> REGISTER PAGE</p>
+                        <p> Please complete all mandatory fields.</p>
+                    </div>
+                    <div className="col s2"></div>
+                </div>
+            </div>
+
+            <div className="row">
+                <Register />
+            </div>
         </div>
     );
-
 }
+
+
+
 
 export function CreateCustomerList() {
     return(
-        <div>
-            <h1> [Create List display if there is an error with my link to this functionality]</h1>
+        <div className="container-fluid">
+            <nav>
+                <div className="nav-wrapper #795548 brown">
+                    <a href="/" className="brand-logo">Smart List </a>
+                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
+                        className="material-icons">menu</i></a>
+                    <ul className="right hide-on-med-and-down">
+                        <li>  <Link to="Register"> Register</Link></li>
+                        <li>  <Link to="CreateCustomerList"> CreateCustomerList</Link></li>
+                        <li><a href="collapsible.html">Pay</a></li>
+                        <li>  <Link to="Help"> Help</Link></li>
+                    </ul>
+                </div>
+            </nav>
 
+            <ul className="sidenav" id="mobile-demo">
+                <li><a href="">  <Link to="MyLists"> My Lists  </Link> </a></li>
+                <li><Link to="Register">User Detail Register Test</Link></li>
+                <li><Link to="CreateCustomerList"> CreateCustomerList  </Link> </li>
+            </ul>
+
+            <div className="container">
+                <div className="row">
+                    <div className="col s2"></div>
+                    <div className="col s8">
+                        <p id="PageTitle"> CREATE LIST</p>
+                    </div>
+                    <div className="col s2"></div>
+                </div>
+            </div>
+            <div className="row">
+                <CreateList />
+            </div>
         </div>
+    );
+}
 
 
 
+export function DisplayTravelerList() {
+    return(
+        <div className="container-fluid">
+            <nav>
+                <div className="nav-wrapper #795548 brown">
+                    <a href="/" className="brand-logo">Smart List </a>
+                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
+                        className="material-icons">menu</i></a>
+                    <ul className="right hide-on-med-and-down">
+                        <li>  <Link to="Register"> Register</Link></li>
+                        <li>  <Link to="CreateCustomerList"> CreateCustomerList</Link></li>
+                        <li><a href="collapsible.html">Pay</a></li>
+                        <li>  <Link to="Help"> Help</Link></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul className="sidenav" id="mobile-demo">
+                <li><a href="">  <Link to="MyLists"> My Lists  </Link> </a></li>
+                <li><Link to="Register">User Detail Register Test</Link></li>
+                <li><Link to="CreateCustomerList"> CreateCustomerList  </Link> </li>
+            </ul>
+
+            <div className="container">
+                <div className="row">
+                    <div className="col s2"></div>
+                    <div className="col s8">
+                        <p id="PageTitle"> CREATED LIST</p>
+                    </div>
+                    <div className="col s2"></div>
+                </div>
+            </div>
+            <div className="row">
+                <DisplayList />
+            </div>
+        </div>
     );
 
 }
+
 
 // zamiast w app w tej funkcji powinienem zaimplementowac prawdopodobnie, jaka zaleta nie jestem pewny
 // ponoc wszystko mialo sie wyswietlac wtedy w jednym oknie, pororbic testy
@@ -138,14 +270,51 @@ export function Pay() {
 }
 
 
-export function LoginAdmin() {
+export function LoginAdminPage() {
     return(
-        <div>
-            <h1> [CreateCustomerList Admin]</h1>
+        <body>
+        <div className="container-fluid">
+            <nav>
+                <div className="nav-wrapper #795548 brown">
+                    <a href="/" className="brand-logo">Smart List </a>
+                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
+                        className="material-icons">menu</i></a>
+                    <ul className="right hide-on-med-and-down">
+                        <li><Link to="../Destinations">Manage Destination</Link></li>
+                        <li><Link to="../DisplayUsers"> Display Users </Link></li>
+                        <li><Link to="../AdminHelp"> Help  </Link> </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul className="sidenav" id="mobile-demo">
+                <li><Link to="../Destinations">Manage Destination</Link></li>
+                <li><Link to="../DisplayUsers"> Display Users </Link></li>
+                <li><Link to="../AdminHelp"> Help  </Link> </li>
+            </ul>
+
+
+            <div className="container">
+                <div className="row">
+                    <div className="col s2"></div>
+                    <div className="col s8">
+                        <p id="PageTitle"> LOGIN ADMINISTRATOR</p>
+                    </div>
+                    <div className="col s2"></div>
+                </div>
+            </div>
+
+            <div className="row">
+                <LoginAdmin />
+            </div>
         </div>
+        </body>
     );
 
 }
+
+
+
 
 
 

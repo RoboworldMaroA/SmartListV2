@@ -5,9 +5,10 @@ import Register from './components/Register'
 import LoginAdmin from "./components/LoginAdmin";
 
 
-//import necessary to change pages, i will use more than one page
+//import necessary to change pages, I will use more than one page so instead display everything what is in app.js
+//i can switch between pages, and they are connected to the "allPages.js".
 import {Routes, Route, Link} from "react-router-dom";
-import { Home, Pay, CreateCustomerList, PageNotExist,DisplayList} from "./allPages";
+import { Home, Pay, CreateCustomerList, PageNotExist,DisplayTravelerList, RegisterPage, LoginPage, LoginAdminPage} from "./allPages";
 import CreateList from "./components/CreateList";
 import Login from "./components/Login";
 
@@ -20,221 +21,25 @@ function App() {
               <Route path ='/' element={<Home/>}/>
 
               {/*Register*/}
-              <Route path='/Register' element={
-                  <div className="container-fluid">
-                      <nav>
-                          <div className="nav-wrapper #795548 brown">
-                              <a href="/" className="brand-logo">Smart List </a>
-                              <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
-                                  className="material-icons">menu</i></a>
-                              <ul className="right hide-on-med-and-down">
-                                  <li><a href="sass.html">Register </a></li>
-                                  <li><Link to="LoginAdmin"> CreateCustomerList Admin </Link></li>
-                                  <li><a href="collapsible.html">Pay</a></li>
-                                  <li>  <Link to="Register"> Help</Link></li>
-                              </ul>
-                          </div>
-                      </nav>
+              <Route path='/Register' element={<RegisterPage/>}/>
 
-                      <ul className="sidenav" id="mobile-demo">
-                          <li><a href="sass.html">Lists</a></li>
-                          <li><a href="badges.html">User Detail</a></li>
-                          <li><Link to="LoginAdmin"> Administrator</Link></li>
-                          <li><a href="">  <Link to="Register"> Register  </Link> </a></li>
-                      </ul>
-
-
-                      <div className="container">
-                          <div className="row">
-                              <div className="col s2"></div>
-                              <div className="col s8">
-                                 <p> Please complete all mandatory fields.</p>
-                              </div>
-                              <div className="col s2"></div>
-                          </div>
-                      </div>
-
-
-                      <div className="row">
-                          <Register />
-                      </div>
-                  </div>
-              }/>
-
-
-
-
-              {/*Login*/}
-              <Route path='/Login' element={
-                  <div className="container-fluid">
-                      <nav>
-                          <div className="nav-wrapper #795548 brown">
-                              <a href="/" className="brand-logo">Smart List </a>
-                              <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
-                                  className="material-icons">menu</i></a>
-                              <ul className="right hide-on-med-and-down">
-                                  <li>  <Link to="Register"> Register</Link></li>
-                                  <li>  <Link to="CreateCustomerList"> CreateCustomerList</Link></li>
-                                  <li><a href="collapsible.html">Pay</a></li>
-                                  <li>  <Link to="Help"> Help</Link></li>
-                              </ul>
-                          </div>
-                      </nav>
-
-                      <ul className="sidenav" id="mobile-demo">
-                          <li><a href="">  <Link to="MyLists"> My Lists  </Link> </a></li>
-                          <li><Link to="Register">User Detail Register Test</Link></li>
-                          <li><Link to="LoginAdmin">Administrator</Link></li>
-                          <li><Link to="CreateCustomerList"> CreateCustomerList  </Link> </li>
-                      </ul>
-
-
-                      <div className="container">
-                          <div className="row">
-                              <div className="col s2"></div>
-                              <div className="col s8">
-                                  <p>  This is in the app.js file login page.</p>
-                              </div>
-                              <div className="col s2"></div>
-                          </div>
-                      </div>
-
-
-
-
-
-                      <div className="row">
-                          <Login />
-                      </div>
-                  </div>
-              }/>
-
-
-
-
-
-
-
-
-
-
-
-
+              {/*It is routed to the allPages.js and there is a function loginPage use to Log in*/}
+              <Route path='/Login' element={<LoginPage/>}/>
 
               {/*CreateCustomerList*/}
-              <Route path='/CreateCustomerList' element={
-                  <div className="container-fluid">
-                      <nav>
-                          <div className="nav-wrapper #795548 brown">
-                              <a href="/" className="brand-logo">Smart List </a>
-                              <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
-                                  className="material-icons">menu</i></a>
-                              <ul className="right hide-on-med-and-down">
-                                  <li>  <Link to="Register"> Register</Link></li>
-                                  <li>  <Link to="CreateCustomerList"> CreateCustomerList</Link></li>
-                                  <li><a href="collapsible.html">Pay</a></li>
-                                  <li>  <Link to="Help"> Help</Link></li>
-                              </ul>
-                          </div>
-                      </nav>
-
-                      <ul className="sidenav" id="mobile-demo">
-                          <li><a href="">  <Link to="MyLists"> My Lists  </Link> </a></li>
-                          <li><Link to="Register">User Detail Register Test</Link></li>
-                          <li><Link to="LoginAdmin">Administrator</Link></li>
-                          <li><Link to="CreateCustomerList"> CreateCustomerList  </Link> </li>
-                      </ul>
-
-
-                      <div className="container">
-                          <div className="row">
-                              <div className="col s2"></div>
-                              <div className="col s8">
-                                  <p>  This is in the app.js file login page.</p>
-                              </div>
-                              <div className="col s2"></div>
-                          </div>
-                      </div>
-
-
-                      <div className="row">
-                          <CreateList />
-                      </div>
-                  </div>
-              }/>
-
-
-
-
+              <Route path='/CreateCustomerList' element={<CreateCustomerList/>}/>
 
               {/*DisplayList*/}
-              <Route path='/displayList' element={<DisplayList/>}/>
-                  {/*// <div className="container-fluid">*/}
-                  {/*//     <nav>*/}
-                  {/*//         <div className="nav-wrapper #795548 brown">*/}
-                  {/*//             <a href="/" className="brand-logo">Smart List </a>*/}
-                  {/*//             <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i*/}
-                  {/*//                 className="material-icons">menu</i></a>*/}
-                  {/*//             <ul className="right hide-on-med-and-down">*/}
-                  {/*//                 <li>  <Link to="Register"> Register</Link></li>*/}
-                  {/*//                 <li>  <Link to="CreateCustomerList"> CreateCustomerList</Link></li>*/}
-                  {/*//                 <li><a href="collapsible.html">Pay</a></li>*/}
-                  {/*//                 <li>  <Link to="Help"> Help</Link></li>*/}
-                  {/*//             </ul>*/}
-                  {/*//         </div>*/}
-                  {/*//     </nav>*/}
-                  {/*//*/}
-                  {/*//     <ul className="sidenav" id="mobile-demo">*/}
-                  {/*//         <li><a href="">  <Link to="MyLists"> My Lists  </Link> </a></li>*/}
-                  {/*//         <li><Link to="Register">User Detail Register Test</Link></li>*/}
-                  {/*//         <li><Link to="LoginAdmin">Administrator</Link></li>*/}
-                  {/*//         <li><Link to="CreateCustomerList"> CreateCustomerList  </Link> </li>*/}
-                  {/*//     </ul>*/}
-                  {/*//*/}
-                  {/*//*/}
-                  {/*//     <div className="container">*/}
-                  {/*//         <div className="row">*/}
-                  {/*//             <div className="col s2"></div>*/}
-                  {/*//             <div className="col s8">*/}
-                  {/*//                 <p>  This is in the app.js file path display list page.</p>*/}
-                  {/*//             </div>*/}
-                  {/*//             <div className="col s2"></div>*/}
-                  {/*//         </div>*/}
-                  {/*//     </div>*/}
-                  {/*//*/}
-                  {/*//*/}
-                  {/*//     <div className="row">*/}
-                  {/*//         <DisplayList />*/}
-                  {/*//     </div>*/}
-                  {/*// </div>*/}
-              {/*}/>*/}
+              <Route path='/displayList' element={<DisplayTravelerList/>}/>
 
 
+             {/* Administrator Page, Display All Contacts, And Manage Database*/}
+              <Route path='/LoginAdminPage' element={<LoginAdminPage/>}/>
 
-
-
-
-             {/* contacts use as a Administrator*/}
-              <Route path='/contactsList' element={
-                <div className="container-fluid">
-                    <nav>
-                        <div className="nav-wrapper center-align">
-                            <a href="/" className="brand-logo"> Contacts </a>
-                        </div>
-                    </nav>
-                    <div className="row">
-                        <Contacts />
-                    </div>
-                </div>
-              }/>
-
-
-
-              {/*<Route path ='/createCustomerList' element={<CreateCustomerList/>}/>*/}
 
               <Route path ='/pay' element={<Pay/>}/>
 
-              <Route path ='/loginAdmin' element={<LoginAdmin/>}/>
+              {/*<Route path ='/loginAdmin' element={<LoginAdmin/>}/>*/}
 
               <Route path ='/*' element={<PageNotExist/>}/>
 

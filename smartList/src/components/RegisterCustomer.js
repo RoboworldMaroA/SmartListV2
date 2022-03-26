@@ -3,6 +3,7 @@ import React, {useState}  from 'react';
 //this  function add customer detail during a registration
 //css to make a style on this class
 import './RegisterCustomer.css';
+import {Link} from "react-router-dom";
 
     const AddDetail = ({setStudentInfo: setInfo}) => {
 
@@ -19,21 +20,21 @@ import './RegisterCustomer.css';
         const [emailIsVerified, setEmailIsVerified] = useState(false);
 
         //change fetch to customer database not a student
-/*        const addCustomer = async () => {
-            const result = await fetch("http://localhost:8080/api/v1/customer", {
-                method: "POST",
-                body: JSON.stringify({name, surname,email, phoneNumber, dob,sex, customerPassword, customerPasswordAgain}),
-                headers: {
-                    "Content-Type": "application/json",
-                }
-
-
-            })
-
-            const body = await result.json();
-            setInfo(body);
-
-        }*/
+       // const addCustomer = async () => {
+       //      const result = await fetch("http://localhost:8080/api/v1/customer", {
+       //          method: "POST",
+       //          body: JSON.stringify({name, surname,email, phoneNumber, dob,sex, customerPassword, customerPasswordAgain}),
+       //          headers: {
+       //              "Content-Type": "application/json",
+       //          }
+       //
+       //
+       //      })
+       //
+       //      const body = await result.json();
+       //      setInfo(body);
+       //
+       //  }
 
 /*
        //not working
@@ -167,8 +168,9 @@ import './RegisterCustomer.css';
 
 
                     <div className="row">
+                        {/*<Link to="../Login">*/}
                         <button className="waves-effect waves-light btn " type="submit" name="action">Register</button>
-
+                        {/*</Link>*/}
                     </div>
                 </form>
             </div>

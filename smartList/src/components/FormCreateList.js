@@ -54,13 +54,13 @@ import { Button, Card, Row, Col } from 'react-materialize';
 
         return (
 
-            <div className="row">
+            <div id ="elementInFormCreateList" className="row">
                 {/*<form className="col s12" onSubmit={() => validateCustomer()}>*/}
                 <form className="col s12" onSubmit="" >
 
 
                     <div className="row">
-                        <div id ="ListNameInFormCreateList" className="input-field col s6">
+                        <div  className="input-field col s6">
                             <i className="material-icons prefix">account_circle</i>
                             <input placeholder="Your unique name of the list." value={listName} type="email" onChange={(event => setListName(event.target.value))}
                                    className="validate"/>
@@ -74,7 +74,7 @@ import { Button, Card, Row, Col } from 'react-materialize';
 
 
                     <div className="row">
-                        <div id ="PasswordInFormCreateList" className="input-field col s6">
+                        <div className="input-field col s6">
                             <i className="material-icons prefix">account_circle</i>
                             <input placeholder="Destination" value={customerPassword} type="text" onChange={(event =>
                                 setCustomerPassword(event.target.value))}
@@ -85,7 +85,7 @@ import { Button, Card, Row, Col } from 'react-materialize';
 
 
                     <div className="row">
-                        <div id ="PasswordInFormCreateList" className="input-field col s6">
+                        <div  className="input-field col s6">
                             <i className="material-icons prefix">account_circle</i>
                             <input placeholder="Password" value={departureDay} type="text" onChange={(event =>
                                 setDepartureDay(event.target.value))}
@@ -105,7 +105,7 @@ import { Button, Card, Row, Col } from 'react-materialize';
 
 
                         <div className="row">
-                        <div id ="PasswordInFormCreateList" className="input-field col s6">
+                        <div  className="input-field col s6">
 
                             <select multiple>
                                 <option value="" disabled selected>Photo/Video Equipment</option>
@@ -121,7 +121,7 @@ import { Button, Card, Row, Col } from 'react-materialize';
                     </div>
 
                     <div className="row">
-                        <div id ="PasswordInFormCreateList" className="input-field col s6">
+                        <div  className="input-field col s6">
 
                             <select multiple>
                                 <option value="" disabled selected>Luggage</option>
@@ -139,7 +139,7 @@ import { Button, Card, Row, Col } from 'react-materialize';
 
 
                     <div className="row">
-                        <div id ="PasswordInFormCreateList" className="input-field col s6">
+                        <div  className="input-field col s6">
 
                             <select multiple>
                                 <option value="" disabled selected>Transport</option>
@@ -170,9 +170,9 @@ import { Button, Card, Row, Col } from 'react-materialize';
 
                     <div  className="row">
                         <div id="ButtonCreateListInFormCreateList" className="input-field col s6">
-                        <Link to="../CreateCustomerList">
+                        <Link to="../DisplayList">
                             <button  className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
-                            Login(Verification password not ready yet)
+                            Generate List
                         </button>
                         </Link>
                         </div>

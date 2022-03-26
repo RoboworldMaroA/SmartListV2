@@ -1,28 +1,24 @@
-#ListNameInFormCreateList{
+#elementInFormCreateList{
     object-position: center;
     margin-left: 25%;
 
 }
 
-#PasswordInFormCreateList{
+
+
+#buttonCreateListInFormCreateList{
     object-position: center;
     margin-left: 25%;
 
 }
 
-#ButtonCreateListInFormCreateList{
+#iconAndLabelBeforePhotoEquipmentInCreateList{
     object-position: center;
     margin-left: 25%;
 
 }
 
-#IconAndLabelBeforePhotoEquipmentInCreateList{
-    object-position: center;
-    margin-left: 25%;
-
-}
-
-#TextAfterIconPhotoEquipmentInCreateList{
+#textAfterIconPhotoEquipmentInCreateList{
     object-position: center;
     margin-left: 10%;
 

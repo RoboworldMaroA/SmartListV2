@@ -1,0 +1,30 @@
+#mainBodyToDoList{
+    object-position: center;
+    margin-left: 25%;
+
+}
+
+#titleElements{
+    object-position: center;
+    color: saddlebrown;
+    font-size: calc(15px + 2vmin);
+    text-align: center;
+
+}
+
+#checkboxColor,input{
+    color: saddlebrown;
+}
+
+/*#crossLine:checked + span{*/
+/*    text-decoration: line-through;*/
+
+
+/*}*/
+
+.filled-in:checked +span{
+    text-decoration: line-through;
+
+
+}
+

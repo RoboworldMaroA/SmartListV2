@@ -22,41 +22,16 @@ export default class Register extends Component{
 
         }
 
-
         render(){
         return(
-            <div>
-
 
                 <div className="row">
                     <RegisterCustomer />
 
                 </div>
 
-                <div className="row">
-
-                    {this.state.contacts.map((item) =>(<DeleteCustomerNew key={item.id} item={item} /> ))}
-
-                </div>
 
 
-
-
-                {/*<div className="row">*/}
-                {/*    {this.state.contacts.map((item) =>(<SingleContact key={item.id} item={item} /> ))}*/}
-
-                {/*</div>*/}
-
-      {/*          //display what is inside the to do list
-                <div className="row">
-                    <ToDoList />
-
-                </div>*/}
-
-
-
-
-            </div>
         )
 
     }

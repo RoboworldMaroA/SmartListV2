@@ -46,42 +46,11 @@ export default class DisplayList extends Component{
         }
         render(){
         return(
-            <div>
-                <div className="row">
-                    <FormCreateList />
-                </div>
-
 
                 <div className="row">
-                    <div id ="PasswordInFormCreateList" className="input-field col s6">
-
-                        <select multiple>
-                            <option value="" disabled selected>Transport</option>
-                            <option value="1">Train1</option>
-                            <option value="2">Bus1</option>
-                            <option value="3">Plain1</option>
-                            <option value="4">Car1</option>
-                            <label>TransportInCreateList</label>
-                        </select>
-                        {/*<input placeholder="Password" value={departureDay} type="text" onChange={(event =>*/}
-                        {/*    setDepartureDay(event.target.value))}*/}
-                        {/*       className="datepicker"/>*/}
-                        {/*<label htmlFor="departureDay">Departure day</label>*/}
-                    </div>
+                    <ToDoList />
                 </div>
 
-                {/*<div className="row">*/}
-                {/*    {this.state.contacts.map((item) =>(<DeleteCustomerNew key={item.id} item={item} /> ))}*/}
-                {/*</div>*/}
-                {/*<div className="row">*/}
-                {/*    {this.state.contacts.map((item) =>(<SingleContact key={item.id} item={item} /> ))}*/}
-                {/*</div>*/}
-               //display what is inside crateList javascript link on web is CreteCustomerList
-                {/*<div className="row">*/}
-                {/*    <ToDoList />*/}
-                {/*</div>*/}
-
-            </div>
         )
     }
 
