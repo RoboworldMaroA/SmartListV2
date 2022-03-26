@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
 
-@Entity
+@Entity(name = "Customer")
 @Table
 public class Customer {
     @Id
@@ -18,9 +18,30 @@ public class Customer {
             generator = "customer_sequence"
 
     )
+
+    @Column(name="id",
+            updatable = false)
     private Long id;
+
+    @Column(
+            name = "name",
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
     private String name;
+
+    @Column(
+            name = "surname",
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
     private String surname;
+
+    @Column(
+            name = "email",
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
     private String email;
     private String phoneNumber;
     private LocalDate dob;
@@ -28,6 +49,7 @@ public class Customer {
     private String address;
     private String customerPassword;
     private String customerPasswordAgain;
+    private String adminPrivileges;
 
     @Transient//this tell this colum (age) no need to be more in database table
     private Integer age;
@@ -36,7 +58,7 @@ public class Customer {
 
     }
     //public Student(Long id, String name, String email, LocalDate dob, Integer age) {
-    public Customer(Long id, String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address, String customerPassword, String customerPasswordAgain) {
+    public Customer(Long id, String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address, String customerPassword, String customerPasswordAgain, String adminPrivileges) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -48,11 +70,12 @@ public class Customer {
         this.customerPassword = customerPassword;
         //this.age = age;
         this.customerPasswordAgain = customerPasswordAgain;
+        this.adminPrivileges= adminPrivileges;
     }
     //constructor without id because it will automatically create id for us
     //public Student(String name, String email, LocalDate dob, Integer age) {//delete age from here because we want to calculate age
 
-    public Customer(String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address,String customerPassword, String customerPasswordAgain) {
+    public Customer(String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address,String customerPassword, String customerPasswordAgain, String adminPrivileges) {
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -63,6 +86,7 @@ public class Customer {
         this.customerPassword = customerPassword;
         //this.age = age;
         this.customerPasswordAgain = customerPasswordAgain;
+        this.adminPrivileges= adminPrivileges;
     }
 
     public String getAddress() {
@@ -73,7 +97,13 @@ public class Customer {
         this.address = address;
     }
 
+    public String getAdminPrivileges() {
+        return adminPrivileges;
+    }
 
+    public void setAdminPrivileges(String adminPrivileges) {
+        this.adminPrivileges = adminPrivileges;
+    }
 //getters and setters
 
 

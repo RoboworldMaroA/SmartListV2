@@ -10,16 +10,17 @@ import java.util.Optional;
 //this
 @Service
 public class CustomerService {
+    //define variable customerRepository
     private final CustomerRepository customerRepository;
 
+    //method CustomerService
     @Autowired
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
 
     public List<Customer> getCustomers(){
-    return customerRepository.findAll();
-
+        return customerRepository.findAll();
 
         //this will be in database so this info we get from three the interface from database
 //        return List.of(new Student(1L,
@@ -29,7 +30,16 @@ public class CustomerService {
 //                21
 //
 //        ));
+        }//end method getCustomer
 
+    //i am trying to implement to display detail only one user that is registering (or when he is logged to his account)
+    //i think that mayby i should do this in front end not back end??
+    public List<Customer> getCustomerWithId(Long customerId){
+        boolean existCustomer = customerRepository.existsById(customerId);
+        if(!existCustomer){
+            return (List<Customer>) customerRepository.getById(customerId);
+        }
+        throw new IllegalStateException("No id have found");
 
     }
 
@@ -54,8 +64,8 @@ public class CustomerService {
         }
         //otherwise
         customerRepository.deleteById(customerId);
-
     }
+
 
     //implementation PUT
     @Transactional

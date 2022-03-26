@@ -28,7 +28,8 @@ public class CustomerConfig {
                     "man",
                     "Dublin",
                     "password",
-                    "password"
+                    "password",
+                    "Yes"
 
                     );
 
@@ -44,7 +45,8 @@ public class CustomerConfig {
                     "man",
                     "Poland",
                     "customerPassword",
-                    "customerPassword"
+                    "customerPassword",
+                    "No"
 
                     );
 

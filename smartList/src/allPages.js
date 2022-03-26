@@ -16,7 +16,7 @@ export function Home() {
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
                         className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
-                        <li><Link to="Register"> Register</Link></li>
+                        <li><Link to="DisplayList"> Display List</Link></li>
                         <li><a href="/login">CreateCustomerList</a></li>
                         <li><a href="/pay">Pay</a></li>
                         <li>  <Link to="/help"> Help</Link></li>
@@ -27,7 +27,7 @@ export function Home() {
             </nav>
 
             <ul className="sidenav" id="mobile-demo">
-                <li><a href="sass.html">Lists</a></li>
+                <li><Link to="DisplayList">Display Lists</Link></li>
                 <li><a href="badges.html">User Detail</a></li>
                 <li><a href="collapsible.html">Administrator</a></li>
                 <li><a href="">  <Link to="Register"> Register  </Link> </a></li>
@@ -78,16 +78,26 @@ export function Home() {
       </div>
       </body>
 
-
-
-
     );
 
+}
 
 
 
+
+export function DisplayList() {
+    return(
+        <div>
+            <h1> This page is for diplay list routed from app.js </h1>
+        </div>
+    );
 
 }
+
+
+
+
+
 
 
 

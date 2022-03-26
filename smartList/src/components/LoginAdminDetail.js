@@ -31,40 +31,28 @@ import React, {useState}  from 'react';
 
         }
 
-
-
-
-
-
         return (
-
             <div className="row">
                 <form className="col s12" onSubmit={() => validateAdmin()}>
                     <div className="row">
-
-
                         <div className="input-field col s6">
                             <input placeholder="Placeholder" value={email} type="email" onChange={(event => setEmail(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="email">Email</label>
                         </div>
+                    </div>
 
-
+                    <div className="row">
                         <div className="input-field col s6">
                             <input placeholder="password" value={customerPassword} type="text" onChange={(event =>
                                 setCustomerPassword(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="customerPassword">Type Password</label>
                         </div>
-
-
-
                     </div>
-
 
                     <div className="row">
                         <button className="waves-effect waves-light btn " type="submit" name="action">Login</button>
-
                     </div>
                 </form>
             </div>
