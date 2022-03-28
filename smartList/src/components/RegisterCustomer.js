@@ -78,12 +78,7 @@ import {Link} from "react-router-dom";
 
                 const body = await result.json();
                 setInfo(body);
-
             }
-
-
-
-
 
 
         return (
@@ -92,7 +87,7 @@ import {Link} from "react-router-dom";
                 <form className="col s12" onSubmit={() => addCustomer()}>
                     {/*<form className="col s12" onSubmit={() => validateInputs()}>*/}
                     <div className="row">
-                        <div className="input-field col s6">
+                        <div className="input-field col s8">
                             <input placeholder="Mandatory" value={name} type="text"
                                    onChange={(event => setName(event.target.value))} className="validate"/>
                             <label htmlFor="name">First Name</label>
@@ -101,7 +96,7 @@ import {Link} from "react-router-dom";
 
                     <div className="row">
 
-                        <div className="input-field col s6">
+                        <div className="input-field col s8">
                             <input placeholder="Mandatory" value={surname} type="text"
                                    onChange={(event => setSurname(event.target.value))} className="validate"/>
                             <label htmlFor="surname">Surname</label>
@@ -109,7 +104,7 @@ import {Link} from "react-router-dom";
                     </div>
 
                     <div className="row">
-                        <div className="input-field col s6">
+                        <div className="input-field col s8">
                             <input placeholder="Mandatory" value={email} type="email" onChange={(event => setEmail(event.target.value))}
                                    className="validate" />
                             <label htmlFor="email">Email</label>
@@ -117,7 +112,7 @@ import {Link} from "react-router-dom";
                     </div>
 
                     <div className="row">
-                        <div className="input-field col s6">
+                        <div className="input-field col s8">
                             <input placeholder="Optional" value={phoneNumber} type="text" onChange={(event => setPhoneNumber(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="phoneNumber">Phone Number</label>
@@ -125,7 +120,7 @@ import {Link} from "react-router-dom";
                     </div>
 
                     <div className="row">
-                        <div className="input-field col s6">
+                        <div className="input-field col s8">
                             <input value={dob} type="date" onChange={(event => setDob(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="dob">Day of Birth</label>
@@ -134,7 +129,7 @@ import {Link} from "react-router-dom";
 
                         <div className="row">
 
-                        <div className="input-field col s6">
+                        <div className="input-field col s8">
                             <input placeholder="Optional" value={sex} type="text" onChange={(event => setSex(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="sex">Sex</label>
@@ -142,7 +137,7 @@ import {Link} from "react-router-dom";
                         </div>
 
                     <div className="row">
-                        <div className="input-field col s6">
+                        <div className="input-field col s8">
                             <input placeholder="Optional" value={address} type="text"
                                    onChange={(event => setAddress(event.target.value))} className="validate"/>
                             <label htmlFor="surname">Address</label>
@@ -150,7 +145,7 @@ import {Link} from "react-router-dom";
                     </div>
 
                     <div className="row">
-                        <div className="input-field col s6">
+                        <div className="input-field col s8">
                             <input placeholder="password" value={customerPassword} type="text" onChange={(event => setCustomerPassword(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="customerPassword">Type Password</label>
@@ -158,7 +153,7 @@ import {Link} from "react-router-dom";
                     </div>
 
                     <div className="row">
-                        <div className="input-field col s6">
+                        <div className="input-field col s8">
                             <input placeholder="Must be the same minimum 8 characters nad numbers" value={customerPasswordAgain} type="text" onChange={(event => setCustomerPasswordAgain(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="customerPasswordAgain">Repeat the Password</label>

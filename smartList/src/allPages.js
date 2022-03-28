@@ -6,7 +6,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import DisplayList from "./components/DisplayList";
 import LoginAdmin from "./components/LoginAdmin";
-
+import Pay from "./components/Pay";
 
 
 
@@ -259,12 +259,49 @@ export function DisplayTravelerList() {
 
 // zamiast w app w tej funkcji powinienem zaimplementowac prawdopodobnie, jaka zaleta nie jestem pewny
 // ponoc wszystko mialo sie wyswietlac wtedy w jednym oknie, pororbic testy
-export function Pay() {
+export function PayPage() {
     return(
-        <div>
-            <h1> [Pay is not implemented yet]  </h1>
-            <CreateList />
+        <body>
+        <div className="container-fluid">
+            <nav>
+                <div className="nav-wrapper #795548 brown">
+                    <a href="/" className="brand-logo">Smart List </a>
+                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
+                        className="material-icons">menu</i></a>
+                    <ul className="right hide-on-med-and-down">
+                        <li>  <Link to="Register"> Register</Link></li>
+                        <li>  <Link to="CreateCustomerList"> CreateCustomerList</Link></li>
+                        <li><Link to="../LoginAdminPage"> Administrator Account </Link></li>
+                        <li><a href="collapsible.html">Pay</a></li>
+                        <li>  <Link to="Help"> Help</Link></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul className="sidenav" id="mobile-demo">
+                <li><a href="">  <Link to="MyLists"> My Lists  </Link> </a></li>
+                <li><Link to="Register">User Detail Register Test</Link></li>
+                <li><Link to="../LoginAdminPage"> Administrator Account </Link></li>
+                <li><Link to="CreateCustomerList"> CreateCustomerList  </Link> </li>
+            </ul>
+
+
+            <div className="container">
+                <div className="row">
+                    <div className="col s2"></div>
+                    <div className="col s8">
+                        <p id="PageTitle"> PAYMENT</p>
+                    </div>
+                    <div className="col s2"></div>
+                </div>
+            </div>
+
+            <div className="row">
+                <Pay />
+            </div>
         </div>
+        </body>
+
     );
 
 }
@@ -321,7 +358,7 @@ export function LoginAdminPage() {
 export function PageNotExist() {
     return(
         <div>
-            <h1> This page not exist </h1>
+            <h1> This page not exist!!! </h1>
         </div>
     );
 

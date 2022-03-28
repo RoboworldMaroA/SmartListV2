@@ -3,6 +3,7 @@ import React, {useState}  from 'react';
 import {type} from "@testing-library/user-event/dist/type";
 import {checkNode} from "@testing-library/jest-dom/dist/utils";
 import './toDoListCSS.css';
+import {Link} from "react-router-dom";
 
 
 const ToDoList=({})=>{
@@ -10,7 +11,8 @@ const ToDoList=({})=>{
     const itemList = [
         "t-short",
         "jacket",
-        "shorts"
+        "shorts",
+        "quantityUnderwear"
 
     ]
 
@@ -23,6 +25,7 @@ const ToDoList=({})=>{
     function toggle(){
         setChecked2(checked2=> !checked2)
     }
+
 
 
     return(
@@ -104,6 +107,9 @@ const ToDoList=({})=>{
                     </p>
                     : "Face Mask"}
                 </span>
+
+
+
         </label>
 
         {/*<p>*/}
@@ -119,7 +125,7 @@ const ToDoList=({})=>{
         <p>
             <label>
                 <input type="checkbox" className="filled-in" />
-                <span>Underwear</span>
+                <span>Underwear Quantity: </span>
             </label>
         </p>
             <label>
@@ -280,6 +286,14 @@ const ToDoList=({})=>{
             </label>
         </p>
 
+        {/*save list button subnit shoul execute function used to saving list on the computer*/}
+        <div className="row">
+            <Link to="../SaveList">
+                <button className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
+                    Save List(Saving not ready yet)
+                </button>
+            </Link>
+        </div>
 
 
 

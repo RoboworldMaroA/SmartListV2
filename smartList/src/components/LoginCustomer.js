@@ -33,7 +33,7 @@ import './LoginCustomer.css';
                 {/*<form className="col s12" onSubmit={() => validateCustomer()}>*/}
                 <form className="col s12" onSubmit="" >
                     <div className="row">
-                        <div className="input-field col s6">
+                        <div className="input-field col s8">
                             <input placeholder="Login" value={email} type="email" onChange={(event => setEmail(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="email">Login (Email)</label>
@@ -41,7 +41,7 @@ import './LoginCustomer.css';
                     </div>
 
                     <div className="row">
-                        <div className="input-field col s6">
+                        <div className="input-field col s8">
                             <input placeholder="Password" value={customerPassword} type="text" onChange={(event =>
                                 setCustomerPassword(event.target.value))}
                                    className="validate"/>

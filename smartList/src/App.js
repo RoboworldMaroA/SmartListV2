@@ -8,7 +8,16 @@ import LoginAdmin from "./components/LoginAdmin";
 //import necessary to change pages, I will use more than one page so instead display everything what is in app.js
 //i can switch between pages, and they are connected to the "allPages.js".
 import {Routes, Route, Link} from "react-router-dom";
-import { Home, Pay, CreateCustomerList, PageNotExist,DisplayTravelerList, RegisterPage, LoginPage, LoginAdminPage} from "./allPages";
+import {
+    Home,
+    CreateCustomerList,
+    PageNotExist,
+    DisplayTravelerList,
+    RegisterPage,
+    LoginPage,
+    LoginAdminPage,
+    PayPage
+} from "./allPages";
 import CreateList from "./components/CreateList";
 import Login from "./components/Login";
 
@@ -18,30 +27,30 @@ function App() {
   return (
       <div>
           <Routes>
-              <Route path ='/' element={<Home/>}/>
+              <Route path ='/' element={Home()}/>
 
               {/*Register*/}
-              <Route path='/Register' element={<RegisterPage/>}/>
+              <Route path='/Register' element={RegisterPage()}/>
 
               {/*It is routed to the allPages.js and there is a function loginPage use to Log in*/}
-              <Route path='/Login' element={<LoginPage/>}/>
+              <Route path='/Login' element={LoginPage()}/>
 
               {/*CreateCustomerList*/}
-              <Route path='/CreateCustomerList' element={<CreateCustomerList/>}/>
+              <Route path='/CreateCustomerList' element={CreateCustomerList()}/>
 
               {/*DisplayList*/}
-              <Route path='/displayList' element={<DisplayTravelerList/>}/>
+              <Route path='/displayList' element={DisplayTravelerList()}/>
 
 
              {/* Administrator Page, Display All Contacts, And Manage Database*/}
-              <Route path='/LoginAdminPage' element={<LoginAdminPage/>}/>
+              <Route path='/LoginAdminPage' element={LoginAdminPage()}/>
 
 
-              <Route path ='/pay' element={<Pay/>}/>
+              <Route path ='/pay' element={PayPage()}/>
 
               {/*<Route path ='/loginAdmin' element={<LoginAdmin/>}/>*/}
 
-              <Route path ='/*' element={<PageNotExist/>}/>
+              <Route path ='/*' element={PageNotExist()}/>
 
           </Routes>
 
