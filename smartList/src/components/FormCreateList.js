@@ -58,7 +58,7 @@ import { Button, Card, Row, Col } from 'react-materialize';
                     <div className="row">
                         <div  className="input-field col s10">
                             <i className="material-icons prefix">account_circle</i>
-                            <input placeholder="Your unique name of the list." value={listName} type="email" onChange={(event => setListName(event.target.value))}
+                            <input placeholder="Your unique name of the travelingList." value={listName} type="email" onChange={(event => setListName(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="List Name">List Name</label>
                         </div>
@@ -72,11 +72,26 @@ import { Button, Card, Row, Col } from 'react-materialize';
                                 setDestination(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="customerPassword">Destination</label>
-
-
-
                         </div>
                     </div>
+
+
+                    <div className="row">
+                        <div  className="input-field col s10">
+
+                            <select>
+                                <option value="" disabled selected> Destination</option>
+                                <option value="1">Ireland</option>
+                                <option value="2">Spain</option>
+                                <option value="3">Poland</option>
+                            </select>
+                            {/*<input placeholder="Password" value={departureDay} type="text" onChange={(event =>*/}
+                            {/*    setDepartureDay(event.target.value))}*/}
+                            {/*       className="datepicker"/>*/}
+                            {/*<label htmlFor="departureDay">Departure day</label>*/}
+                        </div>
+                    </div>
+
 
 
                     <div className="row">
@@ -160,6 +175,25 @@ import { Button, Card, Row, Col } from 'react-materialize';
                             {/*<label htmlFor="departureDay">Departure day</label>*/}
                         </div>
                     </div>
+
+
+
+                    <div className="row">
+                        <div  className="input-field col s10">
+
+                            <select multiple>
+                                <option value="" disabled selected>Activities</option>
+                                <option value="1">Sunbathing</option>
+                                <option value="2">Ski</option>
+                                <option value="3">Trekking</option>
+                            </select>
+                            {/*<input placeholder="Password" value={departureDay} type="text" onChange={(event =>*/}
+                            {/*    setDepartureDay(event.target.value))}*/}
+                            {/*       className="datepicker"/>*/}
+                            {/*<label htmlFor="departureDay">Departure day</label>*/}
+                        </div>
+                    </div>
+
 
                     <div  className="row">
                         <div id="ButtonAddItemInFormCreateList" className="input-field col s10">

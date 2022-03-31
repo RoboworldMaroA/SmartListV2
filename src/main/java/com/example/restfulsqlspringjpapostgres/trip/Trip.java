@@ -23,6 +23,8 @@ public class Trip {
             updatable = false)
     private Long id;
 
+    private String name;
+
     @Column(
             name = "customerId",
             nullable = false,
@@ -50,6 +52,7 @@ public class Trip {
     private String tripPassword;
     private String description;
     private String adminPrivileges;
+    private String payStatus;
 
     @Transient//this tell this colum (age) no need to be more in database table
     private Integer age;
@@ -58,8 +61,9 @@ public class Trip {
 
     }
     //public Student(Long id, String name, String email, LocalDate dob, Integer age) {
-    public Trip(Long id, String customerId, String weatherId, String listId, String destinationId, LocalDate departureDay, LocalDate returnDay, String activity, String tripPassword, String description, String adminPrivileges) {
+    public Trip(Long id, String name, String customerId, String weatherId, String listId, String destinationId, LocalDate departureDay, LocalDate returnDay, String activity, String tripPassword, String description, String adminPrivileges,String payStatus) {
         this.id = id;
+        this.name=name;
         this.customerId = customerId;
         this.weatherId = weatherId;
         this.listId = listId;
@@ -71,11 +75,13 @@ public class Trip {
         //this.age = age;
         this.description = description;
         this.adminPrivileges= adminPrivileges;
+        this.payStatus=payStatus;
     }
     //constructor without id because it will automatically create id for us
     //public Student(String name, String email, LocalDate dob, Integer age) {//delete age from here because we want to calculate age
 
-    public Trip(String customerId, String weatherId, String listId, String destinationId, LocalDate departureDay, LocalDate returnDay, String activity, String tripPassword, String description, String adminPrivileges) {
+    public Trip(String name, String customerId, String weatherId, String listId, String destinationId, LocalDate departureDay, LocalDate returnDay, String activity, String tripPassword, String description, String adminPrivileges,String payStatus) {
+        this.name=name;
         this.customerId = customerId;
         this.weatherId = weatherId;
         this.listId = listId;
@@ -87,6 +93,7 @@ public class Trip {
         //this.age = age;
         this.description = description;
         this.adminPrivileges= adminPrivileges;
+        this.payStatus=payStatus;
     }
 
 //    public String getActivity() {
@@ -198,6 +205,14 @@ public class Trip {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getCustomerId() {
         return customerId;
     }
@@ -284,6 +299,14 @@ public class Trip {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getPayStatus() {
+        return payStatus;
+    }
+
+    public void setPayStatus(String payStatus) {
+        this.payStatus = payStatus;
     }
 
     @Override

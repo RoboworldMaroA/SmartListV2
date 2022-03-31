@@ -48,6 +48,7 @@ import React, {useState}  from 'react';
                                 setCustomerPassword(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="customerPassword">Type Password</label>
+                            <p> It is what customer type {customerPassword}</p>
                         </div>
                     </div>
 

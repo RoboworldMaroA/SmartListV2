@@ -1,26 +1,25 @@
-package com.example.restfulsqlspringjpapostgres.trip;
+package com.example.restfulsqlspringjpapostgres.TravelingList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 //this
 @Service
-public class TripService {
+public class TravelingListService {
     //define variable customerRepository
-    private final TripRepository tripRepository;
+    private final TravelingListRepository travelingListRepository;
 
     //method CustomerService
     @Autowired
-    public TripService(TripRepository tripRepository) {
-        this.tripRepository = tripRepository;
+    public TravelingListService(TravelingListRepository travelingListRepository) {
+        this.travelingListRepository = travelingListRepository;
     }
 
-    public List<Trip> getTrip(){
-        return tripRepository.findAll();
+    public java.util.List<TravelingList> getList(){
+        return travelingListRepository.findAll();
 
         //this will be in database so this info we get from three the interface from database
 //        return List.of(new Student(1L,
@@ -34,18 +33,18 @@ public class TripService {
 
     //i am trying to implement to display detail only one user that is registering (or when he is logged to his account)
     //i think that mayby i should do this in front end not back end??
-    public List<Trip> getTripWithId(Long tripId){
-        boolean existTrip = tripRepository.existsById(tripId);
-        if(!existTrip){
-            return (List<Trip>) tripRepository.getById(tripId);
+    public java.util.List<TravelingList> getListWithId(Long listId){
+        boolean existList = travelingListRepository.existsById(listId);
+        if(!existList){
+            return (java.util.List<TravelingList>) travelingListRepository.getById(listId);
         }
         throw new IllegalStateException("No id have found");
 
     }
 
 
-    public void addNewTrip(Trip trip) {
-        Optional<Trip> tripOptional = tripRepository.findTripByCustomerId(trip.getCustomerId());
+    public void addNewList(TravelingList travelingList) {
+        Optional<TravelingList> tripOptional = travelingListRepository.findListByBeachListStatus(travelingList.getName());
 
         if (tripOptional.isPresent()){
 //            if(payStatus){
@@ -56,38 +55,38 @@ public class TripService {
         //instead of printing customer we want to save new customer
 
         //System.out.println(customer);
-        tripRepository.save(trip);
+        travelingListRepository.save(travelingList);
 
     }
     //implementation services
-    public void deleteTrip(Long tripId) {
-        boolean exists = tripRepository.existsById(tripId);
+    public void deleteList(Long listId) {
+        boolean exists = travelingListRepository.existsById(listId);
         if (!exists){
-            throw new IllegalStateException("`customer  with id: "+ tripId+" does not exist.");
+            throw new IllegalStateException("`customer  with id: "+ listId+" does not exist.");
 
         }
         //otherwise
-        tripRepository.deleteById(tripId);
+        travelingListRepository.deleteById(listId);
     }
 
 
     //implementation PUT
     @Transactional
-    public void updateTrip(Long tripId,
+    public void updateList(Long tripId,
                            String name,
-                           String customerId) {
-        Trip trip = tripRepository.findById(tripId).orElseThrow(()-> new IllegalStateException(
+                           String beachListStatus) {
+        TravelingList travelingList = travelingListRepository.findById(tripId).orElseThrow(()-> new IllegalStateException(
                 "Customer with id"+tripId+"dose not exist"));//-> I think this is kind og get
-        if (name != null && name.length()>0 && !Objects.equals(trip.getCustomerId(), name)){
-            trip.setCustomerId(name);
+        if (name != null && name.length()>0 && !Objects.equals(travelingList.getId(), name)){
+            travelingList.setId(Long.valueOf(name));
         }
-        //check customerId
-        if (customerId != null && customerId.length()>0 && !Objects.equals(trip.getListId(), customerId)){
-            Optional<Trip> tripOptional = tripRepository.findTripByCustomerId(customerId);
+        //check beachListStatus
+        if (beachListStatus != null && beachListStatus.length()>0 && !Objects.equals(travelingList.getId(), beachListStatus)){
+            Optional<TravelingList> tripOptional = travelingListRepository.findListByBeachListStatus(beachListStatus);
             if(tripOptional.isPresent()){
-                throw new IllegalStateException("customerId taken");
+                throw new IllegalStateException("beachListStatus taken");
             }
-            trip.setListId(customerId);
+            travelingList.setId(Long.valueOf(beachListStatus));
         }
 
 

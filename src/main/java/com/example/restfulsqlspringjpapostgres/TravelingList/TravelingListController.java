@@ -1,30 +1,28 @@
-package com.example.restfulsqlspringjpapostgres.trip;
+package com.example.restfulsqlspringjpapostgres.TravelingList;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 // in this class we implement GET, POST,PUT, DELETE
 //this is a proper way we could have rst controller in main restfull app but
 // this is good practice do this that way
 
 @RestController
-@RequestMapping(path = "api/v1/trip")
+@RequestMapping(path = "api/v1/list")
 @CrossOrigin(origins = "http://localhost:3000")
-public class TripController {
-    private final TripService tripService;
+public class TravelingListController {
+    private final TravelingListService travelingListService;
 
     @Autowired
-    public TripController(TripService tripService) {
+    public TravelingListController(TravelingListService travelingListService) {
         //this.studentService = new StudentService();//this is incorrect so use annotation to inject student service
-        this.tripService = tripService;
+        this.travelingListService = travelingListService;
     }
 
     //printing list of the students GET method
         @GetMapping
-        public List<Trip> getTrip(){
+        public java.util.List<TravelingList> getList(){
 //            return List.of(new Student(1L,
 //                    "Marek",
 //                    "Augustyn",
@@ -34,7 +32,7 @@ public class TripController {
 //
 //                    ));
 
-            return tripService.getTrip();
+            return travelingListService.getList();
         }
 
       //implementation post
@@ -44,20 +42,16 @@ public class TripController {
     //**********   POST *******************************************
     //@PostMapping(value = "/api/v1/customer", consumes = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping
-    public void registerNewTrip(@RequestBody Trip trip){
-        tripService.addNewTrip(trip);
-
-
-
-
+    public void registerNewList(@RequestBody TravelingList travelingList){
+        travelingListService.addNewList(travelingList);
 
 
     }//end POST
 
     //**********   DELETE     *******************************************
-    @DeleteMapping(path = "{tripId}")
-    public void deleteTrip(@PathVariable("tripId") Long tripId){
-        tripService.deleteTrip(tripId);
+    @DeleteMapping(path = "{listId}")
+    public void deleteList(@PathVariable("listId") Long listId){
+        travelingListService.deleteList(listId);
 
 
     }
@@ -65,14 +59,14 @@ public class TripController {
 
     //**********   PUT      *******************************************
     // put update data in the student for example we want ot change name and email
-    @PutMapping(path= "{tripId}")
+    @PutMapping(path= "{listId}")
     public void updateTrip(
-            @PathVariable("tripId") Long tripId,
+            @PathVariable("listId") Long listId,
             @RequestParam(required = false) String name,
-            @RequestParam(required = false) String customerId
+            @RequestParam(required = false) String documentsListStatus
 
     ){
-        tripService.updateTrip(tripId,name, customerId);
+        travelingListService.updateList(listId,name, documentsListStatus);
     }
 
 
@@ -84,3 +78,4 @@ public class TripController {
     }*/
 
 }
+

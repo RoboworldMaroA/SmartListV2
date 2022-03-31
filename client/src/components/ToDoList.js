@@ -27,10 +27,10 @@ const ToDoList=({})=>{
 
     return(
 
-        //Description of the list
+        //Description of the travelingList
 
 
-    <form id="main-body-todo-list" action="#">
+    <form id="main-body-todo-travelingList" action="#">
         <div><p>Item that you want to take with you on the trip</p> </div>
 
         <p id="firstname">
