@@ -19,28 +19,37 @@ public class TripConfig {
         return args -> {
 
             Trip TripToSpain = new Trip(
-                    //1l,
+                    //,
                     "Trip to Italy",
-                    "2",
-                    "2",
                     "1",
-                    "Italy",
+                    "1",
+                    "1",
+                    "Yes",
+                    "Yes",
+                    "Yes",
+                     "Italy",
                     LocalDate.of(2022, AUGUST, 10),
                     LocalDate.of(2022,AUGUST,20),
                     "Beach",
                     "password",
                     "Beach, and rest with wife. This Customer has paid subscription",
+                    "Yes",
+                    "Yes",
+                    "Yes",
                     "No",
-                    "Yes"
+                    "No"
                     );
 
 
             Trip TripToIreland = new Trip(
                     //1N,
                     "Trip to Ireland",
-                    "1",
-                    "1",
                     "2",
+                    "2",
+                    "2",
+                    "Yes",
+                    "No",
+                    "Yes",
                     "Ireland",
                     LocalDate.of(2022,MAY,20),
                     LocalDate.of(2022,MAY,20),
@@ -48,7 +57,10 @@ public class TripConfig {
                     "customerPassword",
                     "TRAVEL WITH A FRIENDS TO HTE IRELAND, This customer did not paid subscription",
                     "No",
-                    "yes"
+                    "No",
+                    "Yes",
+                    "No",
+                    "No"
                     );
 
 

@@ -44,6 +44,9 @@ public class Trip {
             columnDefinition = "TEXT"
     )
     private String listId;
+    private String camera;
+    private String camcorder;
+    private String smartphone;
     private String destinationId;
     private String destination;
 
@@ -54,39 +57,58 @@ public class Trip {
     private String description;
     private String adminPrivileges;
     private String payStatus;
+    private String smallLuggage;
+    private String mediumLuggage;
+    private String largeLuggage;
+
 
     @Transient//this tell this colum (age) no need to be more in database table
     private Integer age;
 
     public Trip() {
-
     }
+
     //public Student(Long id, String name, String email, LocalDate dob, Integer age) {
-    public Trip(Long id, String tripName, String customerId, String weatherId, String listId, String destinationId,String destination, LocalDate departureDay, LocalDate returnDay, String activity, String tripPassword, String description, String adminPrivileges, String payStatus) {
+    public Trip(Long id, String tripName, String customerId, String weatherId, String listId,
+                String camera, String camcorder,String smartphone, String destinationId, String destination,
+                LocalDate departureDay, LocalDate returnDay, String activity, String tripPassword,
+                String description, String adminPrivileges, String payStatus,
+                String smallLuggage, String mediumLuggage,String largeLuggage) {
         this.id = id;
         this.tripName = tripName;
         this.customerId = customerId;
         this.weatherId = weatherId;
         this.listId = listId;
-        this.destinationId = destinationId;
+        this.camera = camera;
+        this.camcorder=camcorder;
+        this.smartphone=smartphone;
         this.destinationId = destination;
         this.departureDay = departureDay;
         this.returnDay = returnDay;
         this.activity = activity;
         this.tripPassword = tripPassword;
-        //this.age = age;
         this.description = description;
         this.adminPrivileges= adminPrivileges;
         this.payStatus=payStatus;
+        this.smallLuggage=smallLuggage;
+        this.mediumLuggage=mediumLuggage;
+        this.largeLuggage=largeLuggage;
     }
     //constructor without id because it will automatically create id for us
     //public Student(String name, String email, LocalDate dob, Integer age) {//delete age from here because we want to calculate age
 
-    public Trip(String tripName, String customerId, String weatherId, String listId, String destinationId, LocalDate departureDay, LocalDate returnDay, String activity, String tripPassword, String description, String adminPrivileges, String payStatus) {
+    public Trip(String tripName, String customerId, String weatherId, String listId, String camera,
+                String camcorder,String smartphone, String destinationId, LocalDate departureDay,
+                LocalDate returnDay, String activity, String tripPassword, String description,
+                String adminPrivileges, String payStatus,
+                String smallLuggage, String mediumLuggage,String largeLuggage) {
         this.tripName = tripName;
         this.customerId = customerId;
         this.weatherId = weatherId;
         this.listId = listId;
+        this.camera = camera;
+        this.camera = camcorder;
+        this.camera = smartphone;
         this.destinationId = destinationId;
         this.departureDay = departureDay;
         this.returnDay = returnDay;
@@ -96,6 +118,9 @@ public class Trip {
         this.description = description;
         this.adminPrivileges= adminPrivileges;
         this.payStatus=payStatus;
+        this.smallLuggage=smallLuggage;
+        this.mediumLuggage=mediumLuggage;
+        this.largeLuggage=largeLuggage;
     }
 
 
@@ -137,6 +162,30 @@ public class Trip {
 
     public void setListId(String listId) {
         this.listId = listId;
+    }
+
+    public String getCamera() {
+        return camera;
+    }
+
+    public void setCamera(String camera) {
+        this.camera = camera;
+    }
+
+    public String getCamcorder() {
+        return camcorder;
+    }
+
+    public void setCamcorder(String camcorder) {
+        this.camcorder = camcorder;
+    }
+
+    public String getSmartphone() {
+        return smartphone;
+    }
+
+    public void setSmartphone(String smartphone) {
+        this.smartphone = smartphone;
     }
 
     public String getDestinationId() {
@@ -217,6 +266,30 @@ public class Trip {
 
     public void setPayStatus(String payStatus) {
         this.payStatus = payStatus;
+    }
+
+    public String getSmallLuggage() {
+        return smallLuggage;
+    }
+
+    public void setSmallLuggage(String smallLuggage) {
+        this.smallLuggage = smallLuggage;
+    }
+
+    public String getMediumLuggage() {
+        return mediumLuggage;
+    }
+
+    public void setMediumLuggage(String mediumLuggage) {
+        this.mediumLuggage = mediumLuggage;
+    }
+
+    public String getLargeLuggage() {
+        return largeLuggage;
+    }
+
+    public void setLargeLuggage(String largeLuggage) {
+        this.largeLuggage = largeLuggage;
     }
 
     @Override

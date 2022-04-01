@@ -8,6 +8,7 @@ import './FormCreateList.css';
 import M from 'materialize-css';
 import {Component} from "react";
 import { Button, Card, Row, Col } from 'react-materialize';
+import {getValue} from "@testing-library/user-event/dist/utils";
 
 
 
@@ -54,8 +55,6 @@ import { Button, Card, Row, Col } from 'react-materialize';
             <div id ="elementInFormCreateList" className="row">
                 <form className="col s12" onSubmit={() => validateCustomer()}>
                 {/*<form className="col s12" onSubmit="" >*/}
-
-
                     <div className="row">
                         <div  className="input-field col s10">
                             <i className="material-icons prefix">account_circle</i>
@@ -80,12 +79,15 @@ import { Button, Card, Row, Col } from 'react-materialize';
                     <div className="row">
                         <div  className="input-field col s10">
 
-                            <select>
-                                <option value="" disabled selected> Destination</option>
-                                <option value="1">Ireland</option>
-                                <option value="2">Spain</option>
-                                <option value="3">Poland</option>
+                            <select value={destination} onChange={event => setDestination(event.target.value)}>
+                                    (<option disabled selected> Destination    </option>),
+                                    (<option  value="Ireland">Ireland</option>),
+                                    (<option value="Spain">Spain</option>),
+                                    (<option value="Poland">Poland</option>)
+                                )}
+
                             </select>
+                            <p>This is display destination for test only : {destination}</p>
                             {/*<input placeholder="Password" value={departureDay} type="text" onChange={(event =>*/}
                             {/*    setDepartureDay(event.target.value))}*/}
                             {/*       className="datepicker"/>*/}
@@ -131,7 +133,7 @@ import { Button, Card, Row, Col } from 'react-materialize';
                             <select multiple>
                                 <option value="" disabled selected>Photo/Video Equipment</option>
                                 <option value="1">Camera</option>
-                                <option value="2">Video Recorder</option>
+                                <option value="2">Camcorder</option>
                                 <option value="3">Smartphone</option>
                             </select>
                             {/*<input placeholder="Password" value={departureDay} type="text" onChange={(event =>*/}
