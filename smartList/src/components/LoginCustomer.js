@@ -28,6 +28,9 @@ import './LoginCustomer.css';
             setInfo(body);
         }
 
+
+
+
         return (
             <div id="ItemsInLoginCustomer" className="row">
                 {/*<form className="col s12" onSubmit={() => validateCustomer()}>*/}

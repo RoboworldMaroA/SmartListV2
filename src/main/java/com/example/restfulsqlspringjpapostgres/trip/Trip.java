@@ -2,7 +2,6 @@ package com.example.restfulsqlspringjpapostgres.trip;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.Period;
 
 @Entity(name = "Trip")
 @Table
@@ -23,7 +22,7 @@ public class Trip {
             updatable = false)
     private Long id;
 
-    private String name;
+    private String tripName;
 
     @Column(
             name = "customerId",
@@ -46,6 +45,8 @@ public class Trip {
     )
     private String listId;
     private String destinationId;
+    private String destination;
+
     private LocalDate departureDay;
     private LocalDate returnDay;
     private String activity;
@@ -61,13 +62,14 @@ public class Trip {
 
     }
     //public Student(Long id, String name, String email, LocalDate dob, Integer age) {
-    public Trip(Long id, String name, String customerId, String weatherId, String listId, String destinationId, LocalDate departureDay, LocalDate returnDay, String activity, String tripPassword, String description, String adminPrivileges,String payStatus) {
+    public Trip(Long id, String tripName, String customerId, String weatherId, String listId, String destinationId,String destination, LocalDate departureDay, LocalDate returnDay, String activity, String tripPassword, String description, String adminPrivileges, String payStatus) {
         this.id = id;
-        this.name=name;
+        this.tripName = tripName;
         this.customerId = customerId;
         this.weatherId = weatherId;
         this.listId = listId;
         this.destinationId = destinationId;
+        this.destinationId = destination;
         this.departureDay = departureDay;
         this.returnDay = returnDay;
         this.activity = activity;
@@ -80,8 +82,8 @@ public class Trip {
     //constructor without id because it will automatically create id for us
     //public Student(String name, String email, LocalDate dob, Integer age) {//delete age from here because we want to calculate age
 
-    public Trip(String name, String customerId, String weatherId, String listId, String destinationId, LocalDate departureDay, LocalDate returnDay, String activity, String tripPassword, String description, String adminPrivileges,String payStatus) {
-        this.name=name;
+    public Trip(String tripName, String customerId, String weatherId, String listId, String destinationId, LocalDate departureDay, LocalDate returnDay, String activity, String tripPassword, String description, String adminPrivileges, String payStatus) {
+        this.tripName = tripName;
         this.customerId = customerId;
         this.weatherId = weatherId;
         this.listId = listId;
@@ -96,106 +98,6 @@ public class Trip {
         this.payStatus=payStatus;
     }
 
-//    public String getActivity() {
-//        return activity;
-//    }
-//
-//    public void setActivity(String address) {
-//        this.activity = address;
-//    }
-//
-//    public String getAdminPrivileges() {
-//        return adminPrivileges;
-//    }
-//
-//    public void setAdminPrivileges(String adminPrivileges) {
-//        this.adminPrivileges = adminPrivileges;
-//    }
-////getters and setters
-//
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
-//    public String getCustomerId() {
-//        return customerId;
-//    }
-//
-//    public void setCustomerId(String name) {
-//        this.customerId = name;
-//    }
-//
-//    public String getWeatherId() {
-//        return weatherId;
-//    }
-//
-//    public void setWeatherId(String surname) {
-//        this.weatherId = surname;
-//    }
-//
-//    public String getListId() {
-//        return listId;
-//    }
-//
-//    public void setListId(String email) {
-//        this.listId = email;
-//    }
-//
-//    public String getDestinationId() {
-//        return destinationId;
-//    }
-//
-//    public void setDestinationId(String phoneNumber) {
-//        this.destinationId = phoneNumber;
-//    }
-//
-//    public LocalDate getDepartureDay() {
-//        return departureDay;
-//    }
-//
-//    public void setDepartureDay(LocalDate dob) {
-//        this.departureDay = dob;
-//    }
-//
-//    public String getDescription() {
-//        return description;
-//    }
-//
-//    public void setDescription(String customerPasswordAgain) {
-//        this.description = customerPasswordAgain;
-//    }
-//
-//    public LocalDate getReturnDay() {
-//        return returnDay;
-//    }
-//
-//    public void setReturnDay(String sex) {
-//        this.returnDay = sex;
-//    }
-//
-//    public String getTripPassword() {
-//        return tripPassword;
-//    }
-//
-//    public void setTripPassword(String password) {
-//        this.tripPassword = password;
-//    }
-//
-//    //    public Integer getAge() {
-////        return age;
-////    }
-//    public Integer getAge() {
-//        return Period.between(this.departureDay, LocalDate.now()).getYears();
-//    }
-//    public void setAge(Integer age) {
-//        this.age = age;
-//    }
-
 
     public Long getId() {
         return id;
@@ -205,12 +107,12 @@ public class Trip {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTripName() {
+        return tripName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTripName(String name) {
+        this.tripName = name;
     }
 
     public String getCustomerId() {
@@ -243,6 +145,14 @@ public class Trip {
 
     public void setDestinationId(String destinationId) {
         this.destinationId = destinationId;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
     public LocalDate getDepartureDay() {

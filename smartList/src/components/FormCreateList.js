@@ -15,28 +15,29 @@ import { Button, Card, Row, Col } from 'react-materialize';
 
     const AddCreateListDetail = ({setCreateListInfo: setCreateListInfo}) => {
 
-        const [name, setName] = useState('');
-        const [surname, setSurname] = useState('');
-        const [email, setEmail] = useState('');
-        const [phoneNumber, setPhoneNumber] = useState('');
-        const [dob, setDob] = useState('');
-        const [sex, setSex] = useState('');
-        const [customerPassword, setCustomerPassword] = useState('');
-        const [customerPasswordAgain, setCustomerPasswordAgain] = useState('');
-
-        const [listName, setListName] = useState('');
+        const [activity, setActivity] = useState('');
+        const [adminPrivileges, setAdminPrivileges] = useState('');
+        const [customerId, setCustomerId] = useState('');
         const [departureDay, setDepartureDay] = useState('');
+        const [description, setDescription] = useState('');
+        const [destinationId, setDestinationId] = useState('');
         const [destination, setDestination] = useState('');
+        const [listId, setListId] = useState('');
+        const [payStatus, setPayStatus] = useState('');
         const [returnDay, setReturnDay] = useState('');
-
-
-
+        const [tripName, setTripName] = useState('');
+        const [tripPassword, setTripPassword] = useState('');
+        const [weatherId, setWeatherId] = useState('');
+        const [id, setId] = useState('');
 
         //change fetch to customer database not a student
+
         const validateCustomer = async () => {
-            const result = await fetch("http://localhost:8080/api/v1/customer", {
+            const result = await fetch("http://localhost:8080/api/v1/trip", {
                 method: "POST",
-                body: JSON.stringify({name, surname,email, phoneNumber, dob,sex, customerPassword, customerPasswordAgain, ListName: listName,departureDay,destination,returnDay}),
+                body: JSON.stringify({activity,adminPrivileges,customerId,departureDay,
+                    description, destinationId, listId, payStatus ,returnDay,
+                    tripName, tripPassword, weatherId, id}),
                 headers: {
                     "Content-Type": "application/json",
                 }
@@ -51,14 +52,14 @@ import { Button, Card, Row, Col } from 'react-materialize';
         return (
 
             <div id ="elementInFormCreateList" className="row">
-                {/*<form className="col s12" onSubmit={() => validateCustomer()}>*/}
-                <form className="col s12" onSubmit="" >
+                <form className="col s12" onSubmit={() => validateCustomer()}>
+                {/*<form className="col s12" onSubmit="" >*/}
 
 
                     <div className="row">
                         <div  className="input-field col s10">
                             <i className="material-icons prefix">account_circle</i>
-                            <input placeholder="Your unique name of the travelingList." value={listName} type="email" onChange={(event => setListName(event.target.value))}
+                            <input placeholder="Your unique name of the travelingList." value={tripName} type="text" onChange={(event => setTripName(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="List Name">List Name</label>
                         </div>
@@ -209,13 +210,19 @@ import { Button, Card, Row, Col } from 'react-materialize';
 
                     <div  className="row">
                         <div id="ButtonCreateListInFormCreateList" className="input-field col s10">
-                        <Link to="../DisplayList">
+                        {/*<Link to="../DisplayList">*/}
                             <button  className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
                             Generate List
                         </button>
-                        </Link>
+                        {/*</Link>*/}
                         </div>
                     </div>
+
+
+
+
+
+
                 </form>
             </div>
 

@@ -17,9 +17,9 @@ public class TravelingListConfig {
                     = new TravelingList(
                     //1l,
                     "Status",
-                    "2",
-                    "1",
-                    "1"
+                    "Yes",
+                    "Yes",
+                    "No"
 
                     );
 

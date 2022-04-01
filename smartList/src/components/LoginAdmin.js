@@ -8,7 +8,41 @@ import RegisterCustomer from "./RegisterCustomer";
 import DeleteCustomerNew from "./DeleteCustomerNew";
 import LoginCustomer from "./LoginCustomer";
 import LoginAdminDetail from "./LoginAdminDetail";
+import * as PropTypes from "prop-types";
+import DisplayCustomerTrip from "./DisplayCustomerTrip";
+import Trip from "./Trip";
 /* Class Contact uses for display and read a data from database, data is imported from other classes */
+
+
+// function DisplayCustomerTrip(itemTrip,item) {
+//     return (
+//
+//         <div className="row">
+//             <div className="col s12 m6">
+//                 <div className="card blue-grey darken-1">
+//                     <div className="card-content white-text">
+//                                 <span className="card-title">
+//                                     <p>Trip details for Customer with ID: {item.id}</p>
+//                                     Name: {itemTrip.name}
+//                                     <p> Destination:  {itemTrip.destination}  </p>
+//                                     {/*<p> Email: {item.email} </p>*/}
+//                                     {/*<p> Phone Number: {item.phoneNumber} </p>*/}
+//                                     {/*<p> Date of birth: {item.dob} </p>*/}
+//                                     {/*<p> Sex: {item.sex} </p>*/}
+//                                     {/*<p>Age: {item.age}</p>*/}
+//                                     {/*    Password: {item.customerPassword}   */}
+//                                 </span>
+//
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//
+//
+//     );
+// }
+//
+// DisplayCustomerTrip.propTypes = {itemTrip: PropTypes.any};
 //props are data insie the divs
 export default class LoginAdmin extends Component{
     constructor(props){
@@ -16,6 +50,8 @@ export default class LoginAdmin extends Component{
         this.state= {
             contacts: [],
         };
+
+
         }
 
         componentDidMount(){
@@ -40,6 +76,13 @@ export default class LoginAdmin extends Component{
                     {this.state.contacts.map((item) =>(<DeleteCustomerNew key={item.id} item={item} /> ))}
 
                 </div>
+
+                {/*<div className="row">*/}
+
+                {/*    <Trip />*/}
+
+                {/*</div>*/}
+
 
 
 

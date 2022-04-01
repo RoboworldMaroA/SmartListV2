@@ -3,14 +3,17 @@ import React, {useState}  from 'react';
 
 //It is new display contacts and delete on the bottom with  option to it delete
 
-const DeleteCustomerNew = ({item}) => {
+const DisplayCustomerTrip = ({item}) => {
 
     const [id, setId] = useState('');
+    // const [customerId, setCustomerId] = useState('');
 
 
 
-    const deleteCustomer = async () => {
-        const result = await fetch("http://localhost:8080/api/v1/customer/"+id, {
+
+
+    const deleteCustomerTrip = async () => {
+        const resultTrip = await fetch("http://localhost:8080/api/v1/trip/"+id, {
             method: "DELETE",
             //body: JSON.stringify({id}),
             //headers: {
@@ -20,7 +23,7 @@ const DeleteCustomerNew = ({item}) => {
 
         })
 
-        const body = await result.json();
+        const body = await resultTrip.json();
         item(body);
 
     }
@@ -31,27 +34,31 @@ const DeleteCustomerNew = ({item}) => {
     return (
         // this part display card with detail inside
         <div className="row">
-            <form className="col s12" onSubmit={() => deleteCustomer()}>
+            <form className="col s12" onSubmit={() => deleteCustomerTrip()}>
 
                 <div className="row">
                     <div className="col s12 m6">
                         <div className="card blue-grey darken-1">
                             <div className="card-content white-text">
                                 <span className="card-title">
-                                    <p>It is a detail a customer with ID: {item.id}</p>
-                                    Name: {item.name}
-                                    <p> Surname:  {item.surname}  </p>
-                                    <p> Email: {item.email} </p>
-                                    <p> Phone Number: {item.phoneNumber} </p>
-                                    <p> Date of birth: {item.dob} </p>
-                                    <p> Sex: {item.sex} </p>
-                                    <p>Age: {item.age}</p>
-                                        Password: {item.customerPassword}    </span>
+                                    <p>It is a Trip details with ID: {item.id}</p>
+                                    Name of the trip is: {item.tripName}
+                                    <p> Customer Id:  {item.customerId}  </p>
+                                    <p> Activity : {item.activity} </p>
+                                    <p> Admin Privileges: {item.adminPrivileges} </p>
+                                    <p> Date of birth: {item.customerId} </p>
+                                    <p> Departure Day: {item.departureDay} </p>
+                                    <p>Description: {item.description}</p>
+                                    <p>Destination: {item.destinationId}</p>
+                                    <p>List: {item.list}</p>
+                                    <p>Pay Status: {item.payStatus}</p>
+
+                                </span>
 
                             </div>
 
                             <div className="card-action">
-                                <p> If you want delete user input user id and then press delete button </p>
+                                <p> If you want delete user Trip input Trip id and then press delete button </p>
                                 {/*<a href="#">This is a link</a>*/}
                                 {/*<a href="#">This is a link</a>*/}
                                 {/*<button onSubmit={()=>deleteCustomer(item.id)} >Delete Student</button>*/}
@@ -71,7 +78,7 @@ const DeleteCustomerNew = ({item}) => {
                 </div>
 
                 <div className="row">
-                    <button className="waves-effect waves-light btn " type="submit" name="action">Delete Customer</button>
+                    <button className="waves-effect waves-light btn " type="submit" name="action">Delete Trip</button>
 
                 </div>
             </form>
@@ -82,6 +89,6 @@ const DeleteCustomerNew = ({item}) => {
 
 }
 
-export default DeleteCustomerNew;
+export default DisplayCustomerTrip;
 
 

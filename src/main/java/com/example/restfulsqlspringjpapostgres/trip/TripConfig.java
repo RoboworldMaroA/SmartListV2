@@ -20,12 +20,11 @@ public class TripConfig {
 
             Trip TripToSpain = new Trip(
                     //1l,
-
+                    "Trip to Italy",
+                    "2",
+                    "2",
+                    "1",
                     "Italy",
-                    "2",
-                    "2",
-                    "1",
-                    "1",
                     LocalDate.of(2022, AUGUST, 10),
                     LocalDate.of(2022,AUGUST,20),
                     "Beach",
@@ -33,26 +32,23 @@ public class TripConfig {
                     "Beach, and rest with wife. This Customer has paid subscription",
                     "No",
                     "Yes"
-
                     );
 
 
             Trip TripToIreland = new Trip(
                     //1N,
-
-                    "Ireland",
+                    "Trip to Ireland",
                     "1",
                     "1",
                     "2",
-                    "1",
+                    "Ireland",
                     LocalDate.of(2022,MAY,20),
                     LocalDate.of(2022,MAY,20),
                     "TREK",
                     "customerPassword",
                     "TRAVEL WITH A FRIENDS TO HTE IRELAND, This customer did not paid subscription",
                     "No",
-                    "No"
-
+                    "yes"
                     );
 
 
