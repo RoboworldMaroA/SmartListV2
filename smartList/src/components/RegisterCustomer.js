@@ -113,7 +113,8 @@ import {Link} from "react-router-dom";
 
                     <div className="row">
                         <div className="input-field col s8">
-                            <input placeholder="Optional" value={phoneNumber} type="text" onChange={(event => setPhoneNumber(event.target.value))}
+                            <input placeholder="Optional" value={phoneNumber} type="text"
+                                   onChange={(event => setPhoneNumber(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="phoneNumber">Phone Number</label>
                         </div>

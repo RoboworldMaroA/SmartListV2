@@ -33,7 +33,7 @@ import {getValue} from "@testing-library/user-event/dist/utils";
 
         //change fetch to customer database not a student
 
-        const validateCustomer = async () => {
+        const validateCreateList = async () => {
             const result = await fetch("http://localhost:8080/api/v1/trip", {
                 method: "POST",
                 body: JSON.stringify({activity,adminPrivileges,customerId,departureDay,
@@ -53,7 +53,7 @@ import {getValue} from "@testing-library/user-event/dist/utils";
         return (
 
             <div id ="elementInFormCreateList" className="row">
-                <form className="col s12" onSubmit={() => validateCustomer()}>
+                <form className="col s12" onSubmit={() => validateCreateList()}>
                 {/*<form className="col s12" onSubmit="" >*/}
                     <div className="row">
                         <div  className="input-field col s10">
@@ -100,9 +100,9 @@ import {getValue} from "@testing-library/user-event/dist/utils";
                     <div className="row">
                         <div  className="input-field col s10">
                             <i className="material-icons prefix">account_circle</i>
-                            <input placeholder="Departure Day" value={departureDay} type="text" onChange={(event =>
+                            <input value={departureDay} type="date" onChange={(event =>
                                 setDepartureDay(event.target.value))}
-                                   className="datepicker"/>
+                                   className="validate"/>
                             <label htmlFor="departureDay">Departure day</label>
                         </div>
                     </div>
@@ -110,9 +110,9 @@ import {getValue} from "@testing-library/user-event/dist/utils";
                     <div className="row">
                         <div  className="input-field col s10">
                             <i className="material-icons prefix">account_circle</i>
-                            <input placeholder="Return Day" value={returnDay} type="text" onChange={(event =>
+                            <input value={returnDay} type="date" onChange={(event =>
                                 setReturnDay(event.target.value))}
-                                   className="datepicker"/>
+                                   className="validate"/>
                             <label htmlFor="returnDay">Return day</label>
                         </div>
                     </div>
