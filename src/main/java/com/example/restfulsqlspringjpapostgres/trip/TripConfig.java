@@ -22,11 +22,9 @@ public class TripConfig {
                     //,
                     "Trip to Italy",
                     "1",
+                    "Yes",
                     "1",
-                    "1",
-                    "Yes",
-                    "Yes",
-                    "Yes",
+                    "Yes","Yes",
                      "Italy",
                     LocalDate.of(2022, AUGUST, 10),
                     LocalDate.of(2022,AUGUST,20),
@@ -37,7 +35,8 @@ public class TripConfig {
                     "Yes",
                     "Yes",
                     "No",
-                    "No"
+                    "No",
+                    "Plane"
                     );
 
 
@@ -45,10 +44,9 @@ public class TripConfig {
                     //1N,
                     "Trip to Ireland",
                     "2",
-                    "2",
+                    "Yes",
                     "2",
                     "Yes",
-                    "No",
                     "Yes",
                     "Ireland",
                     LocalDate.of(2022,MAY,20),
@@ -60,7 +58,8 @@ public class TripConfig {
                     "No",
                     "Yes",
                     "No",
-                    "No"
+                    "No",
+                    "Plane"
                     );
 
 

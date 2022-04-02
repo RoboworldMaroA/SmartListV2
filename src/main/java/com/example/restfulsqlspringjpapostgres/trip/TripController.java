@@ -56,8 +56,8 @@ public class TripController {
 
     //**********   DELETE     *******************************************
     @DeleteMapping(path = "{tripId}")
-    public void deleteTrip(@PathVariable("tripId") Long tripId){
-        tripService.deleteTrip(tripId);
+    public void deleteTrip(@PathVariable("tripId") Long Id){
+        tripService.deleteTrip(Id);
 
 
     }
@@ -69,10 +69,10 @@ public class TripController {
     public void updateTrip(
             @PathVariable("tripId") Long tripId,
             @RequestParam(required = false) String name,
-            @RequestParam(required = false) String customerId
+            @RequestParam(required = false) String listId
 
     ){
-        tripService.updateTrip(tripId,name, customerId);
+        tripService.updateTrip(tripId,name,listId);
     }
 
 

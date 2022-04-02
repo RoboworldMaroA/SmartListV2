@@ -38,21 +38,18 @@ export default class CreateList extends Component{
 
 
         }
-        render(){
-        return(
-<div>
-            <div className="row">
-                <p>It is a detail Trip
 
-                    {this.state.contacts.map((item) =>(<DisplayCustomerTrip key={item.id} item={item} /> ))}
-                </p>
-
-            </div>
-
+    render() {
+        return (
+            <div>
                 <div className="row">
-                    <FormCreateList />
+                    <FormCreateList/>
                 </div>
-    </div>
+                <div className="row">
+                    <p>It is a detail Trip</p>
+                    {this.state.contacts.map((item) => (<DisplayCustomerTrip key={item.id} item={item}/>))}
+                </div>
+            </div>
 
         )
     }

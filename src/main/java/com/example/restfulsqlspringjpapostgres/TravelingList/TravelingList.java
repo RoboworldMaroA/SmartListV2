@@ -16,9 +16,6 @@ public class TravelingList {
             generator = "list_sequence"
 
     )
-
-    @Column(name="Id",
-            updatable = false)
     private Long Id;
 
     private String name;

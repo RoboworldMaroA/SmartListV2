@@ -32,27 +32,27 @@ public class TripService {
 //        ));
         }//end method getCustomer
 
-    //i am trying to implement to display detail only one user that is registering (or when he is logged to his account)
-    //i think that mayby i should do this in front end not back end??
-    public List<Trip> getTripWithId(Long tripId){
-        boolean existTrip = tripRepository.existsById(tripId);
-        if(!existTrip){
-            return (List<Trip>) tripRepository.getById(tripId);
-        }
-        throw new IllegalStateException("No id have found");
-
-    }
+//    //i am trying to implement to display detail only one user that is registering (or when he is logged to his account)
+//    //i think that mayby i should do this in front end not back end??
+//    public List<Trip> getTripWithId(Long tripId){
+//        boolean existTrip = tripRepository.existsById(tripId);
+//        if(!existTrip){
+//            return (List<Trip>) tripRepository.getById(tripId);
+//        }
+//        throw new IllegalStateException("No id have found");
+//
+//    }
 
 
     public void addNewTrip(Trip trip) {
-        Optional<Trip> tripOptional = tripRepository.findTripByCustomerId(trip.getCustomerId());
+        Optional<Trip> tripOptional = tripRepository.findTripByCustomerId(trip.getListId());
 
-        if (tripOptional.isPresent()){
-//            if(payStatus){
-//                tripRepository.save(trip);
-//            }
-            throw new IllegalStateException("If you want more  list you have to pay subscription");
-        }
+//        if (tripOptional.isPresent()){
+////            if(payStatus){
+////                tripRepository.save(trip);
+////            }
+//            throw new IllegalStateException("If you want more  list you have to pay subscription");
+//        }
         //instead of printing customer we want to save new customer
 
         //System.out.println(customer);
@@ -75,19 +75,19 @@ public class TripService {
     @Transactional
     public void updateTrip(Long tripId,
                            String name,
-                           String customerId) {
+                           String listId) {
         Trip trip = tripRepository.findById(tripId).orElseThrow(()-> new IllegalStateException(
                 "Customer with id"+tripId+"dose not exist"));//-> I think this is kind og get
-        if (name != null && name.length()>0 && !Objects.equals(trip.getCustomerId(), name)){
-            trip.setCustomerId(name);
+        if (name != null && name.length()>0 && !Objects.equals(trip.getListId(), name)){
+            trip.setListId(name);
         }
-        //check customerId
-        if (customerId != null && customerId.length()>0 && !Objects.equals(trip.getListId(), customerId)){
-            Optional<Trip> tripOptional = tripRepository.findTripByCustomerId(customerId);
+        //check listId
+        if (listId != null && listId.length()>0 && !Objects.equals(trip.getListId(), listId)){
+            Optional<Trip> tripOptional = tripRepository.findTripByCustomerId(listId);
             if(tripOptional.isPresent()){
-                throw new IllegalStateException("customerId taken");
+                throw new IllegalStateException("listId taken");
             }
-            trip.setListId(customerId);
+            trip.setListId(listId);
         }
 
 

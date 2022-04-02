@@ -14,7 +14,7 @@ import java.util.Optional;
 public interface TravelingListRepository
         extends JpaRepository<TravelingList, Long> {//customer class and long because ID is long
 
-    //we want to find customer using specific email - to do that we have can use Optional imported from Java package
+    //we want to find Traveling list when we know csutomer Id using specific email - to do that we have can use Optional imported from Java package
     //equivalent in sql SELECT * FROM student WHERE email = ?
     @Query("SELECT s FROM TravelingList s WHERE s.beachListStatus = ?1")
     Optional<TravelingList> findListByBeachListStatus(String beachListStatus);

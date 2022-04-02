@@ -42,16 +42,28 @@ const DisplayCustomerTrip = ({item}) => {
                             <div className="card-content white-text">
                                 <span className="card-title">
                                     <p>It is a Trip details with ID: {item.id}</p>
-                                    Name of the trip is: {item.tripName}
-                                    <p> Customer Id:  {item.customerId}  </p>
-                                    <p> Activity : {item.activity} </p>
-                                    <p> Admin Privileges: {item.adminPrivileges} </p>
-                                    <p> Date of birth: {item.customerId} </p>
-                                    <p> Departure Day: {item.departureDay} </p>
+                                    <p>Trip name : {item.tripName}</p>
+                                    <p>Customer Id:  {item.customerId}  </p>
+                                    <p>Departure Day: {item.departureDay} </p>
+                                    <p>Return Day: {item.returnDay} </p>
                                     <p>Description: {item.description}</p>
                                     <p>Destination: {item.destinationId}</p>
                                     <p>List: {item.list}</p>
+                                    <p>Activity : {item.activity} </p>
+                                    <p>Admin Privileges: {item.adminPrivileges} </p>
                                     <p>Pay Status: {item.payStatus}</p>
+                                    <p>Bag option:</p>
+                                    <p>Large luggage: {item.largeLuggage} </p>
+                                    <p> Medium luggage: {item.mediumLuggage} </p>
+                                    <p> Small luggage: {item.smallLuggage} </p>
+                                    <p>Photo equipment:</p>
+                                    <p>Camera: {item.camera}</p>
+                                    <p>Camcorder: {item.camcorder}</p>
+                                    <p>Smartphone: {item.smartphone}</p>
+                                     <p>Transport:</p>
+                                     <p>Train: {item.train}</p>
+                                     <p>Plane: {item.plane}</p>
+                                     <p>Car: {item.car}</p>
 
                                 </span>
 

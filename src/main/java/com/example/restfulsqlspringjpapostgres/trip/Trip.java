@@ -1,5 +1,7 @@
 package com.example.restfulsqlspringjpapostgres.trip;
 
+import com.example.restfulsqlspringjpapostgres.customer.Customer;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -24,12 +26,13 @@ public class Trip {
 
     private String tripName;
 
-    @Column(
-            name = "customerId",
-            nullable = false,
-            columnDefinition = "TEXT"
-    )
-    private String customerId;
+//    @Column(
+//            name = "customerId",
+//            nullable = false,
+//            columnDefinition = "TEXT"
+//    )
+//
+//    private String customerId;
 
     @Column(
             name = "weatherId",
@@ -38,12 +41,9 @@ public class Trip {
     )
     private String weatherId;
 
-    @Column(
-            name = "listId",
-            nullable = false,
-            columnDefinition = "TEXT"
-    )
+
     private String listId;
+
     private String camera;
     private String camcorder;
     private String smartphone;
@@ -60,6 +60,7 @@ public class Trip {
     private String smallLuggage;
     private String mediumLuggage;
     private String largeLuggage;
+    private String transport;
 
 
     @Transient//this tell this colum (age) no need to be more in database table
@@ -69,14 +70,14 @@ public class Trip {
     }
 
     //public Student(Long id, String name, String email, LocalDate dob, Integer age) {
-    public Trip(Long id, String tripName, String customerId, String weatherId, String listId,
+    public Trip(Long id, String tripName, String weatherId, String listId,
                 String camera, String camcorder,String smartphone, String destinationId, String destination,
                 LocalDate departureDay, LocalDate returnDay, String activity, String tripPassword,
                 String description, String adminPrivileges, String payStatus,
-                String smallLuggage, String mediumLuggage,String largeLuggage) {
+                String smallLuggage, String mediumLuggage,String largeLuggage,String transport) {
         this.id = id;
         this.tripName = tripName;
-        this.customerId = customerId;
+//        this.customerId = customerId;
         this.weatherId = weatherId;
         this.listId = listId;
         this.camera = camera;
@@ -93,22 +94,23 @@ public class Trip {
         this.smallLuggage=smallLuggage;
         this.mediumLuggage=mediumLuggage;
         this.largeLuggage=largeLuggage;
+        this.transport=transport;
     }
     //constructor without id because it will automatically create id for us
     //public Student(String name, String email, LocalDate dob, Integer age) {//delete age from here because we want to calculate age
 
-    public Trip(String tripName, String customerId, String weatherId, String listId, String camera,
+    public Trip(String tripName,  String weatherId, String camera,String listId,
                 String camcorder,String smartphone, String destinationId, LocalDate departureDay,
                 LocalDate returnDay, String activity, String tripPassword, String description,
                 String adminPrivileges, String payStatus,
-                String smallLuggage, String mediumLuggage,String largeLuggage) {
+                String smallLuggage, String mediumLuggage,String largeLuggage,String transport) {
         this.tripName = tripName;
-        this.customerId = customerId;
+//        this.customerId = customerId;
         this.weatherId = weatherId;
-        this.listId = listId;
         this.camera = camera;
-        this.camera = camcorder;
-        this.camera = smartphone;
+        this.listId = listId;
+        this.camcorder = camcorder;
+        this.smartphone = smartphone;
         this.destinationId = destinationId;
         this.departureDay = departureDay;
         this.returnDay = returnDay;
@@ -121,6 +123,7 @@ public class Trip {
         this.smallLuggage=smallLuggage;
         this.mediumLuggage=mediumLuggage;
         this.largeLuggage=largeLuggage;
+        this.transport=transport;
     }
 
 
@@ -140,13 +143,13 @@ public class Trip {
         this.tripName = name;
     }
 
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
+//    public String getCustomerId() {
+//        return customerId;
+//    }
+//
+//    public void setCustomerId(String customerId) {
+//        this.customerId = customerId;
+//    }
 
     public String getWeatherId() {
         return weatherId;
@@ -292,11 +295,19 @@ public class Trip {
         this.largeLuggage = largeLuggage;
     }
 
+    public String getTransport() {
+        return transport;
+    }
+
+    public void setTransport(String transport) {
+        this.transport = transport;
+    }
+
     @Override
     public String toString() {
         return "Trip{" +
                 "id=" + id +
-                ", name='" + customerId + '\'' +
+                ", name='" + Customer.class.getName() + '\'' +
                 ", surname='" + weatherId + '\'' +
                 ", email='" + listId + '\'' +
                 ", dob=" + departureDay +
