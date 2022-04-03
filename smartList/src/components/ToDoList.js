@@ -8,16 +8,18 @@ import {Link} from "react-router-dom";
 
 const ToDoList=({})=>{
 
-    const itemList = [
-        "t-short",
-        "jacket",
-        "shorts",
-        "quantityUnderwear"
 
-    ]
-
-    const allItemInList = itemList.map((itemList,i)=>({id:i,title:itemList}));
-     console.log(allItemInList)
+    //
+    // const itemList = [
+    //     "t-short",
+    //     "jacket",
+    //     "shorts",
+    //     "quantityUnderwear"
+    //
+    // ]
+    //
+    // const allItemInList = itemList.map((itemList,i)=>({id:i,title:itemList}));
+    //  console.log(allItemInList)
 
 
     const [checked2, setChecked2] = useState(false);

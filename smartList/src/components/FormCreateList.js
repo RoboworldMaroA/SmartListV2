@@ -17,26 +17,29 @@ import * as events from "events";
 
     const AddCreateListDetail = ({setCreateListInfo: setCreateListInfo}) => {
 
-        const [activity, setActivity] = useState('');
-        const [adminPrivileges, setAdminPrivileges] = useState('');
+        const [activity, setActivity] = useState('No');
+        const [adminPrivileges, setAdminPrivileges] = useState('No');
         const [customerId, setCustomerId] = useState('');
-        const [camera, setCamera] = useState('');
-        const [camcorder, setCamcorder] = useState('');
-        const [smartphone, setSmartphone] = useState('');
-        const [departureDay, setDepartureDay] = useState('');
-        const [description, setDescription] = useState('');
+        const [camera, setCamera] = useState('No');
+        const [camcorder, setCamcorder] = useState('No');
+        const [smartphone, setSmartphone] = useState('Yes');
+        const [departureDay, setDepartureDay] = useState("2022-05-20");
+        const [description, setDescription] = useState('Some trip');
         const [destinationId, setDestinationId] = useState('');
-        const [destination, setDestination] = useState('');
+        const [destination, setDestination] = useState('Ireland');
         const [listId, setListId] = useState('');
-        const [largeLuggage, setLargeLuggage] = useState('');
-        const [mediumLuggage, setMediumLuggage] = useState('');
-        const [smallLuggage, setSmallLuggage] = useState('');
-        const [payStatus, setPayStatus] = useState('');
-        const [returnDay, setReturnDay] = useState('');
-        const [tripName, setTripName] = useState('');
-        const [tripPassword, setTripPassword] = useState('');
+        const [largeLuggage, setLargeLuggage] = useState('No');
+        const [mediumLuggage, setMediumLuggage] = useState('No');
+        const [smallLuggage, setSmallLuggage] = useState('No');
+        const [payStatus, setPayStatus] = useState('No');
+        const [returnDay, setReturnDay] = useState('2022-05-30');
+        const [tripName, setTripName] = useState('Trip Name');
+        const [tripPassword, setTripPassword] = useState('password');
         const [weatherId, setWeatherId] = useState('');
-        const [transport, setTransport] = useState('');
+        const [transport, setTransport] = useState('No');
+        const [sunbathing, setSunbathing] = useState('No');
+        const [ski, setSki] = useState('No');
+        const [trekking , setTrekking] = useState('No');
 
 
         //change fetch to customer database not a student
@@ -50,34 +53,83 @@ import * as events from "events";
                 headers: {
                     "Content-Type": "application/json",
                 }
-
-
             })
 
             const body = await result.json();
-            setCreateListInfo(body);
+           // setCreateListInfo(body);
         }
 
 
-
-        const [checked2, setChecked2] = useState(false);
-        function toggle() {
-            setChecked2(checked2=> !checked2)
-
-        }
-
-
-        // const [cameraState, setCameraState] = useState(false);
+        // const [checked2, setChecked2] = useState(false);
+        // function toggle() {
+        //     setChecked2(checked2=> !checked2)
         //
-        // const toggleCamera = ()=> {
-        //     setCameraState(cameraState=> !cameraState);
-        //     if(!cameraState){
-        //         // camera=setCamera("Yes");
-        //          setCamera("Yes");
-        //     }
-        //     // const camera = setCamera(camera => "No");
-        //         setCamera("No");
         // }
+
+
+
+        //It is working checked element change state
+        const [cameraState, setCameraState] = useState(false);
+
+        const toggleCamera = ()=> {
+            setCameraState(cameraState => !cameraState);
+            if (!cameraState) {
+                setCamera("Yes");
+                console.log(camera);//test only
+            }
+            if(cameraState){
+                setCamera("NO");
+                console.log(camera);//test only
+            }
+        }
+
+        //sunbathing function to change state when clicked
+        const [sunbathingState, setSunbathingState] = useState(false);
+
+        const toggleSunbathing = ()=> {
+            setSunbathingState(sunbathingState => !sunbathingState);
+            if (!sunbathingState) {
+                setSunbathing("Yes");
+                console.log(sunbathing);//test only
+            }
+            if(sunbathingState){
+                setSunbathing("NO");
+                console.log(sunbathing);//test only
+            }
+        }
+
+
+        //ski function to change state when clicked
+        const [skiState, setSkiState] = useState(false);
+
+        const toggleSki = ()=> {
+            setSkiState(skiState => !skiState);
+            if (!skiState) {
+                setSki("Yes");
+                console.log(ski);//test only
+            }
+            if(skiState){
+                setSki("NO");
+                console.log(ski);//test only
+            }
+        }
+
+
+
+        //sunbathing function to change state when clicked
+        const [trekkingState, setTrekkingState] = useState(false);
+
+        const toggleTrekking = ()=> {
+            setTrekkingState(trekkingState => !trekkingState);
+            if (!trekkingState) {
+                setTrekking("Yes");
+                console.log(trekking);//test only
+            }
+            if(trekkingState){
+                setTrekking("NO");
+                console.log(trekking);//test only
+            }
+        }
 
 
         // const options = [
@@ -89,13 +141,10 @@ import * as events from "events";
         //     <Select options={options} />
         // )
 
-
-
         return (
 
             <div id ="elementInFormCreateList" className="row">
                 <form className="col s12" onSubmit={() => validateCreateList()}>
-                {/*<form className="col s12" onSubmit="" >*/}
                     <div className="row">
                         <div  className="input-field col s10">
                             <i className="material-icons prefix">account_circle</i>
@@ -113,17 +162,6 @@ import * as events from "events";
                         </div>
                     </div>
 
-                    {/*<div className="row">*/}
-                    {/*    <div className="input-field col s10">*/}
-                    {/*        <i className="material-icons prefix">account_circle</i>*/}
-                    {/*        <input placeholder="Destination" value={destination} type="text" onChange={(event =>*/}
-                    {/*            setDestination(event.target.value))}*/}
-                    {/*               className="validate"/>*/}
-                    {/*        <label htmlFor="customerPassword">Destination</label>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
-
-
                     <div className="row">
                         <div  className="input-field col s10">
 
@@ -134,17 +172,10 @@ import * as events from "events";
                                     (<option value="Spain">Spain</option>),
                                     (<option value="Poland">Poland</option>)
                                 )}
-
                             </select>
-                            <p>This is display destination for test only : {destination}</p>
-                            {/*<input placeholder="Password" value={departureDay} type="text" onChange={(event =>*/}
-                            {/*    setDepartureDay(event.target.value))}*/}
-                            {/*       className="datepicker"/>*/}
-                            {/*<label htmlFor="departureDay">Departure day</label>*/}
+                            {/*<p>This is display destination for test only : {destination}</p>*/}
                         </div>
                     </div>
-
-
 
                     <div className="row">
                         <div  className="input-field col s10">
@@ -167,48 +198,15 @@ import * as events from "events";
                     </div>
 
 
-                    {/*<div className="row">*/}
-                    {/*    <div id ="IconAndLabelBeforePhotoEquipmentInCreateList" className="input-field col s10">*/}
-
-                    {/*    <i id ="IconBeforePhotoEquipmentInCreateList" className="material-icons prefix">account_circle</i>*/}
-                    {/*    <p  id ="TextAfterIconPhotoEquipmentInCreateList"     >Doy you take a video/photo equipment?</p>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
-
-
                         <div className="row">
                         <div  className="input-field col s10">
-                            {/*<select multiple onChange={toggle}>*/}
-                            {/*    <option  disabled selected>Photo/Video Equipment</option>*/}
-                            {/*    <option value="camera" onChange={toggle}>Camera</option>*/}
-                            {/*    <option value="camcorder">Camcorder</option>*/}
-                            {/*    <option value="smartphone">Smartphone</option>*/}
-                            {/*</select>*/}
-
-                            {/*<p>*/}
-                            {/*    <label>*/}
-                            {/*        <input type="checkbox" className="filled-in" value={camera} onChange={toggleCamera}/>*/}
-                            {/*        /!*<input type="checkbox" className="filled-in" value={camera} onChange={event => setCamera(cameraState)}/>*!/*/}
-                            {/*        <span>Camera</span>*/}
-                            {/*    </label>*/}
-                            {/*</p>*/}
-
-
-                            <div className="row">
-                                <p>CAMERA:</p>
-                                <div  className="input-field col s10">
-
-                                    <i className="material-icons prefix">account_circle</i>
-                                    <select value={camera} onChange={event => setCamera(event.target.value)}>
-                                        (<option disabled selected> Camera    </option>),
-                                        (<option  value="Yes">Yes</option>),
-                                        (<option value="No">No</option>)
-
-                                        )}
-                                    </select>
-                                    <p>This is display destination for test only : {camera}</p>
-                                </div>
-                            </div>
+                            <p>
+                                <i className="material-icons prefix">account_circle</i>
+                                <label>
+                                    <input type="checkbox" className="filled-in" value={camera} onClick={toggleCamera}/>
+                                   <span>Camera</span> <div>{camera}</div>
+                                </label>
+                            </p>
 
 
                             <div className="row">
@@ -221,7 +219,7 @@ import * as events from "events";
                                         (<option value="No">No</option>)
                                         )}
                                     </select>
-                                    <p>This is display destination for test only : {camcorder}</p>
+                                    {/*<p>This is display destination for test only : {camcorder}</p>*/}
                                 </div>
                             </div>
 
@@ -237,48 +235,23 @@ import * as events from "events";
 
                                         )}
                                     </select>
-                                    <p>This is display destination for test only : {smartphone}</p>
+                                    {/*<p>This is display destination for test only : {smartphone}</p>*/}
                                 </div>
                             </div>
 
 
-                            {/*<p>*/}
-                            {/*    <label>*/}
-                            {/*        <input type="checkbox" className="filled-in" />*/}
-                            {/*        <span>Camcorder</span>*/}
-                            {/*    </label>*/}
-                            {/*</p>*/}
-                            {/*<p>*/}
-                            {/*    <label>*/}
-                            {/*        <input type="checkbox" className="filled-in" />*/}
-                            {/*        <span>Smartphone</span>*/}
-                            {/*    </label>*/}
-                            {/*</p>*/}
-
-
                             {/*<p> Display checked or not camera: {cameraState ? "Yes": "No"}</p>*/}
-                            <p>This is display destination for test only : {camera},{camcorder}</p>
-                            {/*<input placeholder="Password" value={departureDay} type="text" onChange={(event =>*/}
-                            {/*    setDepartureDay(event.target.value))}*/}
-                            {/*       className="datepicker"/>*/}
-                            {/*<label htmlFor="departureDay">Departure day</label>*/}
+                            {/*<p>This is display destination for test only : {camera},{camcorder}</p>*/}
+
                         </div>
                     </div>
 
                     <div className="row">
                         <div  className="input-field col s10">
-
-                            {/*<select multiple>*/}
-                            {/*    <option value="" disabled selected>Luggage</option>*/}
-                            {/*    <option value="1">Small</option>*/}
-                            {/*    <option value="2">Medium</option>*/}
-                            {/*    <option value="3">Large</option>*/}
-                            {/*</select>*/}
                             <p> BAG SIZE</p>
                             <div className="row">
                                 <p>LARGE LUGGAGE:</p>
                                 <div  className="input-field col s10">
-
                                     <i className="material-icons prefix">account_circle</i>
                                     <select value={largeLuggage} onChange={event => setLargeLuggage(event.target.value)}>
                                         (<option disabled selected> Large Luggage    </option>),
@@ -287,7 +260,7 @@ import * as events from "events";
 
                                         )}
                                     </select>
-                                    <p>This is display destination for test only : {largeLuggage}</p>
+                                    {/*<p>This is display destination for test only : {largeLuggage}</p>*/}
                                 </div>
                             </div>
 
@@ -302,7 +275,7 @@ import * as events from "events";
                                         (<option value="No">No</option>)
                                         )}
                                     </select>
-                                    <p>This is display destination for test only : {mediumLuggage}</p>
+                                    {/*<p>This is display destination for test only : {mediumLuggage}</p>*/}
                                 </div>
                             </div>
 
@@ -315,28 +288,19 @@ import * as events from "events";
                                         (<option disabled selected="Smartphone"> Small Luggage</option>),
                                         (<option  value="Yes">Yes</option>),
                                         (<option value="No">No</option>)
-
                                         )}
                                     </select>
-                                    <p>This is display destination for test only : {smallLuggage}</p>
+                                    {/*<p>This is display destination for test only : {smallLuggage}</p>*/}
                                 </div>
                             </div>
-
-
-
-
-                            {/*<input placeholder="Password" value={departureDay} type="text" onChange={(event =>*/}
-                            {/*    setDepartureDay(event.target.value))}*/}
-                            {/*       className="datepicker"/>*/}
-                            {/*<label htmlFor="departureDay">Departure day</label>*/}
                         </div>
                     </div>
 
 
 
                     <div className="row">
+                        <p>TRANSPORT:</p>
                         <div  className="input-field col s10">
-
                             <select value={transport} onChange={event => setTransport(event.target.value)}>
                                 <option value="" disabled selected>Transport</option>
                                 <option value="Plane">Plane</option>
@@ -345,11 +309,6 @@ import * as events from "events";
                                 <option value="Car">Car</option>
                                 <label>Transport</label>
                             </select>
-
-                            {/*<input placeholder="Password" value={departureDay} type="text" onChange={(event =>*/}
-                            {/*    setDepartureDay(event.target.value))}*/}
-                            {/*       className="datepicker"/>*/}
-                            {/*<label htmlFor="departureDay">Departure day</label>*/}
                         </div>
                     </div>
 
@@ -357,39 +316,38 @@ import * as events from "events";
 
                     <div className="row">
                         <div  className="input-field col s10">
-
-                            {/*<select multiple>*/}
-                            {/*    <option value="" disabled selected>Activities</option>*/}
-                            {/*    <option value="1">Sunbathing</option>*/}
-                            {/*    <option value="2">Ski</option>*/}
-                            {/*    <option value="3">Trekking</option>*/}
-                            {/*</select>*/}
-
-
                             <p>
+                                <i className="material-icons prefix">account_circle</i>
                                 <label>
-                                    <input type="checkbox" className="filled-in" />
-                                    <span>Sunbathing</span>
+                                    <input type="checkbox" className="filled-in" value={sunbathing} onClick={toggleSunbathing}/>
+                                    <span>Sunbathing</span> <div>{sunbathing}</div>
                                 </label>
                             </p>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div  className="input-field col s10">
                             <p>
+                                <i className="material-icons prefix">account_circle</i>
                                 <label>
-                                    <input type="checkbox" className="filled-in" />
-                                    <span>Ski</span>
+                                    <input type="checkbox" className="filled-in" value={ski} onClick={toggleSki}/>
+                                    <span>Ski</span> <div>{ski}</div>
                                 </label>
                             </p>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div  className="input-field col s10">
                             <p>
+                                <i className="material-icons prefix">account_circle</i>
                                 <label>
-                                    <input type="checkbox" className="filled-in" />
-                                    <span>Trekking</span>
+                                    <input type="checkbox" className="filled-in" value={trekking} onClick={toggleTrekking}/>
+                                    <span>Trekking</span> <div>{trekking}</div>
                                 </label>
                             </p>
 
-
-                            {/*<input placeholder="Password" value={departureDay} type="text" onChange={(event =>*/}
-                            {/*    setDepartureDay(event.target.value))}*/}
-                            {/*       className="datepicker"/>*/}
-                            {/*<label htmlFor="departureDay">Departure day</label>*/}
                         </div>
                     </div>
 
@@ -415,11 +373,6 @@ import * as events from "events";
                         {/*</Link>*/}
                         </div>
                     </div>
-
-
-
-
-
 
                 </form>
             </div>
