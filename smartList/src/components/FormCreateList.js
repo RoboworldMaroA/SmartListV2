@@ -10,8 +10,7 @@ import {Component} from "react";
 import {Button, Card, Row, Col, Select} from 'react-materialize';
 import {getValue} from "@testing-library/user-event/dist/utils";
 import * as events from "events";
-
-
+import DisplayList from "./DisplayList";
 
 
 
@@ -41,6 +40,9 @@ import * as events from "events";
         const [ski, setSki] = useState('No');
         const [trekking , setTrekking] = useState('No');
 
+        // const [displayListState , setDisplayListState] = useState(true);
+        // const [displayListState , setDisplayListState] = useState(true);
+
 
         //change fetch to customer database not a student
 
@@ -56,7 +58,21 @@ import * as events from "events";
             })
 
             const body = await result.json();
-           // setCreateListInfo(body);
+            setCreateListInfo(body);
+
+            displayList();
+        }
+
+
+
+      //IT IS NOT WORKIN, DISPLAY CUSTOM LIST !!!!!!!!!!!!!
+        function displayList ()
+        {
+            //here will be logic what lit to display, depen what customer choose in the form FormCrteteList
+            console.log(this.state.displayBeach)
+
+
+
         }
 
 
@@ -374,7 +390,34 @@ import * as events from "events";
                         </div>
                     </div>
 
+
+
+                    <div  className="row">
+                        <div id="ButtonCreateListInFormCreateList" className="input-field col s10">
+                            <Link to="../DisplayList">
+                            <button  className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
+                                Display List
+                            </button>
+                            </Link>
+                        </div>
+                    </div>
+
+
+
+
+
                 </form>
+
+
+
+
+                {/*//pass a values of the list that will be displayed for cutomer*/}
+                {/*<div className="row">*/}
+                {/*    {displayList ?*/}
+                {/*        <Link to="../DisplayList"></Link>*/}
+                {/*        : "Wrong"*/}
+                {/*    }*/}
+                {/*</div>*/}
             </div>
 
 

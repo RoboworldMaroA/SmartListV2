@@ -7,6 +7,8 @@ import 'materialize-css';
 import M from 'materialize-css';
 import DeleteCustomerNew from "./DeleteCustomerNew";
 import DisplayCustomerTrip from "./DisplayCustomerTrip";
+import DocumentsList from "./DocumentsList";
+import DisplayList from "./DisplayList";
 
 
 export default class CreateList extends Component{
@@ -37,6 +39,11 @@ export default class CreateList extends Component{
 
 
 
+
+
+
+
+
         }
 
     render() {
@@ -49,6 +56,11 @@ export default class CreateList extends Component{
                     <p>It is a detail Trip</p>
                     {this.state.contacts.map((item) => (<DisplayCustomerTrip key={item.id} item={item}/>))}
                 </div>
+
+
+
+
+
             </div>
 
         )
