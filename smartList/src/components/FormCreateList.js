@@ -14,7 +14,8 @@ import DisplayList from "./DisplayList";
 
 
 
-    const AddCreateListDetail = ({setCreateListInfo: setCreateListInfo}) => {
+    // const AddCreateListDetail = ({setCreateListInfo: setCreateListInfo},props) => {
+        const AddCreateListDetail = ({props:props},{setCreateListInfo: setCreateListInfo}) => {
 
         const [activity, setActivity] = useState('No');
         const [adminPrivileges, setAdminPrivileges] = useState('No');
@@ -63,15 +64,30 @@ import DisplayList from "./DisplayList";
             displayList();
         }
 
+        // function FormCreateList(props){
+        //     return(
+        //
+        //         <div>
+        //             <p>Test greet Parent pass data from FormCreateList to the DisplayList</p>
+        //             <button onClick={()=>props.greetHandler('child')}>Greet Parent</button>
+        //
+        //         </div>
+        //
+        //         )
+        //
+        //
+        //
+        // }
 
 
       //IT IS NOT WORKIN, DISPLAY CUSTOM LIST !!!!!!!!!!!!!
-        function displayList ()
+        function displayList (props)
         {
+            return(
             //here will be logic what lit to display, depen what customer choose in the form FormCrteteList
             console.log(this.state.displayBeach)
 
-
+            )
 
         }
 
@@ -159,7 +175,20 @@ import DisplayList from "./DisplayList";
 
         return (
 
+
+
+
+
             <div id ="elementInFormCreateList" className="row">
+
+
+                <div className="row">
+                    <p>Test greet Parent pass data from FormCreateList to the DisplayList</p>
+                    <button onClick={()=>props.greetHandler2('child')}>Greet Parent</button>
+
+                </div>
+
+
                 <form className="col s12" onSubmit={() => validateCreateList()}>
                     <div className="row">
                         <div  className="input-field col s10">
@@ -421,7 +450,7 @@ import DisplayList from "./DisplayList";
             </div>
 
 
-        );
+        )
 
     }
 

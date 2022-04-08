@@ -11,6 +11,7 @@ import LoginAdminDetail from "./LoginAdminDetail";
 import * as PropTypes from "prop-types";
 import DisplayCustomerTrip from "./DisplayCustomerTrip";
 import Trip from "./Trip";
+import DisplayList from "./DisplayList";
 /* Class Contact uses for display and read a data from database, data is imported from other classes */
 
 
@@ -76,6 +77,12 @@ export default class LoginAdmin extends Component{
                     {this.state.contacts.map((item) =>(<DeleteCustomerNew key={item.id} item={item} /> ))}
 
                 </div>
+
+
+                {/*<div className="row">*/}
+                {/*<DisplayCustomerTrip />*/}
+
+                {/*</div>*/}
 
                 {/*<div className="row">*/}
 

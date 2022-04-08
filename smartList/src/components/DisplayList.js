@@ -11,6 +11,8 @@ import essentialList from "./EssentialList";
 import BeachList from "./BeachList";
 import DisplayCustomerTrip from "./DisplayCustomerTrip";
 import displayCustomerTrip from "./DisplayCustomerTrip";
+import FormCreateList from "./FormCreateList";
+import ParentComponent from "./ParentComponent";
 
 
 export default class DisplayList extends Component {
@@ -23,8 +25,18 @@ export default class DisplayList extends Component {
             displayEssential: true,
             displayBeach: true,
             camera:' ',
-        };
+            parentName2:'Parent',
+
+        }
+
+        // this.greetParent2=this.greetParent2.bind(this);
     }
+
+    // I am testing to get value from FormCreateList
+    // greetParent2(childName2){
+    //     // alert('Hello'+this.state.parentName );
+    //     alert(`Hello ${this.state.parentName2} from ${childName2}`);
+    // }
 
     componentDidMount() {
         fetch('http://localhost:8080/api/v1/customer').then
@@ -45,7 +57,7 @@ export default class DisplayList extends Component {
     }
 
 
-    //import data from the trip and get a data cutomers, compare with
+    //import data from the trip and get a data customers, compare with
     // customer and display list that has status true
     components() {
         fetch('http://localhost:8080/api/v1/trip').then
@@ -87,6 +99,8 @@ export default class DisplayList extends Component {
 
 
     render() {
+
+
         return (
             <div>
 
@@ -99,16 +113,45 @@ export default class DisplayList extends Component {
 
                 {/*</div>*/}
 
-                    <div className="select-container">
-                <select>
-                    {this.state.tripData.map((item)=>(<item value={item.id}>{item.camera}</item>))}
+                {/*not working*/}
+                {/*<div className="row">*/}
+                {/*    <p>Camera:</p>*/}
+                {/*    <div  className="input-field col s10">*/}
+                {/*        /!*<select value={this.camera} onChange={event => this.state.setCamera(event.target.value)}>*!/*/}
+                {/*        <select>*/}
+                {/*        {this.state.tripData.map((item)=>(<item value={item.id}>{item.camera}</item>))}*/}
+                {/*            <option value="" disabled selected>Transport{this.state.tripData.map((item)=>(<item value={item.id}>{item.camera}</item>))}</option>*/}
+                {/*            <option value="Plane">Plane</option>*/}
+                {/*            <option value="Bus">Bus</option>*/}
+                {/*            <option value="Train">Train</option>*/}
+                {/*            <option value="Car">Car</option>*/}
+                {/*            <label>Transport</label>*/}
+                {/*        </select>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
 
-                </select>
-                </div>
 
 
+                {/*<div  className="input-field col s10">*/}
+                {/*<select>*/}
+                {/*    {this.state.tripData.map((item)=>(<item value={item.id}>{item.camera}</item>))}*/}
 
-                <p> Display single value from a trip usind displaycutomer trip   </p>
+                {/*</select>*/}
+                {/*</div>*/}
+               {/* <div className="row">*/}
+
+
+               {/* <p> Get a value from a FormCreateList and pass them to this component (Display List) and*/}
+               {/*     then use this data to display lists that customer will need</p>*/}
+
+               {/* <FormCreateList greetHandler2={this.greetParent2}/>*/}
+               {/*     /!*<ParentComponent />*!/*/}
+
+               {/*     /!*<p> ddddddddd dddddddd {this}</p>*!/*/}
+               {/*</div>*/}
+
+
+                <p> Display single value from a trip using display customer trip </p>
                 <div className="row">
                     {this.state.displayDocuments ?
                         <DocumentsList/>
@@ -116,12 +159,12 @@ export default class DisplayList extends Component {
                     }
                 </div>
 
-                    <div className="row">
-                        {this.state.displayEssential ?
-                            <EssentialList/>
-                            : null
-                        }
-                    </div>
+                <div className="row">
+                    {this.state.displayEssential ?
+                        <EssentialList/>
+                        : null
+                    }
+                </div>
 
                 <div className="row">
                     {this.state.displayBeach ?
@@ -137,7 +180,7 @@ export default class DisplayList extends Component {
 
                 <div className="row">
                     <p>It is a detail Trip</p>
-                    {this.state.contacts.map((item) => (<DisplayCustomerTrip key={item.id} item={item}/>))}
+                    {this.state.contacts.map((data) => (<DisplayCustomerTrip key={data.id} item={data}/>))}
                 </div>
                 </div>
 

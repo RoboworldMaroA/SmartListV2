@@ -9,9 +9,6 @@ const DisplayCustomerTrip = ({item}) => {
     // const [customerId, setCustomerId] = useState('');
 
 
-
-
-
     const deleteCustomerTrip = async () => {
         const resultTrip = await fetch("http://localhost:8080/api/v1/trip/"+id, {
             method: "DELETE",
