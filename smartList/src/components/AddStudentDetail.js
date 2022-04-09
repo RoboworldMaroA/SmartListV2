@@ -11,7 +11,7 @@ import React, {useState}  from 'react';
 
 
         const addStudent = async () => {
-            const result = await fetch("http://localhost:8080/api/v1/student", {
+            const result = await fetch("api/v1/student", {
                 method: "POST",
                 body: JSON.stringify({name, email, dob}),
                 headers: {

@@ -35,12 +35,13 @@ public class CustomerService {
 
     //i am trying to implement to display detail only one user that is registering (or when he is logged to his account)
     //i think that mayby i should do this in front end not back end??
-    public List<Customer> getCustomerWithId(Long customerId){
-        boolean existCustomer = customerRepository.existsById(customerId);
+    public List<Customer> getCustomerWithId(Long Id){
+        boolean existCustomer = customerRepository.existsById(Id);
         if(!existCustomer){
-            return (List<Customer>) customerRepository.getById(customerId);
+            return (List<Customer>) customerRepository.getById(Id);
         }
         throw new IllegalStateException("No id have found");
+
 
     }
 

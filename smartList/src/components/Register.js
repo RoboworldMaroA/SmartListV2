@@ -18,7 +18,7 @@ export default class Register extends Component{
 
         componentDidMount(){
         /*fetch('http://localhost:8080/api/v1/student').then(response => response.json()).then(data => this.setState({contacts: data}));*/
-            fetch('http://localhost:8080/api/v1/customer').then(response => response.json()).then(data => this.setState({contacts: data}));
+            fetch('api/v1/customer').then(response => response.json()).then(data => this.setState({contacts: data}));
 
         }
 

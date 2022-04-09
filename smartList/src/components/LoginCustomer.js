@@ -17,7 +17,7 @@ import './LoginCustomer.css';
 
         //fetch customer data from database
         const validateCustomer = async () => {
-            const result = await fetch("http://localhost:8080/api/v1/customer", {
+            const result = await fetch("api/v1/customer", {
                 method: "POST",
                 body: JSON.stringify({name, surname,email, phoneNumber, dob,sex, customerPassword, customerPasswordAgain, adminPrivileges}),
                 headers: {
@@ -33,13 +33,13 @@ import './LoginCustomer.css';
 
         return (
             <div id="ItemsInLoginCustomer" className="row">
-                {/*<form className="col s12" onSubmit={() => validateCustomer()}>*/}
-                <form className="col s12" onSubmit="" >
+                <form className="col s12" onSubmit={() => validateCustomer()}>
+                {/*<form className="col s12" onSubmit="" >*/}
                     <div className="row">
                         <div className="input-field col s8">
-                            <input placeholder="Login" value={email} type="email" onChange={(event => setEmail(event.target.value))}
+                            <input placeholder="Login" value={name} type="email" onChange={(event => setName(event.target.value))}
                                    className="validate"/>
-                            <label htmlFor="email">Login (Email)</label>
+                            <label htmlFor="name">Name (Name)</label>
                         </div>
                     </div>
 

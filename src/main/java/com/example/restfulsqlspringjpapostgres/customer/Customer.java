@@ -50,6 +50,7 @@ public class Customer {
     private String customerPassword;
     private String customerPasswordAgain;
     private String adminPrivileges;
+    private String role;
 
     @Transient//this tell this colum (age) no need to be more in database table
     private Integer age;
@@ -58,7 +59,7 @@ public class Customer {
 
     }
     //public Student(Long id, String name, String email, LocalDate dob, Integer age) {
-    public Customer(Long id, String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address, String customerPassword, String customerPasswordAgain, String adminPrivileges) {
+    public Customer(Long id, String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address, String customerPassword, String customerPasswordAgain, String adminPrivileges,String role) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -71,11 +72,12 @@ public class Customer {
         //this.age = age;
         this.customerPasswordAgain = customerPasswordAgain;
         this.adminPrivileges= adminPrivileges;
+        this.role= role;
     }
     //constructor without id because it will automatically create id for us
     //public Student(String name, String email, LocalDate dob, Integer age) {//delete age from here because we want to calculate age
 
-    public Customer(String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address,String customerPassword, String customerPasswordAgain, String adminPrivileges) {
+    public Customer(String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address,String customerPassword, String customerPasswordAgain, String adminPrivileges,String role) {
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -87,6 +89,7 @@ public class Customer {
         //this.age = age;
         this.customerPasswordAgain = customerPasswordAgain;
         this.adminPrivileges= adminPrivileges;
+        this.role= role;
     }
 
     public String getAddress() {
@@ -187,6 +190,15 @@ public class Customer {
     }
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override

@@ -10,7 +10,7 @@ const DisplayCustomerTrip = ({item}) => {
 
 
     const deleteCustomerTrip = async () => {
-        const resultTrip = await fetch("http://localhost:8080/api/v1/trip/"+id, {
+        const resultTrip = await fetch("api/v1/trip/"+id, {
             method: "DELETE",
             //body: JSON.stringify({id}),
             //headers: {

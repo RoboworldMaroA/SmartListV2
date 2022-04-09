@@ -11,7 +11,7 @@ const DeleteCustomer = ({item}) => {
 
 
     const deleteCustomer = async () => {
-        const result = await fetch("http://localhost:8080/api/v1/customer/"+id, {
+        const result = await fetch("api/v1/customer/"+id, {
             method: "DELETE",
             //body: JSON.stringify({id}),
             //headers: {

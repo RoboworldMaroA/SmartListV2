@@ -48,7 +48,7 @@ import DisplayList from "./DisplayList";
         //change fetch to customer database not a student
 
         const validateCreateList = async () => {
-            const result = await fetch("http://localhost:8080/api/v1/trip", {
+            const result = await fetch("api/v1/trip", {
                 method: "POST",
                 body: JSON.stringify({activity,adminPrivileges,customerId,camera,camcorder,smartphone,
                     departureDay, description, destinationId, listId,largeLuggage, mediumLuggage,smallLuggage, payStatus ,returnDay,

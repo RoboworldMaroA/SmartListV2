@@ -10,7 +10,7 @@ const DeleteContactNew = ({item}) => {
 
 
     const deleteStudent = async () => {
-        const result = await fetch("http://localhost:8080/api/v1/student/"+id, {
+        const result = await fetch("api/v1/student/"+id, {
             method: "DELETE",
             //body: JSON.stringify({id}),
             //headers: {

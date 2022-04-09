@@ -14,8 +14,8 @@ import java.util.List;
 // this is good practice do this that way
 
 @RestController
-@RequestMapping(path = "api/v1/student")
-@CrossOrigin(origins = "http://localhost:3000")
+@RequestMapping(path = "/api/v1/student")
+//@CrossOrigin(origins = "http://localhost:3000")
 public class StudentController {
     private final StudentService studentService;
 

@@ -9,10 +9,11 @@ import java.util.List;
 // in this class we implement GET, POST,PUT, DELETE
 //this is a proper way we could have rst controller in main restfull app but
 // this is good practice do this that way
+//@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "*")
 
 @RestController
-@RequestMapping(path = "api/v1/customer")
-@CrossOrigin(origins = "http://localhost:3000")
+@RequestMapping(path = "/api/v1/customer")
 public class CustomerController {
     private final CustomerService customerService;
 
@@ -76,5 +77,25 @@ public class CustomerController {
     public void verificationCustomerLogin(@RequestBody Customer customer, String email, String customerPassword){
         customerService.verifyCustomerPassword(customer,email, customerPassword);
     }*/
+
+
+//    //test login
+//    @GetMapping("/home")
+//    public String home(){
+//
+//        return"this is home page";
+//    }
+//
+//    @GetMapping("/")
+//    public String homePage(){
+//
+//        return"this is real home page";
+//    }
+//
+//    @GetMapping("/admin")
+//    public String admin(){
+//        return "This is admin page";
+//
+//    }
 
 }

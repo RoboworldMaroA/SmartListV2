@@ -39,7 +39,7 @@ export default class DisplayList extends Component {
     // }
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/v1/customer').then
+        fetch('api/v1/customer').then
         (response => response.json()).then(data => this.setState({contacts: data}));
 
 
@@ -57,11 +57,10 @@ export default class DisplayList extends Component {
     }
 
 
-    //import data from the trip and get a data customers, compare with
-    // customer and display list that has status true
-    components() {
-        fetch('http://localhost:8080/api/v1/trip').then
-        (response => response.json()).then(data => this.setState({tripData: data}));
+    //import data from the trip and get a data trip, compare with
+    componentDidMount() {
+        fetch('api/v1/trip').then
+        (response => response.json()).then(TripData => this.setState({tripData: TripData}));
 
     }
 
@@ -178,19 +177,23 @@ export default class DisplayList extends Component {
 
 
 
-                <div className="row">
-                    <p>It is a detail Trip</p>
-                    {this.state.contacts.map((data) => (<DisplayCustomerTrip key={data.id} item={data}/>))}
-                </div>
-                </div>
+                {/*<div className="row">*/}
+                {/*    <p>It is a detail Trip</p>*/}
+                {/*    {this.state.tripData.map((TripData) => (<DisplayCustomerTrip key={TripData.id} item={TripData}/>))}*/}
+                {/*</div>*/}
+
+
+                    <div className="row">
+                        <p>It is are some data Trip</p>
+                        {this.state.tripData.map((TripData) => (<DisplayCustomerTrip item={TripData}
+                         />
+
+                            ),[])}
+                    </div>
 
 
 
 
-
-
-
-                )
-                }
+            </div>)}//end
 
                 }/* end class Contact*/

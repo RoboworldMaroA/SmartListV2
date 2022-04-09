@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 // this is good practice do this that way
 
 @RestController
-@RequestMapping(path = "api/v1/list")
-@CrossOrigin(origins = "http://localhost:3000")
+@RequestMapping(path = "/api/v1/list")
+//@CrossOrigin(origins = "http://localhost:3000")
 public class TravelingListController {
     private final TravelingListService travelingListService;
 
