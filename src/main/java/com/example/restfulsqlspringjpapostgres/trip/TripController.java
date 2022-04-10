@@ -68,11 +68,12 @@ public class TripController {
     @PutMapping(path= "{tripId}")
     public void updateTrip(
             @PathVariable("tripId") Long tripId,
-            @RequestParam(required = false) String name,
-            @RequestParam(required = false) String listId
+            @RequestParam(required = false) String tripName
+            //@RequestParam(required = false) String listId
 
     ){
-        tripService.updateTrip(tripId,name,listId);
+//        tripService.updateTrip(tripId,name,listId);
+        tripService.updateTrip(tripId,tripName);
     }
 
 

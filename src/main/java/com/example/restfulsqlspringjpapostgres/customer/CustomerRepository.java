@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-//import for comunication 3000 port and 8080
+//import for communication 3000 port and 8080
 //import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 //responsible for data access
@@ -20,8 +20,8 @@ public interface  CustomerRepository
     Optional<Customer> findCustomerByEmail(String email);
 
 
-    @Query("SELECT s FROM Customer s WHERE s.customerPassword = ?1")
-    Optional<Customer> findCustomerByPassword(String customerPassword);
+//    @Query("SELECT s FROM Customer s WHERE s.customerPassword = ?1")
+//    Optional<Customer> findCustomerByPassword(String customerPassword);
 
 //    @Query("SELECT s FROM Customer s WHERE s.name = ?1")
 //    Customer findByName(String name);

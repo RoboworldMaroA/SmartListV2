@@ -20,6 +20,7 @@ public class Trip {
 
     )
 
+
     @Column(name="id",
             updatable = false)
     private Long id;
@@ -31,7 +32,6 @@ public class Trip {
 //            nullable = false,
 //            columnDefinition = "TEXT"
 //    )
-//
 //    private String customerId;
 
     @Column(
@@ -41,7 +41,17 @@ public class Trip {
     )
     private String weatherId;
 
-
+//    @Id
+//    @SequenceGenerator(
+//            name = "listId_sequence",
+//            sequenceName = "ListId_sequence",
+//            allocationSize = 1
+//    )
+//    @GeneratedValue(
+//            strategy = GenerationType.SEQUENCE,
+//            generator = "ListId_sequence"
+//
+//    )
     private String listId;
 
     private String camera;
@@ -99,7 +109,7 @@ public class Trip {
     //constructor without id because it will automatically create id for us
     //public Student(String name, String email, LocalDate dob, Integer age) {//delete age from here because we want to calculate age
 
-    public Trip(String tripName,  String weatherId, String camera,String listId,
+    public Trip(String tripName,  String weatherId, String camera,
                 String camcorder,String smartphone, String destinationId, LocalDate departureDay,
                 LocalDate returnDay, String activity, String tripPassword, String description,
                 String adminPrivileges, String payStatus,
@@ -108,7 +118,6 @@ public class Trip {
 //        this.customerId = customerId;
         this.weatherId = weatherId;
         this.camera = camera;
-        this.listId = listId;
         this.camcorder = camcorder;
         this.smartphone = smartphone;
         this.destinationId = destinationId;

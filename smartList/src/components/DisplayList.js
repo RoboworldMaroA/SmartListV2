@@ -172,26 +172,25 @@ export default class DisplayList extends Component {
                     }
                 </div>
 
-
+                <div>
                     <button onClick={() => this.documentState()}> Display/Hide List</button>
 
-
+                </div>
 
                 {/*<div className="row">*/}
                 {/*    <p>It is a detail Trip</p>*/}
                 {/*    {this.state.tripData.map((TripData) => (<DisplayCustomerTrip key={TripData.id} item={TripData}/>))}*/}
                 {/*</div>*/}
 
-
+<div>
                     <div className="row">
-                        <p>It is are some data Trip</p>
-                        {this.state.tripData.map((TripData) => (<DisplayCustomerTrip item={TripData}
-                         />
+                        It is are some data Trip
+                        {this.state.tripData.map((TripData) => (<DisplayCustomerTrip key={TripData.id} item={TripData}/>
 
-                            ),[])}
+                            ))}
                     </div>
 
-
+</div>
 
 
             </div>)}//end

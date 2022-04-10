@@ -7,15 +7,15 @@ import {Link} from "react-router-dom";
 
     const AddDetail = ({setStudentInfo: setInfo}) => {
 
-        const [name, setName] = useState('');
-        const [surname, setSurname] = useState('');
-        const [email, setEmail] = useState('');
-        const [phoneNumber, setPhoneNumber] = useState('');
-        const [dob, setDob] = useState('');
-        const [sex, setSex] = useState('');
-        const [address, setAddress] = useState('');
-        const [customerPassword, setCustomerPassword] = useState('');
-        const [customerPasswordAgain, setCustomerPasswordAgain] = useState('');
+        const [name, setName] = useState('MaroReg');
+        const [surname, setSurname] = useState('AugustynReg');
+        const [email, setEmail] = useState('EmailReg@o2.pl');
+        const [phoneNumber, setPhoneNumber] = useState('0894582043reg');
+        const [dob, setDob] = useState('1988-08-08');
+        const [sex, setSex] = useState('Man');
+        const [address, setAddress] = useState('Dublin');
+        const [customerPassword, setCustomerPassword] = useState('1234');
+        const [customerPasswordAgain, setCustomerPasswordAgain] = useState('1234');
 
         const [emailIsVerified, setEmailIsVerified] = useState(false);
 

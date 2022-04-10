@@ -4,20 +4,20 @@ import {Link} from "react-router-dom";
 //this  function add customer detail during a registration
 import './LoginCustomer.css';
 
-    const AddDetail = ({setStudentInfo: setInfo}) => {
-        const [name, setName] = useState('');
-        const [surname, setSurname] = useState('');
-        const [email, setEmail] = useState('');
-        const [phoneNumber, setPhoneNumber] = useState('');
-        const [dob, setDob] = useState('');
-        const [sex, setSex] = useState('');
-        const [customerPassword, setCustomerPassword] = useState('');
-        const [customerPasswordAgain, setCustomerPasswordAgain] = useState('');
-        const [adminPrivileges, setAdminPrivileges] = useState('');
+    const AddCustomerDetail = ({setCustomerInfo: setInfo}) => {
+        const [name, setName] = useState('Maro2');
+        const [surname, setSurname] = useState('Augustyn');
+        const [email, setEmail] = useState('maugusty@o2.pl');
+        const [phoneNumber, setPhoneNumber] = useState('0894582043');
+        const [dob, setDob] = useState('1978-09-25');
+        const [sex, setSex] = useState('Man');
+        const [customerPassword, setCustomerPassword] = useState('1234');
+        const [customerPasswordAgain, setCustomerPasswordAgain] = useState('1234');
+        const [adminPrivileges, setAdminPrivileges] = useState('Yes');
 
         //fetch customer data from database
         const validateCustomer = async () => {
-            const result = await fetch("api/v1/customer", {
+            const result = await fetch('api/v1/customer', {
                 method: "POST",
                 body: JSON.stringify({name, surname,email, phoneNumber, dob,sex, customerPassword, customerPasswordAgain, adminPrivileges}),
                 headers: {
@@ -33,8 +33,8 @@ import './LoginCustomer.css';
 
         return (
             <div id="ItemsInLoginCustomer" className="row">
-                <form className="col s12" onSubmit={() => validateCustomer()}>
-                {/*<form className="col s12" onSubmit="" >*/}
+                {/*<form className="col s12" onSubmit={() => validateCustomer()}>*/}
+                <form className="col s12" onSubmit="" >
                     <div className="row">
                         <div className="input-field col s8">
                             <input placeholder="Login" value={name} type="email" onChange={(event => setName(event.target.value))}
@@ -63,6 +63,6 @@ import './LoginCustomer.css';
             </div>
         );
     }
-export default AddDetail;
+export default AddCustomerDetail;
 
 

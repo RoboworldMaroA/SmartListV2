@@ -12,7 +12,8 @@ export default class Trip extends Component {
     }
 
     componentDidMount(){
-        fetch('api/v1/trip').then(response => response.json()).then(data => this.setState({contacts: data}));
+        fetch('api/v1/trip').then(response => response.json()).
+        then(data => this.setState({contacts: data}));
     }
 
     render(){

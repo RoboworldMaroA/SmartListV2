@@ -1,5 +1,6 @@
 package com.example.restfulsqlspringjpapostgres.trip;
 
+import com.example.restfulsqlspringjpapostgres.customer.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,9 +17,10 @@ public interface TripRepository
 
     //we want to find customer using specific email - to do that we have can use Optional imported from Java package
     //equivalent in sql SELECT * FROM student WHERE email = ?
-    @Query("SELECT s FROM Trip s WHERE s.listId = ?1")
-    Optional<Trip> findTripByCustomerId(String customerId);
-
+//    @Query("SELECT s FROM Trip s WHERE s.customerId = ?1")
+//    Optional<Trip> findTripByCustomerId(String customerId);
+    @Query("SELECT s FROM Trip s WHERE s.tripName = ?1")
+    Optional<Trip> findTripByTripName(String tripName);
 
 //
 //    @Query("SELECT s FROM Trip s WHERE s.tripPassword = ?1")

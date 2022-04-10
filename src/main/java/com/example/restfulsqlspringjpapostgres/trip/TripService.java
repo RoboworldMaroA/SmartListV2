@@ -1,5 +1,6 @@
 package com.example.restfulsqlspringjpapostgres.trip;
 
+import com.example.restfulsqlspringjpapostgres.customer.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,14 +46,15 @@ public class TripService {
 
 
     public void addNewTrip(Trip trip) {
-        Optional<Trip> tripOptional = tripRepository.findTripByCustomerId(trip.getListId());
+        Optional<Trip> tripOptional = tripRepository.findTripByTripName(trip.getTripName());
 
-//        if (tripOptional.isPresent()){
-////            if(payStatus){
-////                tripRepository.save(trip);
-////            }
-//            throw new IllegalStateException("If you want more  list you have to pay subscription");
-//        }
+        if (tripOptional.isPresent()){
+
+//            if(payStatus){
+//                tripRepository.save(trip);
+//            }
+         throw new IllegalStateException("Tripwith that name is existing change name please!!!");
+        }
         //instead of printing customer we want to save new customer
 
         //System.out.println(customer);
@@ -63,7 +65,7 @@ public class TripService {
     public void deleteTrip(Long tripId) {
         boolean exists = tripRepository.existsById(tripId);
         if (!exists){
-            throw new IllegalStateException("`customer  with id: "+ tripId+" does not exist.");
+            throw new IllegalStateException("`trip  with id: "+ tripId+" does not exist.");
 
         }
         //otherwise
@@ -71,28 +73,51 @@ public class TripService {
     }
 
 
+//    //implementation PUT is wron!!!!!!!!!
+//    @Transactional
+//    public void updateTrip(Long tripId,
+//                           String name,
+//                           String listId) {
+//        Trip trip = tripRepository.findById(tripId).orElseThrow(() -> new IllegalStateException(
+//                "Trip with id" + tripId + "dose not exist"));//-> I think this is kind og get
+//        if (name != null && name.length() > 0 && !Objects.equals(trip.getCustomerId(), name)) {
+//            trip.setCustomerId(name);
+//        }
+//        //check listId
+//        if (listId != null && listId.length() > 0 && !Objects.equals(trip.getCustomerId(), listId)) {
+//            Optional<Trip> tripOptional = tripRepository.findTripByCustomerId(trip.getCustomerId());
+//            if (tripOptional.isPresent()) {
+//                throw new IllegalStateException("listId taken");
+//            }
+//            trip.setCustomerId(trip.getCustomerId());
+//        }
+//
+//
+//    }//end update customer
+
+
     //implementation PUT
     @Transactional
     public void updateTrip(Long tripId,
-                           String name,
-                           String listId) {
-        Trip trip = tripRepository.findById(tripId).orElseThrow(()-> new IllegalStateException(
-                "Customer with id"+tripId+"dose not exist"));//-> I think this is kind og get
-        if (name != null && name.length()>0 && !Objects.equals(trip.getListId(), name)){
-            trip.setListId(name);
+                               String tripName) {
+        Trip trip = tripRepository.findById(tripId).orElseThrow(() -> new IllegalStateException(
+                "Trop with id" + tripId + "dose not exist"));//-> I think this is kind og get
+        if (tripName != null && tripName.length() > 0 && !Objects.equals(trip.getTripName(), tripName)) {
+            trip.setTripName(tripName);
         }
-        //check listId
-        if (listId != null && listId.length()>0 && !Objects.equals(trip.getListId(), listId)){
-            Optional<Trip> tripOptional = tripRepository.findTripByCustomerId(listId);
-            if(tripOptional.isPresent()){
-                throw new IllegalStateException("listId taken");
-            }
-            trip.setListId(listId);
-        }
+        //check email
+
+//        if (email != null && email.length()>0 && !Objects.equals(customer.getEmail(), email)){
+//            Optional<Customer> customerOptional = customerRepository.findCustomerByEmail(email);
+//            if(customerOptional.isPresent()){
+//                throw new IllegalStateException("email taken");
+//            }
+//            customer.setEmail(email);
+  //   }
 
 
 
-    }//end update customer
+    }//end update Trip
 
 
 
