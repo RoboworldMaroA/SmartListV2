@@ -90,7 +90,14 @@ public class CustomerService {
 
 
 
-    }//end update customer
+    }//end update customer NOT working
+
+    //implementation login
+    //path is http://localhost:8080/api/v1/customer/login
+    public void loginCustomers(String email, String password) {
+        Optional<Customer> existedCustomerEmail = customerRepository.findCustomerByEmail(email);
+        System.out.println(existedCustomerEmail);
+    }
 
 
 /*    public void verifyCustomerPassword(Customer customer, String email, String customer_password){
@@ -104,6 +111,13 @@ public class CustomerService {
         //System.out.println(customer);
         customerRepository.getById(customer.getId()).toString();
     }*/
+
+
+
+
+
+
+
 
 
 }

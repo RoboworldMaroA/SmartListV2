@@ -27,7 +27,7 @@ public class CustomerConfig {
                     LocalDate.of(1978, SEPTEMBER, 25),
                     "man",
                     "Dublin",
-                    "$2a$12$zy46eqk6G2HdH63IiZ5HV.jwm2C5fReUHqyniJ.oIN0g.UDQHn7WW",
+                    "1234",
                     "1234",
                     "Yes",
                     "ADMIN"
@@ -45,7 +45,7 @@ public class CustomerConfig {
                     LocalDate.of(2000, JANUARY, 20),
                     "man",
                     "Poland",
-                    "$2a$12$bDFm6Ml39.3.xxs0rKwzTuKT7EL076cWJjpaxQcW4V2M.X8VuBA2m",
+                    "password",
                     "password",
                     "No",
                     "USER"

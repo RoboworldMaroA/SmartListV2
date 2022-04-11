@@ -4,28 +4,33 @@ import {Link} from "react-router-dom";
 //this  function add customer detail during a registration
 import './LoginCustomer.css';
 
-    const AddCustomerDetail = ({setCustomerInfo: setInfo}) => {
-        const [name, setName] = useState('Maro2');
-        const [surname, setSurname] = useState('Augustyn');
-        const [email, setEmail] = useState('maugusty@o2.pl');
-        const [phoneNumber, setPhoneNumber] = useState('0894582043');
-        const [dob, setDob] = useState('1978-09-25');
-        const [sex, setSex] = useState('Man');
-        const [customerPassword, setCustomerPassword] = useState('1234');
-        const [customerPasswordAgain, setCustomerPasswordAgain] = useState('1234');
-        const [adminPrivileges, setAdminPrivileges] = useState('Yes');
+    const AddCustomerDetail = ({item}) => {
+        const [name, setName] = useState('');
+        const [email, setEmail] = useState('');
+        const [customerPassword, setCustomerPassword] = useState('');
+
 
         //fetch customer data from database
         const validateCustomer = async () => {
+            console.warn(email,customerPassword);
+            //item= {email,customerPassword};
+
             const result = await fetch('api/v1/customer', {
                 method: "POST",
-                body: JSON.stringify({name, surname,email, phoneNumber, dob,sex, customerPassword, customerPasswordAgain, adminPrivileges}),
+                body: JSON.stringify({name,email, customerPassword}),
                 headers: {
                     "Content-Type": "application/json",
+                    "Accept":'application/json'
                 }
             })
             const body = await result.json();
-            setInfo(body);
+            item(body);
+            if(this.email===email){
+                console.warn("That is email is same");
+
+            }
+            console.warn("That is email NOT same");
+
         }
 
 
@@ -33,13 +38,13 @@ import './LoginCustomer.css';
 
         return (
             <div id="ItemsInLoginCustomer" className="row">
-                {/*<form className="col s12" onSubmit={() => validateCustomer()}>*/}
-                <form className="col s12" onSubmit="" >
+                <form className="col s12" onSubmit={() => validateCustomer()}>
+                {/*<form className="col s12" onSubmit="" >*/}
                     <div className="row">
                         <div className="input-field col s8">
-                            <input placeholder="Login" value={name} type="email" onChange={(event => setName(event.target.value))}
+                            <input placeholder="Login" value={email} type="email" onChange={(event => setEmail(event.target.value))}
                                    className="validate"/>
-                            <label htmlFor="name">Name (Name)</label>
+                            <label htmlFor="name">Name (Email){email}</label>
                         </div>
                     </div>
 
@@ -48,16 +53,16 @@ import './LoginCustomer.css';
                             <input placeholder="Password" value={customerPassword} type="text" onChange={(event =>
                                 setCustomerPassword(event.target.value))}
                                    className="validate"/>
-                            <label htmlFor="customerPassword">Password</label>
+                            <label htmlFor="customerPassword">Password {customerPassword}</label>
                         </div>
                     </div>
 
                     <div className="row">
-                         <Link to="../CreateCustomerList">
+                         {/*<Link to="../CreateCustomerList">*/}
                             <button className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
                                 Login(Verification password not ready yet)
                             </button>
-                        </Link>
+                        {/*</Link>*/}
                     </div>
                 </form>
             </div>
