@@ -37,10 +37,10 @@
 //    //generate override method
 //    //everyone is permited to home page
 //    // To the User only autenticated user has access and to the Admin page as well
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//      http.authorizeRequests().antMatchers("http://localhost:8080/").permitAll().
-//              antMatchers( "/").hasAuthority("USER").antMatchers("http://localhost:8080/api/v1/customer").hasAuthority("ADMIN").
-//      anyRequest().authenticated( ).and().httpBasic()   ;
-//    }
+////    @Override
+////    protected void configure(HttpSecurity http) throws Exception {
+////      http.authorizeRequests().antMatchers("http://localhost:8080/api/v1/**").permitAll().
+////              antMatchers( "http://localhost:8080/Login").hasAuthority("USER").antMatchers("http://localhost:8080/api/v1/trip").hasAuthority("ADMIN").
+////      anyRequest().authenticated( ).and().httpBasic()   ;
+////    }
 //}

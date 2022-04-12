@@ -15,7 +15,7 @@ export default class CreateList extends Component{
     constructor(props){
         super(props);
         this.state= {
-            contacts: [],
+            trips: [],
         };
         }
 
@@ -23,7 +23,7 @@ export default class CreateList extends Component{
         componentDidMount(){
         /*fetch('http://localhost:8080/api/v1/student').then(response => response.json()).then(data => this.setState({contacts: data}));*/
             fetch('api/v1/trip').then
-            (response => response.json()).then(data => this.setState({contacts: data}));
+            (response => response.json()).then(data => this.setState({trips: data}));
 
 
 
@@ -54,7 +54,7 @@ export default class CreateList extends Component{
                 </div>
                 <div className="row">
                     <p>It is a detail Trip</p>
-                    {this.state.contacts.map((item) => (<DisplayCustomerTrip key={item.id} item={item}/>))}
+                    {this.state.trips.map((item) => (<DisplayCustomerTrip key={item.id} item={item}/>))}
                 </div>
 
 

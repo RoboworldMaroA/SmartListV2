@@ -27,10 +27,12 @@ public class CustomerConfig {
                     LocalDate.of(1978, SEPTEMBER, 25),
                     "man",
                     "Dublin",
-                    "1234",
+                    "$2a$12$OvkgfQ1WGolvCbR1F320reiei3cLQISxY6loU14kTVie/2ydo8gbS",
                     "1234",
                     "Yes",
-                    "ADMIN"
+                    "ADMIN",
+                    true,
+                    true
 
                     );
 
@@ -48,15 +50,35 @@ public class CustomerConfig {
                     "password",
                     "password",
                     "No",
-                    "USER"
+                    "USER",
+                    false,
+                    true
 
                     );
+
+            Customer User3 = new Customer(
+                    //1L, it will be generated
+                    "Wiesiek",
+                    "Augustyn",
+                    "maugusty@o2.pl",
+                    "1234567890",
+                    LocalDate.of(2000, JANUARY, 20),
+                    "man",
+                    "Poland",
+                    "pass",
+                    "pass",
+                    "Yes",
+                    "USER",
+                    true,
+                    false
+
+            );
 
 
 
             //now we tell that we want save customer using list
             repository.saveAll(
-                    List.of(Admin, User)
+                    List.of(Admin, User, User3)
 
             );
         };

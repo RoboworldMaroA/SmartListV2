@@ -54,23 +54,37 @@ public class Trip {
 //    )
     private String listId;
 
-    private String camera;
+    private Boolean camera;
     private String camcorder;
-    private String smartphone;
-    private String destinationId;
-    private String destination;
+    private Boolean smartphone;
+    private Boolean ireland;
+    private Boolean spain;
 
     private LocalDate departureDay;
     private LocalDate returnDay;
-    private String activity;
+    private Boolean trekking;
     private String tripPassword;
     private String description;
-    private String adminPrivileges;
-    private String payStatus;
-    private String smallLuggage;
-    private String mediumLuggage;
-    private String largeLuggage;
-    private String transport;
+    private Boolean adminPrivileges;
+    private Boolean payStatus;
+    private Boolean smallLuggage;
+    private Boolean mediumLuggage;
+    private Boolean largeLuggage;
+    private Boolean plane;
+    private Boolean beachListStatus;
+    private Boolean bus;
+    private Boolean train;
+    private Boolean poland;
+    private Boolean summer;
+    private Boolean winter;
+    private Boolean spring;
+    private Boolean autumn;
+    private Boolean car;
+    private Boolean ski;
+    private Boolean documentsListStatus;
+    private Boolean essentialListStatus;
+
+
 
 
     @Transient//this tell this colum (age) no need to be more in database table
@@ -79,60 +93,89 @@ public class Trip {
     public Trip() {
     }
 
-    //public Student(Long id, String name, String email, LocalDate dob, Integer age) {
-    public Trip(Long id, String tripName, String weatherId, String listId,
-                String camera, String camcorder,String smartphone, String destinationId, String destination,
-                LocalDate departureDay, LocalDate returnDay, String activity, String tripPassword,
-                String description, String adminPrivileges, String payStatus,
-                String smallLuggage, String mediumLuggage,String largeLuggage,String transport) {
+
+
+
+    public Trip(Long id, String tripName, String weatherId, String listId, Boolean camera, String camcorder,
+                Boolean smartphone, Boolean ireland, Boolean spain, LocalDate departureDay,
+                LocalDate returnDay, Boolean trekking, String tripPassword, String description,
+                Boolean adminPrivileges, Boolean payStatus, Boolean smallLuggage, Boolean mediumLuggage,
+                Boolean largeLuggage, Boolean plane, Boolean beachListStatus, Boolean bus, Boolean train,
+                Boolean poland, Boolean summer,Boolean winter,Boolean spring,Boolean autumn,Boolean car,
+                Boolean ski,  Boolean documentsListStatus, Boolean essentialListStatus) {
         this.id = id;
         this.tripName = tripName;
-//        this.customerId = customerId;
         this.weatherId = weatherId;
         this.listId = listId;
         this.camera = camera;
-        this.camcorder=camcorder;
-        this.smartphone=smartphone;
-        this.destinationId = destination;
+        this.camcorder = camcorder;
+        this.smartphone = smartphone;
+        this.ireland = ireland;
+        this.spain = spain;
         this.departureDay = departureDay;
         this.returnDay = returnDay;
-        this.activity = activity;
+        this.trekking = trekking;
         this.tripPassword = tripPassword;
         this.description = description;
-        this.adminPrivileges= adminPrivileges;
-        this.payStatus=payStatus;
-        this.smallLuggage=smallLuggage;
-        this.mediumLuggage=mediumLuggage;
-        this.largeLuggage=largeLuggage;
-        this.transport=transport;
+        this.adminPrivileges = adminPrivileges;
+        this.payStatus = payStatus;
+        this.smallLuggage = smallLuggage;
+        this.mediumLuggage = mediumLuggage;
+        this.largeLuggage = largeLuggage;
+        this.plane = plane;
+        this.beachListStatus = beachListStatus;
+        this.bus = bus;
+        this.train = train;
+        this.poland=poland;
+        this.summer=summer;
+        this.winter=winter;
+        this.spring=spring;
+        this.autumn=autumn;
+        this.car=car;
+        this.ski=ski;
+        this.documentsListStatus=documentsListStatus;
+        this.essentialListStatus=essentialListStatus;
+        //this.age = age;
     }
-    //constructor without id because it will automatically create id for us
-    //public Student(String name, String email, LocalDate dob, Integer age) {//delete age from here because we want to calculate age
 
-    public Trip(String tripName,  String weatherId, String camera,
-                String camcorder,String smartphone, String destinationId, LocalDate departureDay,
-                LocalDate returnDay, String activity, String tripPassword, String description,
-                String adminPrivileges, String payStatus,
-                String smallLuggage, String mediumLuggage,String largeLuggage,String transport) {
+    public Trip( String tripName, String weatherId, String listId, Boolean camera, String camcorder,
+                 Boolean smartphone, Boolean ireland, Boolean spain, LocalDate departureDay,
+                 LocalDate returnDay, Boolean trekking, String tripPassword, String description,
+                 Boolean adminPrivileges, Boolean payStatus, Boolean smallLuggage, Boolean mediumLuggage,
+                 Boolean largeLuggage, Boolean plane, Boolean beachListStatus, Boolean bus, Boolean train,Boolean poland,
+                 Boolean summer,Boolean winter,Boolean spring,Boolean autumn,Boolean car,Boolean ski,Boolean documentsListStatus, Boolean essentialListStatus) {
         this.tripName = tripName;
-//        this.customerId = customerId;
         this.weatherId = weatherId;
+        this.listId = listId;
         this.camera = camera;
         this.camcorder = camcorder;
         this.smartphone = smartphone;
-        this.destinationId = destinationId;
+        this.ireland = ireland;
+        this.spain = spain;
         this.departureDay = departureDay;
         this.returnDay = returnDay;
-        this.activity = activity;
+        this.trekking = trekking;
         this.tripPassword = tripPassword;
-        //this.age = age;
         this.description = description;
-        this.adminPrivileges= adminPrivileges;
-        this.payStatus=payStatus;
-        this.smallLuggage=smallLuggage;
-        this.mediumLuggage=mediumLuggage;
-        this.largeLuggage=largeLuggage;
-        this.transport=transport;
+        this.adminPrivileges = adminPrivileges;
+        this.payStatus = payStatus;
+        this.smallLuggage = smallLuggage;
+        this.mediumLuggage = mediumLuggage;
+        this.largeLuggage = largeLuggage;
+        this.plane = plane;
+        this.beachListStatus = beachListStatus;
+        this.bus = bus;
+        this.train = train;
+        this.poland=poland;
+        this.summer=summer;
+        this.winter=winter;
+        this.spring=spring;
+        this.autumn=autumn;
+        this.car=car;
+        this.ski=ski;
+        this.documentsListStatus=documentsListStatus;
+        this.essentialListStatus=essentialListStatus;
+        //this.age = age;
     }
 
 
@@ -148,17 +191,9 @@ public class Trip {
         return tripName;
     }
 
-    public void setTripName(String name) {
-        this.tripName = name;
+    public void setTripName(String tripName) {
+        this.tripName = tripName;
     }
-
-//    public String getCustomerId() {
-//        return customerId;
-//    }
-//
-//    public void setCustomerId(String customerId) {
-//        this.customerId = customerId;
-//    }
 
     public String getWeatherId() {
         return weatherId;
@@ -176,11 +211,11 @@ public class Trip {
         this.listId = listId;
     }
 
-    public String getCamera() {
+    public Boolean getCamera() {
         return camera;
     }
 
-    public void setCamera(String camera) {
+    public void setCamera(Boolean camera) {
         this.camera = camera;
     }
 
@@ -192,28 +227,28 @@ public class Trip {
         this.camcorder = camcorder;
     }
 
-    public String getSmartphone() {
+    public Boolean getSmartphone() {
         return smartphone;
     }
 
-    public void setSmartphone(String smartphone) {
+    public void setSmartphone(Boolean smartphone) {
         this.smartphone = smartphone;
     }
 
-    public String getDestinationId() {
-        return destinationId;
+    public Boolean getIreland() {
+        return ireland;
     }
 
-    public void setDestinationId(String destinationId) {
-        this.destinationId = destinationId;
+    public void setIreland(Boolean ireland) {
+        this.ireland = ireland;
     }
 
-    public String getDestination() {
-        return destination;
+    public Boolean getSpain() {
+        return spain;
     }
 
-    public void setDestination(String destination) {
-        this.destination = destination;
+    public void setSpain(Boolean spain) {
+        this.spain = spain;
     }
 
     public LocalDate getDepartureDay() {
@@ -232,12 +267,12 @@ public class Trip {
         this.returnDay = returnDay;
     }
 
-    public String getActivity() {
-        return activity;
+    public Boolean getTrekking() {
+        return trekking;
     }
 
-    public void setActivity(String activity) {
-        this.activity = activity;
+    public void setTrekking(Boolean trekking) {
+        this.trekking = trekking;
     }
 
     public String getTripPassword() {
@@ -256,12 +291,132 @@ public class Trip {
         this.description = description;
     }
 
-    public String getAdminPrivileges() {
+    public Boolean getAdminPrivileges() {
         return adminPrivileges;
     }
 
-    public void setAdminPrivileges(String adminPrivileges) {
+    public void setAdminPrivileges(Boolean adminPrivileges) {
         this.adminPrivileges = adminPrivileges;
+    }
+
+    public Boolean getPayStatus() {
+        return payStatus;
+    }
+
+    public void setPayStatus(Boolean payStatus) {
+        this.payStatus = payStatus;
+    }
+
+    public Boolean getSmallLuggage() {
+        return smallLuggage;
+    }
+
+    public void setSmallLuggage(Boolean smallLuggage) {
+        this.smallLuggage = smallLuggage;
+    }
+
+    public Boolean getMediumLuggage() {
+        return mediumLuggage;
+    }
+
+    public void setMediumLuggage(Boolean mediumLuggage) {
+        this.mediumLuggage = mediumLuggage;
+    }
+
+    public Boolean getLargeLuggage() {
+        return largeLuggage;
+    }
+
+    public void setLargeLuggage(Boolean largeLuggage) {
+        this.largeLuggage = largeLuggage;
+    }
+
+    public Boolean getPlane() {
+        return plane;
+    }
+
+    public void setPlane(Boolean plane) {
+        this.plane = plane;
+    }
+
+    public Boolean getBeachListStatus() {
+        return beachListStatus;
+    }
+
+    public void setBeachListStatus(Boolean beachListStatus) {
+        this.beachListStatus = beachListStatus;
+    }
+
+    public Boolean getBus() {
+        return bus;
+    }
+
+    public void setBus(Boolean bus) {
+        this.bus = bus;
+    }
+
+    public Boolean getTrain() {
+        return train;
+    }
+
+    public void setTrain(Boolean train) {
+        this.train = train;
+    }
+
+    public Boolean getPoland() {
+        return poland;
+    }
+
+    public void setPoland(Boolean poland) {
+        this.poland = poland;
+    }
+
+    public Boolean getSummer() {
+        return summer;
+    }
+
+    public void setSummer(Boolean summer) {
+        this.summer = summer;
+    }
+
+    public Boolean getWinter() {
+        return winter;
+    }
+
+    public void setWinter(Boolean winter) {
+        this.winter = winter;
+    }
+
+    public Boolean getSpring() {
+        return spring;
+    }
+
+    public void setSpring(Boolean spring) {
+        this.spring = spring;
+    }
+
+    public Boolean getAutumn() {
+        return autumn;
+    }
+
+    public void setAutumn(Boolean autumn) {
+        this.autumn = autumn;
+    }
+
+    public Boolean getCar() {
+        return car;
+    }
+
+    public void setCar(Boolean car) {
+        this.car = car;
+    }
+
+    public Boolean getSki() {
+        return ski;
+    }
+
+    public void setSki(Boolean ski) {
+        this.ski = ski;
     }
 
     public Integer getAge() {
@@ -272,45 +427,29 @@ public class Trip {
         this.age = age;
     }
 
-    public String getPayStatus() {
-        return payStatus;
+    public Boolean getDocumentsListStatus() {
+        return documentsListStatus;
     }
 
-    public void setPayStatus(String payStatus) {
-        this.payStatus = payStatus;
+    public void setDocumentsListStatus(Boolean documentsListStatus) {
+        this.documentsListStatus = documentsListStatus;
     }
 
-    public String getSmallLuggage() {
-        return smallLuggage;
+    public Boolean getEssentialListStatus() {
+        return essentialListStatus;
     }
 
-    public void setSmallLuggage(String smallLuggage) {
-        this.smallLuggage = smallLuggage;
+    public void setEssentialListStatus(Boolean essentialListStatus) {
+        this.essentialListStatus = essentialListStatus;
     }
 
-    public String getMediumLuggage() {
-        return mediumLuggage;
-    }
-
-    public void setMediumLuggage(String mediumLuggage) {
-        this.mediumLuggage = mediumLuggage;
-    }
-
-    public String getLargeLuggage() {
-        return largeLuggage;
-    }
-
-    public void setLargeLuggage(String largeLuggage) {
-        this.largeLuggage = largeLuggage;
-    }
-
-    public String getTransport() {
-        return transport;
-    }
-
-    public void setTransport(String transport) {
-        this.transport = transport;
-    }
+//    public Integer getAge() {
+//        return age;
+//    }
+//
+//    public void setAge(Integer age) {
+//        this.age = age;
+//    }
 
     @Override
     public String toString() {
@@ -321,7 +460,7 @@ public class Trip {
                 ", email='" + listId + '\'' +
                 ", dob=" + departureDay +
                 ", age=" + age +
-                ", age=" + activity +
+                ", age=" + trekking +
                 '}';
     }
 }///end class student

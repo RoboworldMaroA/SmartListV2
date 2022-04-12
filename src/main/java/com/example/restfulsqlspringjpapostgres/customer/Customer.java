@@ -54,12 +54,14 @@ public class Customer {
 
     @Transient//this tell this colum (age) no need to be more in database table
     private Integer age;
+    private Boolean documentsList;
+    private Boolean beachList;
 
     public Customer() {
 
     }
     //public Student(Long id, String name, String email, LocalDate dob, Integer age) {
-    public Customer(Long id, String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address, String customerPassword, String customerPasswordAgain, String adminPrivileges,String role) {
+    public Customer(Long id, String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address, String customerPassword, String customerPasswordAgain, String adminPrivileges,String role, Boolean documentsList,Boolean beachList) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -73,11 +75,13 @@ public class Customer {
         this.customerPasswordAgain = customerPasswordAgain;
         this.adminPrivileges= adminPrivileges;
         this.role= role;
+        this.documentsList=documentsList;
+        this.beachList=beachList;
     }
     //constructor without id because it will automatically create id for us
     //public Student(String name, String email, LocalDate dob, Integer age) {//delete age from here because we want to calculate age
 
-    public Customer(String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address,String customerPassword, String customerPasswordAgain, String adminPrivileges,String role) {
+    public Customer(String name, String surname, String email, String phoneNumber, LocalDate dob, String sex, String address,String customerPassword, String customerPasswordAgain, String adminPrivileges,String role,Boolean documentsList, Boolean beachList) {
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -90,6 +94,8 @@ public class Customer {
         this.customerPasswordAgain = customerPasswordAgain;
         this.adminPrivileges= adminPrivileges;
         this.role= role;
+        this.documentsList=documentsList;
+        this.beachList=beachList;
     }
 
     public String getAddress() {
@@ -199,6 +205,23 @@ public class Customer {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+
+    public Boolean getDocumentsList() {
+        return documentsList;
+    }
+
+    public void setDocumentsList(Boolean documentsList) {
+        this.documentsList = documentsList;
+    }
+
+    public Boolean getBeachList() {
+        return beachList;
+    }
+
+    public void setBeachList(Boolean beachList) {
+        this.beachList = beachList;
     }
 
     @Override

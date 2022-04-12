@@ -1,4 +1,5 @@
 import React, {Component, useState} from "react";
+import LoginCustomerForm from './LoginCustomerForm'
 import SingleContact from './SingleContact';
 import AddStudentDetail from './AddStudentDetail';
 import DeleteContact from "./DeleteContact";
@@ -44,61 +45,57 @@ export default class Login extends Component{
 
 
                 {/*<div className="row">*/}
-                {/*    <LoginCustomer />*/}
+                {/*    <LoginCustomerForm />*/}
 
                 {/*</div>*/}
 
+
                 <div className="row">
-
-                    {this.state.contacts.map((item) =>(<LoginCustomer key={item.id} item={item} /> ))}
-
-                    {/*    this.state.contacts.map(contact =>*/}
-                    {/*        <div id="ItemsInLoginCustomer" className="row">*/}
-                    {/*            /!*<form className="col s12" onSubmit={() => validateCustomer()}>*!/*/}
-                    {/*                <form className="col s12" onSubmit={() => this.handleSubmit}>*/}
-                    {/*                /!*<form className="col s12" onSubmit="" >*!/*/}
-                    {/*                <div className="row">*/}
-                    {/*                    <div className="input-field col s8">*/}
-                    {/*                        /!*<input placeholder="Login" value={contact.email} type="email" onChange={(event => setEmail(event.target.value))} className="validate"/>*!/*/}
-                    {/*                        <input placeholder="Login" value={contact.email} type="email" onChange={(event => this.handleChange(event.target.value))} className="validate"/>*/}
-                    {/*                        <label htmlFor="name">Name (Email){contact.email}</label>*/}
-                    {/*                    </div>*/}
-                    {/*                </div>*/}
-
-                    {/*                <div className="row">*/}
-                    {/*                    <div className="input-field col s8">*/}
-                    {/*                        /!*<input placeholder="Password" value={contact.customerPassword} type="text" onChange={(event =>*!/*/}
-                    {/*                        /!*    setCustomerPassword(event.target.value))} className="validate"/>*!/*/}
-                    {/*                        <input placeholder="Password" value={contact.customerPassword} type="text" onChange={(event =>*/}
-                    {/*                            this.handleChange(event.target.value))} className="validate"/>*/}
-                    {/*                        <label htmlFor="customerPassword">Password {contact.customerPassword}</label>*/}
-                    {/*                    </div>*/}
-                    {/*                </div>*/}
-
-                    {/*                <div className="row">*/}
-                    {/*                    /!*<Link to="../CreateCustomerList">*!/*/}
-                    {/*                    <button className="waves-effect waves-light btn #795548 brown " type="submit" name="action">*/}
-                    {/*                        Login(Verification password not ready yet)*/}
-                    {/*                    </button>*/}
-                    {/*                    /!*</Link>*!/*/}
-                    {/*                </div>*/}
-                    {/*            </form>*/}
-                    {/*        </div>*/}
-
-
-
-                    {/*    )*/}
-
-
-
-
-                    {/*}*/}
-
-
-
-
+                    {this.state.contacts.map((customerData) => <LoginCustomerForm key={customerData.id} customerData={customerData} />)}
 
                 </div>
+
+                {/*<div className="row">*/}
+
+                {/*    {this.state.contacts.map((item) =>(<LoginCustomer key={item.id} item={item} >*/}
+
+                {/*        <div id="ItemsInLoginCustomer" className="row">*/}
+                {/*            /!*<form className="col s12" onSubmit={() => validateCustomer()}>*!/*/}
+                {/*            <form className="col s12" onSubmit={() => handleSubmit()}>*/}
+                {/*                /!*<form className="col s12" onSubmit="" >*!/*/}
+                {/*                <div className="row">*/}
+                {/*                    <div className="input-field col s8">*/}
+                {/*                        /!*<input placeholder="Login" value={contact.email} type="email" onChange={(event => setEmail(event.target.value))} className="validate"/>*!/*/}
+                {/*                        <input placeholder="Login" value={item.email} type="email" onChange={(event => (event.target.value))} className="validate"/>*/}
+                {/*                        <label htmlFor="name">Name (Email){item.email}{item.email}</label>*/}
+                {/*                    </div>*/}
+                {/*                </div>*/}
+
+                {/*                <div className="row">*/}
+                {/*                    <div className="input-field col s8">*/}
+                {/*                        /!*<input placeholder="Password" value={contact.customerPassword} type="text" onChange={(event =>*!/*/}
+                {/*                        /!*    setCustomerPassword(event.target.value))} className="validate"/>*!/*/}
+                {/*                        <input placeholder="Password" value={item.customerPassword} type="text" onChange={(event =>*/}
+                {/*                            (event.target.value))} className="validate"/>*/}
+                {/*                        <label htmlFor="customerPassword">Password {item.customerPassword}</label>*/}
+                {/*                    </div>*/}
+                {/*                </div>*/}
+
+                {/*                <div className="row">*/}
+                {/*                    /!*<Link to="../CreateCustomerList">*!/*/}
+                {/*                    <button className="waves-effect waves-light btn #795548 brown " type="submit" name="action">*/}
+                {/*                        Login(Verification password not ready yet)*/}
+                {/*                    </button>*/}
+                {/*                    /!*</Link>*!/*/}
+                {/*                </div>*/}
+                {/*            </form>*/}
+                {/*        </div>*/}
+                {/*    </LoginCustomer>))}*/}
+
+
+
+
+                {/*</div>*/}
 
 
 
@@ -115,11 +112,10 @@ export default class Login extends Component{
                 </div>*/}
 
 
+            {/*    </div>*/}
+            </div>)
 
-
-                        </div>
-
-        )
 
     }
-    }
+
+                }

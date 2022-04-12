@@ -1,13 +1,15 @@
-import React, {useState}  from 'react';
+import React, {useState, useEffect}  from 'react';
 /* useState is used to set a value  */
 
 //It is new display contacts and delete on the bottom with  option to it delete
 
-const DisplayCustomerTrip = ({item}) => {
+export const DisplayCustomerTrip = ({item}) => {
 
     const [id, setId] = useState('');
     // const [customerId, setCustomerId] = useState('');
 
+    //data from useEffect Customer data
+    // const [customer, setCustomer] = useState(null);
 
     const deleteCustomerTrip = async () => {
         const resultTrip = await fetch("api/v1/trip/"+id, {
@@ -26,10 +28,24 @@ const DisplayCustomerTrip = ({item}) => {
     }
 
 
+        //
+        // useEffect(() => {
+        //     //do something when loading
+        //     console.log("yoyw yow do something from useeffect")
+        //     if(!customer) {
+        //         fetch("http://localhost:8080/api/v1/customer").then((response) => response.json()).then((dataCustomer) => {
+        //             console.log("List of items in the customer", dataCustomer);
+        //             setCustomer(dataCustomer);
+        //         });
+        //     }
+        // }, [customer]);
+
 
 
     return (
-        // this part display card with detail inside
+
+<div>
+        {/*// this part display card with detail inside*/}
         <div className="row">
             <form className="col s12" onSubmit={() => deleteCustomerTrip()}>
 
@@ -44,22 +60,22 @@ const DisplayCustomerTrip = ({item}) => {
                                     <p>Departure Day: {item.departureDay} </p>
                                     <p>Return Day: {item.returnDay} </p>
                                     <p>Description: {item.description}</p>
-                                    <p>Destination: {item.destinationId}</p>
-                                    <p>List: {item.list}</p>
+                                    {/*<p>Destination: {item.destinationId}</p>*/}
+                                    <p>List: {item.listId}</p>
                                     <p>Activity : {item.activity} </p>
-                                    <p>Admin Privileges: {item.adminPrivileges} </p>
-                                    <p>Pay Status: {item.payStatus}</p>
+                                    <p>Admin Privileges: {item.adminPrivileges.toString()} </p>
+                                    <p>Pay Status: {item.payStatus.toString()}</p>
                                     <p>Bag option:</p>
-                                    <p>Large luggage: {item.largeLuggage} </p>
-                                    <p> Medium luggage: {item.mediumLuggage} </p>
-                                    <p> Small luggage: {item.smallLuggage} </p>
+                                    <p>Large luggage: {item.largeLuggage.toString()} </p>
+                                    <p> Medium luggage: {item.mediumLuggage.toString()} </p>
+                                    <p> Small luggage: {item.smallLuggage.toString()} </p>
                                     <p>Photo equipment:</p>
-                                    <p>Camera: {item.camera}</p>
-                                    <p>Camcorder: {item.camcorder}</p>
-                                    <p>Smartphone: {item.smartphone}</p>
+                                    <p>Camera: {item.camera.toString()}</p>
+                                    <p>Camcorder: {item.camcorder.toString()}</p>
+                                    <p>Smartphone: {item.smartphone.toString()}</p>
                                      <p>Transport:</p>
-                                     <p>Train: {item.train}</p>
-                                     <p>Plane: {item.plane}</p>
+                                     <p>Train: {item.train.toString()}</p>
+                                     <p>Plane: {item.plane.toString()}</p>
                                      <p>Car: {item.car}</p>
 
                                 </span>
@@ -92,8 +108,20 @@ const DisplayCustomerTrip = ({item}) => {
                 </div>
             </form>
         </div>
+            {/*<div>*/}
+            {/*    /!*<p>It is a Customer detail  ID:</p>*!/*/}
+         {/*It is checking if customer is bulll then*/}
+            {/*    /!*                    display string loading page if there is data then map*!/*!/*/}
+            {/*        {customer*/}
+            {/*            ? customer.map((data) => {*/}
+            {/*                return <input type="checkbox" checked={data.documentList} />;*/}
+            {/*            })*/}
+            {/*            : "..... loading page"}*/}
+            {/*    );*/}
+            {/*</div>*/}
 
 
+</div>
     );
 
 }

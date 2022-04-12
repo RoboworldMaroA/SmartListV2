@@ -17,30 +17,41 @@ import DisplayList from "./DisplayList";
     // const AddCreateListDetail = ({setCreateListInfo: setCreateListInfo},props) => {
         const AddCreateListDetail = ({props:props},{setCreateListInfo: setCreateListInfo}) => {
 
-        const [activity, setActivity] = useState('No');
-        const [adminPrivileges, setAdminPrivileges] = useState('No');
-        const [customerId, setCustomerId] = useState('');
-        const [camera, setCamera] = useState('No');
-        const [camcorder, setCamcorder] = useState('No');
-        const [smartphone, setSmartphone] = useState('Yes');
+        //const [activity, setActivity] = useState('No');
+        const [adminPrivileges, setAdminPrivileges] = useState(true);
+        const [autumn, setAutumn] = useState(true);
+        const [beachListStatus, setBeachListStatus] = useState(true);
+        const [bus, setBus] = useState(false);
+        const [camcorder, setCamcorder] = useState('');
+        const [camera, setCamera] = useState(true);
+        const [car, setCar] = useState(true);
         const [departureDay, setDepartureDay] = useState("2022-05-20");
         const [description, setDescription] = useState('Some trip');
-        const [destinationId, setDestinationId] = useState('');
-        const [destination, setDestination] = useState('Ireland');
-        const [listId, setListId] = useState('');
-        const [largeLuggage, setLargeLuggage] = useState('No');
-        const [mediumLuggage, setMediumLuggage] = useState('No');
-        const [smallLuggage, setSmallLuggage] = useState('No');
-        const [payStatus, setPayStatus] = useState('No');
+        const [ireland, setIreland] = useState(true);
+        const [listId, setListId] = useState('vvv');
+        const [largeLuggage, setLargeLuggage] = useState(true);
+        const [mediumLuggage, setMediumLuggage] = useState(false);
+        const [smallLuggage, setSmallLuggage] = useState(true);
+        const [smartphone, setSmartphone] = useState(true);
+        const [payStatus, setPayStatus] = useState(true);
         const [returnDay, setReturnDay] = useState('2022-05-30');
         const [tripName, setTripName] = useState('Trip Name');
         const [tripPassword, setTripPassword] = useState('password');
         const [weatherId, setWeatherId] = useState('');
-        const [transport, setTransport] = useState('No');
-        const [sunbathing, setSunbathing] = useState('No');
-        const [ski, setSki] = useState('No');
-        const [trekking , setTrekking] = useState('No');
+        //const [transport, setTransport] = useState();
 
+        const [ski, setSki] = useState(false);
+        const [trekking , setTrekking] = useState(true);
+            const [documentListStatus , setDocumentListStatus] = useState(true);
+            const [essentialListStatus , setEssentialListStatus] = useState(true);
+            const [plane , setPlane] = useState(true);
+            const [poland , setPoland] = useState(true);
+            const [spain , setSpain] = useState(true);
+            const [summer , setSummer] = useState(true);
+            const [winter , setWinter] = useState(true);
+            const [spring , setSpring] = useState(true);
+            const [train , setTrain] = useState(true);
+            const [id , setId] = useState('');
         // const [displayListState , setDisplayListState] = useState(true);
         // const [displayListState , setDisplayListState] = useState(true);
 
@@ -50,9 +61,10 @@ import DisplayList from "./DisplayList";
         const validateCreateList = async () => {
             const result = await fetch("api/v1/trip", {
                 method: "POST",
-                body: JSON.stringify({activity,adminPrivileges,customerId,camera,camcorder,smartphone,
-                    departureDay, description, destinationId, listId,largeLuggage, mediumLuggage,smallLuggage, payStatus ,returnDay,
-                    tripName, tripPassword, weatherId,transport}),
+                body: JSON.stringify({adminPrivileges,autumn, beachListStatus, bus, camcorder,camera,
+                    car, departureDay, description, documentListStatus, essentialListStatus, ireland, largeLuggage,
+                    listId, mediumLuggage, payStatus , plane, poland, returnDay, ski,smallLuggage,smartphone,spain,spring,
+                    summer,train,trekking,tripName, tripPassword, weatherId,winter,id}),
                 headers: {
                     "Content-Type": "application/json",
                 }
@@ -106,27 +118,27 @@ import DisplayList from "./DisplayList";
         const toggleCamera = ()=> {
             setCameraState(cameraState => !cameraState);
             if (!cameraState) {
-                setCamera("Yes");
+                setCamera(true);
                 console.log(camera);//test only
             }
             if(cameraState){
-                setCamera("NO");
+                setCamera(false);
                 console.log(camera);//test only
             }
         }
 
-        //sunbathing function to change state when clicked
+        //beachListStatus function to change state when clicked
         const [sunbathingState, setSunbathingState] = useState(false);
 
         const toggleSunbathing = ()=> {
             setSunbathingState(sunbathingState => !sunbathingState);
             if (!sunbathingState) {
-                setSunbathing("Yes");
-                console.log(sunbathing);//test only
+                setBeachListStatus(true);
+                console.log(beachListStatus);//test only
             }
             if(sunbathingState){
-                setSunbathing("NO");
-                console.log(sunbathing);//test only
+                setBeachListStatus(false);
+                console.log(beachListStatus);//test only
             }
         }
 
@@ -137,32 +149,48 @@ import DisplayList from "./DisplayList";
         const toggleSki = ()=> {
             setSkiState(skiState => !skiState);
             if (!skiState) {
-                setSki("Yes");
+                setSki(true);
                 console.log(ski);//test only
             }
             if(skiState){
-                setSki("NO");
+                setSki(false);
                 console.log(ski);//test only
             }
         }
 
 
 
-        //sunbathing function to change state when clicked
+        //beachListStatus function to change state when clicked
         const [trekkingState, setTrekkingState] = useState(false);
 
         const toggleTrekking = ()=> {
             setTrekkingState(trekkingState => !trekkingState);
             if (!trekkingState) {
-                setTrekking("Yes");
+                setTrekking(true);
                 console.log(trekking);//test only
             }
             if(trekkingState){
-                setTrekking("NO");
+                setTrekking(false);
                 console.log(trekking);//test only
             }
         }
 
+
+
+            //beachListStatus function to change state when clicked
+            // const [camcorderState, setCamcorderState] = useState(false);
+            //
+            // const toggleCamcorder = (event)=> {
+            //     setCamcorder(camcorderState => !camcorderState);
+            //     if (event.equal("Yes")) {
+            //         setCamcorder(true);
+            //         console.log(camcorder);//test only
+            //     }
+            //     if(event.equal("No")){
+            //         setCamcorder(false);
+            //         console.log(camcorder);//test only
+            //     }
+            // }
 
         // const options = [
         //     { value: 'chocolate', label: 'Chocolate' },
@@ -182,11 +210,11 @@ import DisplayList from "./DisplayList";
             <div id ="elementInFormCreateList" className="row">
 
 
-                <div className="row">
-                    <p>Test greet Parent pass data from FormCreateList to the DisplayList</p>
-                    <button onClick={()=>props.greetHandler2('child')}>Greet Parent</button>
+                {/*<div className="row">*/}
+                {/*    <p>Test greet Parent pass data from FormCreateList to the DisplayList</p>*/}
+                {/*    <button onClick={()=>props.greetHandler2('child')}>Greet Parent</button>*/}
 
-                </div>
+                {/*</div>*/}
 
 
                 <form className="col s12" onSubmit={() => validateCreateList()}>
@@ -207,20 +235,20 @@ import DisplayList from "./DisplayList";
                         </div>
                     </div>
 
-                    <div className="row">
-                        <div  className="input-field col s10">
+                    {/*<div className="row">*/}
+                    {/*    <div  className="input-field col s10">*/}
 
-                            <i className="material-icons prefix">account_circle</i>
-                            <select value={destination} onChange={event => setDestination(event.target.value)}>
-                                    (<option disabled selected> Destination    </option>),
-                                    (<option  value="Ireland">Ireland</option>),
-                                    (<option value="Spain">Spain</option>),
-                                    (<option value="Poland">Poland</option>)
-                                )}
-                            </select>
-                            {/*<p>This is display destination for test only : {destination}</p>*/}
-                        </div>
-                    </div>
+                    {/*        <i className="material-icons prefix">account_circle</i>*/}
+                    {/*        <select value={ireland} onChange={event => setIreland(event.target.value)}>*/}
+                    {/*                (<option disabled selected> Destination    </option>),*/}
+                    {/*                (<option value="Ireland">Ireland</option>),*/}
+                    {/*                (<option value="Spain">Spain</option>),*/}
+                    {/*                (<option value="Poland">Poland</option>)*/}
+                    {/*            )}*/}
+                    {/*        </select>*/}
+                    {/*        /!*<p>This is display destination for test only : {destination}</p>*!/*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
                     <div className="row">
                         <div  className="input-field col s10">
@@ -248,7 +276,7 @@ import DisplayList from "./DisplayList";
                             <p>
                                 <i className="material-icons prefix">account_circle</i>
                                 <label>
-                                    <input type="checkbox" className="filled-in" value={camera} onClick={toggleCamera}/>
+                                    <input type="checkbox" className="filled-in" value={camera.toString()} onClick={toggleCamera}/>
                                    <span>Camera</span> <div>{camera}</div>
                                 </label>
                             </p>
@@ -269,20 +297,20 @@ import DisplayList from "./DisplayList";
                             </div>
 
 
-                            <div className="row">
-                                <p>SMARTPHONE:</p>
-                                <div  className="input-field col s10">
-                                    <i className="material-icons prefix">account_circle</i>
-                                    <select value={smartphone} onChange={event => setSmartphone(event.target.value)}>
-                                        (<option disabled selected="Smartphone"> Smartphone</option>),
-                                        (<option  value="Yes">Yes</option>),
-                                        (<option value="No">No</option>)
+                            {/*<div className="row">*/}
+                            {/*    <p>SMARTPHONE:</p>*/}
+                            {/*    <div  className="input-field col s10">*/}
+                            {/*        <i className="material-icons prefix">account_circle</i>*/}
+                            {/*        <select value={smartphone.toString()} onChange={event => setSmartphone(event.target.value)}>*/}
+                            {/*            (<option disabled selected="Smartphone"> Smartphone</option>),*/}
+                            {/*            (<option  value="Yes">Yes</option>),*/}
+                            {/*            (<option value="No">No</option>)*/}
 
-                                        )}
-                                    </select>
-                                    {/*<p>This is display destination for test only : {smartphone}</p>*/}
-                                </div>
-                            </div>
+                            {/*            )}*/}
+                            {/*        </select>*/}
+                            {/*        /!*<p>This is display destination for test only : {smartphone}</p>*!/*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
 
 
                             {/*<p> Display checked or not camera: {cameraState ? "Yes": "No"}</p>*/}
@@ -291,71 +319,71 @@ import DisplayList from "./DisplayList";
                         </div>
                     </div>
 
-                    <div className="row">
-                        <div  className="input-field col s10">
-                            <p> BAG SIZE</p>
-                            <div className="row">
-                                <p>LARGE LUGGAGE:</p>
-                                <div  className="input-field col s10">
-                                    <i className="material-icons prefix">account_circle</i>
-                                    <select value={largeLuggage} onChange={event => setLargeLuggage(event.target.value)}>
-                                        (<option disabled selected> Large Luggage    </option>),
-                                        (<option  value="Yes">Yes</option>),
-                                        (<option value="No">No</option>)
+                    {/*<div className="row">*/}
+                    {/*    <div  className="input-field col s10">*/}
+                    {/*        <p> BAG SIZE</p>*/}
+                    {/*        <div className="row">*/}
+                    {/*            <p>LARGE LUGGAGE:</p>*/}
+                    {/*            <div  className="input-field col s10">*/}
+                    {/*                <i className="material-icons prefix">account_circle</i>*/}
+                    {/*                <select value={largeLuggage.toString()} onChange={event => setLargeLuggage(event.target.value)}>*/}
+                    {/*                    (<option disabled selected> Large Luggage    </option>),*/}
+                    {/*                    (<option  value="Yes">Yes</option>),*/}
+                    {/*                    (<option value="No">No</option>)*/}
 
-                                        )}
-                                    </select>
-                                    {/*<p>This is display destination for test only : {largeLuggage}</p>*/}
-                                </div>
-                            </div>
-
-
-                            <div className="row">
-                                <p>MEDIUM LUGGAGE:</p>
-                                <div  className="input-field col s10">
-                                    <i className="material-icons prefix">account_circle</i>
-                                    <select value={mediumLuggage} onChange={event => setMediumLuggage(event.target.value)}>
-                                        (<option disabled selected> Medium Luggage    </option>),
-                                        (<option  value="Yes">Yes</option>),
-                                        (<option value="No">No</option>)
-                                        )}
-                                    </select>
-                                    {/*<p>This is display destination for test only : {mediumLuggage}</p>*/}
-                                </div>
-                            </div>
+                    {/*                    )}*/}
+                    {/*                </select>*/}
+                    {/*                /!*<p>This is display destination for test only : {largeLuggage}</p>*!/*/}
+                    {/*            </div>*/}
+                    {/*        </div>*/}
 
 
-                            <div className="row">
-                                <p>SMALL LUGGAGE:</p>
-                                <div  className="input-field col s10">
-                                    <i className="material-icons prefix">account_circle</i>
-                                    <select value={smallLuggage} onChange={event => setSmallLuggage(event.target.value)}>
-                                        (<option disabled selected="Smartphone"> Small Luggage</option>),
-                                        (<option  value="Yes">Yes</option>),
-                                        (<option value="No">No</option>)
-                                        )}
-                                    </select>
-                                    {/*<p>This is display destination for test only : {smallLuggage}</p>*/}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            {/*<div className="row">*/}
+                            {/*    <p>MEDIUM LUGGAGE:</p>*/}
+                            {/*    <div  className="input-field col s10">*/}
+                            {/*        <i className="material-icons prefix">account_circle</i>*/}
+                            {/*        <select value={mediumLuggage.toString()} onChange={event => setMediumLuggage(event.target.value)}>*/}
+                            {/*            (<option disabled selected> Medium Luggage    </option>),*/}
+                            {/*            (<option  value="Yes">Yes</option>),*/}
+                            {/*            (<option value="No">No</option>)*/}
+                            {/*            )}*/}
+                            {/*        </select>*/}
+                            {/*        /!*<p>This is display destination for test only : {mediumLuggage}</p>*!/*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+
+
+                    {/*        <div className="row">*/}
+                    {/*            <p>SMALL LUGGAGE:</p>*/}
+                    {/*            <div  className="input-field col s10">*/}
+                    {/*                <i className="material-icons prefix">account_circle</i>*/}
+                    {/*                <select value={smallLuggage.toString()} onChange={event => setSmallLuggage(event.target.value)}>*/}
+                    {/*                    (<option disabled selected="Smartphone"> Small Luggage</option>),*/}
+                    {/*                    (<option  value="Yes">Yes</option>),*/}
+                    {/*                    (<option value="No">No</option>)*/}
+                    {/*                    )}*/}
+                    {/*                </select>*/}
+                    {/*                /!*<p>This is display destination for test only : {smallLuggage}</p>*!/*/}
+                    {/*            </div>*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
 
 
-                    <div className="row">
-                        <p>TRANSPORT:</p>
-                        <div  className="input-field col s10">
-                            <select value={transport} onChange={event => setTransport(event.target.value)}>
-                                <option value="" disabled selected>Transport</option>
-                                <option value="Plane">Plane</option>
-                                <option value="Bus">Bus</option>
-                                <option value="Train">Train</option>
-                                <option value="Car">Car</option>
-                                <label>Transport</label>
-                            </select>
-                        </div>
-                    </div>
+                    {/*<div className="row">*/}
+                    {/*    <p>TRANSPORT:</p>*/}
+                    {/*    <div  className="input-field col s10">*/}
+                    {/*        <select value={transport.toString()} onChange={event => setTransport(event.target.value)}>*/}
+                    {/*            <option value="" disabled selected>Transport</option>*/}
+                    {/*            <option value="Plane">Plane</option>*/}
+                    {/*            <option value="Bus">Bus</option>*/}
+                    {/*            <option value="Train">Train</option>*/}
+                    {/*            <option value="Car">Car</option>*/}
+                    {/*            <label>Transport</label>*/}
+                    {/*        </select>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
 
 
@@ -364,8 +392,8 @@ import DisplayList from "./DisplayList";
                             <p>
                                 <i className="material-icons prefix">account_circle</i>
                                 <label>
-                                    <input type="checkbox" className="filled-in" value={sunbathing} onClick={toggleSunbathing}/>
-                                    <span>Sunbathing</span> <div>{sunbathing}</div>
+                                    <input type="checkbox" className="filled-in" value={beachListStatus.toString()} onClick={toggleSunbathing}/>
+                                    <span>Sunbathing</span> <div>{beachListStatus}</div>
                                 </label>
                             </p>
                         </div>
@@ -376,7 +404,7 @@ import DisplayList from "./DisplayList";
                             <p>
                                 <i className="material-icons prefix">account_circle</i>
                                 <label>
-                                    <input type="checkbox" className="filled-in" value={ski} onClick={toggleSki}/>
+                                    <input type="checkbox" className="filled-in" value={ski.toString()} onClick={toggleSki}/>
                                     <span>Ski</span> <div>{ski}</div>
                                 </label>
                             </p>
@@ -388,7 +416,7 @@ import DisplayList from "./DisplayList";
                             <p>
                                 <i className="material-icons prefix">account_circle</i>
                                 <label>
-                                    <input type="checkbox" className="filled-in" value={trekking} onClick={toggleTrekking}/>
+                                    <input type="checkbox" className="filled-in" value={trekking.toString()} onClick={toggleTrekking}/>
                                     <span>Trekking</span> <div>{trekking}</div>
                                 </label>
                             </p>

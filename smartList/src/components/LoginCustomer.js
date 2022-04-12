@@ -4,7 +4,8 @@ import {Link} from "react-router-dom";
 //this  function add customer detail during a registration
 import './LoginCustomer.css';
 
-    const AddCustomerDetail = ({item}) => {
+    //const AddCustomerDetail = ({item}) => {
+        const AddCustomerDetail = (props) => {
         const [name, setName] = useState('');
         const [email, setEmail] = useState('');
         const [customerPassword, setCustomerPassword] = useState('');
@@ -24,27 +25,36 @@ import './LoginCustomer.css';
                 }
             })
             const body = await result.json();
-            item(body);
-            if(this.email===email){
-                console.warn("That is email is same");
+            this.item(body);
 
-            }
-            console.warn("That is email NOT same");
+            // if(this.email===email){
+            //     console.warn("That is email is same");
+            //
+            // }
+            // console.warn("That is email NOT same");
 
         }
 
+
+        const sendData =(event) => {
+            event.preventDefault();
+
+            props.validateHandler(email);//this is sent data to Login CustomerForm Parent
+            // alert(`Email is ${email}`);//This display only error
+        }
 
 
 
         return (
             <div id="ItemsInLoginCustomer" className="row">
-                <form className="col s12" onSubmit={() => validateCustomer()}>
+                {/*<form className="col s12" onSubmit={() => validateCustomer()}>*/}
+                    <form className="col s12" onSubmit={sendData}>
                 {/*<form className="col s12" onSubmit="" >*/}
                     <div className="row">
                         <div className="input-field col s8">
                             <input placeholder="Login" value={email} type="email" onChange={(event => setEmail(event.target.value))}
                                    className="validate"/>
-                            <label htmlFor="name">Name (Email){email}</label>
+                            <label htmlFor="name">Name (Email from database){email} This is client email{email}</label>
                         </div>
                     </div>
 
@@ -64,6 +74,11 @@ import './LoginCustomer.css';
                             </button>
                         {/*</Link>*/}
                     </div>
+                    {/*This execute fuction in the Parent function LoginCustomerForm*/}
+                    {/*<button onClick={props.validateHandler}> Hello validator Button in LoginCustomerForm</button>*/}
+
+                   {/*If you want to pass a values from child to the parent you have to use arrow function*/}
+                    <button onClick={() => props.validateHandler("This ifo is from a LoginCustomer Button")}> Hello validator Button in LoginCustomerForm</button>
                 </form>
             </div>
         );

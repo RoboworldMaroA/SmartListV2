@@ -13,6 +13,9 @@ import DisplayCustomerTrip from "./DisplayCustomerTrip";
 import displayCustomerTrip from "./DisplayCustomerTrip";
 import FormCreateList from "./FormCreateList";
 import ParentComponent from "./ParentComponent";
+import LoginCustomerForm from "./LoginCustomerForm";
+import {useEffect} from "react";
+import DisplayStateOfCustomerList from "../DisplayStateOfCustomerList";
 
 
 export default class DisplayList extends Component {
@@ -30,6 +33,8 @@ export default class DisplayList extends Component {
         }
 
         // this.greetParent2=this.greetParent2.bind(this);
+        //this.documentList=this.documentList.bind(this);
+
     }
 
     // I am testing to get value from FormCreateList
@@ -58,50 +63,90 @@ export default class DisplayList extends Component {
 
 
     //import data from the trip and get a data trip, compare with
+    //documentList
+
     componentDidMount() {
         fetch('api/v1/trip').then
         (response => response.json()).then(TripData => this.setState({tripData: TripData}));
 
     }
 
-    documentState() {
-        //here will be logic what lit to display, depen what customer choose in the form FormCrteteList
-        console.log(this.state.displayDocuments)
-        this.setState(
-            {
-                displayDocuments: !this.state.displayDocuments
-            },()=>"eecece")
+    // documentState() {
+    //     //here will be logic what lit to display, depen what customer choose in the form FormCrteteList
+    //     console.log("State Document List", this.state.documentList)
+    //     this.setState(
+    //         {
+    //             documentList: !this.state.documentList
+    //         },()=>"eecece");
+    //
+    //     this.essentialState();//it executes next method
+    //
+    // }
 
-        this.essentialState();
+    // essentialState() {
+    //     //here will be logic what lit to display, depen what customer choose in the form FormCrteteList
+    //     console.log("essential state", this.state.displayEssential)
+    //     console.warn("ddddd"+(this.state.displayEssential))
+    //     this.setState(
+    //         {
+    //             displayEssential: !this.state.displayEssential
+    //         },()=>"eceee")
+    //
+    //     this.beachState();
+    // }
 
-    }
+    // beachState() {
+    //     //here will be logic what lit to display, depen what customer choose in the form FormCrteteList
+    //     console.log("Beach ststus", this.state.displayBeach)
+    //     this.setState(
+    //         {
+    //             displayBeach: !this.state.displayBeach
+    //         },()=>"eceee")
+    // }
 
-    essentialState() {
-        //here will be logic what lit to display, depen what customer choose in the form FormCrteteList
-        console.log(this.state.displayEssential)
-        this.setState(
-            {
-                displayEssential: !this.state.displayEssential
-            },()=>"eceee")
 
-        this.beachState();
-    }
-
-    beachState() {
-        //here will be logic what lit to display, depen what customer choose in the form FormCrteteList
-        console.log(this.state.displayBeach)
-        this.setState(
-            {
-                displayBeach: !this.state.displayBeach
-            },()=>"eceee")
-    }
 
 
     render() {
-
+        // const {contacts}  = this.state;
 
         return (
-            <div>
+            <div>//everything wrapped in div
+            {/*//*/}
+            {/*//     <div>*/}
+            {/*//         Access Normal Object*/}
+            {/*//         <hr />*/}
+            {/*//         <table>*/}
+            {/*//             <tr>*/}
+            {/*//                 <td>First Name :</td>*/}
+            {/*//                 <td>{this.state.name}</td>*/}
+            {/*//             </tr>*/}
+            {/*//             <tr>*/}
+            {/*//                 <td>Last Name :</td>*/}
+            {/*//                 <td>{contacts.documentList}</td>*/}
+            {/*//             </tr>*/}
+            {/*//             <tr>*/}
+            {/*//                 <td>Department :</td>*/}
+            {/*//                 <td>{contacts.role}</td>*/}
+            {/*//             </tr>*/}
+            {/*//         </table>*/}
+            {/*//     </div>*/}
+
+
+
+
+                {/*<div>*/}
+                {/*    {Object.entries(contacts).map(([id, name]) => {*/}
+                {/*        return (*/}
+                {/*            <div>*/}
+                {/*                {id} = {name}*/}
+                {/*            </div>*/}
+                {/*        );*/}
+                {/*    })}*/}
+                {/*</div>*/}
+
+
+
 
                 {/*//do mapping in the trip and  check what is a status for the unique parameter i thing listName*/}
                 {/*//because it has to be unique*/}
@@ -150,32 +195,47 @@ export default class DisplayList extends Component {
                {/*</div>*/}
 
 
-                <p> Display single value from a trip using display customer trip </p>
-                <div className="row">
-                    {this.state.displayDocuments ?
-                        <DocumentsList/>
-                        : null
-                    }
-                </div>
+                  {/*<p> Display Contact Id and  status lists </p>*/}
+                  {/*<div className="row">*/}
+                  {/*      {contacts.map(contacts => (*/}
+                  {/*          <p key={contacts.name} contacts={contacts}>*/}
+                  {/*             {contacts.name} {contacts.documentList}*/}
+                  {/*          </p>*/}
+                  {/*      ))}*/}
 
-                <div className="row">
-                    {this.state.displayEssential ?
-                        <EssentialList/>
-                        : null
-                    }
-                </div>
+                  {/*    <p> {contacts.documentList} </p>*/}
+                  {/*  </div>*/}
 
-                <div className="row">
-                    {this.state.displayBeach ?
-                        <BeachList/>
-                        : null
-                    }
-                </div>
 
-                <div>
-                    <button onClick={() => this.documentState()}> Display/Hide List</button>
 
-                </div>
+
+
+                {/*<p> Display single value from a trip using display customer trip </p>*/}
+                {/*<div className="row">*/}
+                {/*    {this.state.documentList ?*/}
+                {/*        <DocumentsList/>*/}
+                {/*        : null*/}
+                {/*    }*/}
+                {/*</div>*/}
+
+                {/*<div className="row">*/}
+                {/*    {this.state.displayEssential ?*/}
+                {/*        <EssentialList/>*/}
+                {/*        : null*/}
+                {/*    }*/}
+                {/*</div>*/}
+
+                {/*<div className="row">*/}
+                {/*    {this.state.displayBeach ?*/}
+                {/*        <BeachList/>*/}
+                {/*        : null*/}
+                {/*    }*/}
+                {/*</div>*/}
+
+                {/*<div>*/}
+                {/*    <button onClick={() => this.documentState()}> Display/Hide List</button>*/}
+
+                {/*</div>*/}
 
                 {/*<div className="row">*/}
                 {/*    <p>It is a detail Trip</p>*/}
@@ -191,6 +251,18 @@ export default class DisplayList extends Component {
                     </div>
 
 </div>
+<div>
+                <p> Status of the list from database </p>
+                <div className="row">
+
+                        <DisplayStateOfCustomerList/>
+
+                </div>
+</div>
+
+
+
+
 
 
             </div>)}//end

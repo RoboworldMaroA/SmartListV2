@@ -23,9 +23,8 @@ public interface  CustomerRepository
 //    @Query("SELECT s FROM Customer s WHERE s.customerPassword = ?1")
 //    Optional<Customer> findCustomerByPassword(String customerPassword);
 
-//    @Query("SELECT s FROM Customer s WHERE s.name = ?1")
-//    Customer findByName(String name);
+    @Query("SELECT s FROM Customer s WHERE s.name = ?1")
     //Optional <Customer> findByName(String name);
-
+     Customer findByName(String name);
 
 }

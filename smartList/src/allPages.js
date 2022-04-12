@@ -46,6 +46,7 @@ export function Home() {
                         </Link>
                         </div>
 
+                       {/*LOGIN BUTTON ON HOME PAGE*/}
                        <div id="loginOrRegister">
                            <Link to="Login">
                            <button className="btn waves-effect waves-light #8d6e63 brown lighten-1">
