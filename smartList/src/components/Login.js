@@ -16,7 +16,6 @@ export default class Login extends Component{
         this.state= {
             contacts: [],
             // email:'',
-
         };
         // this.handleChange = this.handleChange.bind(this);
         // this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,35 +24,29 @@ export default class Login extends Component{
         componentDidMount(){
         /*fetch('http://localhost:8080/api/v1/student').then(response => response.json()).then(data => this.setState({contacts: data}));*/
             fetch('api/v1/customer').then(response => response.json()).
-            then(data => this.setState({contacts: data}));
-
+            then(data => this.setState({contacts: data})).catch(err=>console.log(err.message));
         }
+
+
+
 
     // handleChange(event) {
     //     let input = this.state.input;
     //     input[event.target.name] = event.target.value;
     // }
 
-
-
-
-
-        render(){
+    render(){
 
             return(
             <div>
-
-
-                {/*<div className="row">*/}
-                {/*    <LoginCustomerForm />*/}
-
-                {/*</div>*/}
-
-
                 <div className="row">
-                    {this.state.contacts.map((customerData) => <LoginCustomerForm key={customerData.id} customerData={customerData} />)}
+                    <LoginCustomer />
 
                 </div>
+                {/*<div className="row">*/}
+                {/*    {this.state.contacts.map((customerData) => <LoginCustomerForm key={customerData.id} customerData={customerData} />)}*/}
+
+                {/*</div>*/}
 
                 {/*<div className="row">*/}
 

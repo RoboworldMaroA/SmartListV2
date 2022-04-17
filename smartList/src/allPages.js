@@ -7,6 +7,8 @@ import Login from "./components/Login";
 import DisplayList from "./components/DisplayList";
 import LoginAdmin from "./components/LoginAdmin";
 import Pay from "./components/Pay";
+import LoginNew from "./components/LoginNew";
+import LoginNew2 from "./components/LoginNew2";
 
 
 
@@ -123,7 +125,7 @@ export function LoginPage() {
             </div>
 
             <div className="row">
-                <Login />
+                <LoginNew2 />
             </div>
         </div>
         </body>
@@ -185,10 +187,10 @@ export function CreateCustomerList() {
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
                         className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
-                        <li>  <Link to="Register"> Register</Link></li>
-                        <li>  <Link to="CreateCustomerList"> CreateCustomerList</Link></li>
-                        <li><a href="collapsible.html">Pay</a></li>
-                        <li>  <Link to="Help"> Help</Link></li>
+                        <li>  <Link to="../DisplayList"> Display Trips</Link></li>
+                        <li>  <Link to="../Pay"> Pay</Link></li>
+                        {/*<li><a href="collapsible.html">Pay</a></li>*/}
+                        <li>  <Link to="../Help"> Help</Link></li>
                     </ul>
                 </div>
             </nav>

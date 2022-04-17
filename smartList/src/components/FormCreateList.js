@@ -1,5 +1,6 @@
-import React, {useState}  from 'react';
+import React, {useState} from 'react';
 import {Link} from "react-router-dom";
+
 import 'materialize-css';
 import ReactDOM from "react-dom";
     /* useState is used to set a value  */
@@ -11,6 +12,7 @@ import {Button, Card, Row, Col, Select} from 'react-materialize';
 import {getValue} from "@testing-library/user-event/dist/utils";
 import * as events from "events";
 import DisplayList from "./DisplayList";
+import {selectOptions} from "@testing-library/user-event/dist/select-options";
 
 
 
@@ -18,22 +20,22 @@ import DisplayList from "./DisplayList";
         const AddCreateListDetail = ({props:props},{setCreateListInfo: setCreateListInfo}) => {
 
         //const [activity, setActivity] = useState('No');
-        const [adminPrivileges, setAdminPrivileges] = useState(true);
-        const [autumn, setAutumn] = useState(true);
-        const [beachListStatus, setBeachListStatus] = useState(true);
+        const [adminPrivileges, setAdminPrivileges] = useState(false);
+        const [autumn, setAutumn] = useState(false);
+        const [beachListStatus, setBeachListStatus] = useState(false);
         const [bus, setBus] = useState(false);
-        const [camcorder, setCamcorder] = useState('');
-        const [camera, setCamera] = useState(true);
-        const [car, setCar] = useState(true);
+        const [camcorder, setCamcorder] = useState(false);
+        const [camera, setCamera] = useState(false);
+        const [car, setCar] = useState(false);
         const [departureDay, setDepartureDay] = useState("2022-05-20");
         const [description, setDescription] = useState('Some trip');
-        const [ireland, setIreland] = useState(true);
-        const [listId, setListId] = useState('vvv');
-        const [largeLuggage, setLargeLuggage] = useState(true);
+        const [ireland, setIreland] = useState("0");
+        const [listId, setListId] = useState('Trip 1');
+        const [largeLuggage, setLargeLuggage] = useState(false);
         const [mediumLuggage, setMediumLuggage] = useState(false);
-        const [smallLuggage, setSmallLuggage] = useState(true);
-        const [smartphone, setSmartphone] = useState(true);
-        const [payStatus, setPayStatus] = useState(true);
+        const [smallLuggage, setSmallLuggage] = useState(false);
+        const [smartphone, setSmartphone] = useState(false);
+        const [payStatus, setPayStatus] = useState(false);
         const [returnDay, setReturnDay] = useState('2022-05-30');
         const [tripName, setTripName] = useState('Trip Name');
         const [tripPassword, setTripPassword] = useState('password');
@@ -41,28 +43,35 @@ import DisplayList from "./DisplayList";
         //const [transport, setTransport] = useState();
 
         const [ski, setSki] = useState(false);
-        const [trekking , setTrekking] = useState(true);
+        const [trekking , setTrekking] = useState(false);
             const [documentListStatus , setDocumentListStatus] = useState(true);
             const [essentialListStatus , setEssentialListStatus] = useState(true);
-            const [plane , setPlane] = useState(true);
-            const [poland , setPoland] = useState(true);
-            const [spain , setSpain] = useState(true);
-            const [summer , setSummer] = useState(true);
-            const [winter , setWinter] = useState(true);
-            const [spring , setSpring] = useState(true);
-            const [train , setTrain] = useState(true);
+            const [plane , setPlane] = useState(false);
+            const [poland , setPoland] = useState(false);
+            const [spain , setSpain] = useState(false);
+            const [summer , setSummer] = useState(false);
+            const [winter , setWinter] = useState(false);
+            const [spring , setSpring] = useState(false);
+            const [train , setTrain] = useState(false);
             const [id , setId] = useState('');
+            const [destination, setDestination] = useState('');
         // const [displayListState , setDisplayListState] = useState(true);
         // const [displayListState , setDisplayListState] = useState(true);
 
 
-        //change fetch to customer database not a student
+
+
+
+        //fetch for trip
+
+
+
 
         const validateCreateList = async () => {
             const result = await fetch("api/v1/trip", {
                 method: "POST",
                 body: JSON.stringify({adminPrivileges,autumn, beachListStatus, bus, camcorder,camera,
-                    car, departureDay, description, documentListStatus, essentialListStatus, ireland, largeLuggage,
+                    car, departureDay, description, destination,documentListStatus, essentialListStatus, ireland, largeLuggage,
                     listId, mediumLuggage, payStatus , plane, poland, returnDay, ski,smallLuggage,smartphone,spain,spring,
                     summer,train,trekking,tripName, tripPassword, weatherId,winter,id}),
                 headers: {
@@ -72,8 +81,12 @@ import DisplayList from "./DisplayList";
 
             const body = await result.json();
             setCreateListInfo(body);
+            //updateDestinationStatus();
+            // const changeHandler = (event) => {
+            //     this.setState({ camcorder: event ? event.value : '' });
+            // };
+            ///displayList();
 
-            displayList();
         }
 
         // function FormCreateList(props){
@@ -92,16 +105,16 @@ import DisplayList from "./DisplayList";
         // }
 
 
-      //IT IS NOT WORKIN, DISPLAY CUSTOM LIST !!!!!!!!!!!!!
-        function displayList (props)
-        {
-            return(
-            //here will be logic what lit to display, depen what customer choose in the form FormCrteteList
-            console.log(this.state.displayBeach)
-
-            )
-
-        }
+      // //IT IS NOT WORKIN, DISPLAY CUSTOM LIST !!!!!!!!!!!!!
+      //   function displayList (props)
+      //   {
+      //       return(
+      //       //here will be logic what lit to display, depen what customer choose in the form FormCrteteList
+      //       console.log(this.state.displayBeach)
+      //
+      //       )
+      //
+      //   }
 
 
         // const [checked2, setChecked2] = useState(false);
@@ -110,6 +123,60 @@ import DisplayList from "./DisplayList";
         //
         // }
 
+
+
+
+            //It is working checked element change state
+            const [irelandState, setIrelandState] = useState(false);
+
+            const toggleIreland = ()=> {
+
+                setIrelandState(irelandState => !irelandState);
+                if (!irelandState) {
+                    setIreland("1");
+                    console.log(ireland);//test only
+                }
+                if(irelandState){
+                    setIreland("0");
+                    console.log(ireland);//test only
+                }
+
+
+            }
+
+
+
+            //It is working checked element change state
+            const [spainState, setSpainState] = useState(false);
+
+            const toggleSpain = ()=> {
+                setSpainState(spainState => !spainState);
+                if (!spainState) {
+                    setSpain(true);
+                    console.log(spain);//test only
+                }
+                if(spainState){
+                    setSpain(false);
+                    console.log(spain);//test only
+                }
+            }
+
+
+
+            //It is working checked element change state
+            const [polandState, setPolandState] = useState(false);
+
+            const togglePoland = ()=> {
+                setPolandState(polandState => !polandState);
+                if (!polandState) {
+                    setPoland(true);
+                    console.log(poland);//test only
+                }
+                if(polandState){
+                    setPoland(false);
+                    console.log(poland);//test only
+                }
+            }
 
 
         //It is working checked element change state
@@ -127,7 +194,90 @@ import DisplayList from "./DisplayList";
             }
         }
 
-        //beachListStatus function to change state when clicked
+
+            //It is working checked element change state
+            const [camcorderState, setCamcorderState] = useState(false);
+
+            const toggleCamcorder = ()=> {
+                setCamcorderState(camcorderState => !camcorderState);
+                if (!camcorderState) {
+                    setCamcorder(true);
+                    console.log(camcorder);//test only
+                }
+                if(camcorderState){
+                    setCamcorder(false);
+                    console.log(camcorder);//test only
+                }
+            }
+
+
+            //It is working checked element change state
+            const [smartphoneState, setSmartphoneState] = useState(false);
+
+            const toggleSmartphone = ()=> {
+                setSmartphoneState(smartphoneState => !smartphoneState);
+                if (!smartphoneState) {
+                    setSmartphone(true);
+                    console.log(smartphone);//test only
+                }
+                if(smartphoneState){
+                    setSmartphone(false);
+                    console.log(smartphone);//test only
+                }
+            }
+
+            //It is working checked element change state
+            const [largeLuggageState, setLargeLuggageState] = useState(false);
+
+            const toggleLargeLuggage = ()=> {
+                setLargeLuggageState(largeLuggageState => !largeLuggageState);
+                if (!largeLuggageState) {
+                    setLargeLuggage(true);
+                    console.log(largeLuggage);//test only
+                }
+                if(largeLuggageState){
+                    setLargeLuggage(false);
+                    console.log(largeLuggage);//test only
+                }
+            }
+
+
+
+            //It is working checked element change state
+            const [mediumLuggageState, setMediumLuggageState] = useState(false);
+
+            const toggleMediumLuggage = ()=> {
+                setMediumLuggageState(mediumLuggageState => !mediumLuggageState);
+                if (!mediumLuggageState) {
+                    setMediumLuggage(true);
+                    console.log(mediumLuggage);//test only
+                }
+                if(mediumLuggageState){
+                    setMediumLuggage(false);
+                    console.log(mediumLuggage);//test only
+                }
+            }
+
+
+            //It is working checked element change state
+            const [smallLuggageState, setSmallLuggageState] = useState(false);
+
+            const toggleSmallLuggage = ()=> {
+                setSmallLuggageState(smallLuggageState => !smallLuggageState);
+                if (!smallLuggageState) {
+                    setSmallLuggage(true);
+                    console.log(smallLuggage);//test only
+                }
+                if(smallLuggageState){
+                    setSmallLuggage(false);
+                    console.log(smallLuggage);//test only
+                }
+            }
+
+
+
+
+            //beachListStatus function to change state when clicked
         const [sunbathingState, setSunbathingState] = useState(false);
 
         const toggleSunbathing = ()=> {
@@ -178,6 +328,187 @@ import DisplayList from "./DisplayList";
 
 
             //beachListStatus function to change state when clicked
+            const [planeState, setPlaneState] = useState(false);
+
+            const togglePlane = ()=> {
+                setPlaneState(planeState => !planeState);
+                if (!planeState) {
+                    setPlane(true);
+                    console.log(plane);//test only
+                }
+                if(planeState){
+                    setPlane(false);
+                    console.log(plane);//test only
+                }
+            }
+
+            //beachListStatus function to change state when clicked
+            const [busState, setBusState] = useState(false);
+
+            const toggleBus = ()=> {
+                setBusState(busState => !busState);
+                if (!busState) {
+                    setBus(true);
+                    console.log(bus);//test only
+                }
+                if(busState){
+                    setBus(false);
+                    console.log(bus);//test only
+                }
+            }
+
+
+            const [trainState, setTrainState] = useState(false);
+            const toggleTrain = ()=> {
+                setTrainState(trainState => !trainState);
+                if (!trainState) {
+                    setTrain(true);
+                    console.log(train);//test only
+                }
+                if(trainState){
+                    setTrain(false);
+                    console.log(train);//test only
+                }
+            }
+
+            const [carState, setCarState] = useState(false);
+            const toggleCar = ()=> {
+                setCarState(carState => !carState);
+                if (!carState) {
+                    setCar(true);
+                    console.log(car);//test only
+                }
+                if(carState){
+                    setCar(false);
+                    console.log(car);//test only
+                }
+            }
+
+
+            // const option = [
+            //     {value: 'Yes', label: 'Camcorder'},
+            //     {value: 'No', label: 'Camcorder'}
+            // ]
+            //
+            // const changeHandler = (event) => {
+            //     this.setState({ camcorder: event ? event.map(x => x.value) : [] });
+            // };
+
+
+
+
+
+
+            //send string probably is working
+            // const [destination, setDestination] = useState("");
+            // // const [irelandStatus, setIrelandStatus] = useState(false);
+            // // const [spainStatus, setSpainStatus] = useState(false);
+            // // event => setDestination(event.target.value)
+            // const updateDestinationStatus = (event)=> {
+            //     //setIrelandStatus(irelandStatus => !irelandStatus);
+            //     //setSpainStatus(spainStatus => !spainStatus);
+            //
+            //     //const ireland = "1";
+            //     //const spain="2";
+            //     if (destination === "1" ){
+            //         setIreland("1");
+            //         setSpain("0")
+            //         setPoland("0");
+            //         console.log("Ireland Value is",ireland);//test only
+            //         console.log("Spain Value is",spain);//test only
+            //         console.log("Poland Value is",poland);//test only
+            //     }
+            //     if(destination === "2" ){
+            //         setIreland("0");
+            //         setSpain("1")
+            //         setPoland("0");
+            //         console.log("Ireland Value is",ireland);//test only
+            //         console.log("Spain Value is",spain);//test only
+            //         console.log("Poland Value is",poland);//test only
+            //     }
+            //
+            //     if(destination === "3" ){
+            //         setIreland("0");
+            //         setSpain("0")
+            //         setPoland("1");
+            //         console.log("Ireland Value is",ireland);//test only
+            //         console.log("Spain Value is",spain);//test only
+            //         console.log("Poland Value is",poland);//test only
+            //     }
+            //
+            //
+            // }
+
+
+
+           //send boolean and string for ireland
+             //const [destination, setDestination] = useState('');
+           //  // const [irelandStatus, setIrelandStatus] = useState(false);
+           //  // const [spainStatus, setSpainStatus] = useState(false);
+           //  // event => setDestination(event.target.value)
+           //  const updateDestinationStatus = (event)=> {
+           //      //setIreland(ireland => !ireland);
+           //     // setSpain(spainStatus => !spainStatus);
+           //
+           //      const ireland1 = "1";
+           //      const spain1=true;
+           //      const poland1=true;
+           //
+           //      // setDestination(null);
+           //      // setIreland("");
+           //      // setSpain(false);
+           //      // setPoland(false);
+           //
+           //      const dest = event.target.value;
+           //      setDestination(dest);
+           //      console.log("Destination Value is before if",destination);//test only
+           //      const dest2=destination;
+           //      console.log("Dest2 Value before if",dest2);//test only
+           //
+           //      if (dest2 === "1" ){
+           //          setIreland(ireland1);
+           //          setSpain(!spain1);
+           //          setPoland(!poland1);
+           //          console.log("Destination Value first if",destination);//test only
+           //          console.log("Ireland Value is",ireland);//test only
+           //          console.log("Spain Value is",spain);//test only
+           //          console.log("Poland Value is",poland);//test only
+           //          setDestination(event.target.value);
+           //          console.log("Destination after target value",destination);//test only
+           //      }
+           //      if(dest2 === "2" ){
+           //          setIreland("0");
+           //          setSpain(spain1)
+           //          setPoland(!poland1);
+           //          console.log("Destination Value 2nd if",destination);//test only
+           //          console.log("Ireland Value is",ireland);//test only
+           //          console.log("Spain Value is",spain);//test only
+           //          console.log("Poland Value is",poland);//test only
+           //          setDestination(event.target.value);
+           //          console.log("Destination after target value",destination);//test only
+           //      }
+           //
+           //      if(dest2 === "3" ){
+           //          setIreland("0");
+           //          setSpain(!spain1)
+           //          setPoland(poland1);
+           //          console.log("Destination Value 3rd if",destination);//test only
+           //          console.log("Ireland Value is",ireland);//test only
+           //          console.log("Spain Value is",spain);//test only
+           //          console.log("Poland Value is",poland);//test only
+           //          setDestination(event.target.value);
+           //          console.log("Destination after target value",destination);//test only
+           //      }
+           //
+           //      setIreland("0");
+           //      setSpain(false)
+           //      setPoland(false);
+           //
+           //
+           //  }
+
+
+            //beachListStatus function to change state when clicked
             // const [camcorderState, setCamcorderState] = useState(false);
             //
             // const toggleCamcorder = (event)=> {
@@ -201,7 +532,11 @@ import DisplayList from "./DisplayList";
         //     <Select options={options} />
         // )
 
-        return (
+            function handleChange(event) {    this.setState({value: event.target.value});  }
+
+
+
+            return (
 
 
 
@@ -217,7 +552,7 @@ import DisplayList from "./DisplayList";
                 {/*</div>*/}
 
 
-                <form className="col s12" onSubmit={() => validateCreateList()}>
+                <form className="col s12" onSubmit={(event) => validateCreateList(event.preventDefault())}>
                     <div className="row">
                         <div  className="input-field col s10">
                             <i className="material-icons prefix">account_circle</i>
@@ -231,15 +566,23 @@ import DisplayList from "./DisplayList";
                             <i className="material-icons prefix">account_circle</i>
                             <input placeholder="Your unique name of the travelingList." value={listId} type="text" onChange={(event => setListId(event.target.value))}
                                    className="validate"/>
-                            <label htmlFor="List Name">List ID must be unique.</label>
+                            <label htmlFor="List Name">List Name must be unique.</label>
                         </div>
                     </div>
 
+
+
+
+
+
+
+
+
+                    {/*I dont know how to pass data to this form*/}
                     {/*<div className="row">*/}
                     {/*    <div  className="input-field col s10">*/}
-
                     {/*        <i className="material-icons prefix">account_circle</i>*/}
-                    {/*        <select value={ireland} onChange={event => setIreland(event.target.value)}>*/}
+                    {/*        <select className="browser-default"  value={destination} onChange={event => setIreland(event.target.value)}>*/}
                     {/*                (<option disabled selected> Destination    </option>),*/}
                     {/*                (<option value="Ireland">Ireland</option>),*/}
                     {/*                (<option value="Spain">Spain</option>),*/}
@@ -249,6 +592,49 @@ import DisplayList from "./DisplayList";
                     {/*        /!*<p>This is display destination for test only : {destination}</p>*!/*/}
                     {/*    </div>*/}
                     {/*</div>*/}
+
+
+
+
+                    {/*<div className="row">*/}
+                    {/*    <div  className="input-field col s10">*/}
+
+                    {/*        <i className="material-icons prefix">account_circle</i>*/}
+                    {/*        /!*<select value={destination} onChange={(event)=>updateDestinationStatus(event)}>*!/*/}
+                    {/*            <select value={destination|"2"|destination|"3"} onChange={(event)=>setDestination(event.target.value)}>*/}
+
+
+                    {/*                (<option disabled selected> Destination    </option>),*/}
+                    {/*                (<option value="1" ireland="1" >Ireland</option>),*/}
+                    {/*                (<option value="2">Spain</option>),*/}
+                    {/*                (<option value="3" >Poland</option>)*/}
+                    {/*            )}*/}
+                    {/*        </select>*/}
+                    {/*        /!*<p>This is display destination for test only : {destination}</p>*!/*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
+
+                    <div className="row">
+                        <div  className="input-field col s10">
+                            <p>
+                                <i className="material-icons prefix">account_circle</i>
+                                <label>
+                                    <input type="checkbox" className="filled-in" value={ireland.toString()} onClick={toggleIreland}/>
+                                    <span>Ireland</span> <div>{ireland}</div>
+                                </label>
+                                <label>
+                                    <input type="checkbox" className="filled-in" value={spain.toString()} onClick={toggleSpain}/>
+                                    <span>Spain</span> <div>{spain.toString()}</div>
+                                </label>
+                                <label>
+                                    <input type="checkbox" className="filled-in" value={poland.toString()} onClick={togglePoland}/>
+                                    <span>Poland</span> <div>{poland.toString()}</div>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+
+
 
                     <div className="row">
                         <div  className="input-field col s10">
@@ -277,24 +663,41 @@ import DisplayList from "./DisplayList";
                                 <i className="material-icons prefix">account_circle</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={camera.toString()} onClick={toggleCamera}/>
-                                   <span>Camera</span> <div>{camera}</div>
+                                   <span>Camera</span> <div>{camera.toString()}</div>
                                 </label>
                             </p>
 
 
-                            <div className="row">
-                                <p>CAMCORDER:</p>
-                                <div  className="input-field col s10">
-                                    <i className="material-icons prefix">account_circle</i>
-                                    <select value={camcorder} onChange={event => setCamcorder(event.target.value)}>
-                                        (<option disabled selected> Camcorder    </option>),
-                                        (<option  value="Yes">Yes</option>),
-                                        (<option value="No">No</option>)
-                                        )}
-                                    </select>
-                                    {/*<p>This is display destination for test only : {camcorder}</p>*/}
-                                </div>
-                            </div>
+                            <p>
+                                <i className="material-icons prefix">account_circle</i>
+                                <label>
+                                    <input type="checkbox" className="filled-in" value={camcorder.toString()} onClick={toggleCamcorder}/>
+                                    <span>Camcorder</span> <div>{camcorder.toString()}</div>
+                                </label>
+                            </p>
+
+
+                            <p>
+                                <i className="material-icons prefix">account_circle</i>
+                                <label>
+                                    <input type="checkbox" className="filled-in" value={smartphone.toString()} onClick={toggleSmartphone}/>
+                                    <span>Smartphone</span> <div>{smartphone.toString()}</div>
+                                </label>
+                            </p>
+                            {/*this is wrong , !!!!!!*/}
+                            {/*<div className="row">*/}
+                            {/*    <p>CAMCORDER:</p>*/}
+                            {/*    <div  className="input-field col s10">*/}
+                            {/*        <i className="material-icons prefix">account_circle</i>*/}
+                            {/*        <select className="browser-default"  value={camcorder} onChange={(event)=>event.target.value}>*/}
+                            {/*            (<option disabled selected> Camcorder    </option>),*/}
+                            {/*            (<option  value="Yes">Yes</option>),*/}
+                            {/*            (<option value="No">No</option>)*/}
+                            {/*            )}*/}
+                            {/*        </select>*/}
+                            {/*        /!*<p>This is display destination for test only : {camcorder}</p>*!/*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
 
 
                             {/*<div className="row">*/}
@@ -318,6 +721,14 @@ import DisplayList from "./DisplayList";
 
                         </div>
                     </div>
+
+
+
+
+
+
+
+
 
                     {/*<div className="row">*/}
                     {/*    <div  className="input-field col s10">*/}
@@ -385,6 +796,44 @@ import DisplayList from "./DisplayList";
                     {/*    </div>*/}
                     {/*</div>*/}
 
+                    <div className="row" id="luggage"> LUGGAGE OPTIONS</div>
+                    <div className="row">
+                        <div  className="input-field col s10">
+                            <p>
+                                <i className="material-icons prefix">account_circle</i>
+                                <label>
+                                    <input type="checkbox" className="filled-in" value={largeLuggage.toString()} onClick={toggleLargeLuggage}/>
+                                    <span>Large Luggage</span> <div>{largeLuggage.toString()}</div>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div  className="input-field col s10">
+                            <p>
+                                <i className="material-icons prefix">account_circle</i>
+                                <label>
+                                    <input type="checkbox" className="filled-in" value={mediumLuggage.toString()} onClick={toggleMediumLuggage}/>
+                                    <span>Medium Luggage</span> <div>{mediumLuggage.toString()}</div>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div  className="input-field col s10">
+                            <p>
+                                <i className="material-icons prefix">account_circle</i>
+                                <label>
+                                    <input type="checkbox" className="filled-in" value={smallLuggage.toString()} onClick={toggleSmallLuggage}/>
+                                    <span>Small Luggage</span> <div>{smallLuggage.toString()}</div>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                    <div className="row" id="activities"> ACTIVITIES</div>
 
 
                     <div className="row">
@@ -393,7 +842,7 @@ import DisplayList from "./DisplayList";
                                 <i className="material-icons prefix">account_circle</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={beachListStatus.toString()} onClick={toggleSunbathing}/>
-                                    <span>Sunbathing</span> <div>{beachListStatus}</div>
+                                    <span>Sunbathing</span> <div>{beachListStatus.toString()}</div>
                                 </label>
                             </p>
                         </div>
@@ -405,7 +854,7 @@ import DisplayList from "./DisplayList";
                                 <i className="material-icons prefix">account_circle</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={ski.toString()} onClick={toggleSki}/>
-                                    <span>Ski</span> <div>{ski}</div>
+                                    <span>Ski</span> <div>{ski.toString()}</div>
                                 </label>
                             </p>
                         </div>
@@ -417,7 +866,7 @@ import DisplayList from "./DisplayList";
                                 <i className="material-icons prefix">account_circle</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={trekking.toString()} onClick={toggleTrekking}/>
-                                    <span>Trekking</span> <div>{trekking}</div>
+                                    <span>Trekking</span> <div>{trekking.toString()}</div>
                                 </label>
                             </p>
 
@@ -425,15 +874,73 @@ import DisplayList from "./DisplayList";
                     </div>
 
 
-                    <div  className="row">
-                        <div id="ButtonAddItemInFormCreateList" className="input-field col s10">
-                            <Link to="../CreateCustomerList">
-                                <button  className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
-                                    Add Item(not ready yet)
-                                </button>
-                            </Link>
+
+                    <div className="row" id="transport"> Transport</div>
+
+
+                    <div className="row">
+                        <div  className="input-field col s10">
+                            <p>
+                                <i className="material-icons prefix">account_circle</i>
+                                <label>
+                                    <input type="checkbox" className="filled-in" value={plane.toString()} onClick={togglePlane}/>
+                                    <span>Plane</span> <div>{plane.toString()}</div>
+                                </label>
+                            </p>
                         </div>
                     </div>
+
+                    <div className="row">
+                        <div  className="input-field col s10">
+                            <p>
+                                <i className="material-icons prefix">account_circle</i>
+                                <label>
+                                    <input type="checkbox" className="filled-in" value={car.toString()} onClick={toggleCar}/>
+                                    <span>Car</span> <div>{car.toString()}</div>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div  className="input-field col s10">
+                            <p>
+                                <i className="material-icons prefix">account_circle</i>
+                                <label>
+                                    <input type="checkbox" className="filled-in" value={train.toString()} onClick={toggleTrain}/>
+                                    <span>Train</span> <div>{train.toString()}</div>
+                                </label>
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div  className="input-field col s10">
+                            <p>
+                                <i className="material-icons prefix">account_circle</i>
+                                <label>
+                                    <input type="checkbox" className="filled-in" value={bus.toString()} onClick={toggleBus}/>
+                                    <span>Bus</span> <div>{bus.toString()}</div>
+                                </label>
+                            </p>
+
+                        </div>
+                    </div>
+
+
+
+
+                    {/*/!*BUTTONS*!/*/}
+                    {/*<div  className="row">*/}
+                    {/*    <div id="ButtonAddItemInFormCreateList" className="input-field col s10">*/}
+                    {/*        <Link to="../CreateCustomerList">*/}
+                    {/*            <button  className="waves-effect waves-light btn #795548 brown " type="submit" name="action">*/}
+                    {/*                Add Item(not ready yet)*/}
+                    {/*            </button>*/}
+                    {/*        </Link>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
 
 
@@ -458,6 +965,11 @@ import DisplayList from "./DisplayList";
                             </Link>
                         </div>
                     </div>
+
+
+
+
+
 
 
 

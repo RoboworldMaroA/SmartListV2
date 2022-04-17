@@ -25,9 +25,9 @@ public class TripConfig {
                     "list 1",
                     "List one",
                     true,
-                    "No",
-                    true,
                     false,
+                    true,
+                    "0",
                     true,
                     LocalDate.of(2022, AUGUST, 10),
                     LocalDate.of(2022,AUGUST,20),
@@ -49,7 +49,10 @@ public class TripConfig {
                     false,
                     false,
                     true,
-                    false,true,true
+                    false,
+                    true,
+                    true,
+                    "Spain"
             );
 
 
@@ -59,9 +62,9 @@ public class TripConfig {
                     "list 2",
                     "interesting list change this",
                     true,
-                    "No",
                     true,
                     true,
+                    "1",
                     false,
                     LocalDate.of(2022, OCTOBER, 10),
                     LocalDate.of(2022,OCTOBER,20),
@@ -83,7 +86,10 @@ public class TripConfig {
                     true,
                     true,
                     true,
-                    true,true,true
+                    true,
+                    true,
+                    true,
+                    "Ireland"
 
                     );
 

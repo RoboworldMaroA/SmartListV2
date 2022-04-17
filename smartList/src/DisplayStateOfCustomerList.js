@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ToDoListComponents from "./components/ToDoListComponents";
 import ToDoListComponentsTrip from "./components/ToDoListComponentsTrip";
+import {Link} from "react-router-dom";
 /* useState is used to set a value  */
 
 //It is new display contacts and delete on the bottom with  option to it delete
@@ -8,7 +9,7 @@ import ToDoListComponentsTrip from "./components/ToDoListComponentsTrip";
 export const DisplayStateOfCustomerList = () => {
 
     //data from useEffect Customer data
-    const [customer, setCustomer] = useState(null);
+    // const [customer, setCustomer] = useState(null);
     const [trip, setTrip] = useState(null);
 
     // useEffect(() => {
@@ -23,14 +24,14 @@ export const DisplayStateOfCustomerList = () => {
     // }, [customer]);
 
 
-    useEffect(() => {
-        //do something when loading
-        console.log("yoyw yow do something from useeffect")
-            fetch("api/v1/customer").then((response) => response.json()).then((dataCustomer) => {
-                console.log("List of items in the customer", dataCustomer);
-                setCustomer(dataCustomer);
-            });
-    }, ["hI"]);
+    // useEffect(() => {
+    //     //do something when loading
+    //     console.log("yoyw yow do something from useeffect")
+    //         fetch("api/v1/customer").then((response) => response.json()).then((dataCustomer) => {
+    //             console.log("List of items in the customer", dataCustomer);
+    //             setCustomer(dataCustomer);
+    //         });
+    // }, ["hI"]);
 
 
 
@@ -62,6 +63,9 @@ export const DisplayStateOfCustomerList = () => {
                         }):"..... loading page"}
                     {/*end*/}
             </div>
+
+
+
 
 </div>
     );

@@ -10,14 +10,18 @@ import {Link} from "react-router-dom";
         const [name, setName] = useState('MaroReg');
         const [surname, setSurname] = useState('AugustynReg');
         const [email, setEmail] = useState('EmailReg@o2.pl');
-        const [phoneNumber, setPhoneNumber] = useState('0894582043reg');
+        const [phoneNumber, setPhoneNumber] = useState('0899999943');
         const [dob, setDob] = useState('1988-08-08');
         const [sex, setSex] = useState('Man');
         const [address, setAddress] = useState('Dublin');
         const [customerPassword, setCustomerPassword] = useState('1234');
-        const [customerPasswordAgain, setCustomerPasswordAgain] = useState('1234');
+        const [customerPasswordAgain, setCustomerPasswordAgain] = useState('');
 
         const [emailIsVerified, setEmailIsVerified] = useState(false);
+        const [isError, setIsError] = useState('');
+        const [isErrorFetchMethod, setIsErrorFetchMethod] = useState(null);
+        const [passwordError, setPasswordError] = useState(true);
+        const [passwordErrorEmpty, setPasswordErrorEmpty] = useState("");
 
         //change fetch to customer database not a student
        // const addCustomer = async () => {
@@ -51,11 +55,23 @@ import {Link} from "react-router-dom";
         }
 */
 
+       const verifyAllFields = (event)=>{
+           if(!passwordError){
+              return addCustomer()
+
+           }
+           if(passwordError){
+               setPasswordErrorEmpty("CAN NOT BE EMPTY");
+               event.preventDefault();
+           }
+
+       }
 
 
 
+
+        // function resposible for pass data to database
         const addCustomer = async () => {
-
                 const result = await fetch("api/v1/customer", {
                     method: "POST",
                     body: JSON.stringify({
@@ -72,22 +88,50 @@ import {Link} from "react-router-dom";
                     headers: {
                         "Content-Type": "application/json",
                     }
-
-
+                }).catch((err)=>{
+                    setIsErrorFetchMethod(err.message)
+                    console.log(err.response);
                 })
 
-                const body = await result.json();
-                setInfo(body);
+                const body = await result.json().catch(err=>console.log(err.response));
+                setInfo(body).catch(err=>console.log(err.response));
+
+
+
             }
+
+
+            const validatePassword=(event)=>{
+            const pass =event.target.value;
+            setCustomerPasswordAgain(pass);
+                if(customerPassword!=pass) {
+                    if(customerPassword===" "){
+                        setPasswordErrorEmpty("CAN NOT BE EMPTY");
+                    }
+                    else{setIsError("password mus be the same!!!!");}
+                }
+
+                else{
+                    setIsError("Password OK");
+                    setPasswordError(false);
+                }
+            }
+
+
+
+
 
 
         return (
 
             <div id="itemsInRegisterCustomer" className="row">
-                <form className="col s12" onSubmit={() => addCustomer()}>
-                    {/*<form className="col s12" onSubmit={() => validateInputs()}>*/}
+                {/*<form className="col s12" onSubmit={() => addCustomer()}>*/}
+                    <form className="col s12" onSubmit={(event) => verifyAllFields(event)}>
                     <div className="row">
                         <div className="input-field col s8">
+
+                            {isErrorFetchMethod && <div>{isErrorFetchMethod}</div>}
+                            <div>{isErrorFetchMethod}</div>
                             <input placeholder="Mandatory" value={name} type="text"
                                    onChange={(event => setName(event.target.value))} className="validate"/>
                             <label htmlFor="name">First Name</label>
@@ -153,11 +197,22 @@ import {Link} from "react-router-dom";
                         </div>
                     </div>
 
+                    {/*<div className="row">*/}
+                    {/*    <div className="input-field col s8">*/}
+                    {/*        <input placeholder="Must be the same minimum 8 characters nad numbers" value={customerPasswordAgain} type="text" onChange={(event => setCustomerPasswordAgain(event.target.value))}*/}
+                    {/*               className="validate"/>*/}
+                    {/*        <label htmlFor="customerPasswordAgain">Repeat the Password</label>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
+
                     <div className="row">
                         <div className="input-field col s8">
-                            <input placeholder="Must be the same minimum 8 characters nad numbers" value={customerPasswordAgain} type="text" onChange={(event => setCustomerPasswordAgain(event.target.value))}
+                            <input placeholder="Must be the same minimum 8 characters nad numbers" value={customerPasswordAgain} type="text" onChange={(event => validatePassword(event))}
                                    className="validate"/>
                             <label htmlFor="customerPasswordAgain">Repeat the Password</label>
+                            <div>{isError}</div>
+                            <div>{passwordErrorEmpty}</div>
+                            <div>{passwordError}</div>
                         </div>
                     </div>
 

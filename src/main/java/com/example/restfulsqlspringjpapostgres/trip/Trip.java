@@ -55,9 +55,9 @@ public class Trip {
     private String listId;
 
     private Boolean camera;
-    private String camcorder;
+    private Boolean camcorder;
     private Boolean smartphone;
-    private Boolean ireland;
+    private String ireland;
     private Boolean spain;
 
     private LocalDate departureDay;
@@ -83,7 +83,7 @@ public class Trip {
     private Boolean ski;
     private Boolean documentsListStatus;
     private Boolean essentialListStatus;
-
+    private String destination;
 
 
 
@@ -96,13 +96,13 @@ public class Trip {
 
 
 
-    public Trip(Long id, String tripName, String weatherId, String listId, Boolean camera, String camcorder,
-                Boolean smartphone, Boolean ireland, Boolean spain, LocalDate departureDay,
+    public Trip(Long id, String tripName, String weatherId, String listId, Boolean camera, Boolean camcorder,
+                Boolean smartphone, String ireland, Boolean spain, LocalDate departureDay,
                 LocalDate returnDay, Boolean trekking, String tripPassword, String description,
                 Boolean adminPrivileges, Boolean payStatus, Boolean smallLuggage, Boolean mediumLuggage,
                 Boolean largeLuggage, Boolean plane, Boolean beachListStatus, Boolean bus, Boolean train,
                 Boolean poland, Boolean summer,Boolean winter,Boolean spring,Boolean autumn,Boolean car,
-                Boolean ski,  Boolean documentsListStatus, Boolean essentialListStatus) {
+                Boolean ski,  Boolean documentsListStatus, Boolean essentialListStatus, String destination) {
         this.id = id;
         this.tripName = tripName;
         this.weatherId = weatherId;
@@ -135,15 +135,17 @@ public class Trip {
         this.ski=ski;
         this.documentsListStatus=documentsListStatus;
         this.essentialListStatus=essentialListStatus;
+        this.destination=destination;
         //this.age = age;
     }
 
-    public Trip( String tripName, String weatherId, String listId, Boolean camera, String camcorder,
-                 Boolean smartphone, Boolean ireland, Boolean spain, LocalDate departureDay,
+    public Trip( String tripName, String weatherId, String listId, Boolean camera, Boolean camcorder,
+                 Boolean smartphone, String ireland, Boolean spain, LocalDate departureDay,
                  LocalDate returnDay, Boolean trekking, String tripPassword, String description,
                  Boolean adminPrivileges, Boolean payStatus, Boolean smallLuggage, Boolean mediumLuggage,
                  Boolean largeLuggage, Boolean plane, Boolean beachListStatus, Boolean bus, Boolean train,Boolean poland,
-                 Boolean summer,Boolean winter,Boolean spring,Boolean autumn,Boolean car,Boolean ski,Boolean documentsListStatus, Boolean essentialListStatus) {
+                 Boolean summer,Boolean winter,Boolean spring,Boolean autumn,Boolean car,Boolean ski,
+                 Boolean documentsListStatus, Boolean essentialListStatus,String destination) {
         this.tripName = tripName;
         this.weatherId = weatherId;
         this.listId = listId;
@@ -175,6 +177,7 @@ public class Trip {
         this.ski=ski;
         this.documentsListStatus=documentsListStatus;
         this.essentialListStatus=essentialListStatus;
+        this.destination=destination;
         //this.age = age;
     }
 
@@ -219,11 +222,11 @@ public class Trip {
         this.camera = camera;
     }
 
-    public String getCamcorder() {
+    public Boolean getCamcorder() {
         return camcorder;
     }
 
-    public void setCamcorder(String camcorder) {
+    public void setCamcorder(Boolean camcorder) {
         this.camcorder = camcorder;
     }
 
@@ -235,11 +238,11 @@ public class Trip {
         this.smartphone = smartphone;
     }
 
-    public Boolean getIreland() {
+    public String getIreland() {
         return ireland;
     }
 
-    public void setIreland(Boolean ireland) {
+    public void setIreland(String ireland) {
         this.ireland = ireland;
     }
 

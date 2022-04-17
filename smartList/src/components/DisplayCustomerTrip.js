@@ -56,6 +56,7 @@ export const DisplayCustomerTrip = ({item}) => {
                                 <span className="card-title">
                                     <p>It is a Trip details with ID: {item.id}</p>
                                     <p>Trip name : {item.tripName}</p>
+                                     <p>Destination : {item.destination}</p>
                                     <p>Customer Id:  {item.customerId}  </p>
                                     <p>Departure Day: {item.departureDay} </p>
                                     <p>Return Day: {item.returnDay} </p>
@@ -63,20 +64,26 @@ export const DisplayCustomerTrip = ({item}) => {
                                     {/*<p>Destination: {item.destinationId}</p>*/}
                                     <p>List: {item.listId}</p>
                                     <p>Activity : {item.activity} </p>
-                                    <p>Admin Privileges: {item.adminPrivileges.toString()} </p>
-                                    <p>Pay Status: {item.payStatus.toString()}</p>
+                                    <p>Ski : {item.ski? "Yes" : "No"} </p>
+                                    <p>Trekking : {item.trekking? "Yes" : "No"} </p>
+                                    <p>Beach : { item.beachListStatus ? "Yes" : "No"} </p>
+                                    <p>Admin Privileges: {item.adminPrivileges? "Yes" : "No"} </p>
+                                    <p>Pay Status: {item.payStatus ? "Yes" : "No"}</p>
                                     <p>Bag option:</p>
-                                    <p>Large luggage: {item.largeLuggage.toString()} </p>
-                                    <p> Medium luggage: {item.mediumLuggage.toString()} </p>
-                                    <p> Small luggage: {item.smallLuggage.toString()} </p>
+                                    <p>Large luggage: {item.largeLuggage ? "Yes" : "No"} </p>
+                                    <p> Medium luggage: {item.mediumLuggage ? "Yes" : "No"} </p>
+                                    <p> Small luggage: {item.smallLuggage ? "Yes" : "No"} </p>
                                     <p>Photo equipment:</p>
-                                    <p>Camera: {item.camera.toString()}</p>
-                                    <p>Camcorder: {item.camcorder.toString()}</p>
-                                    <p>Smartphone: {item.smartphone.toString()}</p>
+                                    <p>Camera: {item.camera ? "Yes" : "No"}</p>
+                                    <p>Camcorder: {item.camcorder? "Yes" : "No"}</p>
+                                    <p>Smartphone: {item.smartphone? "Yes" : "No"}</p>
                                      <p>Transport:</p>
-                                     <p>Train: {item.train.toString()}</p>
-                                     <p>Plane: {item.plane.toString()}</p>
-                                     <p>Car: {item.car}</p>
+                                     <p>Train: {item.train ? "Yes" : "No"}</p>
+                                     <p>Plane: {item.plane ? "Yes" : "No"}</p>
+                                     <p>Car: {item.car ? "Yes" : "No"}</p>
+                                      <p>Ireland Status {item.ireland}</p>
+                                    <p>Spain Status {item.spain.toString()? "Yes" : "No"}</p>
+                                    <p>Poland Status {item.poland.toString()? "Yes" : "No"}</p>
 
                                 </span>
 

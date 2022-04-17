@@ -3,10 +3,14 @@ import {Link} from "react-router-dom";
     /* useState is used to set a value  */
 //this  function add customer detail during a registration
 import './LoginCustomer.css';
+//const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
+//const {compare} = require("bcrypt");
+
 
     //const AddCustomerDetail = ({item}) => {
         const AddCustomerDetail = (props) => {
-        const [name, setName] = useState('');
+        const [name, setName] = useState();
         const [email, setEmail] = useState('');
         const [customerPassword, setCustomerPassword] = useState('');
 
@@ -36,7 +40,33 @@ import './LoginCustomer.css';
         }
 
 
-        const sendData =(event) => {
+        //sending encrypted password
+        //     const hashPassword = async (pw) => {
+        //         //12 is standard if you make bigger then will be doing longer, beter crypro hashing
+        //         const hash = await bcrypt.hash(pw,12);
+        //         console.log(hash);
+        //     }
+
+
+
+            // //login function
+            // const login = async (pw,hashedPw)=>{
+            //     const result = await bcrypt.compare(pw,hashedPw);
+            //     if (result){
+            //         console.log("Logged you in succesfull match");
+            //     }else{
+            //
+            //         console.log("incorect data");
+            //     }
+            //
+            //
+            // }
+
+            // hashPassword('monkey');
+            //login('monkey','$2b$12$gxe22gAe3id9dD08vxuwPuqe9mdiTixB.CWbpVsTTXVbVUN2gA2cS');
+
+
+            const sendData =(event) => {
             event.preventDefault();
 
             props.validateHandler(email);//this is sent data to Login CustomerForm Parent

@@ -4,10 +4,10 @@ import LoginCustomer from "./LoginCustomer";
 // This function call child with validation form and then display only one time
 // we have a form with buttons in functional component LoginCustomer we can press a button in the LoginCustomer
 // and this  will execite function in fuction parent LoginCustomerForm
-const LoginCustomerForm=({customerData}) =>{
-
+const LoginCustomerForm=(props) =>{
     const validateLogin = (valueFromLoginCustomer) => {
         alert(`Hello Validator ${valueFromLoginCustomer}`)
+
 
         //{customerData.email ? 'yes':'no'}
        // if(customerData.email.value() === `${valueFromLoginCustomer}`.valueOf()){
