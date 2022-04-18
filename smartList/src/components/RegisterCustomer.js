@@ -3,10 +3,11 @@ import React, {useState}  from 'react';
 //this  function add customer detail during a registration
 //css to make a style on this class
 import './RegisterCustomer.css';
+import {useNavigate} from "react-router-dom";
 import {Link} from "react-router-dom";
 
     const AddDetail = ({setStudentInfo: setInfo}) => {
-
+        const navigateRegister = useNavigate();
         const [name, setName] = useState('MaroReg');
         const [surname, setSurname] = useState('AugustynReg');
         const [email, setEmail] = useState('EmailReg@o2.pl');
@@ -57,7 +58,8 @@ import {Link} from "react-router-dom";
 
        const verifyAllFields = (event)=>{
            if(!passwordError){
-              return addCustomer()
+               navigateRegister("/Login");
+              //return addCustomer()
 
            }
            if(passwordError){

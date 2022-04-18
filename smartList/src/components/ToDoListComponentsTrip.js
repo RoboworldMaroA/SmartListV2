@@ -22,7 +22,7 @@ import Spring from "./Spring";
 import Summer from "./Summer";
 import TrekkingList from "./TrekkingList";
 import SkiList from "./SkiList";
-import './ToDoListComponent.css';
+import './ToDoListComponentTrip.css';
 
 //i moved data from a component Display state component, and
 // I can add here what I want to do when I click a checkboxes
@@ -294,7 +294,7 @@ export const ToDoListComponentsTrip = (props) => {
 
             {/*BUTTON add your Item*/}
             <div  className="row">
-                <div id="ButtonAddItemInFormCreateList" className="input-field col s10">
+                <div id="buttonAddItemInToDoListComponentTrip" className="input-field col s10">
                     <Link to="../CreateCustomerList">
                         <button  className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
                             Add Item(not ready yet)

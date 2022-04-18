@@ -38,7 +38,7 @@ export const DisplayStateOfCustomerList = () => {
     useEffect(() => {
         //do something when loading
         console.log("yoyw yow do something from useeffect")
-        fetch("api/v1/trip").then((response) => response.json()).then((dataTrip) => {
+        fetch("api/v1/trip/").then((response) => response.json()).then((dataTrip) => {
             console.log("List of items in the trip", dataTrip);
             setTrip(dataTrip);
         });

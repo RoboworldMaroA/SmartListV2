@@ -12,6 +12,14 @@
 
 }
 
+
+#buttonAddItemInToDoListComponentTrip{
+    object-position: center;
+    color: saddlebrown;
+    font-size: calc(15px + 2vmin);
+    text-align: center;
+
+}
 /*#checkboxColor,input{*/
 /*    color: saddlebrown;*/
 /*}*/

@@ -14,12 +14,14 @@ const navigate = useNavigate();
          password:"admin123"
      }
 
-     const[userName,setUserName]= useState("");
+     // Login
      const[userEmail,setUserEmail]= useState("");
+     const[userPassword,setUserPassword]= useState("");
+
 
      const [isError, setIsError] = useState('');
-     const [loginErrorEmpty, setLoginErrorEmpty] = useState("");
-     const [loginError, setLoginError] = useState(true);
+     const [passwordErrorEmpty, setPasswordErrorEmpty] = useState("");
+     const [passwordError, setPasswordError] = useState(true);
 
 
      const [isErrorEmail, setIsErrorEmail] = useState('');
@@ -46,7 +48,7 @@ const navigate = useNavigate();
 
 
      const verifyAllFields = (event)=>{
-         if(!loginError){
+         if(!passwordError){
 
              if(!emailError){
                  console.log("i want to go to the registration page")
@@ -57,12 +59,8 @@ const navigate = useNavigate();
 
          }
 
-         // if(!emailError){
-         //     return verifyEmail();
-         //
-         // }
-         if(loginError || emailError){
-             setLoginErrorEmpty("CAN NOT BE EMPTY");
+         if(passwordError || emailError){
+             setPasswordErrorEmpty("CAN NOT BE EMPTY");
              event.preventDefault();
          }
 
@@ -74,22 +72,22 @@ const navigate = useNavigate();
 
      function verifyName(event) {
          const pass =event.target.value;
-         setUserName(pass);
-         if(adminUser.name!==pass) {
-             if(userName===" "){
-                 setLoginErrorEmpty("CAN NOT BE EMPTY Not same pass");
+         setUserPassword(pass);
+         if(adminUser.password!==pass) {
+             if(userPassword===" "){
+                 setPasswordErrorEmpty("CAN NOT BE EMPTY Not same pass");
              }
              else{setIsError("password mus be the same!!!!");}
          }
 
          else{
              setIsError("Login OK");
-             setLoginError(false);
+             setPasswordError(false);
          }
      }
 
 
-
+    //email is a login
      function verifyEmail(event) {
          const em =event.target.value;
          setUserEmail(em);
@@ -113,34 +111,49 @@ const navigate = useNavigate();
                     {/*<form className="col s12" onSubmit={() => validateCustomer()}>*/}
                     <form className="col s12" onSubmit={verifyAllFields}>
                         {/*<form className="col s12" onSubmit="" >*/}
-                        <div className="row">
-                            <div className="input-field col s8">
-                                <input placeholder="Login" value={userName} type="text" onChange={(event => verifyName(event))}
-                                       className="validate"/>
-                                <label htmlFor="name"> Login</label>
-                                <p>Name (Name from database){adminUser.name}.  User nAme that is writing{userName}</p>
-                            <p>Is error login :{isError}</p>
-
-                                <p>Login error is empty : {loginErrorEmpty}</p>
-                                <p>Login Error :{loginError}</p>
-
-
-                            </div>
-                        </div>
 
                         <div className="row">
                             <div className="input-field col s8">
-                                <input placeholder="Password" value={userEmail} type="email" onChange={(event => verifyEmail(event))}
+                                <input placeholder="login" value={userEmail} type="email" onChange={(event => verifyEmail(event))}
                                        className="validate"/>
                                 <label htmlFor="name"> Email</label>
-                                <p>Email (Email from database){adminUser.email}.  User nAme that is writing{userEmail}</p>
-                                <p>Is error login :{isErrorEmail}</p>
+                                {/*<p>Email (Email from database){adminUser.email}.  User nAme that is writing{userEmail}</p>*/}
+                                {/*<p>Is error login :{isErrorEmail}</p>*/}
 
-                                <p>Login error is empty : {emailErrorEmpty}</p>
-                                <p>Login Error :{emailError}</p>
+                                {/*<p>Login error is empty : {emailErrorEmpty}</p>*/}
+                                {/*<p>Login Error :{emailError}</p>*/}
+                                <p>{adminUser.email}</p>
+                                <p>{isErrorEmail}</p>
+
+                                <p>{emailErrorEmpty}</p>
+                                <p>{emailError}</p>
+
+
 
                             </div>
                         </div>
+
+
+                        <div className="row">
+                            <div className="input-field col s8">
+                                <input placeholder="password" value={userPassword} type="text" onChange={(event => verifyName(event))}
+                                       className="validate"/>
+                                <label htmlFor="name"> Password</label>
+                            {/*    <p>Name (Name from database){adminUser.password}.  User nAme that is writing{userPassword}</p>*/}
+                            {/*<p>Is error password :{isError}</p>*/}
+
+                            {/*    <p>Login error is empty : {passwordErrorEmpty}</p>*/}
+                            {/*    <p>Login Error :{passwordError}</p>*/}
+                                <p>{adminUser.password}</p>
+                                <p>{isError}</p>
+
+                                <p>{passwordErrorEmpty}</p>
+                                <p>{passwordError}</p>
+
+                            </div>
+                        </div>
+
+
 
                         <div className="row">
                             {/*<Link to="../CreateCustomerList">*/}

@@ -18,6 +18,7 @@ import {useEffect} from "react";
 import DisplayStateOfCustomerList from "../DisplayStateOfCustomerList";
 import {Link} from "react-router-dom";
 import ToDoListComponentsTrip from "./ToDoListComponentsTrip";
+import Trip from "./Trip";
 
 
 export default class DisplayList extends Component {
@@ -32,7 +33,13 @@ export default class DisplayList extends Component {
             camera:' ',
             parentName2:'Parent',
             displayTripDetail:false,
-
+            items:[
+                {id:1, name:"Marek"},
+                {id:2, name:"Leszek"},
+                {id:3, name:"Augustyn"}
+            ],
+            loggedCustomerId:1,
+            loggedCustomerEmail:"maugusty@o2.pl",
 
         }
 
@@ -48,7 +55,7 @@ export default class DisplayList extends Component {
     // }
 
     componentDidMount() {
-        fetch('api/v1/customer').then
+        fetch('api/v1/customer/').then
         (response => response.json()).then(data => this.setState({contacts: data}));
 
 
@@ -70,7 +77,7 @@ export default class DisplayList extends Component {
     //documentList
 
     componentDidMount() {
-        fetch('api/v1/trip').then
+        fetch('api/v1/trip/').then
         (response => response.json()).then(TripData => this.setState({tripData: TripData}));
 
     }
@@ -78,7 +85,7 @@ export default class DisplayList extends Component {
 
     //this method diplay or not the Trip Detail
     changeStatus() {
-        //here will be logic what lit to display, depen what customer choose in the form FormCrteteList
+        //here will be logic what lit to display, depend what customer choose in the form FormCrteteList
         console.log("State trip List", this.state.displayTripDetail)
         this.setState(
             {
@@ -90,25 +97,83 @@ export default class DisplayList extends Component {
 
     render() {
 
+
+
+
     return (
             // First DIV
             <div>
 
-                {/*<p> Status of the list from database </p>*/}
+                {/*<div className="row">*/}
+
+
+                {/*    {this.state.tripData.map((TripData)=> {*/}
+                {/*        return(<div >*/}
+                {/*                <h1>key={TripData.id} camera {TripData.camera.toString()}</h1>*/}
+                {/*        </div>*/}
+
+                {/*        )*/}
+
+                {/*    })}*/}
+                {/*</div>*/}
+
+
+                {/*Filter function to diplay only trip data from one cutomer*/}
                 <div className="row">
-                        <DisplayStateOfCustomerList/>
+                    {this.state.tripData.filter((TripData)=>TripData.id===1)
+                        .map((TripData)=> TripData.ireland)}
+
+                </div>
+
+                <div className="row">
+                    {this.state.tripData && this.state.tripData.filter((TripData) => TripData.id===2).
+                    map((TripData) => {return (
+                        <div key={TripData.id} >
+
+                        <h1> From Trip   {TripData.departureDay} {TripData.ireland.toString()}  </h1>
+                        </div>
+                    )})
+
+                    }
+
                 </div>
 
 
 
-                   <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> this.changeStatus()} >  Display Trip Detail </button>
-                    <div>
-                        {this.state.displayTripDetail
-                            ? this.state.tripData.map((TripData) => {
-                                    return (<DisplayCustomerTrip key={TripData.id} item={TripData}/>);
-                            }):"... press to see more detail about a trips"}
-                        {/*end*/}
-                    </div>
+
+
+                <div className="row">
+                    {this.state.contacts.filter((data)=>data.id===1)
+                        .map((data)=> data.name)}
+
+                </div>
+
+
+
+                {/*<p> Status of the list from database </p>*/}
+                {/*<div className="row">*/}
+                {/*        <DisplayStateOfCustomerList/>*/}
+                {/*</div>*/}
+
+
+
+                   {/*<button className="waves-effect waves-light btn #795548 brown "  onClick={()=> this.changeStatus()} >  Display Trip Detail </button>*/}
+                   {/* <div>*/}
+                   {/*     {this.state.displayTripDetail*/}
+                   {/*         ? this.state.tripData.map((TripData) => {*/}
+                   {/*                 return (<DisplayCustomerTrip key={TripData.id} item={TripData}/>);*/}
+                   {/*         }):"... press to see more detail about a trips"}*/}
+                   {/*     /!*end*!/*/}
+                   {/* </div>*/}
+
+                <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> this.changeStatus()} >  Display Trip Detail </button>
+                 <div>
+                     {this.state.displayTripDetail
+                         ? this.state.tripData.filter((TripData) => TripData.id===this.state.loggedCustomerId).map((TripData) => {
+                                 return (<DisplayCustomerTrip key={TripData.id} item={TripData}/>);
+                         }):"... press to see more detail about a trips"}
+                     {/*end*/}
+                 </div>
 
 
 
