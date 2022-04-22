@@ -1,4 +1,4 @@
-import React, {Component, useState} from "react";
+import React, {Component, useContext, useState} from "react";
 import ToDoList from "./ToDoList"
 /* Class Contact uses for display and read a data from database, data is imported from other classes */
 //props are data inside the divs
@@ -19,7 +19,8 @@ import DisplayStateOfCustomerList from "../DisplayStateOfCustomerList";
 import {Link} from "react-router-dom";
 import ToDoListComponentsTrip from "./ToDoListComponentsTrip";
 import Trip from "./Trip";
-
+import {UserContext} from "../UserContext";
+import LoginNew2 from "./LoginNew2";
 
 export default class DisplayList extends Component {
     constructor(props) {
@@ -102,7 +103,7 @@ export default class DisplayList extends Component {
 
     return (
             // First DIV
-            <div>
+            <div id="wholeDisplayList">
 
                 {/*<div className="row">*/}
 

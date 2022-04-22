@@ -13,8 +13,9 @@ import {Link} from "react-router-dom";
         const [email, setEmail] = useState('EmailReg@o2.pl');
         const [phoneNumber, setPhoneNumber] = useState('0899999943');
         const [dob, setDob] = useState('1988-08-08');
-        const [sex, setSex] = useState('Man');
+        const [sex, setSex] = useState('Male');
         const [address, setAddress] = useState('Dublin');
+
         const [customerPassword, setCustomerPassword] = useState('1234');
         const [customerPasswordAgain, setCustomerPasswordAgain] = useState('');
 
@@ -23,6 +24,13 @@ import {Link} from "react-router-dom";
         const [isErrorFetchMethod, setIsErrorFetchMethod] = useState(null);
         const [passwordError, setPasswordError] = useState(true);
         const [passwordErrorEmpty, setPasswordErrorEmpty] = useState("");
+
+
+        const [isErrorSex, setIsErrorSex] = useState('');
+        const [sexError, setSexError] = useState(true);
+        const [sexErrorEmpty, setSexErrorEmpty] = useState("");
+
+
 
         //change fetch to customer database not a student
        // const addCustomer = async () => {
@@ -58,6 +66,7 @@ import {Link} from "react-router-dom";
 
        const verifyAllFields = (event)=>{
            if(!passwordError){
+               window.alert("Thank You for registration !!!")
                navigateRegister("/Login");
               //return addCustomer()
 
@@ -106,7 +115,7 @@ import {Link} from "react-router-dom";
             const validatePassword=(event)=>{
             const pass =event.target.value;
             setCustomerPasswordAgain(pass);
-                if(customerPassword!=pass) {
+                if(customerPassword!==pass) {
                     if(customerPassword===" "){
                         setPasswordErrorEmpty("CAN NOT BE EMPTY");
                     }
@@ -118,6 +127,29 @@ import {Link} from "react-router-dom";
                     setPasswordError(false);
                 }
             }
+
+
+
+        const validateSex=(event)=>{
+            const sx =event.target.value;
+            console.log(sx)
+            setSex(sx);
+            const male = "male";
+            const female = "female"
+            if(sx !== male && sx !== female) {
+                if(sx ===" "){
+                    setSexErrorEmpty("CAN NOT BE EMPTY");
+                }
+                else{setIsErrorSex("Must be male or female");}
+            }
+
+            else{
+                setIsErrorSex("Sex ok");
+                setSexError(false);
+            }
+        }
+
+
 
 
 
@@ -134,6 +166,8 @@ import {Link} from "react-router-dom";
 
                             {isErrorFetchMethod && <div>{isErrorFetchMethod}</div>}
                             <div>{isErrorFetchMethod}</div>
+                            <i className="material-icons prefix">account_circle</i>
+
                             <input placeholder="Mandatory" value={name} type="text"
                                    onChange={(event => setName(event.target.value))} className="validate"/>
                             <label htmlFor="name">First Name</label>
@@ -143,6 +177,8 @@ import {Link} from "react-router-dom";
                     <div className="row">
 
                         <div className="input-field col s8">
+                            <i className="material-icons prefix">account_circle</i>
+
                             <input placeholder="Mandatory" value={surname} type="text"
                                    onChange={(event => setSurname(event.target.value))} className="validate"/>
                             <label htmlFor="surname">Surname</label>
@@ -151,6 +187,8 @@ import {Link} from "react-router-dom";
 
                     <div className="row">
                         <div className="input-field col s8">
+                            <i className="material-icons prefix">email</i>
+
                             <input placeholder="Mandatory" value={email} type="email" onChange={(event => setEmail(event.target.value))}
                                    className="validate" />
                             <label htmlFor="email">Email</label>
@@ -159,6 +197,8 @@ import {Link} from "react-router-dom";
 
                     <div className="row">
                         <div className="input-field col s8">
+                            <i className="material-icons prefix">phone</i>
+
                             <input placeholder="Optional" value={phoneNumber} type="text"
                                    onChange={(event => setPhoneNumber(event.target.value))}
                                    className="validate"/>
@@ -168,6 +208,8 @@ import {Link} from "react-router-dom";
 
                     <div className="row">
                         <div className="input-field col s8">
+                            <i className="material-icons prefix">cake</i>
+
                             <input value={dob} type="date" onChange={(event => setDob(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="dob">Day of Birth</label>
@@ -177,14 +219,21 @@ import {Link} from "react-router-dom";
                         <div className="row">
 
                         <div className="input-field col s8">
-                            <input placeholder="Optional" value={sex} type="text" onChange={(event => setSex(event.target.value))}
+                            <i className="material-icons prefix">{sex}</i>
+
+                            <input placeholder="Optional" value={sex} type="text" onChange={(event => validateSex(event))}
                                    className="validate"/>
                             <label htmlFor="sex">Sex</label>
+                            <div>{isErrorSex}</div>
+                            <div>{sexErrorEmpty}</div>
+                            <div>{sexError}</div>
                         </div>
                         </div>
 
                     <div className="row">
                         <div className="input-field col s8">
+                            <i className="material-icons prefix">home</i>
+
                             <input placeholder="Optional" value={address} type="text"
                                    onChange={(event => setAddress(event.target.value))} className="validate"/>
                             <label htmlFor="surname">Address</label>
@@ -193,6 +242,8 @@ import {Link} from "react-router-dom";
 
                     <div className="row">
                         <div className="input-field col s8">
+                            <i className="material-icons prefix">password</i>
+
                             <input placeholder="password" value={customerPassword} type="text" onChange={(event => setCustomerPassword(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="customerPassword">Type Password</label>
@@ -209,6 +260,8 @@ import {Link} from "react-router-dom";
 
                     <div className="row">
                         <div className="input-field col s8">
+                            <i className="material-icons prefix">password</i>
+
                             <input placeholder="Must be the same minimum 8 characters nad numbers" value={customerPasswordAgain} type="text" onChange={(event => validatePassword(event))}
                                    className="validate"/>
                             <label htmlFor="customerPasswordAgain">Repeat the Password</label>

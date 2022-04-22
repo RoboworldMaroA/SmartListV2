@@ -35,7 +35,7 @@ const SmallLuggageList=({})=>{
                     <label>
                         <input type="checkbox" className="filled-in" onChange={toggle} />
 
-                        <span> Camera body.
+                        <span> Some airlines check if you not exceed more then 1 bag so if you have  shopping on TAX Free zone try to put the all item to the one bag
                 <p> {checked2 ? "checked": "not checked"}</p>
             </span>
 

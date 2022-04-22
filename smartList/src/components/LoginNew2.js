@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Register from "./Register";
 import {useNavigate} from "react-router-dom";
+import {UserContext} from "../UserContext";
 
-
- function LoginNew2() {
-
-const navigate = useNavigate();
+ //function LoginNew2() {
+export const LoginNew2 = () =>{
+    const navigate = useNavigate();
      //database
      const adminUser ={
 
          name:"Marek",
-         email:"admin@admin.com",
-         password:"admin123"
+         email:"maugusty@o2.pl",
+         password:"1234"
      }
 
      // Login
@@ -27,6 +27,9 @@ const navigate = useNavigate();
      const [isErrorEmail, setIsErrorEmail] = useState('');
      const [emailErrorEmpty, setEmailErrorEmpty] = useState("");
      const [emailError, setEmailError] = useState(true);
+
+
+    const {value,setValue} = useContext(UserContext);
 
      // const validatePassword=(event)=>{
      //     const pass =event.target.value;
@@ -111,6 +114,9 @@ const navigate = useNavigate();
                     {/*<form className="col s12" onSubmit={() => validateCustomer()}>*/}
                     <form className="col s12" onSubmit={verifyAllFields}>
                         {/*<form className="col s12" onSubmit="" >*/}
+                        <div className="row"><h2>This is message from context : {value}</h2></div>
+
+
 
                         <div className="row">
                             <div className="input-field col s8">

@@ -67,7 +67,9 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
 
 
 
-        const validateCreateList = async () => {
+        const validateCreateList = async (event) => {
+            alert("Thank you for creating list")
+
             const result = await fetch("api/v1/trip", {
                 method: "POST",
                 body: JSON.stringify({adminPrivileges,autumn, beachListStatus, bus, camcorder,camera,
@@ -80,12 +82,16 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
             })
 
             const body = await result.json();
+
+            event.preventDefault();
             setCreateListInfo(body);
             //updateDestinationStatus();
             // const changeHandler = (event) => {
             //     this.setState({ camcorder: event ? event.value : '' });
             // };
             ///displayList();
+
+
 
         }
 
@@ -552,21 +558,21 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                 {/*</div>*/}
 
 
-                <form className="col s12" onSubmit={(event) => validateCreateList(event.preventDefault())}>
+                <form className="col s12" onSubmit={(event) => validateCreateList(event)}>
                     <div className="row">
                         <div  className="input-field col s10">
-                            <i className="material-icons prefix">account_circle</i>
+                            <i className="material-icons prefix">title</i>
                             <input placeholder="Your unique name of the travelingList." value={tripName} type="text" onChange={(event => setTripName(event.target.value))}
                                    className="validate"/>
-                            <label htmlFor="List Name">List Name</label>
+                            <label htmlFor="List Name">Trip Name</label>
                         </div>
                     </div>
                     <div className="row">
                         <div  className="input-field col s10">
-                            <i className="material-icons prefix">account_circle</i>
-                            <input placeholder="Your unique name of the travelingList." value={listId} type="text" onChange={(event => setListId(event.target.value))}
+                            <i className="material-icons prefix">notes</i>
+                            <input placeholder="Write unique description." value={listId} type="text" onChange={(event => setListId(event.target.value))}
                                    className="validate"/>
-                            <label htmlFor="List Name">List Name must be unique.</label>
+                            <label htmlFor="List Name">Trip Description</label>
                         </div>
                     </div>
 
@@ -616,8 +622,13 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
 
                     <div className="row">
                         <div  className="input-field col s10">
+                            <i className="material-icons prefix">target</i>
+                            <label><p id="destinationInFormCreateList">DESTINATION:</p></label>
+                        </div></div>
+
+                            <div className="row">
+                                <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={ireland.toString()} onClick={toggleIreland}/>
                                     <span>Ireland</span> <div>{ireland}</div>
@@ -638,7 +649,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
 
                     <div className="row">
                         <div  className="input-field col s10">
-                            <i className="material-icons prefix">account_circle</i>
+                            <i className="material-icons prefix">calendar_month</i>
                             <input value={departureDay} type="date" onChange={(event =>
                                 setDepartureDay(event.target.value))}
                                    className="validate"/>
@@ -648,7 +659,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
 
                     <div className="row">
                         <div  className="input-field col s10">
-                            <i className="material-icons prefix">account_circle</i>
+                            <i className="material-icons prefix">date_range</i>
                             <input value={returnDay} type="date" onChange={(event =>
                                 setReturnDay(event.target.value))}
                                    className="validate"/>
@@ -660,30 +671,32 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                         <div className="row">
                         <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
+                                <i className="material-icons prefix">photo_camera</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={camera.toString()} onClick={toggleCamera}/>
                                    <span>Camera</span> <div>{camera.toString()}</div>
                                 </label>
                             </p>
-
-
+                        </div>
+                            <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
+                                <i className="material-icons prefix"> videocam </i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={camcorder.toString()} onClick={toggleCamcorder}/>
                                     <span>Camcorder</span> <div>{camcorder.toString()}</div>
                                 </label>
                             </p>
+                            </div>
 
-
+                            <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
+                                <i className="material-icons prefix">phone_iphone</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={smartphone.toString()} onClick={toggleSmartphone}/>
                                     <span>Smartphone</span> <div>{smartphone.toString()}</div>
                                 </label>
                             </p>
+                            </div>
                             {/*this is wrong , !!!!!!*/}
                             {/*<div className="row">*/}
                             {/*    <p>CAMCORDER:</p>*/}
@@ -719,7 +732,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                             {/*<p> Display checked or not camera: {cameraState ? "Yes": "No"}</p>*/}
                             {/*<p>This is display destination for test only : {camera},{camcorder}</p>*/}
 
-                        </div>
+
                     </div>
 
 
@@ -800,7 +813,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     <div className="row">
                         <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
+                                <i className="material-icons prefix">luggage </i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={largeLuggage.toString()} onClick={toggleLargeLuggage}/>
                                     <span>Large Luggage</span> <div>{largeLuggage.toString()}</div>
@@ -811,7 +824,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     <div className="row">
                         <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
+                                <i className="material-icons prefix">luggage</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={mediumLuggage.toString()} onClick={toggleMediumLuggage}/>
                                     <span>Medium Luggage</span> <div>{mediumLuggage.toString()}</div>
@@ -822,7 +835,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     <div className="row">
                         <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
+                                <i className="material-icons prefix">cases</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={smallLuggage.toString()} onClick={toggleSmallLuggage}/>
                                     <span>Small Luggage</span> <div>{smallLuggage.toString()}</div>
@@ -839,7 +852,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     <div className="row">
                         <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
+                                <i className="material-icons prefix">beach_access</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={beachListStatus.toString()} onClick={toggleSunbathing}/>
                                     <span>Sunbathing</span> <div>{beachListStatus.toString()}</div>
@@ -851,7 +864,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     <div className="row">
                         <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
+                                <i className="material-icons prefix">downhill_skiing</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={ski.toString()} onClick={toggleSki}/>
                                     <span>Ski</span> <div>{ski.toString()}</div>
@@ -863,7 +876,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     <div className="row">
                         <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
+                                <i className="material-icons prefix">hiking</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={trekking.toString()} onClick={toggleTrekking}/>
                                     <span>Trekking</span> <div>{trekking.toString()}</div>
@@ -881,7 +894,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     <div className="row">
                         <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
+                                <i className="material-icons prefix">flight</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={plane.toString()} onClick={togglePlane}/>
                                     <span>Plane</span> <div>{plane.toString()}</div>
@@ -893,7 +906,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     <div className="row">
                         <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
+                                <i className="material-icons prefix">directions_car</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={car.toString()} onClick={toggleCar}/>
                                     <span>Car</span> <div>{car.toString()}</div>
@@ -905,10 +918,11 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     <div className="row">
                         <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
+                                <i className="material-icons prefix">train</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={train.toString()} onClick={toggleTrain}/>
-                                    <span>Train</span> <div>{train.toString()}</div>
+
+                                    <span>Train</span> <div>{train.toString()}</div> <div id="squareWithNumber"> 1 </div>
                                 </label>
                             </p>
 
@@ -918,7 +932,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     <div className="row">
                         <div  className="input-field col s10">
                             <p>
-                                <i className="material-icons prefix">account_circle</i>
+                                <i className="material-icons prefix">directions_bus</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={bus.toString()} onClick={toggleBus}/>
                                     <span>Bus</span> <div>{bus.toString()}</div>
@@ -955,7 +969,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     </div>
 
 
-
+                    {/*!!!!!!!zrobic w tym miejcu tak ze zbiera dana liste id albo name i wyswietla tylko ta liste po wcicnieniu display list*/}
                     <div  className="row">
                         <div id="ButtonCreateListInFormCreateList" className="input-field col s10">
                             <Link to="../DisplayList">

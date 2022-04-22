@@ -28,7 +28,7 @@ const CamcorderList=({})=>{
             <form id="mainBodyToDoList"  action="#">
 
                 <div id="titleElements">
-                    <p >CAMERA</p>
+                    <p >CAMCORDER</p>
                 </div>
                 <p>
                     <label>
@@ -52,7 +52,7 @@ const CamcorderList=({})=>{
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>Battery</span>
+                        <span>Camcorder Battery</span>
                     </label>
                 </p>
                 <p>
@@ -64,9 +64,17 @@ const CamcorderList=({})=>{
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>State</span>
+                        <span>Tripod</span>
                     </label>
                 </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox" className="filled-in" />
+                        <span>Spare Memory Card</span>
+                    </label>
+                </p>
+
 
 
                 {/*save list button subnit shoul execute function used to saving list on the computer*/}

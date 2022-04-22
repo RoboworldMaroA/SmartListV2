@@ -1,0 +1,39 @@
+#checkboxMask{
+    /*object-position: center;*/
+    /*margin-left: 15%;*/
+    width:50%;
+    float: left;
+}
+
+#quantityMask{
+    /*object-position: center;*/
+    /*margin-left: 15%;*/
+    width:50%;
+    float: right;
+
+}
+
+
+#maskWeigh{
+    /*object-position: center;*/
+    /*margin-left: 15%;*/
+    width:33%;
+    float: right;
+
+}
+
+#checkboxUnderwear{
+    /*object-position: center;*/
+    /*margin-left: 15%;*/
+    width:50%;
+    float: left;
+}
+
+
+#quantityUnderwear {
+    /*object-position: center;*/
+    /*margin-left: 15%;*/
+    width: 50%;
+    float: right;
+
+}

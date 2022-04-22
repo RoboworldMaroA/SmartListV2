@@ -1,5 +1,9 @@
-import React, {useState, useEffect}  from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import {UserContext} from "../UserContext";
 /* useState is used to set a value  */
+import './DisplayCustomerTripCSS.css';
+
+
 
 //It is new display contacts and delete on the bottom with  option to it delete
 
@@ -10,6 +14,10 @@ export const DisplayCustomerTrip = ({item}) => {
 
     //data from useEffect Customer data
     // const [customer, setCustomer] = useState(null);
+
+    //const {value,setValue} = useContext(UserContext);
+
+
 
     const deleteCustomerTrip = async () => {
         const resultTrip = await fetch("api/v1/trip/"+id, {
@@ -46,18 +54,19 @@ export const DisplayCustomerTrip = ({item}) => {
 
 <div>
         {/*// this part display card with detail inside*/}
-        <div className="row">
+        <div id="formDisplayList" className="row">
             <form className="col s12" onSubmit={() => deleteCustomerTrip()}>
 
-                <div className="row">
-                    <div className="col s12 m6">
+                <div  className="row">
+                    <div className="col s10 m6 l6">
                         <div className="card blue-grey darken-1">
                             <div className="card-content white-text">
                                 <span className="card-title">
-                                    <p>It is a Trip details with ID: {item.id}</p>
+                                    {/*<h2> Message : {value}  </h2>*/}
+                                    <p>Details Trip ID : {item.id}</p>
                                     <p>Trip name : {item.tripName}</p>
-                                     <p>Destination : {item.destination}</p>
-                                    <p>Customer Id:  {item.customerId}  </p>
+                                     {/*<p>Destination : {item.destination}</p>*/}
+                                    {/*<p>Customer Id:  {item.customerId}  </p>*/}
                                     <p>Departure Day: {item.departureDay} </p>
                                     <p>Return Day: {item.returnDay} </p>
                                     <p>Description: {item.description}</p>

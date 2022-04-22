@@ -60,12 +60,7 @@ const LargeLuggageList=({})=>{
                         <span>Luggage Quantity </span>
                     </label>
                 </p>
-                <p>
-                    <label>
-                        <input type="checkbox" className="filled-in" />
-                        <span>State</span>
-                    </label>
-                </p>
+
 
 
                 {/*save list button subnit shoul execute function used to saving list on the computer*/}

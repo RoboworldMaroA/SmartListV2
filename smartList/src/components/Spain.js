@@ -52,19 +52,19 @@ const Spain=({})=>{
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>Waterproof Jacket</span>
+                        <span>Sun Glasses</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>zzzzz</span>
+                        <span>Shorts</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>zzzzz</span>
+                        <span>Polo Shirt</span>
                     </label>
                 </p>
 

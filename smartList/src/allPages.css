@@ -21,3 +21,18 @@
     text-align: center;
 
 }
+
+#buttonSizePay{
+    width: 140px;
+}
+#buttonSizeRegister{
+    width: 140px;
+}
+
+#buttonSizeLogin{
+    width: 140px;
+}
+
+#buttonSizeCreateList{
+    width: 140px;
+}

@@ -64,7 +64,7 @@ const CameraList=({})=>{
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>State</span>
+                        <span>Camera Bag</span>
                     </label>
                 </p>
 

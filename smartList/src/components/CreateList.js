@@ -16,7 +16,7 @@ export default class CreateList extends Component{
         super(props);
         this.state= {
             trips: [],
-            value: 'coconut',
+            //value: 'coconut',
         };
 
         }
@@ -50,14 +50,18 @@ export default class CreateList extends Component{
                 {/*<div className="row">*/}
                 {/*    <exampleSelect/>*/}
                 {/*</div>*/}
+                {/*<div className="row">*/}
+                {/*    <FormCreateList value1={this.state.value}/>*/}
+                {/*</div>*/}
+
 
                 <div className="row">
-                    <FormCreateList value1={this.state.value}/>
+                    <FormCreateList/>
                 </div>
-                {/*<div className="row">*/}
-                {/*    <p>It is a detail Trip</p>*/}
-                {/*    {this.state.trips.map((item) => (<DisplayCustomerTrip key={item.id} item={item}/>))}*/}
-                {/*</div>*/}
+                <div className="row">
+                    <p>It is a detail Trip</p>
+                    {this.state.trips.map((item) => (<DisplayCustomerTrip key={item.id} item={item}/>))}
+                </div>
 
 
             </div>

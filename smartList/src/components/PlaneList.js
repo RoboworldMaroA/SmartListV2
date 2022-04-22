@@ -5,7 +5,6 @@ import {checkNode} from "@testing-library/jest-dom/dist/utils";
 import './toDoListCSS.css';
 import {Link} from "react-router-dom";
 
-
 const PlaneList=({})=>{
 
 
@@ -27,14 +26,25 @@ const PlaneList=({})=>{
 
             <form id="mainBodyToDoList"  action="#">
 
-                <div id="titleElements">
-                    <p >CAMERA</p>
-                </div>
+
+                <div className="row">
+                {/*    <div className="two-column-summary">*/}
+                {/*<div id="iconPlane">*/}
+
+
+                {/*    <i className="material-icons prefix">flight</i>*/}
+                {/*</div>*/}
+                    <div id="titleElements">
+                        <p >PLANE</p></div>
+                {/*</div>*/}
+
+                {/*</div>*/}
+
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" onChange={toggle} />
 
-                        <span> Camera body.
+                        <span> The passenger may take with him liquids with a capacity not exceeding 100 ml.
                 <p> {checked2 ? "checked": "not checked"}</p>
             </span>
 
@@ -46,13 +56,13 @@ const PlaneList=({})=>{
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>Lenses</span>
+                        <span>When traveling by plane, make sure you do not need a special protective mask.</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>Battery</span>
+                        <span>Power Bank</span>
                     </label>
                 </p>
                 <p>
@@ -64,7 +74,7 @@ const PlaneList=({})=>{
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>State</span>
+                        <span>It is best to buy water or drinks at the airport after check-in.</span>
                     </label>
                 </p>
 
@@ -78,7 +88,7 @@ const PlaneList=({})=>{
                 {/*    </Link>*/}
                 {/*</div>*/}
 
-
+                </div>
 
             </form>
         </div>

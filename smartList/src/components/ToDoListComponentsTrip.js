@@ -73,8 +73,17 @@ export const ToDoListComponentsTrip = (props) => {
 
 
     return (
+
+
         <div>
-            <p id="listOfItemsInToDoListComponent"> List ID {toDoListTrip.id} Name: {toDoListTrip.description} LISTS OF ITEMS</p>
+
+            <div className="row">
+                  <div id="titleListToDoListID" className="col s10 m6">
+
+            <p id="listOfItemsInToDoListComponent"> List ID {toDoListTrip.id} Name: {toDoListTrip.description}</p>
+
+                  </div>
+                  </div>
             {/*<div>*/}
             {/*    <input type="checkbox" checked={toDoListTrip.documentsListStatus}*/}
             {/*           onChange={updateIsDoneTrip}/>*/}
@@ -125,6 +134,19 @@ export const ToDoListComponentsTrip = (props) => {
             {/*           onChange={updateIsDoneTrip}/>*/}
             {/*    <span> Display Car List for user  user {toDoListTrip.id} {toDoListTrip.name} </span>*/}
             {/*</div>*/}
+
+
+
+           {/*<div id="allListsInToDoListComponentsTrip">*/}
+
+
+           {/*    <div className="row">*/}
+           {/*        <div className="col s12 m6">*/}
+           {/*            <div className="card blue-grey darken-1">*/}
+           {/*                <div className="card-content white-text">*/}
+           {/*                     <span className="card-title">*/}
+
+
 
 
 
@@ -292,6 +314,9 @@ export const ToDoListComponentsTrip = (props) => {
                 }
             </div>
 
+
+
+
             {/*BUTTON add your Item*/}
             <div  className="row">
                 <div id="buttonAddItemInToDoListComponentTrip" className="input-field col s10">
@@ -302,6 +327,18 @@ export const ToDoListComponentsTrip = (props) => {
                     </Link>
                 </div>
             </div>
+
+
+
+
+                                {/*</span></div></div></div></div>*/}
+            {/*end all list*/}
+           {/*</div>*/}
+
+
+
+
+
 
 
         </div>

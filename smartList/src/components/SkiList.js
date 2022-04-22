@@ -34,13 +34,38 @@ const SkiList=({})=>{
         <label>
             <input type="checkbox" className="filled-in" onChange={toggle} />
 
-            <span> Swimsuit.
+            <span> Ski Jacket.
                 <p> {checked2 ? "checked": "not checked"}</p>
             </span>
 
         </label>
         </p>
+        <p>
+            <label>
+                <input type="checkbox" className="filled-in" />
+                <span>Ski trousers</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input type="checkbox" className="filled-in" />
+                <span>Ski Gloves</span>
+            </label>
+        </p>
 
+        <p>
+            <label>
+                <input type="checkbox" className="filled-in" />
+                <span>Hat</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input type="checkbox" className="filled-in" />
+                <span>Scarf</span>
+            </label>
+        </p>
 
 
         <p>
@@ -67,6 +92,8 @@ const SkiList=({})=>{
                 <span>Backpack</span>
             </label>
         </p>
+
+
 
 
         {/*save list button subnit shoul execute function used to saving list on the computer*/}

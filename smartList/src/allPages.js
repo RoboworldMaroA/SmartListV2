@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom"
 import './allPages.css';
 import CreateList from "./components/CreateList";
@@ -9,12 +9,12 @@ import LoginAdmin from "./components/LoginAdmin";
 import Pay from "./components/Pay";
 import LoginNew from "./components/LoginNew";
 import LoginNew2 from "./components/LoginNew2";
-
+import {UserContext} from "./UserContext";
+import DisplayListFunctionalComponent from "./components/DisplayListFuctionalComponent";
 
 
 export function Home() {
     return(
-        <body>
         <div>
             <nav>
                 <div className="nav-wrapper #795548 brown">
@@ -38,11 +38,11 @@ export function Home() {
                 <li><a href="">  <Link to="Register"> Register  </Link> </a></li>
             </ul>
             <div className="container">
-               <div class="row">
-                <div class="col s2"></div>
+               <div className="row">
+                <div className="col s2"></div>
                    <div class="col s8">
                         <div id="loginOrRegister"><Link to="Register">
-                            <button class="btn waves-effect waves-light #8d6e63 brown lighten-1">
+                            <button  id="buttonSizeRegister" className="btn waves-effect waves-light #8d6e63 brown lighten-1">
                                 <i className="medium material-icons">account_box</i>  Register
                             </button>
                         </Link>
@@ -51,7 +51,7 @@ export function Home() {
                        {/*LOGIN BUTTON ON HOME PAGE*/}
                        <div id="loginOrRegister">
                            <Link to="Login">
-                           <button className="btn waves-effect waves-light #8d6e63 brown lighten-1">
+                           <button id="buttonSizeLogin" className="btn waves-effect waves-light #8d6e63 brown lighten-1">
                                <i className="medium material-icons">account_box</i> Login
                            </button>
                            </Link>
@@ -59,7 +59,7 @@ export function Home() {
 
                         <div id="createCustomerList">
                             <Link to="CreateCustomerList">
-                            <button class="btn waves-effect waves-light #8d6e63 brown lighten-1">
+                            <button id="buttonSizeCreateList" className="btn waves-effect waves-light #8d6e63 brown lighten-1">
                                 <i className="medium material-icons">build</i>
                                 Create list
                             </button>
@@ -68,7 +68,7 @@ export function Home() {
 
                         <div id="pay">
                             <Link to="pay">
-                                <button class="btn waves-effect waves-light #8d6e63 brown lighten-1">
+                                <button  id="buttonSizePay" className="btn waves-effect waves-light #8d6e63 brown lighten-1">
                                     <i className="medium material-icons">credit_card</i>
                                     Pay
                                 </button>
@@ -81,13 +81,13 @@ export function Home() {
 
         </div>
       </div>
-      </body>
 
     );
 
 }
 
 export function LoginPage() {
+    const[value,setValue] = useState("Hello from context");
     return(
         <body>
         <div className="container-fluid">
@@ -125,7 +125,12 @@ export function LoginPage() {
             </div>
 
             <div className="row">
+
+                <UserContext.Provider value ={{value,setValue}}>
                 <LoginNew2 />
+
+                </UserContext.Provider>
+
             </div>
         </div>
         </body>
@@ -179,6 +184,7 @@ export function RegisterPage() {
 
 
 export function CreateCustomerList() {
+
     return(
         <div className="container-fluid">
             <nav>
@@ -220,6 +226,9 @@ export function CreateCustomerList() {
 
 
 export function DisplayTravelerList() {
+
+    const[value,setValue] = useState("Hello from context");
+
     return(
         <div className="container-fluid">
             <nav>
@@ -244,15 +253,22 @@ export function DisplayTravelerList() {
 
             <div className="container">
                 <div className="row">
-                    <div className="col s2"></div>
+                    <div className="col s2">...</div>
                     <div className="col s8">
                         <p id="PageTitle"> CREATED LIST</p>
                     </div>
-                    <div className="col s2"></div>
+                    <div className="col s2">...</div>
                 </div>
             </div>
             <div className="row">
-                <DisplayList />
+
+
+                <UserContext.Provider value ={{value,setValue}}>
+                    <DisplayListFunctionalComponent />
+                    {/*<DisplayList />*/}
+
+                </UserContext.Provider>
+
             </div>
         </div>
     );

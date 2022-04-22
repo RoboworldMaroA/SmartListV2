@@ -28,13 +28,13 @@ const BusList=({})=>{
             <form id="mainBodyToDoList"  action="#">
 
                 <div id="titleElements">
-                    <p >CAMERA</p>
+                    <p >BUS</p>
                 </div>
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" onChange={toggle} />
 
-                        <span> Camera body.
+                        <span> Luggage limit weight is up to 30 kg.
                 <p> {checked2 ? "checked": "not checked"}</p>
             </span>
 
@@ -46,28 +46,48 @@ const BusList=({})=>{
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>Lenses</span>
+                        <span>Slipping pillow</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>Battery</span>
+                        <span>Small Bag keep on board with sandwiches , snakes and drinks.</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>Charger</span>
+                        <span>Tablet with a movies or books.</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>State</span>
+                        <span>Thin blanket</span>
                     </label>
                 </p>
 
+                <p>
+                    <label>
+                        <input type="checkbox" className="filled-in" />
+                        <span>Comfortable clothes</span>
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox" className="filled-in" />
+                        <span>Tissue</span>
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox" className="filled-in" />
+                        <span>Hand sanitizer</span>
+                    </label>
+                </p>
 
                 {/*save list button subnit shoul execute function used to saving list on the computer*/}
                 {/*<div className="row">*/}

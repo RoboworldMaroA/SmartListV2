@@ -20,6 +20,8 @@ import {
 } from "./allPages";
 import CreateList from "./components/CreateList";
 import Login from "./components/Login";
+import {UserContext} from "./UserContext";
+
 
 
 
@@ -33,14 +35,22 @@ function App() {
               {/*Register*/}
               <Route path='/Register' element={RegisterPage()}/>
 
+              {/*<UserContext.Provider value="Hello from context should diplay on thus three pages">*/}
+
+
+
               {/*It is routed to the allPages.js and there is a function loginPage use to Log in*/}
               <Route path='/Login' element={LoginPage()}/>
+
 
               {/*CreateCustomerList*/}
               <Route path='/CreateCustomerList' element={CreateCustomerList()}/>
 
               {/*DisplayList*/}
               <Route path='/displayList' element={DisplayTravelerList()}/>
+
+
+              {/*</UserContext.Provider>*/}
 
 
              {/* Administrator Page, Display All Contacts, And Manage Database*/}

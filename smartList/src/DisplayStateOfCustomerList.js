@@ -55,7 +55,9 @@ export const DisplayStateOfCustomerList = () => {
             {/*                    );*/}
             {/*        }):"..... loading page"}*/}
             {/*</div>*/}
-            <div>
+
+
+    <div >
                     {trip
                         ? trip.map((Trip) => {
                             return (<ToDoListComponentsTrip key={Trip.id} dataTrip2={Trip}/>
