@@ -21,21 +21,13 @@ const EssentialList=({})=>{
     return(
 
         //Description of the list
-<div>
+        <div className="row">
+            <div className="col m10 s12">
+                <div id="titleElements">
+                    <p>ESSENTIALS</p>
+                </div>
 
-    <form id="mainBodyToDoList"  action="#">
-
-
-
-
-
-
-        <div id="titleElements">
-            <p>ESSENTIALS</p>
-        </div>
-
-
-
+                <form id="essential"  action="#">
 
 
        <div id="checkboxColor">
@@ -184,6 +176,8 @@ const EssentialList=({})=>{
 
 
     </form>
+
+            </div>
 </div>
     )//end return
 

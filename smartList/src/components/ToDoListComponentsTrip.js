@@ -23,6 +23,8 @@ import Summer from "./Summer";
 import TrekkingList from "./TrekkingList";
 import SkiList from "./SkiList";
 import './ToDoListComponentTrip.css';
+import DocumentsList2 from "./DocumentsList2";
+import EssentialList2 from "./EssentialList2";
 
 //i moved data from a component Display state component, and
 // I can add here what I want to do when I click a checkboxes
@@ -154,14 +156,14 @@ export const ToDoListComponentsTrip = (props) => {
             {/*<p> Display LIST for USER: ID {toDoList.id} NAME: {toDoList.name}</p>*/}
             <div className="row">
                 {toDoListTrip.documentsListStatus ?
-                    <DocumentsList/>
+                    <DocumentsList2/>
                     : null
                 }
             </div>
 
             <div className="row">
                 {toDoListTrip.essentialListStatus ?
-                    <EssentialList/>
+                    <EssentialList2/>
                     : null
                 }
             </div>

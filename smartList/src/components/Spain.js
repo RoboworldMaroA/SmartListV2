@@ -23,13 +23,15 @@ const Spain=({})=>{
     return(
 
         //Description of the list
-        <div>
-
-            <form id="mainBodyToDoList"  action="#">
-
+        <div className="row">
+            <div className="col m10 s12">
                 <div id="titleElements">
                     <p>SPAIN</p>
                 </div>
+
+            <form id="spain"  action="#">
+
+
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" onChange={toggle} />
@@ -46,7 +48,7 @@ const Spain=({})=>{
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>Euro - the currency in Spain is the euro. </span>
+                        <span>Currency - Euro  </span>
                     </label>
                 </p>
                 <p>
@@ -81,6 +83,7 @@ const Spain=({})=>{
 
 
             </form>
+            </div>
         </div>
     )//end return
 

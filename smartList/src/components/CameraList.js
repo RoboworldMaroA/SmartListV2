@@ -23,13 +23,17 @@ const CameraList=({})=>{
     return(
 
         //Description of the list
-        <div>
+        <div className="row">
+            <div className="col m10 s12">
 
-            <form id="mainBodyToDoList"  action="#">
+            <div id="titleElements">
+                <p >CAMERA</p>
+            </div>
 
-                <div id="titleElements">
-                    <p >CAMERA</p>
-                </div>
+
+            <form id="camera"  action="#">
+
+
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" onChange={toggle} />
@@ -81,6 +85,7 @@ const CameraList=({})=>{
 
 
             </form>
+            </div>
         </div>
     )//end return
 

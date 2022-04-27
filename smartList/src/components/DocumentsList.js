@@ -4,7 +4,7 @@ import {type} from "@testing-library/user-event/dist/type";
 import {checkNode} from "@testing-library/jest-dom/dist/utils";
 import './toDoListCSS.css';
 import {Link} from "react-router-dom";
-
+// import backgroundDocuments from "../photo/backgroundDocuments2...jpg";
 
 const DocumentsList=({})=>{
 
@@ -33,13 +33,17 @@ const DocumentsList=({})=>{
     return(
 
         //Description of the list
-<div>
+<div className="row">
 
-    <form id="mainBodyToDoList"  action="#">
+    <div className="col m11 s10">
 
         <div id="titleElements">
             <p>DOCUMENTS</p>
         </div>
+
+    <form id="documents"  action="#">
+
+
 
         <p>
             <label>
@@ -98,6 +102,8 @@ const DocumentsList=({})=>{
 
 
     </form>
+
+    </div>
 </div>
     )//end return
 

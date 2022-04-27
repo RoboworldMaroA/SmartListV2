@@ -33,16 +33,16 @@ const Winter=({})=>{
                 <div id="titleElements">
                     <p >WINTER</p>
                 </div>
-                <p>
-                    <label>
-                        <input type="checkbox" className="filled-in" onChange={toggle} />
+            {/*    <p>*/}
+            {/*        <label>*/}
+            {/*            <input type="checkbox" className="filled-in" onChange={toggle} />*/}
 
-                        <span> Camera body.
-                <p> {checked2 ? "checked": "not checked"}</p>
-            </span>
+            {/*            <span> Camera body.*/}
+            {/*    <p> {checked2 ? "checked": "not checked"}</p>*/}
+            {/*</span>*/}
 
-                    </label>
-                </p>
+            {/*        </label>*/}
+            {/*    </p>*/}
 
 
 

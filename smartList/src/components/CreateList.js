@@ -10,13 +10,16 @@ import DisplayCustomerTrip from "./DisplayCustomerTrip";
 import DocumentsList from "./DocumentsList";
 import DisplayList from "./DisplayList";
 import exampleCreteList from "./exampleSelect";
+import {UserContext} from "../UserContext";
+
+
 
 export default class CreateList extends Component{
     constructor(props){
         super(props);
         this.state= {
             trips: [],
-            //value: 'coconut',
+            value: '',
         };
 
         }

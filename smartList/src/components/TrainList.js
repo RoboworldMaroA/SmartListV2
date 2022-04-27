@@ -28,43 +28,50 @@ const TrainList=({})=>{
             <form id="mainBodyToDoList"  action="#">
 
                 <div id="titleElements">
-                    <p >CAMERA</p>
+                    <p >Train</p>
                 </div>
-                <p>
-                    <label>
-                        <input type="checkbox" className="filled-in" onChange={toggle} />
+            {/*    <p>*/}
+            {/*        <label>*/}
+            {/*            <input type="checkbox" className="filled-in" onChange={toggle} />*/}
 
-                        <span> Camera body.
-                <p> {checked2 ? "checked": "not checked"}</p>
-            </span>
+            {/*            <span> Camera body.*/}
+            {/*    <p> {checked2 ? "checked": "not checked"}</p>*/}
+            {/*</span>*/}
 
-                    </label>
-                </p>
+            {/*        </label>*/}
+            {/*    </p>*/}
 
 
 
-                <p>
-                    <label>
-                        <input type="checkbox" className="filled-in" />
-                        <span>Lenses</span>
-                    </label>
-                </p>
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>Battery</span>
+                        <span>Bottle of water</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>Charger</span>
+                        <span>Power Bank</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>State</span>
+                        <span>Phone Charger</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" className="filled-in" />
+                        <span>Food</span>
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox" className="filled-in" />
+                        <span>Food</span>
                     </label>
                 </p>
 

@@ -102,7 +102,7 @@ export const DisplayListFunctionalComponent = (props) =>{
 
     //this method display or not the Trip Detail
     function changeStatus() {
-        //here will be logic what lit to display, depend what customer choose in the form FormCrteteList
+        //here will be logic what lit to display, depend on what customer choose in the form FormCrteteList
         console.log("State trip List", displayTripDetail);
         setDisplayTripDetail(!displayTripDetail);
 

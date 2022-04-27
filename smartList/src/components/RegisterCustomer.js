@@ -1,16 +1,20 @@
-import React, {useState}  from 'react';
+import React, {useContext, useState} from 'react';
     /* useState is used to set a value  */
 //this  function add customer detail during a registration
 //css to make a style on this class
 import './RegisterCustomer.css';
 import {useNavigate} from "react-router-dom";
 import {Link} from "react-router-dom";
+// import background from "../photo/BackgroundRegsiterPage.jpg";
+
+import {UserContext} from "../UserContext";
+
 
     const AddDetail = ({setStudentInfo: setInfo}) => {
         const navigateRegister = useNavigate();
-        const [name, setName] = useState('MaroReg');
-        const [surname, setSurname] = useState('AugustynReg');
-        const [email, setEmail] = useState('EmailReg@o2.pl');
+        const [name, setName] = useState('MaroA');
+        const [surname, setSurname] = useState('August');
+        const [email, setEmail] = useState('Email@o2.pl');
         const [phoneNumber, setPhoneNumber] = useState('0899999943');
         const [dob, setDob] = useState('1988-08-08');
         const [sex, setSex] = useState('Male');
@@ -30,6 +34,8 @@ import {Link} from "react-router-dom";
         const [sexError, setSexError] = useState(true);
         const [sexErrorEmpty, setSexErrorEmpty] = useState("");
 
+
+        const {value,setValue} = useContext(UserContext);
 
 
         //change fetch to customer database not a student
@@ -66,9 +72,9 @@ import {Link} from "react-router-dom";
 
        const verifyAllFields = (event)=>{
            if(!passwordError){
-               window.alert("Thank You for registration !!!")
+               window.alert("Thank You for registration. !")
                navigateRegister("/Login");
-              //return addCustomer()
+               return addCustomer()
 
            }
            if(passwordError){
@@ -81,7 +87,7 @@ import {Link} from "react-router-dom";
 
 
 
-        // function resposible for pass data to database
+        // function responsible for pass data to database
         const addCustomer = async () => {
                 const result = await fetch("api/v1/customer", {
                     method: "POST",
@@ -117,9 +123,9 @@ import {Link} from "react-router-dom";
             setCustomerPasswordAgain(pass);
                 if(customerPassword!==pass) {
                     if(customerPassword===" "){
-                        setPasswordErrorEmpty("CAN NOT BE EMPTY");
+                        setPasswordErrorEmpty("Can NOT be empty!");
                     }
-                    else{setIsError("password mus be the same!!!!");}
+                    else{setIsError("Passwords do NOT match!");}
                 }
 
                 else{
@@ -138,9 +144,9 @@ import {Link} from "react-router-dom";
             const female = "female"
             if(sx !== male && sx !== female) {
                 if(sx ===" "){
-                    setSexErrorEmpty("CAN NOT BE EMPTY");
+                    setSexErrorEmpty("");
                 }
-                else{setIsErrorSex("Must be male or female");}
+                else{setIsErrorSex("Must be \"male\" or \"female\".");}
             }
 
             else{
@@ -151,6 +157,15 @@ import {Link} from "react-router-dom";
 
 
 
+        const validateEmail=(event)=>{
+            const em =event.target.value;
+            setEmail(em);
+            setValue(em);
+       }
+
+
+
+
 
 
 
@@ -158,7 +173,7 @@ import {Link} from "react-router-dom";
 
         return (
 
-            <div id="itemsInRegisterCustomer" className="row">
+            <div id="itemsInRegisterCustomer" className="row" >
                 {/*<form className="col s12" onSubmit={() => addCustomer()}>*/}
                     <form className="col s12" onSubmit={(event) => verifyAllFields(event)}>
                     <div className="row">
@@ -189,7 +204,8 @@ import {Link} from "react-router-dom";
                         <div className="input-field col s8">
                             <i className="material-icons prefix">email</i>
 
-                            <input placeholder="Mandatory" value={email} type="email" onChange={(event => setEmail(event.target.value))}
+                            {/*<input placeholder="Mandatory" value={email} type="email" onChange={(event => setEmail(event.target.value))}*/}
+                            <input placeholder="Mandatory" value={email} type="email" onChange={(event => validateEmail(event))}
                                    className="validate" />
                             <label htmlFor="email">Email</label>
                         </div>
@@ -246,7 +262,7 @@ import {Link} from "react-router-dom";
 
                             <input placeholder="password" value={customerPassword} type="text" onChange={(event => setCustomerPassword(event.target.value))}
                                    className="validate"/>
-                            <label htmlFor="customerPassword">Type Password</label>
+                            <label htmlFor="customerPassword">Password</label>
                         </div>
                     </div>
 
@@ -262,7 +278,7 @@ import {Link} from "react-router-dom";
                         <div className="input-field col s8">
                             <i className="material-icons prefix">password</i>
 
-                            <input placeholder="Must be the same minimum 8 characters nad numbers" value={customerPasswordAgain} type="text" onChange={(event => validatePassword(event))}
+                            <input placeholder="Must be the same minimum 8 characters and numbers" value={customerPasswordAgain} type="text" onChange={(event => validatePassword(event))}
                                    className="validate"/>
                             <label htmlFor="customerPasswordAgain">Repeat the Password</label>
                             <div>{isError}</div>
@@ -275,7 +291,7 @@ import {Link} from "react-router-dom";
 
                     <div className="row">
                         {/*<Link to="../Login">*/}
-                        <button className="waves-effect waves-light btn " type="submit" name="action">Register</button>
+                        <button id="buttonRegister" className="waves-effect waves-light btn #795548 brown" type="submit" name="action">Register</button>
                         {/*</Link>*/}
                     </div>
                 </form>

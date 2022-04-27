@@ -30,16 +30,16 @@ const TrekkingList=({})=>{
         <div id="titleElements">
             <p >TREKKING</p>
         </div>
-        <p>
-        <label>
-            <input type="checkbox" className="filled-in" onChange={toggle} />
+        {/*<p>*/}
+        {/*<label>*/}
+        {/*    <input type="checkbox" className="filled-in" onChange={toggle} />*/}
 
-            <span> Swimsuit.
-                <p> {checked2 ? "checked": "not checked"}</p>
-            </span>
+        {/*    <span> Swimsuit.*/}
+        {/*        <p> {checked2 ? "checked": "not checked"}</p>*/}
+        {/*    </span>*/}
 
-        </label>
-        </p>
+        {/*</label>*/}
+        {/*</p>*/}
 
 
 

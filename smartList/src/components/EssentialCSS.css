@@ -1,15 +1,16 @@
 #checkboxMask{
     /*object-position: center;*/
     /*margin-left: 15%;*/
-    width:50%;
+    width:20%;
     float: left;
 }
 
 #quantityMask{
     /*object-position: center;*/
     /*margin-left: 15%;*/
-    width:50%;
-    float: right;
+    width:20%;
+    float: left;
+    /*margin-right: 10%;*/
 
 }
 
@@ -28,12 +29,16 @@
     width:50%;
     float: left;
 }
+#inputQuantity{
+    width:50%;
+    float:right;
 
+}
 
 #quantityUnderwear {
     /*object-position: center;*/
     /*margin-left: 15%;*/
     width: 50%;
-    float: right;
+    float: left;
 
 }

@@ -23,13 +23,15 @@ const Car=({})=>{
     return(
 
         //Description of the list
-        <div>
-
-            <form id="mainBodyToDoList"  action="#">
-
+        <div className="row">
+            <div className="col m10 s12">
                 <div id="titleElements">
                     <p >CAR ESSENTIAL</p>
                 </div>
+
+            <form id="car"  action="#">
+
+
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" onChange={toggle} />
@@ -46,7 +48,7 @@ const Car=({})=>{
                 <p>
                     <label>
                         <input type="checkbox" className="filled-in" />
-                        <span>Install Navigation Application on your device</span>
+                        <span id="carItem">Install Navigation Application on your device</span>
                     </label>
                 </p>
                 <p>
@@ -81,6 +83,7 @@ const Car=({})=>{
 
 
             </form>
+            </div>
         </div>
     )//end return
 

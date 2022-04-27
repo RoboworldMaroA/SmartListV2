@@ -16,7 +16,11 @@ import {
     RegisterPage,
     LoginPage,
     LoginAdminPage,
-    PayPage
+    PayPage,
+    HelpPage,
+    DestinationPage,
+    CustomerCreateOrDisplay
+
 } from "./allPages";
 import CreateList from "./components/CreateList";
 import Login from "./components/Login";
@@ -63,6 +67,12 @@ function App() {
 
               <Route path ='/*' element={PageNotExist()}/>
 
+
+              <Route path ='/help' element={HelpPage()}/>
+
+              <Route path ='/destination' element={DestinationPage()}/>
+
+              <Route path ='/createOrDisplayList' element={CustomerCreateOrDisplay()}/>
           </Routes>
 
 

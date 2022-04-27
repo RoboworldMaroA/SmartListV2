@@ -33,7 +33,7 @@ public class TripConfig {
                     LocalDate.of(2022,AUGUST,20),
                     false,
                     "password",
-                    "Beach, and rest with wife. This Customer has paid subscription",
+                    "Beach and leisure.",
                     true,
                     false,
                     true,

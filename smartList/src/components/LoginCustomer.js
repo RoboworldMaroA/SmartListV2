@@ -2,7 +2,7 @@
 // import {Link} from "react-router-dom";
 //     /* useState is used to set a value  */
 // //this  function add customer detail during a registration
-// import './LoginCustomer.css';
+// import './LoginNew2.css';
 // //const bcrypt = require('bcrypt');
 // // const bcrypt = require('bcrypt');
 // //const {compare} = require("bcrypt");

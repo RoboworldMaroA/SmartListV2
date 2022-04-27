@@ -1,7 +1,68 @@
 #mainBodyToDoList{
     object-position: center;
-    margin-left: 15%;
+    margin-left: 10%;
+    background-color: darkred;
 
+}
+
+#blockDocuments{
+    object-position: center;
+/*padding-left: 100px;*/
+    margin-left: 10%;
+}
+
+
+#documents{
+    object-position: center;
+    margin-left: 10%;
+    /*background-color: blue;*/
+    /*background-image: url("../photo/backgroundDocuments3.jpg");*/
+
+}
+
+#blockEssential{
+    object-position: center;
+    /*padding-left: 100px;*/
+    margin-left: 10%;
+}
+
+
+
+#essential{
+    object-position: center;
+    margin-left: 10%;
+    /*background-color: blue;*/
+    /*background-image: url("../photo/backgroundEssential2.jpg");*/
+padding-right: 10%;
+}
+
+#camera{
+    object-position: center;
+    margin-left: 10%;
+    background-color: blue;
+    background-image: url("../photo/backgroundCamera.jpg");
+    padding-right: 10%;
+}
+
+
+#spain{
+    object-position: center;
+    margin-left: 10%;
+    background-color: blue;
+    background-image: url("../photo/backgroundSpain4.jpg");
+    padding-right: 10%;
+}
+
+#car{
+    object-position: center;
+    margin-left: 10%;
+    background-color: blue;
+    background-image: url("../photo/backgroundCar.jpg");
+    padding-right: 10%;
+}
+
+#car span {
+    color:black;
 }
 
 #titleElements{
@@ -28,3 +89,9 @@
 
 }
 
+
+#toRight{
+    width: 50%;
+    float: right;
+
+}

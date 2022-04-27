@@ -68,10 +68,10 @@ export default class LoginAdmin extends Component{
             <div>
 
 
-                <div className="row">
-                    <LoginAdminDetail />
+                {/*<div className="row">*/}
+                {/*    <LoginAdminDetail />*/}
 
-                </div>
+                {/*</div>*/}
 
                 <div className="row">
 
