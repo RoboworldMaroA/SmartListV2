@@ -156,14 +156,15 @@ export const ToDoListComponentsTrip = (props) => {
             {/*<p> Display LIST for USER: ID {toDoList.id} NAME: {toDoList.name}</p>*/}
             <div className="row">
                 {toDoListTrip.documentsListStatus ?
-                    <DocumentsList2/>
+                    <EssentialList2/>
                     : null
                 }
             </div>
 
             <div className="row">
                 {toDoListTrip.essentialListStatus ?
-                    <EssentialList2/>
+
+                    <DocumentsList2/>
                     : null
                 }
             </div>
