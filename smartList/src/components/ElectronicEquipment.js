@@ -10,7 +10,7 @@ import {Link} from "react-router-dom";
 import './EssentialCSS.css';
 
 
-const DocumentsList2=({})=>{
+const ElectronicEquipment=({})=>{
 
 
     //
@@ -81,7 +81,7 @@ const DocumentsList2=({})=>{
                 <div   className="card">
                     <div className="card-image">
                         <img src={require("../photo/backgroundDocuments2.jpg")} />
-                            <span className="card-title">DOCUMENTS</span>
+                            <span className="card-title">ELECTRONIC EQUIPMENTS</span>
                             {/*<a className="btn-floating halfway-fab waves-effect waves-light red">*/}
                             {/*    <a className="btn-floating waves-effect">*/}
                             {/*    <i className="material-icons"> add</i>*/}
@@ -95,13 +95,17 @@ const DocumentsList2=({})=>{
 
 
                         <form id="documents"  action="#">
+
+
+
+
                             <label>
                             <div id="toRight" ><button onClick={(event)=>changeQuantityMinus(event)}>-</button><button> {underwearQty} </button><button onClick={(event)=>changeQuantityPlus(event)}>+</button> </div>
                             </label>
                             <p>
                                 <label>
                                     <input id="crossLine" type="checkbox" className="filled-in" />
-                                    <span>Passport</span>
+                                    <span>Power-bank</span>
                                     <div id="toRight" ><button onClick={(event)=>changeQuantityMinus(event)}>-</button><button> {underwearQty} </button><button onClick={(event)=>changeQuantityPlus(event)}>+</button> </div>
                                 </label>
                             </p>
@@ -109,7 +113,7 @@ const DocumentsList2=({})=>{
                             <p>
                                 <label>
                                     <input  type="checkbox" className="filled-in"/>
-                                    <span>Identity card</span>
+                                    <span>Smartphone</span>
                                 </label>
                             </p>
 
@@ -334,4 +338,4 @@ const DocumentsList2=({})=>{
 
 }
 
-export default DocumentsList2;
+export default ElectronicEquipment;

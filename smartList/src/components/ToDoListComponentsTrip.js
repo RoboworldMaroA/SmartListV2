@@ -23,7 +23,7 @@ import Summer from "./Summer";
 import TrekkingList from "./TrekkingList";
 import SkiList from "./SkiList";
 import './ToDoListComponentTrip.css';
-import DocumentsList2 from "./DocumentsList2";
+import ElectronicEquipment from "./ElectronicEquipment";
 import EssentialList2 from "./EssentialList2";
 
 //i moved data from a component Display state component, and
@@ -164,7 +164,7 @@ export const ToDoListComponentsTrip = (props) => {
             <div className="row">
                 {toDoListTrip.essentialListStatus ?
 
-                    <DocumentsList2/>
+                    <ElectronicEquipment/>
                     : null
                 }
             </div>
