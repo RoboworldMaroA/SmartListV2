@@ -3,31 +3,34 @@ import {type} from "@testing-library/user-event/dist/type";
 import {checkNode} from "@testing-library/jest-dom/dist/utils";
 import './toDoListCSS.css';
 import {Link} from "react-router-dom";
-import './EssentialCSS.css';
+import './ElectronicEquipment2.css';
 
-const EssentialList = ({props}) => {
+const ElectronicEquipment2 = ({props}) => {
+
+    const [camera, setCamera] = useState(true);
 
 
-    const [checked2, setChecked2] = useState(false);
-    const [maskWeight, setMaskWeight] = useState(0.02);
-    const [underwearQty, setUnderwearQty] = useState(5);
-    const [passportQty, setPassportQty] = useState(1);
-    const [errorNewItem, setErrorNewItem] = useState("At least one character ");
+
+
+    const [errorNewItem, setErrorNewItem] = useState(" ");
 
     // const [items, setItems] = useState([]);
     const [inputValue, setInputValue] = useState('');
 
     const [items, setItems] = useState([
-        {itemName: 'Passport', quantity: 1, isSelected: false, weight: 0.1},
-        {itemName: 'Identity Card', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Boarding Pass', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Driving  Licence', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Wallet', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'House Key', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Cash', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Travel Insurance', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Hotel booking confirmation', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Vaccination Certificate COVID-19 ', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Phone', quantity: 1, isSelected: false, weight: 0.3},
+        {itemName: 'Phone Charger', quantity: 1, isSelected: false, weight: 0.3},
+        {itemName: 'Earphones', quantity: 1, isSelected: false, weight: 0.3},
+        {itemName: 'Tablet', quantity: 1, isSelected: false, weight: 0.3},
+        {itemName: 'Photo Camera', quantity: 1, isSelected: false, weight: 0.3},
+        {itemName: 'Photo Camera Equipment', quantity: 1, isSelected: false, weight: 0.3},
+        {itemName: 'Powerbank', quantity: 1, isSelected: false, weight: 0.3},
+        {itemName: 'Drone', quantity: 1, isSelected: false, weight: 0.3},
+        {itemName: 'Drone Equipment', quantity: 1, isSelected: false, weight: 0.3},
+        {itemName: 'Camcorder', quantity: 1, isSelected: false, weight: 0.3},
+        {itemName: 'Camcorder Equipment', quantity: 1, isSelected: false, weight: 0.3},
+        {itemName: 'Additional Battery', quantity: 1, isSelected: false, weight: 0.3},
+
 
     ]);
 
@@ -35,7 +38,7 @@ const EssentialList = ({props}) => {
     //grab data from local storage
     useEffect(() => {
 
-            const data = window.localStorage.getItem('ESSENTIAL_DATA');
+            const data = window.localStorage.getItem('EQUIPMENT_DATA');
             // if ( data !== null ) setPassportQty(JSON.parse(data));
             setItems(JSON.parse(data));
 
@@ -50,7 +53,7 @@ const EssentialList = ({props}) => {
     //save data to local storage
     useEffect(() => {
             console.log(items);
-            window.localStorage.setItem('ESSENTIAL_DATA', JSON.stringify(items));
+            window.localStorage.setItem('EQUIPMENT_DATA', JSON.stringify(items));
 
         }, [items]
         // },[passportQty]
@@ -59,7 +62,7 @@ const EssentialList = ({props}) => {
 
 
     // function to add a new item
-    const handleAddItemButton = () => {
+    const handleAddItemButtonEquipment = () => {
 
         const newItem = {
             itemName: inputValue,
@@ -173,31 +176,11 @@ const EssentialList = ({props}) => {
                 <div className="card">
                     <div className="card-image">
                         <img src={require("../photo/backgroundDocuments2.jpg")}/>
-                        <span className="card-title">ESSENTIALS</span>
+                        <span className="card-title">ELECTRONIC EQUIPMENT</span>
                     </div>
                     <div className="card-content">
 
                         <form id="documents" action="#">
-                            {/*<label>*/}
-                            {/*    <div id="toRight">*/}
-                            {/*        <button onClick={(event) => changeQuantityMinusPassport(event)}>-</button>*/}
-                            {/*        <button onClick={(event)=>event.preventDefault()}> {passportQty} </button>*/}
-                            {/*        <button onClick={(event) => changeQuantityPlusPassport(event)}>+</button>*/}
-                            {/*    </div>*/}
-                            {/*</label>*/}
-                            {/*<p>*/}
-                            {/*    <label>*/}
-                            {/*        <input id="crossLine" type="checkbox" className="filled-in"/>*/}
-                            {/*        <span>Passport</span>*/}
-                            {/*        <div id="toRight">*/}
-                            {/*            <button onClick={(event) => changeQuantityMinus(event)}>-</button>*/}
-                            {/*            <button onClick={(event)=>event.preventDefault()}> {underwearQty} </button>*/}
-                            {/*            <button onClick={(event) => changeQuantityPlus(event)}>+</button>*/}
-                            {/*        </div>*/}
-                            {/*    </label>*/}
-                            {/*</p>*/}
-
-
                             <div className='main-container'>
                                 <div className='item-list'>
                                     {items.map((item, index) => (
@@ -258,7 +241,7 @@ const EssentialList = ({props}) => {
                                 <input id="addItemButton" value={inputValue}
                                        onChange={(event) => validateInputNewItem(event)}
                                        className='add-item-input' placeholder='add your item'/>
-                                <i className="material-icons prefix" onClick={() => handleAddItemButton()}>add</i>
+                                <i className="material-icons prefix" onClick={() => handleAddItemButtonEquipment()}>add</i>
                                 <div>{errorNewItem}</div>
                                 <div className='total'>Total Items: {totalItemCount}</div>
                                 <div className='total'>Total Weight: {totalItemWeight} kg.</div>
@@ -273,4 +256,4 @@ const EssentialList = ({props}) => {
 
 }
 
-export default EssentialList;
+export default ElectronicEquipment2;

@@ -381,6 +381,7 @@ export function DisplayTravelerList() {
     const[value,setValue] = useState("Hello from context");
 
     return(
+        <div id={"DisplayListFirstPage"}>
         <div className="container-fluid">
             <nav>
                 <div className="nav-wrapper #5d4037 brown darken-2">
@@ -408,11 +409,11 @@ export function DisplayTravelerList() {
 
             <div className="container">
                 <div className="row">
-                    <div className="col s2">...</div>
+                    <div className="col s2"></div>
                     <div className="col s8">
                         <p id="PageTitle"> YOUR LUGGAGE</p>
                     </div>
-                    <div className="col s2">...</div>
+                    <div className="col s2"></div>
                 </div>
             </div>
             <div className="row">
@@ -425,6 +426,8 @@ export function DisplayTravelerList() {
                 </UserContext.Provider>
 
             </div>
+        </div>
+
         </div>
     );
 

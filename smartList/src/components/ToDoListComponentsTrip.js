@@ -25,27 +25,28 @@ import SkiList from "./SkiList";
 import './ToDoListComponentTrip.css';
 import ElectronicEquipment from "./ElectronicEquipment";
 import EssentialList2 from "./EssentialList2";
+import ElectronicEquipment2 from "./ElectronicEquipment2";
 
 //i moved data from a component Display state component, and
 // I can add here what I want to do when I click a checkboxes
 export const ToDoListComponentsTrip = (props) => {
     // const [toDoList, setToDoList] = useState(props.data2);
     const [toDoListTrip, setToDoListTrip] = useState(props.dataTrip2);
-    const [ireland,setIreland]=useState(props.dataTrip2.ireland)
+    const [ireland, setIreland] = useState(props.dataTrip2.ireland)
 
 
-
-    const updateIsDoneTrip= () => {
-        setToDoListTrip({ ... toDoListTrip, camera: !toDoListTrip.camera});
+    const updateIsDoneTrip = () => {
+        setToDoListTrip({...toDoListTrip, camera: !toDoListTrip.camera});
     }
-    useEffect(()=> {
-        console.log("item was updated ireland value is:", toDoListTrip.ireland, updateIrelandStatus()  );},[toDoListTrip]);
+    useEffect(() => {
+        console.log("item was updated ireland value is:", toDoListTrip.ireland, updateIrelandStatus());
+    }, [toDoListTrip]);
 
 
     //const [irelandState, setIrelandState] = useState("1");
     const [irelandStatus, setIrelandStatus] = useState(false);
     // const [yesIreland, setYesIreland] = useState("Yes");
-    const updateIrelandStatus = (event)=> {
+    const updateIrelandStatus = (event) => {
         //const irelandStatus = setIrelandStatus(props.dataTrip2.ireland)
         //setIrelandStatus(irelandStatus => !irelandStatus);
         //let yes = "1";
@@ -55,37 +56,44 @@ export const ToDoListComponentsTrip = (props) => {
         //setToDoListTrip({ ... toDoListTrip, ireland: !toDoListTrip.ireland});
         const trip = ireland;
         const irlStatus = irelandStatus;
-        if (trip === "1"){
+        if (trip === "1") {
             setIrelandStatus(true);
             //setIrelandState("0");
-            console.log("irlStatus is:(in if trip =1) ",irlStatus);
+            console.log("irlStatus is:(in if trip =1) ", irlStatus);
         }
 
         if (trip === "0") {
             setIrelandStatus(false);
             //setIrelandState("1");
-            console.log("irlStatus is:(in if trip =0) ",irlStatus);//test only
+            console.log("irlStatus is:(in if trip =0) ", irlStatus);//test only
         }
     }
 
 
-    useEffect(()=> {
+    useEffect(() => {
         console.log("Camera was updated state is:", toDoListTrip.camera
-        );},[toDoListTrip]);
+        );
+    }, [toDoListTrip]);
 
 
     return (
 
 
         <div>
-
             <div className="row">
-                  <div id="titleListToDoListID" className="col s10 m6">
+                <div id="titleListToDoListID" className="col s10 m6">
 
-            <p id="listOfItemsInToDoListComponent"> List ID {toDoListTrip.id} Name: {toDoListTrip.description}</p>
+                    <p id="listOfItemsInToDoListComponent">
+                        {toDoListTrip.ireland === "1" ? "Ireland" : ""} :
+                        {toDoListTrip.spain === "1" ? "Spain" : " "}
+                        {toDoListTrip.poland === "1" ? "Poland" : " "}
+                        {/*{toDoListTrip.name}<br/>*/}
+                        {/*{toDoListTrip.destination}<br/>*/}
+                        {/*{toDoListTrip.description}<br/>*/}
+                        {toDoListTrip.departureDay} to {toDoListTrip.returnDay}</p>
 
-                  </div>
-                  </div>
+                </div>
+            </div>
             {/*<div>*/}
             {/*    <input type="checkbox" checked={toDoListTrip.documentsListStatus}*/}
             {/*           onChange={updateIsDoneTrip}/>*/}
@@ -138,19 +146,14 @@ export const ToDoListComponentsTrip = (props) => {
             {/*</div>*/}
 
 
-
-           {/*<div id="allListsInToDoListComponentsTrip">*/}
-
-
-           {/*    <div className="row">*/}
-           {/*        <div className="col s12 m6">*/}
-           {/*            <div className="card blue-grey darken-1">*/}
-           {/*                <div className="card-content white-text">*/}
-           {/*                     <span className="card-title">*/}
+            {/*<div id="allListsInToDoListComponentsTrip">*/}
 
 
-
-
+            {/*    <div className="row">*/}
+            {/*        <div className="col s12 m6">*/}
+            {/*            <div className="card blue-grey darken-1">*/}
+            {/*                <div className="card-content white-text">*/}
+            {/*                     <span className="card-title">*/}
 
 
             {/*<p> Display LIST for USER: ID {toDoList.id} NAME: {toDoList.name}</p>*/}
@@ -164,7 +167,7 @@ export const ToDoListComponentsTrip = (props) => {
             <div className="row">
                 {toDoListTrip.essentialListStatus ?
 
-                    <ElectronicEquipment/>
+                    <ElectronicEquipment2/>
                     : null
                 }
             </div>
@@ -186,44 +189,43 @@ export const ToDoListComponentsTrip = (props) => {
             </div>
 
 
-
             <div className="row">
-                {irelandStatus?
+                {irelandStatus ?
                     <Ireland/>
                     : null
                 }
             </div>
 
             <div className="row">
-                {toDoListTrip.spain?
+                {toDoListTrip.spain ?
                     <Spain/>
                     : null
                 }
             </div>
 
             <div className="row">
-                {toDoListTrip.poland?
+                {toDoListTrip.poland ?
                     <Poland/>
                     : null
                 }
             </div>
 
             <div className="row">
-                {toDoListTrip.car?
+                {toDoListTrip.car ?
                     <Car/>
                     : null
                 }
             </div>
 
             <div className="row">
-                {toDoListTrip.plane?
+                {toDoListTrip.plane ?
                     <PlaneList/>
                     : null
                 }
             </div>
 
             <div className="row">
-                {toDoListTrip.bus?
+                {toDoListTrip.bus ?
                     <BusList/>
                     : null
                 }
@@ -231,21 +233,21 @@ export const ToDoListComponentsTrip = (props) => {
 
 
             <div className="row">
-                {toDoListTrip.train?
+                {toDoListTrip.train ?
                     <TrainList/>
                     : null
                 }
             </div>
 
             <div className="row">
-                {toDoListTrip.largeLuggage?
+                {toDoListTrip.largeLuggage ?
                     <LargeLuggageList/>
                     : null
                 }
             </div>
 
             <div className="row">
-                {toDoListTrip.mediumLuggage?
+                {toDoListTrip.mediumLuggage ?
                     <MediumLuggageList/>
                     : null
                 }
@@ -253,18 +255,17 @@ export const ToDoListComponentsTrip = (props) => {
 
 
             <div className="row">
-                {toDoListTrip.smallLuggage?
+                {toDoListTrip.smallLuggage ?
                     <SmallLuggageList/>
                     : null
                 }
             </div>
 
 
-
             {/*/*this list will display depend from the month that customer is traveling*!/*/}
             {/*Autumn is from*/}
             <div className="row">
-                {toDoListTrip.autumn?
+                {toDoListTrip.autumn ?
                     <Autumn/>
                     : null
                 }
@@ -272,21 +273,21 @@ export const ToDoListComponentsTrip = (props) => {
 
 
             <div className="row">
-                {toDoListTrip.spring?
+                {toDoListTrip.spring ?
                     <Spring/>
                     : null
                 }
             </div>
 
             <div className="row">
-                {toDoListTrip.summer?
+                {toDoListTrip.summer ?
                     <Summer/>
                     : null
                 }
             </div>
 
             <div className="row">
-                {toDoListTrip.winter?
+                {toDoListTrip.winter ?
                     <Winter/>
                     : null
                 }
@@ -295,19 +296,18 @@ export const ToDoListComponentsTrip = (props) => {
             {/*Activities*/}
 
             <div className="row">
-                {toDoListTrip.trekking?
+                {toDoListTrip.trekking ?
                     <TrekkingList/>
                     : null
                 }
             </div>
 
             <div className="row">
-                {toDoListTrip.ski?
+                {toDoListTrip.ski ?
                     <SkiList/>
                     : null
                 }
             </div>
-
 
 
             <div className="row">
@@ -318,13 +318,11 @@ export const ToDoListComponentsTrip = (props) => {
             </div>
 
 
-
-
             {/*BUTTON add your Item*/}
-            <div  className="row">
+            <div className="row">
                 <div id="buttonAddItemInToDoListComponentTrip" className="input-field col s10">
                     <Link to="../CreateCustomerList">
-                        <button  className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
+                        <button className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
                             Add Item(not ready yet)
                         </button>
                     </Link>
@@ -332,16 +330,9 @@ export const ToDoListComponentsTrip = (props) => {
             </div>
 
 
-
-
-                                {/*</span></div></div></div></div>*/}
+            {/*</span></div></div></div></div>*/}
             {/*end all list*/}
-           {/*</div>*/}
-
-
-
-
-
+            {/*</div>*/}
 
 
         </div>
