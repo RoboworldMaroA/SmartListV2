@@ -27,18 +27,18 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
         const [camcorder, setCamcorder] = useState(false);
         const [camera, setCamera] = useState(false);
         const [car, setCar] = useState(false);
-        const [departureDay, setDepartureDay] = useState("2022-05-20");
-        const [description, setDescription] = useState('Some trip');
-        const [ireland, setIreland] = useState("0");
-        const [listId, setListId] = useState('Trip 1');
+        const [departureDay, setDepartureDay] = useState("");
+        const [description, setDescription] = useState('');
+        const [ireland, setIreland] = useState(" ");
+        const [listId, setListId] = useState('');
         const [largeLuggage, setLargeLuggage] = useState(false);
         const [mediumLuggage, setMediumLuggage] = useState(false);
         const [smallLuggage, setSmallLuggage] = useState(false);
         const [smartphone, setSmartphone] = useState(false);
         const [payStatus, setPayStatus] = useState(false);
-        const [returnDay, setReturnDay] = useState('2022-05-30');
-        const [tripName, setTripName] = useState('Trip Name');
-        const [tripPassword, setTripPassword] = useState('password');
+        const [returnDay, setReturnDay] = useState('');
+        const [tripName, setTripName] = useState('');
+        const [tripPassword, setTripPassword] = useState('');
         const [weatherId, setWeatherId] = useState('');
         //const [transport, setTransport] = useState();
 
@@ -58,7 +58,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
         // const [displayListState , setDisplayListState] = useState(true);
         // const [displayListState , setDisplayListState] = useState(true);
 
-
+            const [sex, setSex] = useState('');
 
 
 
@@ -74,7 +74,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                 method: "POST",
                 body: JSON.stringify({adminPrivileges,autumn, beachListStatus, bus, camcorder,camera,
                     car, departureDay, description, destination,documentListStatus, essentialListStatus, ireland, largeLuggage,
-                    listId, mediumLuggage, payStatus , plane, poland, returnDay, ski,smallLuggage,smartphone,spain,spring,
+                    listId, mediumLuggage, payStatus , plane, poland, returnDay, sex, ski,smallLuggage,smartphone,spain,spring,
                     summer,train,trekking,tripName, tripPassword, weatherId,winter,id}),
                 headers: {
                     "Content-Type": "application/json",
@@ -542,6 +542,42 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
 
 
 
+            const [isErrorSex, setIsErrorSex] = useState('');
+            const [sexError, setSexError] = useState(true);
+            const [sexErrorEmpty, setSexErrorEmpty] = useState("");
+
+
+            const validateSex=(event)=>{
+                const sx =event.target.value;
+                console.log(sx)
+                setSex(sx);
+                const male = "male";
+                const female = "female"
+                if(sx !== male && sx !== female) {
+                    if(sx ===" "){
+                        setSexErrorEmpty("");
+                    }
+                    else{setIsErrorSex("Must be \"male\" or \"female\".");}
+                }
+
+                else{
+                    setIsErrorSex("Sex ok");
+                    setSexError(false);
+                    setSex(sx);
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
             return (
 
 
@@ -808,6 +844,29 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     {/*        </select>*/}
                     {/*    </div>*/}
                     {/*</div>*/}
+
+
+                    <div className="row">
+
+                        <div className="input-field col s8">
+                            <i className="material-icons prefix">{sex}</i>
+
+                            <input placeholder="Optional" value={sex} type="text" onChange={(event => validateSex(event))}
+                                   className="validate"/>
+                            <label htmlFor="sex">Sex</label>
+                            <div>{isErrorSex}</div>
+                            <div>{sexErrorEmpty}</div>
+                            <div>{sexError}</div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
 
                     <div className="row" id="luggage"> LUGGAGE OPTIONS</div>
                     <div className="row">

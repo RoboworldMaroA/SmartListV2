@@ -21,9 +21,9 @@ public class TripConfig {
 
             Trip TripToSpain = new Trip(
                     //,
-                    "trip To Spain",
-                    "list 1",
-                    "List one",
+                    "Trip To Spain",
+                    "Whether list 1",
+                    "List ID 1",
                     true,
                     false,
                     true,
@@ -52,7 +52,9 @@ public class TripConfig {
                     false,
                     true,
                     true,
-                    "Spain"
+                    "Spain",
+                    true,
+                    "male"
             );
 
 
@@ -71,25 +73,27 @@ public class TripConfig {
                     true,
                     "password",
                     "Beach, and rest with wife. This Customer has paid subscription",
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
                     false,
                     true,
                     true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    "Ireland",
                     false,
-                    false,
-                    true,
-                    false,
-                    false,
-                    false,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true,
-                    "Ireland"
+                    "female"
 
                     );
 
@@ -97,7 +101,7 @@ public class TripConfig {
 
             //now we tell that we want save customer using list
             tripRepository.saveAll(
-                    List.of(TripToSpain, TripToIreland)
+                    List.of(TripToIreland, TripToSpain)
 
             );
         };

@@ -9,19 +9,19 @@ import {Link} from "react-router-dom";
 export const DisplayStateOfCustomerList = () => {
 
     //data from useEffect Customer data
-    // const [customer, setCustomer] = useState(null);
+    const [customer, setCustomer] = useState(null);
     const [trip, setTrip] = useState(null);
 
-    // useEffect(() => {
-    //     //do something when loading
-    //     console.log("yoyw yow do something from useeffect")
-    //     if(!customer) {
-    //         fetch("api/v1/customer").then((response) => response.json()).then((dataCustomer) => {
-    //             console.log("List of items in the customer", dataCustomer);
-    //             setCustomer(dataCustomer);
-    //         });
-    //     }
-    // }, [customer]);
+    useEffect(() => {
+        //do something when loading
+        console.log("yoyw yow do something from useeffect")
+        if(!customer) {
+            fetch("api/v1/customer").then((response) => response.json()).then((dataCustomer) => {
+                console.log("List of items in the customer", dataCustomer);
+                setCustomer(dataCustomer);
+            });
+        }
+    }, [customer]);
 
 
     // useEffect(() => {
@@ -57,10 +57,10 @@ export const DisplayStateOfCustomerList = () => {
             {/*</div>*/}
 
 
-    <div >
+           <div >
                     {trip
-                        ? trip.map((Trip) => {
-                            return (<ToDoListComponentsTrip key={Trip.id} dataTrip2={Trip}/>
+                        ? trip.map((Trip, UserData) => {
+                            return (<ToDoListComponentsTrip key={Trip.id} dataTrip2={Trip} dataCustomer={UserData}/>
                             );
                         }):"..... loading page"}
                     {/*end*/}

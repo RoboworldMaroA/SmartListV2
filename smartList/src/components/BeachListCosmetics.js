@@ -98,7 +98,7 @@ import './toDoListCSS.css';
 import {Link} from "react-router-dom";
 
 
-const BeachList=({})=>{
+const BeachListCosmetics=({})=>{
 
     const [checked2, setChecked2] = useState(false);
     const [maskWeight, setMaskWeight] = useState(0.02);
@@ -110,9 +110,9 @@ const BeachList=({})=>{
     const [inputValue, setInputValue] = useState('');
 
     const [items, setItems] = useState([
-        {itemName: 'Bikini/Swimming suit', quantity: 1, isSelected: false, weight: 0.1},
-        {itemName: 'Beach Towel', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Sandals', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Sunscreen', quantity: 1, isSelected: false, weight: 0.1},
+        // {itemName: 'Towel', quantity: 1, isSelected: false, weight: 0.02},
+        // {itemName: 'Sandals', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Charger', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Camera Bag', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'House Key', quantity: 1, isSelected: false, weight: 0.02},
@@ -127,7 +127,7 @@ const BeachList=({})=>{
     //grab data from local storage
     useEffect(() => {
 
-            const beachData = window.localStorage.getItem('BEACH_DATA');
+            const beachData = window.localStorage.getItem('BEACH_COSMETICS_DATA');
             // if ( data !== null ) setPassportQty(JSON.parse(data));
             setItems(JSON.parse(beachData));
 
@@ -142,7 +142,7 @@ const BeachList=({})=>{
     //save data to local storage
     useEffect(() => {
             console.log(items);
-            window.localStorage.setItem('BEACH_DATA', JSON.stringify(items));
+            window.localStorage.setItem('BEACH_COSMETICS_DATA', JSON.stringify(items));
 
         }, [items]
         // },[passportQty]
@@ -339,4 +339,4 @@ const BeachList=({})=>{
 
 }
 
-export default BeachList;
+export default BeachListCosmetics;

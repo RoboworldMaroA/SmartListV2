@@ -4,10 +4,15 @@ import {checkNode} from "@testing-library/jest-dom/dist/utils";
 import './toDoListCSS.css';
 import {Link} from "react-router-dom";
 import './ElectronicEquipment2.css';
+import CameraList from "./CameraList";
+import ToDoListComponentsTrip from "./ToDoListComponentsTrip";
+
 
 const ElectronicEquipment2 = ({props}) => {
 
-    const [camera, setCamera] = useState(true);
+
+
+    // const [camera, setCamera] = useState(props);
 
 
 
@@ -59,6 +64,25 @@ const ElectronicEquipment2 = ({props}) => {
         // },[passportQty]
 
     )
+
+
+
+
+    //get trip detal ftom database
+    //
+    // const [trip, setTrip] = useState(null);
+    //
+    // useEffect(() => {
+    //     //do something when loading
+    //     console.log("yoyw yow do something from useeffect")
+    //     fetch("api/v1/trip/").then((response) => response.json()).then((dataTrip) => {
+    //         console.log("List of items in the trip", dataTrip);
+    //         setTrip(dataTrip);
+    //     });
+    // }, ["hI trip"]);
+
+
+
 
 
     // function to add a new item
@@ -237,6 +261,24 @@ const ElectronicEquipment2 = ({props}) => {
                                         </div>
                                     ))}
                                 </div>
+
+                                {/*<div className="row">*/}
+                                {/*    {camera ?*/}
+                                {/*        <CameraList/>*/}
+                                {/*        : null*/}
+                                {/*    }*/}
+                                {/*</div>*/}
+
+
+                                {/*<div >*/}
+                                {/*    {trip*/}
+                                {/*        ? trip.map((Trip) => {*/}
+                                {/*            return (<CameraList key={Trip.id} dataTrip2={Trip}/>*/}
+                                {/*            );*/}
+                                {/*        }):"..... loading page"}*/}
+                                {/*    /!*end*!/*/}
+                                {/*</div>*/}
+
 
                                 <input id="addItemButton" value={inputValue}
                                        onChange={(event) => validateInputNewItem(event)}

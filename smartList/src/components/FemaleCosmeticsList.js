@@ -1,94 +1,3 @@
-//
-// import React, {useState}  from 'react';
-// import {type} from "@testing-library/user-event/dist/type";
-// import {checkNode} from "@testing-library/jest-dom/dist/utils";
-// import './toDoListCSS.css';
-// import {Link} from "react-router-dom";
-//
-//
-// const BeachList=({})=>{
-//
-//
-//
-//
-//     const [checked2, setChecked2] = useState(false);
-//
-//     function toggle(){
-//         setChecked2(checked2=> !checked2)
-//     }
-//
-//
-//
-//
-//     return(
-//
-//         //Description of the list
-// <div>
-//
-//     <form id="mainBodyToDoList"  action="#">
-//
-//         <div id="titleElements">
-//             <p >BEACH</p>
-//         </div>
-//         <p>
-//         <label>
-//             <input type="checkbox" className="filled-in" onChange={toggle} />
-//
-//             <span> Swimsuit.
-//                 <p> {checked2 ? "checked": "not checked"}</p>
-//             </span>
-//
-//         </label>
-//         </p>
-//
-//
-//
-//         <p>
-//             <label>
-//                 <input type="checkbox" className="filled-in" />
-//                 <span>Towel</span>
-//             </label>
-//         </p>
-//         <p>
-//             <label>
-//                 <input type="checkbox" className="filled-in" />
-//                 <span>Sandals</span>
-//             </label>
-//         </p>
-//         <p>
-//             <label>
-//                 <input type="checkbox" className="filled-in" />
-//                 <span>Sunscreen</span>
-//             </label>
-//         </p>
-//         <p>
-//             <label>
-//                 <input type="checkbox" className="filled-in" />
-//                 <span>House Key</span>
-//             </label>
-//         </p>
-//
-//
-//         {/*save list button subnit shoul execute function used to saving list on the computer*/}
-//         {/*<div className="row">*/}
-//         {/*    <Link to="../SaveList">*/}
-//         {/*        <button className="waves-effect waves-light btn #795548 brown " type="submit" name="action">*/}
-//         {/*            Save List(Saving not ready yet)*/}
-//         {/*        </button>*/}
-//         {/*    </Link>*/}
-//         {/*</div>*/}
-//
-//
-//
-//     </form>
-// </div>
-//     )//end return
-//
-// }
-//
-// export default BeachList;
-
-
 
 
 import React, {useEffect, useState} from 'react';
@@ -98,7 +7,7 @@ import './toDoListCSS.css';
 import {Link} from "react-router-dom";
 
 
-const BeachList=({})=>{
+const FemaleCosmeticsList=({})=>{
 
     const [checked2, setChecked2] = useState(false);
     const [maskWeight, setMaskWeight] = useState(0.02);
@@ -110,15 +19,19 @@ const BeachList=({})=>{
     const [inputValue, setInputValue] = useState('');
 
     const [items, setItems] = useState([
-        {itemName: 'Bikini/Swimming suit', quantity: 1, isSelected: false, weight: 0.1},
-        {itemName: 'Beach Towel', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Sandals', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Charger', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Camera Bag', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'House Key', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Cash', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Travel Insurance', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Hotel booking confirmation', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Foundation/Cream BB', quantity: 1, isSelected: false, weight: 0.21},
+        {itemName: 'Bronzer', quantity: 1, isSelected: false, weight: 0.15},
+        {itemName: 'Make-up removing products', quantity: 1, isSelected: false, weight: 0.32},
+        {itemName: 'Cotton Pads', quantity: 1, isSelected: false, weight: 0.32},
+        {itemName: 'Eye concealer', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Highlighter', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Mascara', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Lipstick/Lip-Gloss/Lip Pencil', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Face Powder', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Eye Shadows', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Eyebrow pencil/ Gel', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Make-up Brushes/ Accessories', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Eye Pencil/ Eyeliner', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Vaccination Certificate COVID-19 ', quantity: 1, isSelected: false, weight: 0.02},
 
     ]);
@@ -127,9 +40,9 @@ const BeachList=({})=>{
     //grab data from local storage
     useEffect(() => {
 
-            const beachData = window.localStorage.getItem('BEACH_DATA');
+            const femaleCosmeticsData = window.localStorage.getItem('FEMALE_COSMETICS_DATA');
             // if ( data !== null ) setPassportQty(JSON.parse(data));
-            setItems(JSON.parse(beachData));
+            setItems(JSON.parse(femaleCosmeticsData));
 
             // const data2 = window.localStorage.getItem('ITEM_CHECKED_ESSENTIAL');
             // if ( data !== null ) setItems(JSON.parse(data));
@@ -142,43 +55,13 @@ const BeachList=({})=>{
     //save data to local storage
     useEffect(() => {
             console.log(items);
-            window.localStorage.setItem('BEACH_DATA', JSON.stringify(items));
+            window.localStorage.setItem('FEMALE_COSMETICS_DATA', JSON.stringify(items));
 
         }, [items]
         // },[passportQty]
 
     )
 
-
-
-
-
-
-
-
-
-
-
-
-    // // function to add a new item
-    // const handleAddItemButton = () => {
-    //
-    //     const newItem = {
-    //         itemName: inputValue,
-    //         quantity: 1,
-    //         isSelected: false,
-    //         weight: 0.3,
-    //
-    //     };
-    //
-    //     const newItems = [...items, newItem];
-    //     setItems(newItems);
-    //     setInputValue('');
-    //     calculateTotal();
-    //     calculateTotalWeight();
-    //
-    //
-    // };
 
 
     const handleIncreaseQuantity = (index) => {
@@ -339,4 +222,4 @@ const BeachList=({})=>{
 
 }
 
-export default BeachList;
+export default FemaleCosmeticsList;

@@ -17,7 +17,7 @@ import {UserContext} from "../UserContext";
         const [email, setEmail] = useState('Email@o2.pl');
         const [phoneNumber, setPhoneNumber] = useState('0899999943');
         const [dob, setDob] = useState('1988-08-08');
-        const [sex, setSex] = useState('Male');
+        // const [sex, setSex] = useState('Male');
         const [address, setAddress] = useState('Dublin');
 
         const [customerPassword, setCustomerPassword] = useState('1234');
@@ -97,7 +97,7 @@ import {UserContext} from "../UserContext";
                         email,
                         phoneNumber,
                         dob,
-                        sex,
+                        // sex,
                         address,
                         customerPassword,
                         customerPasswordAgain
@@ -136,24 +136,24 @@ import {UserContext} from "../UserContext";
 
 
 
-        const validateSex=(event)=>{
-            const sx =event.target.value;
-            console.log(sx)
-            setSex(sx);
-            const male = "male";
-            const female = "female"
-            if(sx !== male && sx !== female) {
-                if(sx ===" "){
-                    setSexErrorEmpty("");
-                }
-                else{setIsErrorSex("Must be \"male\" or \"female\".");}
-            }
-
-            else{
-                setIsErrorSex("Sex ok");
-                setSexError(false);
-            }
-        }
+        // const validateSex=(event)=>{
+        //     const sx =event.target.value;
+        //     console.log(sx)
+        //     setSex(sx);
+        //     const male = "male";
+        //     const female = "female"
+        //     if(sx !== male && sx !== female) {
+        //         if(sx ===" "){
+        //             setSexErrorEmpty("");
+        //         }
+        //         else{setIsErrorSex("Must be \"male\" or \"female\".");}
+        //     }
+        //
+        //     else{
+        //         setIsErrorSex("Sex ok");
+        //         setSexError(false);
+        //     }
+        // }
 
 
 
@@ -232,19 +232,19 @@ import {UserContext} from "../UserContext";
                         </div>
                     </div>
 
-                        <div className="row">
+                        {/*<div className="row">*/}
 
-                        <div className="input-field col s8">
-                            <i className="material-icons prefix">{sex}</i>
+                        {/*<div className="input-field col s8">*/}
+                        {/*    <i className="material-icons prefix">{sex}</i>*/}
 
-                            <input placeholder="Optional" value={sex} type="text" onChange={(event => validateSex(event))}
-                                   className="validate"/>
-                            <label htmlFor="sex">Sex</label>
-                            <div>{isErrorSex}</div>
-                            <div>{sexErrorEmpty}</div>
-                            <div>{sexError}</div>
-                        </div>
-                        </div>
+                        {/*    <input placeholder="Optional" value={sex} type="text" onChange={(event => validateSex(event))}*/}
+                        {/*           className="validate"/>*/}
+                        {/*    <label htmlFor="sex">Sex</label>*/}
+                        {/*    <div>{isErrorSex}</div>*/}
+                        {/*    <div>{sexErrorEmpty}</div>*/}
+                        {/*    <div>{sexError}</div>*/}
+                        {/*</div>*/}
+                        {/*</div>*/}
 
                     <div className="row">
                         <div className="input-field col s8">

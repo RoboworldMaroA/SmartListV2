@@ -58,6 +58,16 @@ const EssentialList = ({props}) => {
     )
 
 
+
+
+
+
+
+
+
+
+
+
     // function to add a new item
     const handleAddItemButton = () => {
 

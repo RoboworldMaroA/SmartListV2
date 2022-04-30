@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import {UserContext} from "../UserContext";
 /* useState is used to set a value  */
 import './DisplayCustomerTripCSS.css';
+import registerCustomer from "./RegisterCustomer";
 
 
 
@@ -13,9 +14,13 @@ export const DisplayCustomerTrip = ({item}) => {
     // const [customerId, setCustomerId] = useState('');
 
     //data from useEffect Customer data
-    // const [customer, setCustomer] = useState(null);
+    const [customer, setCustomer] = useState(null);
 
     //const {value,setValue} = useContext(UserContext);
+
+
+
+
 
 
 
@@ -36,17 +41,17 @@ export const DisplayCustomerTrip = ({item}) => {
     }
 
 
-        //
-        // useEffect(() => {
-        //     //do something when loading
-        //     console.log("yoyw yow do something from useeffect")
-        //     if(!customer) {
-        //         fetch("http://localhost:8080/api/v1/customer").then((response) => response.json()).then((dataCustomer) => {
-        //             console.log("List of items in the customer", dataCustomer);
-        //             setCustomer(dataCustomer);
-        //         });
-        //     }
-        // }, [customer]);
+
+        useEffect(() => {
+            //do something when loading
+            console.log("yoyw yow do something from useeffect")
+            if(!customer) {
+                fetch("http://localhost:8080/api/v1/customer").then((response) => response.json()).then((dataCustomer) => {
+                    console.log("List of items in the customer", dataCustomer);
+                    setCustomer(dataCustomer);
+                });
+            }
+        }, [customer]);
 
 
 
@@ -73,6 +78,7 @@ export const DisplayCustomerTrip = ({item}) => {
                                     {/*<p>Destination: {item.destinationId}</p>*/}
                                     <p>List: {item.listId}</p>
                                     <p>Activity : {item.activity} </p>
+                                    <p>Sex: {item.sex==="male"?"male":"female"}</p>
                                     <p>Ski : {item.ski? "Yes" : "No"} </p>
                                     <p>Trekking : {item.trekking? "Yes" : "No"} </p>
                                     <p>Beach : { item.beachListStatus ? "Yes" : "No"} </p>

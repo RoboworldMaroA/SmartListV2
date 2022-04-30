@@ -6,7 +6,7 @@
 // import {Link} from "react-router-dom";
 //
 //
-// const BeachList=({})=>{
+// const TrekkingList=({})=>{
 //
 //
 //
@@ -28,31 +28,31 @@
 //     <form id="mainBodyToDoList"  action="#">
 //
 //         <div id="titleElements">
-//             <p >BEACH</p>
+//             <p >TREKKING</p>
 //         </div>
-//         <p>
-//         <label>
-//             <input type="checkbox" className="filled-in" onChange={toggle} />
+//         {/*<p>*/}
+//         {/*<label>*/}
+//         {/*    <input type="checkbox" className="filled-in" onChange={toggle} />*/}
 //
-//             <span> Swimsuit.
-//                 <p> {checked2 ? "checked": "not checked"}</p>
-//             </span>
+//         {/*    <span> Swimsuit.*/}
+//         {/*        <p> {checked2 ? "checked": "not checked"}</p>*/}
+//         {/*    </span>*/}
 //
-//         </label>
-//         </p>
+//         {/*</label>*/}
+//         {/*</p>*/}
 //
 //
 //
 //         <p>
 //             <label>
 //                 <input type="checkbox" className="filled-in" />
-//                 <span>Towel</span>
+//                 <span>TREKKING SHOES</span>
 //             </label>
 //         </p>
 //         <p>
 //             <label>
 //                 <input type="checkbox" className="filled-in" />
-//                 <span>Sandals</span>
+//                 <span>No cotton t-shirts</span>
 //             </label>
 //         </p>
 //         <p>
@@ -64,7 +64,7 @@
 //         <p>
 //             <label>
 //                 <input type="checkbox" className="filled-in" />
-//                 <span>House Key</span>
+//                 <span>Backpack</span>
 //             </label>
 //         </p>
 //
@@ -86,8 +86,7 @@
 //
 // }
 //
-// export default BeachList;
-
+// export default TrekkingList;
 
 
 
@@ -98,7 +97,18 @@ import './toDoListCSS.css';
 import {Link} from "react-router-dom";
 
 
-const BeachList=({})=>{
+const TrekkingListClothes=({})=>{
+
+
+
+    //
+    // const [checked2, setChecked2] = useState(false);
+    //
+    // function toggle(){
+    //     setChecked2(checked2=> !checked2)
+    // }
+
+
 
     const [checked2, setChecked2] = useState(false);
     const [maskWeight, setMaskWeight] = useState(0.02);
@@ -110,16 +120,20 @@ const BeachList=({})=>{
     const [inputValue, setInputValue] = useState('');
 
     const [items, setItems] = useState([
-        {itemName: 'Bikini/Swimming suit', quantity: 1, isSelected: false, weight: 0.1},
-        {itemName: 'Beach Towel', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Hiking Shoes', quantity: 1, isSelected: false, weight: 0.1},
+        {itemName: 'Trekking Trousers', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Short Sleeve Shirt', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Flashlight', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Long Sleeve Shirt  ', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Down or Synthetic Jacket', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Rain Jacket', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Windbreaker', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Base Layer Top', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Pair Shorts/Skirt ', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Pair Rain Pants ', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Warm Hat', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Sunglasses', quantity: 1, isSelected: false, weight: 0.02},
         {itemName: 'Sandals', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Charger', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Camera Bag', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'House Key', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Cash', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Travel Insurance', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Hotel booking confirmation', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Vaccination Certificate COVID-19 ', quantity: 1, isSelected: false, weight: 0.02},
 
     ]);
 
@@ -127,9 +141,9 @@ const BeachList=({})=>{
     //grab data from local storage
     useEffect(() => {
 
-            const beachData = window.localStorage.getItem('BEACH_DATA');
+            const trekkingClothesData = window.localStorage.getItem('TREKKING_CLOTHES_DATA');
             // if ( data !== null ) setPassportQty(JSON.parse(data));
-            setItems(JSON.parse(beachData));
+            setItems(JSON.parse(trekkingClothesData));
 
             // const data2 = window.localStorage.getItem('ITEM_CHECKED_ESSENTIAL');
             // if ( data !== null ) setItems(JSON.parse(data));
@@ -142,7 +156,7 @@ const BeachList=({})=>{
     //save data to local storage
     useEffect(() => {
             console.log(items);
-            window.localStorage.setItem('BEACH_DATA', JSON.stringify(items));
+            window.localStorage.setItem('TREKKING_CLOTHES_DATA', JSON.stringify(items));
 
         }, [items]
         // },[passportQty]
@@ -339,4 +353,4 @@ const BeachList=({})=>{
 
 }
 
-export default BeachList;
+export default TrekkingListClothes;

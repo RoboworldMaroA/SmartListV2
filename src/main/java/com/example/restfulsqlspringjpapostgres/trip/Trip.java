@@ -84,6 +84,8 @@ public class Trip {
     private Boolean documentsListStatus;
     private Boolean essentialListStatus;
     private String destination;
+    private Boolean female;
+    private String sex;
 
 
 
@@ -102,7 +104,7 @@ public class Trip {
                 Boolean adminPrivileges, Boolean payStatus, Boolean smallLuggage, Boolean mediumLuggage,
                 Boolean largeLuggage, Boolean plane, Boolean beachListStatus, Boolean bus, Boolean train,
                 Boolean poland, Boolean summer,Boolean winter,Boolean spring,Boolean autumn,Boolean car,
-                Boolean ski,  Boolean documentsListStatus, Boolean essentialListStatus, String destination) {
+                Boolean ski,  Boolean documentsListStatus, Boolean essentialListStatus, String destination,Boolean female, String sex) {
         this.id = id;
         this.tripName = tripName;
         this.weatherId = weatherId;
@@ -136,6 +138,8 @@ public class Trip {
         this.documentsListStatus=documentsListStatus;
         this.essentialListStatus=essentialListStatus;
         this.destination=destination;
+        this.female=female;
+        this.sex=sex;
         //this.age = age;
     }
 
@@ -145,7 +149,7 @@ public class Trip {
                  Boolean adminPrivileges, Boolean payStatus, Boolean smallLuggage, Boolean mediumLuggage,
                  Boolean largeLuggage, Boolean plane, Boolean beachListStatus, Boolean bus, Boolean train,Boolean poland,
                  Boolean summer,Boolean winter,Boolean spring,Boolean autumn,Boolean car,Boolean ski,
-                 Boolean documentsListStatus, Boolean essentialListStatus,String destination) {
+                 Boolean documentsListStatus, Boolean essentialListStatus,String destination,Boolean female,String sex) {
         this.tripName = tripName;
         this.weatherId = weatherId;
         this.listId = listId;
@@ -178,6 +182,8 @@ public class Trip {
         this.documentsListStatus=documentsListStatus;
         this.essentialListStatus=essentialListStatus;
         this.destination=destination;
+        this.female=female;
+        this.sex=sex;
         //this.age = age;
     }
 
@@ -446,7 +452,31 @@ public class Trip {
         this.essentialListStatus = essentialListStatus;
     }
 
-//    public Integer getAge() {
+    public Boolean getFemale() {
+        return female;
+    }
+
+    public void setFemale(Boolean female) {
+        this.female = female;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    //    public Integer getAge() {
 //        return age;
 //    }
 //

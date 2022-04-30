@@ -1,93 +1,3 @@
-//
-// import React, {useState}  from 'react';
-// import {type} from "@testing-library/user-event/dist/type";
-// import {checkNode} from "@testing-library/jest-dom/dist/utils";
-// import './toDoListCSS.css';
-// import {Link} from "react-router-dom";
-//
-//
-// const BeachList=({})=>{
-//
-//
-//
-//
-//     const [checked2, setChecked2] = useState(false);
-//
-//     function toggle(){
-//         setChecked2(checked2=> !checked2)
-//     }
-//
-//
-//
-//
-//     return(
-//
-//         //Description of the list
-// <div>
-//
-//     <form id="mainBodyToDoList"  action="#">
-//
-//         <div id="titleElements">
-//             <p >BEACH</p>
-//         </div>
-//         <p>
-//         <label>
-//             <input type="checkbox" className="filled-in" onChange={toggle} />
-//
-//             <span> Swimsuit.
-//                 <p> {checked2 ? "checked": "not checked"}</p>
-//             </span>
-//
-//         </label>
-//         </p>
-//
-//
-//
-//         <p>
-//             <label>
-//                 <input type="checkbox" className="filled-in" />
-//                 <span>Towel</span>
-//             </label>
-//         </p>
-//         <p>
-//             <label>
-//                 <input type="checkbox" className="filled-in" />
-//                 <span>Sandals</span>
-//             </label>
-//         </p>
-//         <p>
-//             <label>
-//                 <input type="checkbox" className="filled-in" />
-//                 <span>Sunscreen</span>
-//             </label>
-//         </p>
-//         <p>
-//             <label>
-//                 <input type="checkbox" className="filled-in" />
-//                 <span>House Key</span>
-//             </label>
-//         </p>
-//
-//
-//         {/*save list button subnit shoul execute function used to saving list on the computer*/}
-//         {/*<div className="row">*/}
-//         {/*    <Link to="../SaveList">*/}
-//         {/*        <button className="waves-effect waves-light btn #795548 brown " type="submit" name="action">*/}
-//         {/*            Save List(Saving not ready yet)*/}
-//         {/*        </button>*/}
-//         {/*    </Link>*/}
-//         {/*</div>*/}
-//
-//
-//
-//     </form>
-// </div>
-//     )//end return
-//
-// }
-//
-// export default BeachList;
-
 
 
 
@@ -98,7 +8,18 @@ import './toDoListCSS.css';
 import {Link} from "react-router-dom";
 
 
-const BeachList=({})=>{
+const TrekkingListAccessories=({})=>{
+
+
+
+    //
+    // const [checked2, setChecked2] = useState(false);
+    //
+    // function toggle(){
+    //     setChecked2(checked2=> !checked2)
+    // }
+
+
 
     const [checked2, setChecked2] = useState(false);
     const [maskWeight, setMaskWeight] = useState(0.02);
@@ -110,12 +31,12 @@ const BeachList=({})=>{
     const [inputValue, setInputValue] = useState('');
 
     const [items, setItems] = useState([
-        {itemName: 'Bikini/Swimming suit', quantity: 1, isSelected: false, weight: 0.1},
-        {itemName: 'Beach Towel', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Sandals', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Charger', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Camera Bag', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'House Key', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Backpack', quantity: 1, isSelected: false, weight: 0.1},
+        {itemName: 'Sleeping Bag', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Bottle of Water', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'High Power Flashlight', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: ' Magnesium Fire Starter Kit ', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Mosquito Repellent Lotion', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Cash', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Travel Insurance', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Hotel booking confirmation', quantity: 1, isSelected: false, weight: 0.02},
@@ -127,9 +48,9 @@ const BeachList=({})=>{
     //grab data from local storage
     useEffect(() => {
 
-            const beachData = window.localStorage.getItem('BEACH_DATA');
+            const trekkingClothesData = window.localStorage.getItem('TREKKING_ACCESSORIES_DATA');
             // if ( data !== null ) setPassportQty(JSON.parse(data));
-            setItems(JSON.parse(beachData));
+            setItems(JSON.parse(trekkingClothesData));
 
             // const data2 = window.localStorage.getItem('ITEM_CHECKED_ESSENTIAL');
             // if ( data !== null ) setItems(JSON.parse(data));
@@ -142,7 +63,7 @@ const BeachList=({})=>{
     //save data to local storage
     useEffect(() => {
             console.log(items);
-            window.localStorage.setItem('BEACH_DATA', JSON.stringify(items));
+            window.localStorage.setItem('TREKKING_ACCESSORIES_DATA', JSON.stringify(items));
 
         }, [items]
         // },[passportQty]
@@ -339,4 +260,4 @@ const BeachList=({})=>{
 
 }
 
-export default BeachList;
+export default TrekkingListAccessories;

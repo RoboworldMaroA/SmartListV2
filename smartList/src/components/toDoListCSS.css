@@ -38,10 +38,21 @@ padding-right: 10%;
 
 #camera{
     object-position: center;
-    margin-left: 10%;
-    background-color: blue;
-    background-image: url("../photo/backgroundCamera.jpg");
-    padding-right: 10%;
+    margin-left: 0%;
+    background-color: white;
+    /*background-image: url("../photo/backgroundCamera.jpg");*/
+    padding-right: 0%;
+}
+
+
+#camcorder{
+    object-position: center;
+    margin-left: 0%;
+    background-color: white;
+    /*background-image: url("../photo/backgroundCamera.jpg");*/
+    padding-right: 0%;
+    padding-top: 0%;
+    margin-bottom: 0%;
 }
 
 
