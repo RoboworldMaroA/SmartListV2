@@ -19,7 +19,8 @@ import {
     PayPage,
     HelpPage,
     DestinationPage,
-    CustomerCreateOrDisplay
+    CustomerCreateOrDisplay,
+    CustomerPickListsToDisplay
 
 } from "./allPages";
 import CreateList from "./components/CreateList";
@@ -73,6 +74,9 @@ function App() {
               <Route path ='/destination' element={DestinationPage()}/>
 
               <Route path ='/createOrDisplayList' element={CustomerCreateOrDisplay()}/>
+
+
+              <Route path ='/pickListToDisplay' element={CustomerPickListsToDisplay()}/>
           </Routes>
 
 

@@ -131,6 +131,7 @@ import {UserContext} from "../UserContext";
                 else{
                     setIsError("Password OK");
                     setPasswordError(false);
+                    setPasswordErrorEmpty(" ")
                 }
             }
 
@@ -291,7 +292,8 @@ import {UserContext} from "../UserContext";
 
                     <div className="row">
                         {/*<Link to="../Login">*/}
-                        <button id="buttonRegister" className="waves-effect waves-light btn #795548 brown" type="submit" name="action">Register</button>
+                        <button disabled={email.length===0||customerPasswordAgain.length===0||customerPassword.length===0} id="buttonRegister" className="waves-effect waves-light btn #795548 brown" type="submit" name="action">
+                            Register</button>
                         {/*</Link>*/}
                     </div>
                 </form>

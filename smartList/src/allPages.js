@@ -19,6 +19,7 @@ import backgroundHome from "./photo/backgroundHomePage3.jpg";
 import backgroundLogin from "./photo/backgroundLoginPage3.jpg";
 import HomeButtons from "./components/HomeButtons";
 import CustomerCreateOrDisplayList from "./components/CustomerCreateOrDisplayList";
+import CustomerPickListToDisplay from "./components/CustomerPickListToDisplay";
 
 
 export function Home() {
@@ -326,6 +327,54 @@ export function CustomerCreateOrDisplay() {
 }
 
 
+export function CustomerPickListsToDisplay() {
+
+    return(
+        <div id="CustomerCreateOrDisplayListPage" className="container-fluid">
+            <nav>
+                <div className="nav-wrapper #5d4037 brown darken-2">
+                    <a href="/" className="brand-logo">SmartLuggage </a>
+                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
+                        className="material-icons">menu</i></a>
+                    <ul className="right hide-on-med-and-down">
+                        {/*<li>  <Link to="../DisplayList"> Display Trips</Link></li>*/}
+                        <li>  <Link to="../Pay"> Pay</Link></li>
+                        {/*<li><a href="collapsible.html">Pay</a></li>*/}
+                        <li>  <Link to="../Help"> Help</Link></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul className="sidenav" id="mobile-demo">
+                {/*<li>  <Link to="../DisplayList"> Display Trips</Link></li>*/}
+                <li>  <Link to="../Pay"> Pay</Link></li>
+                {/*<li><a href="collapsible.html">Pay</a></li>*/}
+                <li>  <Link to="../Help"> Help</Link></li>
+            </ul>
+
+            {/*<div className="container">*/}
+            {/*    <div className="row">*/}
+            {/*        <div className="col s2"></div>*/}
+            {/*        <div className="col s8">*/}
+            {/*            <p id="PageTitle"> Pick on of this options</p>*/}
+            {/*        </div>*/}
+            {/*        <div className="col s2"></div>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
+            <div className="row">
+                <CustomerPickListToDisplay/>
+            </div>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </div>
+    );
+}
 
 
 
