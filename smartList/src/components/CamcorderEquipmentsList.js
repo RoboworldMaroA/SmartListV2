@@ -1,4 +1,5 @@
 
+
 import React, {useEffect, useState} from 'react';
 import {type} from "@testing-library/user-event/dist/type";
 import {checkNode} from "@testing-library/jest-dom/dist/utils";
@@ -6,7 +7,7 @@ import './toDoListCSS.css';
 import {Link} from "react-router-dom";
 
 
-const CameraList=({})=>{
+const CamcorderEquipmentsList=({})=>{
 
 
 
@@ -29,13 +30,13 @@ const CameraList=({})=>{
     const [inputValue, setInputValue] = useState('');
 
     const [items, setItems] = useState([
-        // {itemName: 'Camera Body', quantity: 1, isSelected: false, weight: 0.1},
-        {itemName: 'Lenses', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Battery', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Camera Charger', quantity: 0, isSelected: false, weight: 0.12},
-        {itemName: 'Camera Bag', quantity: 1, isSelected: false, weight: 0.12},
-        {itemName: 'Camera Filters', quantity: 0, isSelected: false, weight: 0.12},
-        // {itemName: 'Cash', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Camcorder Body + Battery', quantity: 1, isSelected: false, weight: 0.1},
+        // {itemName: 'Lenses', quantity: 1, isSelected: false, weight: 0.02},
+        // {itemName: 'Camcorder Battery', quantity: 1, isSelected: false, weight: 0.02},
+        // {itemName: 'Charger', quantity: 1, isSelected: false, weight: 0.02},
+        // {itemName: 'Camcorder Bag', quantity: 1, isSelected: false, weight: 0.02},
+        // {itemName: 'Tripod', quantity: 1, isSelected: false, weight: 0.02},
+        // {itemName: 'Spare Memory Card', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Travel Insurance', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Hotel booking confirmation', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Vaccination Certificate COVID-19 ', quantity: 1, isSelected: false, weight: 0.02},
@@ -46,9 +47,9 @@ const CameraList=({})=>{
     //grab data from local storage
     useEffect(() => {
 
-            const cameraData = window.localStorage.getItem('CAMERA_DATA');
+            const camcorderData = window.localStorage.getItem('CAMCORDER_EQUIPMENTS_DATA');
             // if ( data !== null ) setPassportQty(JSON.parse(data));
-            setItems(JSON.parse(cameraData));
+            setItems(JSON.parse(camcorderData));
 
             // const data2 = window.localStorage.getItem('ITEM_CHECKED_ESSENTIAL');
             // if ( data !== null ) setItems(JSON.parse(data));
@@ -61,7 +62,7 @@ const CameraList=({})=>{
     //save data to local storage
     useEffect(() => {
             console.log(items);
-            window.localStorage.setItem('CAMERA_DATA', JSON.stringify(items));
+            window.localStorage.setItem('CAMCORDER_EQUIPMENTS_DATA', JSON.stringify(items));
 
         }, [items]
         // },[passportQty]
@@ -86,7 +87,7 @@ const CameraList=({})=>{
             itemName: inputValue,
             quantity: 1,
             isSelected: false,
-            weight: 0.1,
+            weight: 0.3,
 
         };
 
@@ -190,9 +191,8 @@ const CameraList=({})=>{
 
 
     return(
-
         <>
-        <form id="camera" action="#">
+            <form id="camcorder" action="#">
         <div className='main-container'>
             <div className='item-list'>
                 {items.map((item, index) => (
@@ -249,13 +249,14 @@ const CameraList=({})=>{
                     </div>
                 ))}
             </div>
+
         </div>
-        </form>
 
 
-        </>
+</form>
+            </>
     )//end return
 
 }
 
-export default CameraList;
+export default  CamcorderEquipmentsList;

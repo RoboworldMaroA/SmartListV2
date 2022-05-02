@@ -24,9 +24,13 @@ import './DisplayListComponent.css';
 
 export const DisplayListFunctionalComponent = (props) =>{
 
-    const [tripData, setTripData] = useState(null);
+    const [tripData, setTripData] = useState([]);
     const [displayTripDetail, setDisplayTripDetail] = useState(false);
+    const [displayTripDetail2, setDisplayTripDetail2] = useState(false);
+    const [displayTripDetail3, setDisplayTripDetail3] = useState(false);
+    const [displayTripDetail4, setDisplayTripDetail4] = useState(false);
     const [loggedCustomerId, setLoggedCustomerId] = useState(1);
+    const [tripId, setTripId] = useState([]);
 
     const {value,setValue} = useContext(UserContext);
     // constructor(props) {
@@ -95,8 +99,24 @@ export const DisplayListFunctionalComponent = (props) =>{
         fetch("api/v1/trip/").then((response) => response.json()).then((TripData) => {
             console.log("List of items in the trip", TripData);
             setTripData(TripData);
+            // calculateLastTripId();
         });
     }, ["hI trip"]);
+
+
+   // const calculateLastTripId=()=>{
+   //     tripData.map(
+   //         (TripData)=> {
+   //             return(
+   //                 <div> {TripData.id} </div>
+   //             );
+   //         }
+   //     )
+   //
+   //
+   //     // console.log("I am looking for last Id", lastId);
+   //
+   // }
 
 
 
@@ -108,12 +128,48 @@ export const DisplayListFunctionalComponent = (props) =>{
 
     }
 
+    //this method display or not the Trip Detail
+    function changeStatus2() {
+        //here will be logic what lit to display, depend on what customer choose in the form FormCrteteList
+        console.log("State trip List", displayTripDetail2);
+        setDisplayTripDetail2(!displayTripDetail2);
+
+    }
+
+    //this method display or not the Trip Detail
+    function changeStatus3() {
+        //here will be logic what lit to display, depend on what customer choose in the form FormCrteteList
+        console.log("State trip List", displayTripDetail3);
+        setDisplayTripDetail3(!displayTripDetail3);
+
+    }
+
+    //this method display or not the Trip Detail
+    function changeStatus4() {
+        //here will be logic what lit to display, depend on what customer choose in the form FormCrteteList
+        console.log("State trip List", displayTripDetail4);
+        setDisplayTripDetail4(!displayTripDetail4);
+
+    }
+
 
         return (
             // First DIV
-            <div >
+            <div id="allElementInDisplayListFunctionalComponent">
 
-                {/*<div className="row">*/}
+                {/*<div>*/}
+
+
+                {/*    tripData.map((TripData)=> {*/}
+                {/*        return(<div >*/}
+                {/*                <h1>key={TripData.id} camera {TripData.camera.toString()}</h1>*/}
+                {/*        </div>*/}
+
+                {/*        );*/}
+                {/*};*/}
+                {/*</div>*/}
+
+
 
 
                 {/*    {this.state.tripData.map((TripData)=> {*/}
@@ -159,14 +215,28 @@ export const DisplayListFunctionalComponent = (props) =>{
 
 
 
+
+
                 {/*<p> Status of the list from database </p>*/}
-                <div className="row">
+                <div id="positionDisplayStateOfCustomerList">
                         <DisplayStateOfCustomerList/>
                 </div>
 
-                <div className="row"> <h2>Element from useContext {value}</h2></div>
+                {/*IN THIS LINE IS VISIBLE VALUE FROM THE ANOTHER COMPONENT THAT YOU CAN SHARE*/}
+                {/*<div className="row"> <h2>Element from useContext {value}</h2></div>*/}
 
-                <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus()} >  Display Trip Detail </button>
+                {/*<div> Trip ID {tripId.length}</div>*/}
+
+
+
+
+
+                <div id= "fourButtonsToDisplayListDetail" className="row">
+
+
+                    {/*#################FIRST BUTTON#######################*/}
+                    <div className="col s12 m6 l3">
+                <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus()} >  Display Trip 1 Details </button>
                  {/*<div>*/}
                  {/*    {displayTripDetail*/}
                  {/*        ? tripData.map((TripData) => {*/}
@@ -178,13 +248,146 @@ export const DisplayListFunctionalComponent = (props) =>{
                 {/*<button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus()} >  Display Trip Detail </button>*/}
                 {/*</div>*/}
 
-                <div className="row">
+                    </div>
+                <div>
                     {displayTripDetail
                         ? tripData.filter((TripData) => TripData.id===loggedCustomerId).map((TripData) => {
-                            return (<DisplayCustomerTrip key={TripData.id} item={TripData}/>);
-                        }):"... press to see more detail about a trips"}
+                            return (
+                                <>
+                                <DisplayCustomerTrip key={TripData.id} item={TripData}/>
+
+
+                                </>
+
+                                );
+                        }):""}
                     {/*end*/}
                 </div>
+
+
+
+
+                    {/*#################  2 BUTTON#######################*/}
+                        <div className="col s12 m6 l3">
+                <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus2()} >  Display Trip2 Details </button>
+                {/*<div>*/}
+                {/*    {displayTripDetail*/}
+                {/*        ? tripData.map((TripData) => {*/}
+                {/*                return (<DisplayCustomerTrip key={TripData.id} item={TripData}/>);*/}
+                {/*        }):"... press to see more detail about a trips"}*/}
+                {/*    /!*end*!/*/}
+                {/*</div>*/}
+                {/*<div className="row">*/}
+                {/*<button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus()} >  Display Trip Detail </button>*/}
+                {/*</div>*/}
+
+
+                        </div>
+                <div>
+                    {displayTripDetail2
+                        ? tripData.filter((TripData) => TripData.id===2).map((TripData) => {
+                            return (
+                                <>
+                                    <DisplayCustomerTrip key={TripData.id} item={TripData}/>
+
+
+                                </>
+
+                            );
+                        }):""}
+                    {/*end*/}
+                </div>
+
+
+
+
+                    {/*################# 3 BUTTON#######################*/}
+                            <div className="col s12 m6 l3">
+                <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus3()} >  Display Trip3 Details </button>
+                {/*<div>*/}
+                {/*    {displayTripDetail*/}
+                {/*        ? tripData.map((TripData) => {*/}
+                {/*                return (<DisplayCustomerTrip key={TripData.id} item={TripData}/>);*/}
+                {/*        }):"... press to see more detail about a trips"}*/}
+                {/*    /!*end*!/*/}
+                {/*</div>*/}
+                {/*<div className="row">*/}
+                {/*<button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus()} >  Display Trip Detail </button>*/}
+                {/*</div>*/}
+
+                            </div>
+
+                <div>
+                    {displayTripDetail3
+                        ? tripData.filter((TripData) => TripData.id===3).map((TripData) => {
+                            return (
+                                <>
+                                    <DisplayCustomerTrip key={TripData.id} item={TripData}/>
+
+
+                                </>
+
+                            );
+                        }):""}
+                    {/*end*/}
+                </div>
+
+
+
+                    {/*################# 4 BUTTON#######################*/}
+                                <div className="col s12 m6 l3">
+
+                <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus4()} >  Display Trip 4 Details </button>
+                {/*<div>*/}
+                {/*    {displayTripDetail*/}
+                {/*        ? tripData.map((TripData) => {*/}
+                {/*                return (<DisplayCustomerTrip key={TripData.id} item={TripData}/>);*/}
+                {/*        }):"... press to see more detail about a trips"}*/}
+                {/*    /!*end*!/*/}
+                {/*</div>*/}
+                {/*<div className="row">*/}
+                {/*<button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus()} >  Display Trip Detail </button>*/}
+                {/*</div>*/}
+                                </div>
+                <div >
+                    {displayTripDetail4
+                        ? tripData.filter((TripData) => TripData.id===4).map((TripData) => {
+                            return (
+                                <>
+                                    <DisplayCustomerTrip key={TripData.id} item={TripData}/>
+
+
+                                </>
+
+                            );
+                        }):""}
+                    {/*end*/}
+                </div>
+
+
+
+
+
+
+
+
+                {/*<div className="row">*/}
+                {/*    {displayTripDetail*/}
+                {/*        ? tripData.filter((TripData) => TripData.id===3).map((TripData) => {*/}
+                {/*            return (*/}
+                {/*                <>*/}
+                {/*                    <DisplayCustomerTrip key={TripData.id} item={TripData}/>*/}
+
+
+                {/*                </>*/}
+
+                {/*            );*/}
+                {/*        }):"... press to see more detail about a trips"}*/}
+                {/*    /!*end*!/*/}
+                {/*</div>*/}
+
+                </div>
+
 
 
 

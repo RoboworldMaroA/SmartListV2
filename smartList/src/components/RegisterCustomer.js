@@ -12,26 +12,26 @@ import {UserContext} from "../UserContext";
 
     const AddDetail = ({setStudentInfo: setInfo}) => {
         const navigateRegister = useNavigate();
-        const [name, setName] = useState('MaroA');
-        const [surname, setSurname] = useState('August');
-        const [email, setEmail] = useState('Email@o2.pl');
-        const [phoneNumber, setPhoneNumber] = useState('0899999943');
-        const [dob, setDob] = useState('1988-08-08');
+        const [name, setName] = useState('');
+        const [surname, setSurname] = useState('');
+        const [email, setEmail] = useState('');
+        const [phoneNumber, setPhoneNumber] = useState('');
+        const [dob, setDob] = useState('');
         // const [sex, setSex] = useState('Male');
-        const [address, setAddress] = useState('Dublin');
+        const [address, setAddress] = useState('');
 
-        const [customerPassword, setCustomerPassword] = useState('1234');
+        const [customerPassword, setCustomerPassword] = useState('');
         const [customerPasswordAgain, setCustomerPasswordAgain] = useState('');
 
         const [emailIsVerified, setEmailIsVerified] = useState(false);
         const [isError, setIsError] = useState('');
         const [isErrorFetchMethod, setIsErrorFetchMethod] = useState(null);
-        const [passwordError, setPasswordError] = useState(true);
+        const [passwordError, setPasswordError] = useState(null);
         const [passwordErrorEmpty, setPasswordErrorEmpty] = useState("");
 
 
         const [isErrorSex, setIsErrorSex] = useState('');
-        const [sexError, setSexError] = useState(true);
+        const [sexError, setSexError] = useState(null);
         const [sexErrorEmpty, setSexErrorEmpty] = useState("");
 
 
@@ -261,7 +261,7 @@ import {UserContext} from "../UserContext";
                         <div className="input-field col s8">
                             <i className="material-icons prefix">password</i>
 
-                            <input placeholder="password" value={customerPassword} type="text" onChange={(event => setCustomerPassword(event.target.value))}
+                            <input placeholder="password" value={customerPassword} type="password" onChange={(event => setCustomerPassword(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="customerPassword">Password</label>
                         </div>
@@ -279,7 +279,7 @@ import {UserContext} from "../UserContext";
                         <div className="input-field col s8">
                             <i className="material-icons prefix">password</i>
 
-                            <input placeholder="Must be the same minimum 8 characters and numbers" value={customerPasswordAgain} type="text" onChange={(event => validatePassword(event))}
+                            <input placeholder="Must be the same" value={customerPasswordAgain} type="password" onChange={(event => validatePassword(event))}
                                    className="validate"/>
                             <label htmlFor="customerPasswordAgain">Repeat the Password</label>
                             <div>{isError}</div>

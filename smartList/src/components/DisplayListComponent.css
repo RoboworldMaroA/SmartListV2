@@ -2,4 +2,24 @@
     border: thin beige;
     outline-width: medium;
     background-color: beige;
+
+}
+
+#positionDisplayStateOfCustomerList{
+    object-position: center;
+
+
+}
+
+#allElementInDisplayListFunctionalComponent{
+
+    padding-bottom: 290px;
+}
+
+
+#fourButtonsToDisplayListDetail{
+
+    margin-left: 3%;
+
+
 }

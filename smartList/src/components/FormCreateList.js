@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
+import { mdiQuadcopter } from '@mdi/js';
+import Icon from "@mdi/react";
 
 import 'materialize-css';
 import ReactDOM from "react-dom";
@@ -13,6 +15,7 @@ import {getValue} from "@testing-library/user-event/dist/utils";
 import * as events from "events";
 import DisplayList from "./DisplayList";
 import {selectOptions} from "@testing-library/user-event/dist/select-options";
+import {mdiAccount, mdiBagCarryOn} from "@mdi/js/commonjs/mdi";
 
 
 
@@ -20,62 +23,117 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
         const AddCreateListDetail = ({props:props},{setCreateListInfo: setCreateListInfo}) => {
 
         //const [activity, setActivity] = useState('No');
-        const [adminPrivileges, setAdminPrivileges] = useState(false);
-        const [autumn, setAutumn] = useState(false);
-        const [beachListStatus, setBeachListStatus] = useState(false);
-        const [bus, setBus] = useState(false);
-        const [camcorder, setCamcorder] = useState(false);
-        const [camera, setCamera] = useState(false);
-        const [car, setCar] = useState(false);
-        const [departureDay, setDepartureDay] = useState("");
-        const [description, setDescription] = useState('');
-        const [ireland, setIreland] = useState(" ");
-        const [listId, setListId] = useState('');
-        const [largeLuggage, setLargeLuggage] = useState(false);
-        const [mediumLuggage, setMediumLuggage] = useState(false);
-        const [smallLuggage, setSmallLuggage] = useState(false);
-        const [smartphone, setSmartphone] = useState(false);
-        const [payStatus, setPayStatus] = useState(false);
-        const [returnDay, setReturnDay] = useState('');
-        const [tripName, setTripName] = useState('');
-        const [tripPassword, setTripPassword] = useState('');
-        const [weatherId, setWeatherId] = useState('');
-        //const [transport, setTransport] = useState();
+        // const [adminPrivileges, setAdminPrivileges] = useState(false);
+        // const [autumn, setAutumn] = useState(false);
+        // const [beachListStatus, setBeachListStatus] = useState(false);
+        // const [bus, setBus] = useState(false);
+        // const [camcorder, setCamcorder] = useState(false);
+        // const [camera, setCamera] = useState(false);
+        // const [car, setCar] = useState(false);
+        // const [departureDay, setDepartureDay] = useState("");
+        // const [description, setDescription] = useState('');
+        // const [ireland, setIreland] = useState(" ");
+        // const [listId, setListId] = useState('');
+        // const [largeLuggage, setLargeLuggage] = useState(false);
+        // const [mediumLuggage, setMediumLuggage] = useState(false);
+        // const [smallLuggage, setSmallLuggage] = useState(false);
+        // const [smartphone, setSmartphone] = useState(false);
+        // const [payStatus, setPayStatus] = useState(false);
+        // const [returnDay, setReturnDay] = useState('');
+        // const [tripName, setTripName] = useState('');
+        // const [tripPassword, setTripPassword] = useState('');
+        // const [weatherId, setWeatherId] = useState('');
+        // //const [transport, setTransport] = useState();
+        //
+        // const [ski, setSki] = useState(false);
+        // const [trekking , setTrekking] = useState(false);
+        //     const [documentListStatus , setDocumentListStatus] = useState(true);
+        //     const [essentialListStatus , setEssentialListStatus] = useState(true);
+        //     const [plane , setPlane] = useState(false);
+        //     const [poland , setPoland] = useState(false);
+        //     const [spain , setSpain] = useState(false);
+        //     const [summer , setSummer] = useState(false);
+        //     const [winter , setWinter] = useState(false);
+        //     const [spring , setSpring] = useState(false);
+        //     const [train , setTrain] = useState(false);
+        //     const [id , setId] = useState('');
+        //     const [destination, setDestination] = useState('');
+        // // const [displayListState , setDisplayListState] = useState(true);
+        // // const [displayListState , setDisplayListState] = useState(true);
+        //
+        //     const [sex, setSex] = useState('');
+        //     const [laptop , setLaptop] = useState(false);
+        //     const [tablet , setDrone] = useState(false);
 
-        const [ski, setSki] = useState(false);
-        const [trekking , setTrekking] = useState(false);
+
+
+            // FOR TEST ONLY ALL TRUE
+            const [adminPrivileges, setAdminPrivileges] = useState(false);
+            const [autumn, setAutumn] = useState(true);
+            const [beachListStatus, setBeachListStatus] = useState(true);
+            const [bus, setBus] = useState(true);
+            const [camcorder, setCamcorder] = useState(true);
+            const [camera, setCamera] = useState(true);
+            const [car, setCar] = useState(true);
+            const [departureDay, setDepartureDay] = useState("");
+            const [description, setDescription] = useState('');
+            const [ireland, setIreland] = useState(" ");
+            const [listId, setListId] = useState('');
+            const [largeLuggage, setLargeLuggage] = useState(true);
+            const [mediumLuggage, setMediumLuggage] = useState(true);
+            const [smallLuggage, setSmallLuggage] = useState(true);
+            // const [smartphone, setSmartphone] = useState(true);//it is drone
+            const [drone, setDrone] = useState(true);//it is drone
+            const [payStatus, setPayStatus] = useState(true);
+            const [returnDay, setReturnDay] = useState('');
+            const [tripName, setTripName] = useState('');
+            const [tripPassword, setTripPassword] = useState('');
+            const [weatherId, setWeatherId] = useState('');
+            //const [transport, setTransport] = useState();
+
+            const [ski, setSki] = useState(true);
+            const [trekking , setTrekking] = useState(true);
             const [documentListStatus , setDocumentListStatus] = useState(true);
             const [essentialListStatus , setEssentialListStatus] = useState(true);
-            const [plane , setPlane] = useState(false);
+            const [plane , setPlane] = useState(true);
             const [poland , setPoland] = useState(false);
             const [spain , setSpain] = useState(false);
-            const [summer , setSummer] = useState(false);
-            const [winter , setWinter] = useState(false);
-            const [spring , setSpring] = useState(false);
-            const [train , setTrain] = useState(false);
+            const [summer , setSummer] = useState(true);
+            const [winter , setWinter] = useState(true);
+            const [spring , setSpring] = useState(true);
+            const [train , setTrain] = useState(true);
             const [id , setId] = useState('');
             const [destination, setDestination] = useState('');
-        // const [displayListState , setDisplayListState] = useState(true);
-        // const [displayListState , setDisplayListState] = useState(true);
+            // const [displayListState , setDisplayListState] = useState(true);
+            // const [displayListState , setDisplayListState] = useState(true);
 
             const [sex, setSex] = useState('');
+            const [laptop , setLaptop] = useState(true);
+            const [tablet , setTablet] = useState(true);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
         //fetch for trip
-
-
-
-
         const validateCreateList = async (event) => {
             alert("Thank you for creating list")
 
             const result = await fetch("api/v1/trip", {
                 method: "POST",
                 body: JSON.stringify({adminPrivileges,autumn, beachListStatus, bus, camcorder,camera,
-                    car, departureDay, description, destination,documentListStatus, essentialListStatus, ireland, largeLuggage,
-                    listId, mediumLuggage, payStatus , plane, poland, returnDay, sex, ski,smallLuggage,smartphone,spain,spring,
-                    summer,train,trekking,tripName, tripPassword, weatherId,winter,id}),
+                    car, departureDay, description, destination,documentListStatus, drone, essentialListStatus, ireland, laptop, largeLuggage,
+                    listId, mediumLuggage, payStatus , plane, poland, returnDay, sex, ski,smallLuggage,smartphone: drone,spain,spring,
+                    summer,tablet, train,trekking,tripName, tripPassword, weatherId,winter,id}),
                 headers: {
                     "Content-Type": "application/json",
                 }
@@ -106,33 +164,11 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
         //
         //         )
         //
-        //
-        //
-        // }
-
-
-      // //IT IS NOT WORKIN, DISPLAY CUSTOM LIST !!!!!!!!!!!!!
-      //   function displayList (props)
-      //   {
-      //       return(
-      //       //here will be logic what lit to display, depen what customer choose in the form FormCrteteList
-      //       console.log(this.state.displayBeach)
-      //
-      //       )
-      //
-      //   }
-
-
-        // const [checked2, setChecked2] = useState(false);
-        // function toggle() {
-        //     setChecked2(checked2=> !checked2)
-        //
         // }
 
 
 
-
-            //It is working checked element change state
+            //checked element change state
             const [irelandState, setIrelandState] = useState(false);
 
             const toggleIreland = ()=> {
@@ -218,19 +254,58 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
 
 
             //It is working checked element change state
-            const [smartphoneState, setSmartphoneState] = useState(false);
+            const [droneState, setDroneState] = useState(false);
 
-            const toggleSmartphone = ()=> {
-                setSmartphoneState(smartphoneState => !smartphoneState);
-                if (!smartphoneState) {
-                    setSmartphone(true);
-                    console.log(smartphone);//test only
+            const toggleDrone = ()=> {
+                setDroneState(droneState => !droneState);
+                if (!droneState) {
+                    setDrone(true);
+                    console.log(drone);//test only
                 }
-                if(smartphoneState){
-                    setSmartphone(false);
-                    console.log(smartphone);//test only
+                if(droneState){
+                    setDrone(false);
+                    console.log(drone);//test only
                 }
             }
+
+
+
+            //Tablet checked element change state
+            const [tabletState, setTabletState] = useState(false);
+
+            const toggleTablet = ()=> {
+                setTabletState(tabletState => !tabletState);
+                if (!tabletState) {
+                    setTablet(true);
+                    console.log(tablet);//test only
+                }
+                if(tabletState){
+                    setTablet(false);
+                    console.log(tablet);//test only
+                }
+            }
+
+            //Laptop checked element change state
+            const [laptopState, setLaptopState] = useState(false);
+
+            const toggleLaptop = ()=> {
+                setLaptopState(laptopState => !laptopState);
+                if (!laptopState) {
+                    setLaptop(true);
+                    console.log(laptop);//test only
+                }
+                if(laptopState){
+                    setLaptop(false);
+                    console.log(laptop);//test only
+                }
+            }
+
+
+
+
+
+
+
 
             //It is working checked element change state
             const [largeLuggageState, setLargeLuggageState] = useState(false);
@@ -348,7 +423,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                 }
             }
 
-            //beachListStatus function to change state when clicked
+            //bus function to change state when clicked
             const [busState, setBusState] = useState(false);
 
             const toggleBus = ()=> {
@@ -391,152 +466,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
             }
 
 
-            // const option = [
-            //     {value: 'Yes', label: 'Camcorder'},
-            //     {value: 'No', label: 'Camcorder'}
-            // ]
-            //
-            // const changeHandler = (event) => {
-            //     this.setState({ camcorder: event ? event.map(x => x.value) : [] });
-            // };
 
-
-
-
-
-
-            //send string probably is working
-            // const [destination, setDestination] = useState("");
-            // // const [irelandStatus, setIrelandStatus] = useState(false);
-            // // const [spainStatus, setSpainStatus] = useState(false);
-            // // event => setDestination(event.target.value)
-            // const updateDestinationStatus = (event)=> {
-            //     //setIrelandStatus(irelandStatus => !irelandStatus);
-            //     //setSpainStatus(spainStatus => !spainStatus);
-            //
-            //     //const ireland = "1";
-            //     //const spain="2";
-            //     if (destination === "1" ){
-            //         setIreland("1");
-            //         setSpain("0")
-            //         setPoland("0");
-            //         console.log("Ireland Value is",ireland);//test only
-            //         console.log("Spain Value is",spain);//test only
-            //         console.log("Poland Value is",poland);//test only
-            //     }
-            //     if(destination === "2" ){
-            //         setIreland("0");
-            //         setSpain("1")
-            //         setPoland("0");
-            //         console.log("Ireland Value is",ireland);//test only
-            //         console.log("Spain Value is",spain);//test only
-            //         console.log("Poland Value is",poland);//test only
-            //     }
-            //
-            //     if(destination === "3" ){
-            //         setIreland("0");
-            //         setSpain("0")
-            //         setPoland("1");
-            //         console.log("Ireland Value is",ireland);//test only
-            //         console.log("Spain Value is",spain);//test only
-            //         console.log("Poland Value is",poland);//test only
-            //     }
-            //
-            //
-            // }
-
-
-
-           //send boolean and string for ireland
-             //const [destination, setDestination] = useState('');
-           //  // const [irelandStatus, setIrelandStatus] = useState(false);
-           //  // const [spainStatus, setSpainStatus] = useState(false);
-           //  // event => setDestination(event.target.value)
-           //  const updateDestinationStatus = (event)=> {
-           //      //setIreland(ireland => !ireland);
-           //     // setSpain(spainStatus => !spainStatus);
-           //
-           //      const ireland1 = "1";
-           //      const spain1=true;
-           //      const poland1=true;
-           //
-           //      // setDestination(null);
-           //      // setIreland("");
-           //      // setSpain(false);
-           //      // setPoland(false);
-           //
-           //      const dest = event.target.value;
-           //      setDestination(dest);
-           //      console.log("Destination Value is before if",destination);//test only
-           //      const dest2=destination;
-           //      console.log("Dest2 Value before if",dest2);//test only
-           //
-           //      if (dest2 === "1" ){
-           //          setIreland(ireland1);
-           //          setSpain(!spain1);
-           //          setPoland(!poland1);
-           //          console.log("Destination Value first if",destination);//test only
-           //          console.log("Ireland Value is",ireland);//test only
-           //          console.log("Spain Value is",spain);//test only
-           //          console.log("Poland Value is",poland);//test only
-           //          setDestination(event.target.value);
-           //          console.log("Destination after target value",destination);//test only
-           //      }
-           //      if(dest2 === "2" ){
-           //          setIreland("0");
-           //          setSpain(spain1)
-           //          setPoland(!poland1);
-           //          console.log("Destination Value 2nd if",destination);//test only
-           //          console.log("Ireland Value is",ireland);//test only
-           //          console.log("Spain Value is",spain);//test only
-           //          console.log("Poland Value is",poland);//test only
-           //          setDestination(event.target.value);
-           //          console.log("Destination after target value",destination);//test only
-           //      }
-           //
-           //      if(dest2 === "3" ){
-           //          setIreland("0");
-           //          setSpain(!spain1)
-           //          setPoland(poland1);
-           //          console.log("Destination Value 3rd if",destination);//test only
-           //          console.log("Ireland Value is",ireland);//test only
-           //          console.log("Spain Value is",spain);//test only
-           //          console.log("Poland Value is",poland);//test only
-           //          setDestination(event.target.value);
-           //          console.log("Destination after target value",destination);//test only
-           //      }
-           //
-           //      setIreland("0");
-           //      setSpain(false)
-           //      setPoland(false);
-           //
-           //
-           //  }
-
-
-            //beachListStatus function to change state when clicked
-            // const [camcorderState, setCamcorderState] = useState(false);
-            //
-            // const toggleCamcorder = (event)=> {
-            //     setCamcorder(camcorderState => !camcorderState);
-            //     if (event.equal("Yes")) {
-            //         setCamcorder(true);
-            //         console.log(camcorder);//test only
-            //     }
-            //     if(event.equal("No")){
-            //         setCamcorder(false);
-            //         console.log(camcorder);//test only
-            //     }
-            // }
-
-        // const options = [
-        //     { value: 'chocolate', label: 'Chocolate' },
-        //     { value: 'strawberry', label: 'Strawberry' },
-        //     { value: 'vanilla', label: 'Vanilla' }
-        // ]
-        // const MyComponent = () => (
-        //     <Select options={options} />
-        // )
 
             function handleChange(event) {    this.setState({value: event.target.value});  }
 
@@ -561,7 +491,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                 }
 
                 else{
-                    setIsErrorSex("Sex ok");
+                    setIsErrorSex("");
                     setSexError(false);
                     setSex(sx);
                 }
@@ -572,18 +502,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
 
 
 
-
-
-
-
-
-
             return (
-
-
-
-
-
             <div id ="elementInFormCreateList" className="row">
 
 
@@ -598,7 +517,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     <div className="row">
                         <div  className="input-field col s10">
                             <i className="material-icons prefix">title</i>
-                            <input placeholder="Your unique name of the travelingList." value={tripName} type="text" onChange={(event => setTripName(event.target.value))}
+                            <input placeholder="" value={tripName} type="text" onChange={(event => setTripName(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="List Name">Trip Name</label>
                         </div>
@@ -606,55 +525,13 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     <div className="row">
                         <div  className="input-field col s10">
                             <i className="material-icons prefix">notes</i>
-                            <input placeholder="Write unique description." value={listId} type="text" onChange={(event => setListId(event.target.value))}
+                            <input placeholder="" value={listId} type="text" onChange={(event => setListId(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="List Name">Trip Description</label>
                         </div>
                     </div>
 
 
-
-
-
-
-
-
-
-                    {/*I dont know how to pass data to this form*/}
-                    {/*<div className="row">*/}
-                    {/*    <div  className="input-field col s10">*/}
-                    {/*        <i className="material-icons prefix">account_circle</i>*/}
-                    {/*        <select className="browser-default"  value={destination} onChange={event => setIreland(event.target.value)}>*/}
-                    {/*                (<option disabled selected> Destination    </option>),*/}
-                    {/*                (<option value="Ireland">Ireland</option>),*/}
-                    {/*                (<option value="Spain">Spain</option>),*/}
-                    {/*                (<option value="Poland">Poland</option>)*/}
-                    {/*            )}*/}
-                    {/*        </select>*/}
-                    {/*        /!*<p>This is display destination for test only : {destination}</p>*!/*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
-
-
-
-
-                    {/*<div className="row">*/}
-                    {/*    <div  className="input-field col s10">*/}
-
-                    {/*        <i className="material-icons prefix">account_circle</i>*/}
-                    {/*        /!*<select value={destination} onChange={(event)=>updateDestinationStatus(event)}>*!/*/}
-                    {/*            <select value={destination|"2"|destination|"3"} onChange={(event)=>setDestination(event.target.value)}>*/}
-
-
-                    {/*                (<option disabled selected> Destination    </option>),*/}
-                    {/*                (<option value="1" ireland="1" >Ireland</option>),*/}
-                    {/*                (<option value="2">Spain</option>),*/}
-                    {/*                (<option value="3" >Poland</option>)*/}
-                    {/*            )}*/}
-                    {/*        </select>*/}
-                    {/*        /!*<p>This is display destination for test only : {destination}</p>*!/*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
 
                     <div className="row">
                         <div  className="input-field col s10">
@@ -667,15 +544,18 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                             <p>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={ireland.toString()} onClick={toggleIreland}/>
-                                    <span>Ireland</span> <div>{ireland}</div>
-                                </label>
+                                    <span>Ireland</span>
+                                    {/*<div>{ireland}</div>*/}
+                                </label><br/>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={spain.toString()} onClick={toggleSpain}/>
-                                    <span>Spain</span> <div>{spain.toString()}</div>
-                                </label>
+                                    <span>Spain</span>
+                                    {/*<div>{spain.toString()}</div>*/}
+                                </label><br/>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={poland.toString()} onClick={togglePoland}/>
-                                    <span>Poland</span> <div>{poland.toString()}</div>
+                                    <span>Poland</span>
+                                    {/*<div>{poland.toString()}</div>*/}
                                 </label>
                             </p>
                         </div>
@@ -710,7 +590,8 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                                 <i className="material-icons prefix">photo_camera</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={camera.toString()} onClick={toggleCamera}/>
-                                   <span>Camera</span> <div>{camera.toString()}</div>
+                                   <span>Camera</span>
+                                    {/*<div>{camera.toString()}</div>*/}
                                 </label>
                             </p>
                         </div>
@@ -719,131 +600,61 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                                 <i className="material-icons prefix"> videocam </i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={camcorder.toString()} onClick={toggleCamcorder}/>
-                                    <span>Camcorder</span> <div>{camcorder.toString()}</div>
+                                    <span>Camcorder</span>
+                                    {/*<div>{camcorder.toString()}</div>*/}
                                 </label>
                             </p>
                             </div>
 
                             <div  className="input-field col s10">
-                            <p>
-                                <i className="material-icons prefix">phone_iphone</i>
-                                <label>
-                                    <input type="checkbox" className="filled-in" value={smartphone.toString()} onClick={toggleSmartphone}/>
-                                    <span>Smartphone</span> <div>{smartphone.toString()}</div>
-                                </label>
-                            </p>
+                                <p>
+                                    <i className="material-icons prefix"> computer </i>
+                                    <label>
+                                        <input type="checkbox" className="filled-in" value={laptop.toString()} onClick={toggleLaptop}/>
+                                        <span>Laptop</span>
+                                        <div>{laptop.toString()}</div>
+                                    </label>
+                                </p>
                             </div>
-                            {/*this is wrong , !!!!!!*/}
-                            {/*<div className="row">*/}
-                            {/*    <p>CAMCORDER:</p>*/}
-                            {/*    <div  className="input-field col s10">*/}
-                            {/*        <i className="material-icons prefix">account_circle</i>*/}
-                            {/*        <select className="browser-default"  value={camcorder} onChange={(event)=>event.target.value}>*/}
-                            {/*            (<option disabled selected> Camcorder    </option>),*/}
-                            {/*            (<option  value="Yes">Yes</option>),*/}
-                            {/*            (<option value="No">No</option>)*/}
-                            {/*            )}*/}
-                            {/*        </select>*/}
-                            {/*        /!*<p>This is display destination for test only : {camcorder}</p>*!/*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
+
+                            <div  className="input-field col s10">
+                                <p>
+                                    <i className="material-icons prefix"> tablet </i>
+                                    <label>
+                                        <input type="checkbox" className="filled-in" value={tablet.toString()} onClick={toggleTablet}/>
+                                        <span>Tablet</span>
+                                        <div>{tablet.toString()}</div>
+                                    </label>
+                                </p>
+                            </div>
 
 
-                            {/*<div className="row">*/}
-                            {/*    <p>SMARTPHONE:</p>*/}
-                            {/*    <div  className="input-field col s10">*/}
-                            {/*        <i className="material-icons prefix">account_circle</i>*/}
-                            {/*        <select value={smartphone.toString()} onChange={event => setSmartphone(event.target.value)}>*/}
-                            {/*            (<option disabled selected="Smartphone"> Smartphone</option>),*/}
-                            {/*            (<option  value="Yes">Yes</option>),*/}
-                            {/*            (<option value="No">No</option>)*/}
+                            <div  className="input-field col s10">
+                              <p id={"drone1"}>
+                                {/*<i className="material-icons prefix"></i>*/}
 
-                            {/*            )}*/}
-                            {/*        </select>*/}
-                            {/*        /!*<p>This is display destination for test only : {smartphone}</p>*!/*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
+                                  <Icon  path={mdiQuadcopter}
+                                      title=""
+                                      size={1}
+                                      horizontal
+                                      vertical
+                                      rotate={90}
+                                      color="black"
+                                      />
+                               {/*<div id="drone">*/}
 
+                                  <label>
 
-                            {/*<p> Display checked or not camera: {cameraState ? "Yes": "No"}</p>*/}
-                            {/*<p>This is display destination for test only : {camera},{camcorder}</p>*/}
-
-
-                    </div>
-
-
-
+                                    <input type="checkbox" className="filled-in" value={drone.toString()} onClick={toggleDrone}/>
+                                    <span >Drone</span>
+                                    <div>{drone.toString()}</div>
+                                </label>
+                               {/*</div>*/}
+                               </p>
 
 
-
-
-
-
-                    {/*<div className="row">*/}
-                    {/*    <div  className="input-field col s10">*/}
-                    {/*        <p> BAG SIZE</p>*/}
-                    {/*        <div className="row">*/}
-                    {/*            <p>LARGE LUGGAGE:</p>*/}
-                    {/*            <div  className="input-field col s10">*/}
-                    {/*                <i className="material-icons prefix">account_circle</i>*/}
-                    {/*                <select value={largeLuggage.toString()} onChange={event => setLargeLuggage(event.target.value)}>*/}
-                    {/*                    (<option disabled selected> Large Luggage    </option>),*/}
-                    {/*                    (<option  value="Yes">Yes</option>),*/}
-                    {/*                    (<option value="No">No</option>)*/}
-
-                    {/*                    )}*/}
-                    {/*                </select>*/}
-                    {/*                /!*<p>This is display destination for test only : {largeLuggage}</p>*!/*/}
-                    {/*            </div>*/}
-                    {/*        </div>*/}
-
-
-                            {/*<div className="row">*/}
-                            {/*    <p>MEDIUM LUGGAGE:</p>*/}
-                            {/*    <div  className="input-field col s10">*/}
-                            {/*        <i className="material-icons prefix">account_circle</i>*/}
-                            {/*        <select value={mediumLuggage.toString()} onChange={event => setMediumLuggage(event.target.value)}>*/}
-                            {/*            (<option disabled selected> Medium Luggage    </option>),*/}
-                            {/*            (<option  value="Yes">Yes</option>),*/}
-                            {/*            (<option value="No">No</option>)*/}
-                            {/*            )}*/}
-                            {/*        </select>*/}
-                            {/*        /!*<p>This is display destination for test only : {mediumLuggage}</p>*!/*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
-
-
-                    {/*        <div className="row">*/}
-                    {/*            <p>SMALL LUGGAGE:</p>*/}
-                    {/*            <div  className="input-field col s10">*/}
-                    {/*                <i className="material-icons prefix">account_circle</i>*/}
-                    {/*                <select value={smallLuggage.toString()} onChange={event => setSmallLuggage(event.target.value)}>*/}
-                    {/*                    (<option disabled selected="Smartphone"> Small Luggage</option>),*/}
-                    {/*                    (<option  value="Yes">Yes</option>),*/}
-                    {/*                    (<option value="No">No</option>)*/}
-                    {/*                    )}*/}
-                    {/*                </select>*/}
-                    {/*                /!*<p>This is display destination for test only : {smallLuggage}</p>*!/*/}
-                    {/*            </div>*/}
-                    {/*        </div>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
-
-
-
-                    {/*<div className="row">*/}
-                    {/*    <p>TRANSPORT:</p>*/}
-                    {/*    <div  className="input-field col s10">*/}
-                    {/*        <select value={transport.toString()} onChange={event => setTransport(event.target.value)}>*/}
-                    {/*            <option value="" disabled selected>Transport</option>*/}
-                    {/*            <option value="Plane">Plane</option>*/}
-                    {/*            <option value="Bus">Bus</option>*/}
-                    {/*            <option value="Train">Train</option>*/}
-                    {/*            <option value="Car">Car</option>*/}
-                    {/*            <label>Transport</label>*/}
-                    {/*        </select>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
+                            </div>
+                        </div>
 
 
                     <div className="row">
@@ -851,7 +662,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                         <div className="input-field col s8">
                             <i className="material-icons prefix">{sex}</i>
 
-                            <input placeholder="Optional" value={sex} type="text" onChange={(event => validateSex(event))}
+                            <input placeholder="" value={sex} type="text" onChange={(event => validateSex(event))}
                                    className="validate"/>
                             <label htmlFor="sex">Sex</label>
                             <div>{isErrorSex}</div>
@@ -863,19 +674,27 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
 
 
 
-
-
-
-
-
                     <div className="row" id="luggage"> LUGGAGE OPTIONS</div>
                     <div className="row">
                         <div  className="input-field col s10">
-                            <p>
-                                <i className="material-icons prefix">luggage </i>
+                            <p id={"largeLuggage"}>
+                                {/*<i className="material-icons prefix">luggage </i>*/}
+
+
+                                <Icon  path={ mdiBagCarryOn }
+                                       title=""
+                                       size={2}
+                                       horizontal
+                                       vertical
+                                       rotate={180}
+                                       color="black"
+                                />
+
+
                                 <label>
                                     <input type="checkbox" className="filled-in" value={largeLuggage.toString()} onClick={toggleLargeLuggage}/>
-                                    <span>Large Luggage</span> <div>{largeLuggage.toString()}</div>
+                                    <span>Large Luggage</span>
+                                    {/*<div>{largeLuggage.toString()}</div>*/}
                                 </label>
                             </p>
                         </div>
@@ -886,7 +705,8 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                                 <i className="material-icons prefix">luggage</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={mediumLuggage.toString()} onClick={toggleMediumLuggage}/>
-                                    <span>Medium Luggage</span> <div>{mediumLuggage.toString()}</div>
+                                    <span>Medium Luggage</span>
+                                    {/*<div>{mediumLuggage.toString()}</div>*/}
                                 </label>
                             </p>
                         </div>
@@ -897,7 +717,8 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                                 <i className="material-icons prefix">cases</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={smallLuggage.toString()} onClick={toggleSmallLuggage}/>
-                                    <span>Small Luggage</span> <div>{smallLuggage.toString()}</div>
+                                    <span>Small Luggage</span>
+                                    {/*<div>{smallLuggage.toString()}</div>*/}
                                 </label>
                             </p>
                         </div>
@@ -914,7 +735,8 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                                 <i className="material-icons prefix">beach_access</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={beachListStatus.toString()} onClick={toggleSunbathing}/>
-                                    <span>Sunbathing</span> <div>{beachListStatus.toString()}</div>
+                                    <span>Sunbathing</span>
+                                    {/*<div>{beachListStatus.toString()}</div>*/}
                                 </label>
                             </p>
                         </div>
@@ -926,7 +748,8 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                                 <i className="material-icons prefix">downhill_skiing</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={ski.toString()} onClick={toggleSki}/>
-                                    <span>Ski</span> <div>{ski.toString()}</div>
+                                    <span>Ski</span>
+                                    {/*<div>{ski.toString()}</div>*/}
                                 </label>
                             </p>
                         </div>
@@ -938,7 +761,8 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                                 <i className="material-icons prefix">hiking</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={trekking.toString()} onClick={toggleTrekking}/>
-                                    <span>Trekking</span> <div>{trekking.toString()}</div>
+                                    <span>Trekking</span>
+                                    {/*<div>{trekking.toString()}</div>*/}
                                 </label>
                             </p>
 
@@ -956,7 +780,8 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                                 <i className="material-icons prefix">flight</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={plane.toString()} onClick={togglePlane}/>
-                                    <span>Plane</span> <div>{plane.toString()}</div>
+                                    <span>Plane</span>
+                                    {/*<div>{plane.toString()}</div>*/}
                                 </label>
                             </p>
                         </div>
@@ -968,7 +793,8 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                                 <i className="material-icons prefix">directions_car</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={car.toString()} onClick={toggleCar}/>
-                                    <span>Car</span> <div>{car.toString()}</div>
+                                    <span>Car</span>
+                                    {/*<div>{car.toString()}</div>*/}
                                 </label>
                             </p>
                         </div>
@@ -981,7 +807,9 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                                 <label>
                                     <input type="checkbox" className="filled-in" value={train.toString()} onClick={toggleTrain}/>
 
-                                    <span>Train</span> <div>{train.toString()}</div> <div id="squareWithNumber"> 1 </div>
+                                    <span>Train</span>
+                                    {/*<div>{train.toString()}*/}
+                                    {/*</div> <div id="squareWithNumber"> 1 </div>*/}
                                 </label>
                             </p>
 
@@ -994,7 +822,8 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                                 <i className="material-icons prefix">directions_bus</i>
                                 <label>
                                     <input type="checkbox" className="filled-in" value={bus.toString()} onClick={toggleBus}/>
-                                    <span>Bus</span> <div>{bus.toString()}</div>
+                                    <span>Bus</span>
+                                    {/*<div>{bus.toString()}</div>*/}
                                 </label>
                             </p>
 
@@ -1020,7 +849,7 @@ import {selectOptions} from "@testing-library/user-event/dist/select-options";
                     <div  className="row">
                         <div id="ButtonCreateListInFormCreateList" className="input-field col s10">
                         {/*<Link to="../DisplayList">*/}
-                            <button  className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
+                            <button  disabled={tripName.length===0&&listId.length===0} className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
                             Generate List
                         </button>
                         {/*</Link>*/}

@@ -32,12 +32,12 @@ const TrekkingListAccessories=({})=>{
 
     const [items, setItems] = useState([
         {itemName: 'Backpack', quantity: 1, isSelected: false, weight: 0.1},
-        {itemName: 'Sleeping Bag', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Bottle of Water', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'High Power Flashlight', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: ' Magnesium Fire Starter Kit ', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Mosquito Repellent Lotion', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Cash', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Sleeping Bag', quantity: 1, isSelected: false, weight: 0.12},
+        {itemName: 'Bottle of Water', quantity: 1, isSelected: false, weight: 0.12},
+        {itemName: 'Flashlight', quantity: 1, isSelected: false, weight: 0.12},
+        {itemName: 'Fire Starter Kit ', quantity: 1, isSelected: false, weight: 0.12},
+        {itemName: 'Mosquito Repellent Lotion', quantity: 1, isSelected: false, weight: 0.12},
+        // {itemName: 'Flashlight', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Travel Insurance', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Hotel booking confirmation', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Vaccination Certificate COVID-19 ', quantity: 1, isSelected: false, weight: 0.02},

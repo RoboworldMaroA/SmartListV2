@@ -26,7 +26,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--        Unhidden this for security-->
+<!--        &lt;!&ndash;        Unhidden this for security&ndash;&gt;-->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->
 <!--            <artifactId>spring-boot-starter-security</artifactId>-->

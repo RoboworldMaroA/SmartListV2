@@ -411,7 +411,7 @@ export function CreateCustomerList() {
                 <div className="row">
                     <div className="col s2"></div>
                     <div className="col s8">
-                        <p id="PageTitle"> CREATE TRAVEL LIST</p>
+                        <p id="PageTitle"> PACK YOUR LUGGAGE</p>
                     </div>
                     <div className="col s2"></div>
                 </div>

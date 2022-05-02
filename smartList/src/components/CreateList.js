@@ -61,10 +61,10 @@ export default class CreateList extends Component{
                 <div className="row">
                     <FormCreateList/>
                 </div>
-                <div className="row">
-                    <p>It is a detail Trip</p>
-                    {this.state.trips.map((item) => (<DisplayCustomerTrip key={item.id} item={item}/>))}
-                </div>
+                {/*<div className="row">*/}
+                {/*    <p>It is a detail Trip</p>*/}
+                {/*    {this.state.trips.map((item) => (<DisplayCustomerTrip key={item.id} item={item}/>))}*/}
+                {/*</div>*/}
 
 
             </div>

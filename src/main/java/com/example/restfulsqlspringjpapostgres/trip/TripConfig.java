@@ -37,24 +37,27 @@ public class TripConfig {
                     true,
                     false,
                     true,
-                    false,
+                    true,
+                    true,
+                    true,
                     true,
                     true,
                     true,
                     false,
-                    false,
-                    false,
                     true,
                     false,
                     false,
                     false,
                     true,
-                    false,
+                    true,
                     true,
                     true,
                     "Spain",
                     true,
-                    "male"
+                    "male",
+                    true,
+                    true,
+                    true
             );
 
 
@@ -83,17 +86,20 @@ public class TripConfig {
                     true,
                     true,
                     false,
-                    true,
-                    true,
-                    true,
-                    true,
+                    false,
+                    false,
+                    false,
+                    false,
                     true,
                     true,
                     true,
                     true,
                     "Ireland",
                     false,
-                    "female"
+                    "female",
+                    true,
+                    true,
+                    true
 
                     );
 
@@ -101,7 +107,8 @@ public class TripConfig {
 
             //now we tell that we want save customer using list
             tripRepository.saveAll(
-                    List.of(TripToIreland, TripToSpain)
+//                    List.of(TripToIreland, TripToSpain)
+                    List.of(TripToIreland)
 
             );
         };

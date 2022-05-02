@@ -21,13 +21,14 @@ const EssentialList = ({props}) => {
         {itemName: 'Passport', quantity: 1, isSelected: false, weight: 0.1},
         {itemName: 'Identity Card', quantity: 1, isSelected: false, weight: 0.02},
         {itemName: 'Boarding Pass', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Payment Card', quantity: 1, isSelected: false, weight: 0.02},
         {itemName: 'Driving  Licence', quantity: 1, isSelected: false, weight: 0.02},
         {itemName: 'Wallet', quantity: 1, isSelected: false, weight: 0.02},
         {itemName: 'House Key', quantity: 1, isSelected: false, weight: 0.02},
         {itemName: 'Cash', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Travel Insurance', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Travel Insurance', quantity: 0, isSelected: false, weight: 0.02},
         {itemName: 'Hotel booking confirmation', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Vaccination Certificate COVID-19 ', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Vaccination Certificate COVID-19 ', quantity: 0, isSelected: false, weight: 0.02},
 
     ]);
 

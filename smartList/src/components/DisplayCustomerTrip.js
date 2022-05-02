@@ -105,7 +105,7 @@ export const DisplayCustomerTrip = ({item}) => {
                             </div>
 
                             <div className="card-action">
-                                <p> If you want delete user Trip input Trip id and then press delete button </p>
+                                {/*<p> If you want delete user Trip input Trip id and then press delete button </p>*/}
                                 {/*<a href="#">This is a link</a>*/}
                                 {/*<a href="#">This is a link</a>*/}
                                 {/*<button onSubmit={()=>deleteCustomer(item.id)} >Delete Student</button>*/}
@@ -118,7 +118,7 @@ export const DisplayCustomerTrip = ({item}) => {
 
                 <div className="row">
                     <div className="input-field col s6">
-                        <input placeholder="Input user ID that you want to delete"  type="text"
+                        <input placeholder="Input Trip ID"  type="text"
                                onChange={(event => setId(event.target.value))} className="validate"/>
                         {/*<label htmlFor="What Id want you delete">Id</label>*/}
                     </div>

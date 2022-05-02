@@ -29,10 +29,10 @@ const Car=({})=>{
     const [inputValue, setInputValue] = useState('');
 
     const [items, setItems] = useState([
-        {itemName: 'GPS Device', quantity: 1, isSelected: false, weight: 0.1},
-        {itemName: 'Update Maps', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Cables to GPS', quantity: 1, isSelected: false, weight: 0.02},
-        // {itemName: 'Charger', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'GPS Device', quantity: 0, isSelected: false, weight: 0.1},
+        {itemName: 'Update Maps', quantity: 0, isSelected: false, weight: 0.02},
+        {itemName: 'Cables to GPS', quantity: 0, isSelected: false, weight: 0.02},
+        {itemName: 'Car Phone Holder', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Camera Bag', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'House Key', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Cash', quantity: 1, isSelected: false, weight: 0.02},

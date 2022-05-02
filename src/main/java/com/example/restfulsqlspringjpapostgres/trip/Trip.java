@@ -86,7 +86,9 @@ public class Trip {
     private String destination;
     private Boolean female;
     private String sex;
-
+    private Boolean laptop;
+    private Boolean tablet;
+    private Boolean drone;
 
 
     @Transient//this tell this colum (age) no need to be more in database table
@@ -104,7 +106,8 @@ public class Trip {
                 Boolean adminPrivileges, Boolean payStatus, Boolean smallLuggage, Boolean mediumLuggage,
                 Boolean largeLuggage, Boolean plane, Boolean beachListStatus, Boolean bus, Boolean train,
                 Boolean poland, Boolean summer,Boolean winter,Boolean spring,Boolean autumn,Boolean car,
-                Boolean ski,  Boolean documentsListStatus, Boolean essentialListStatus, String destination,Boolean female, String sex) {
+                Boolean ski,  Boolean documentsListStatus, Boolean essentialListStatus, String destination,
+                Boolean female, String sex, Boolean laptop, Boolean tablet, Boolean drone) {
         this.id = id;
         this.tripName = tripName;
         this.weatherId = weatherId;
@@ -140,6 +143,9 @@ public class Trip {
         this.destination=destination;
         this.female=female;
         this.sex=sex;
+        this.laptop=laptop;
+        this.tablet=tablet;
+        this.drone=drone;
         //this.age = age;
     }
 
@@ -149,7 +155,8 @@ public class Trip {
                  Boolean adminPrivileges, Boolean payStatus, Boolean smallLuggage, Boolean mediumLuggage,
                  Boolean largeLuggage, Boolean plane, Boolean beachListStatus, Boolean bus, Boolean train,Boolean poland,
                  Boolean summer,Boolean winter,Boolean spring,Boolean autumn,Boolean car,Boolean ski,
-                 Boolean documentsListStatus, Boolean essentialListStatus,String destination,Boolean female,String sex) {
+                 Boolean documentsListStatus, Boolean essentialListStatus,String destination,Boolean female,
+                 String sex, Boolean laptop, Boolean tablet,Boolean drone) {
         this.tripName = tripName;
         this.weatherId = weatherId;
         this.listId = listId;
@@ -184,6 +191,9 @@ public class Trip {
         this.destination=destination;
         this.female=female;
         this.sex=sex;
+        this.laptop=laptop;
+        this.tablet=tablet;
+        this.drone=drone;
         //this.age = age;
     }
 
@@ -474,6 +484,30 @@ public class Trip {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public Boolean getLaptop() {
+        return laptop;
+    }
+
+    public void setLaptop(Boolean laptop) {
+        this.laptop = laptop;
+    }
+
+    public Boolean getTablet() {
+        return tablet;
+    }
+
+    public void setTablet(Boolean tablet) {
+        this.tablet = tablet;
+    }
+
+    public Boolean getDrone() {
+        return drone;
+    }
+
+    public void setDrone(Boolean drone) {
+        this.drone = drone;
     }
 
     //    public Integer getAge() {

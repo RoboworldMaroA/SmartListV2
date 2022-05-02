@@ -30,13 +30,13 @@ const CamcorderList=({})=>{
     const [inputValue, setInputValue] = useState('');
 
     const [items, setItems] = useState([
-        {itemName: 'Camcorder Body', quantity: 1, isSelected: false, weight: 0.1},
-        {itemName: 'Lenses', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Camcorder Battery', quantity: 1, isSelected: false, weight: 0.02},
+        // {itemName: 'Camcorder Body', quantity: 1, isSelected: false, weight: 0.1},
+        {itemName: 'Camcorder Lenses', quantity: 0, isSelected: false, weight: 0.02},
+        // {itemName: 'Camcorder Battery', quantity: 1, isSelected: false, weight: 0.02},
         {itemName: 'Charger', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Camcorder Bag', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Tripod', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Spare Memory Card', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Camcorder Bag', quantity: 0, isSelected: false, weight: 0.02},
+        {itemName: 'Tripod', quantity: 0, isSelected: false, weight: 0.02},
+        {itemName: 'Spare Memory Card', quantity: 0, isSelected: false, weight: 0.02},
         // {itemName: 'Travel Insurance', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Hotel booking confirmation', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Vaccination Certificate COVID-19 ', quantity: 1, isSelected: false, weight: 0.02},

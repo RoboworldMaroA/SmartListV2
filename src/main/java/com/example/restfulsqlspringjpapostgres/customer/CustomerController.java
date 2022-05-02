@@ -74,12 +74,11 @@ public class  CustomerController {
     //************** Login verification *****************
 
     // path is http://localhost:8080/api/v1/customer/login
-    @GetMapping("login")
+    @GetMapping("/login")
     public void loginCustomers(@RequestParam(required = false) String email,
                                @RequestParam(required = false) String password){
         customerService.loginCustomers(email,password);
     }
-
 
 
 
