@@ -13,7 +13,7 @@ const HomeButtons=({})=>{
 
     return(
 
-        //Description of the list
+        // Description of the list
         <div id="allButtons" className="container-fluid" >
 
                                 <div clasName="row" id="loginOrRegister">

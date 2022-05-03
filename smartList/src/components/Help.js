@@ -29,19 +29,19 @@ export default class Help extends Component{
         return(
             <div id = "payButton">
                 <div  className="row">
-                    <Link to="../PayPal">
+                    <a href="https://www.nytimes.com/guides/travel/how-to-pack-a-suitcase">
                         <button className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
                             Packing Guides
                         </button>
-                    </Link>
+                    </a>
                 </div>
 
                 <div className="row">
-                    <Link to="../Stripe">
+                    <a href="https://www.nytimes.com/guides/travel/how-to-fly">
                         <button className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
-                            How to create List
+                            Travel by Plane
                         </button>
-                    </Link>
+                    </a>
                 </div>
 
                 {/*<div className="row">*/}

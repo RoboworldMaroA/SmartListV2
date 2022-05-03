@@ -29,19 +29,19 @@ export default class Pay extends Component{
         return(
             <div id = "payButton">
                 <div  className="row">
-                    <Link to="../PayPal">
+                    <a href="https://www.paypal.com/">
                         <button className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
-                            PayPal(Payment not ready yet)
+                            PayPal
                         </button>
-                    </Link>
+                    </a>
                 </div>
 
                 <div className="row">
-                    <Link to="../Stripe">
+                    <a href="https://www.stripe.com/">
                         <button className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
-                            Stripe(Payment not ready yet)
+                            Stripe
                         </button>
-                    </Link>
+                    </a>
                 </div>
 
                 {/*<div className="row">*/}

@@ -19,7 +19,7 @@ import DisplayStateOfCustomerList from "../DisplayStateOfCustomerList";
 import {Link} from "react-router-dom";
 import ToDoListComponentsTrip from "./ToDoListComponentsTrip";
 import Trip from "./Trip";
-import {UserContext} from "../UserContext";
+// import {UserContext} from "../UserContext";
 import './DisplayListComponent.css';
 
 export const ManageDestinationFunctionalComponent = () =>{
@@ -28,7 +28,7 @@ export const ManageDestinationFunctionalComponent = () =>{
     const [displayTripDetail, setDisplayTripDetail] = useState(false);
     const [loggedCustomerId, setLoggedCustomerId] = useState(1);
 
-    const {value,setValue} = useContext(UserContext);
+    // const {value,setValue} = useContext(UserContext);
     // constructor(props) {
     //     super(props);
     //     this.state = {
@@ -159,12 +159,12 @@ export const ManageDestinationFunctionalComponent = () =>{
 
 
 
-            <h1>Manage Destination</h1>
+            {/*<h1>Manage Destination</h1>*/}
                 {/*<div className="row">*/}
                 {/*        <DisplayStateOfCustomerList/>*/}
                 {/*</div>*/}
 
-                <div className="row"> <h2>Element from useContext {value}</h2></div>
+                {/*<div className="row"> <h2>Element from useContext {value}</h2></div>*/}
 
                 <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus()} >  Display Trip Detail </button>
                  <div>

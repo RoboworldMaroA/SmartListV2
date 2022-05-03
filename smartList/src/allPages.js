@@ -169,6 +169,7 @@ export function LoginPage() {
                     <ul className="right hide-on-med-and-down">
                         {/*<li>  <Link to="../Register"> Register</Link></li>*/}
                         {/*<li>  <Link to="../CreateCustomerList"> Pack Your Luggage</Link></li>*/}
+                        <li><Link to="../">Home</Link></li>
                         <li><Link to="../LoginAdminPage"> Administrator </Link></li>
                         {/*<li><Link to="../Pay">Pay</Link></li>*/}
                         <li>  <Link to="../Help"> Help</Link></li>
@@ -178,7 +179,7 @@ export function LoginPage() {
 
             <ul className="sidenav" id="mobile-demo">
                 {/*<li><a href="">  <Link to="MyLists"> My List </Link> </a></li>*/}
-                {/*<li><Link to="../Register">Register</Link></li>*/}
+                <li><Link to="../">Home</Link></li>
                 <li><Link to="../LoginAdminPage"> Administrator </Link></li>
                 {/*<li><Link to="../CreateCustomerList"> Pack Your Luggage </Link> </li>*/}
                 <li>  <Link to="../Help"> Help</Link></li>
@@ -288,6 +289,7 @@ export function CustomerCreateOrDisplay() {
                         className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
                         {/*<li>  <Link to="../DisplayList"> Display Trips</Link></li>*/}
+                        <li> <Link to="../"> Home</Link></li>
                         <li>  <Link to="../Pay"> Pay</Link></li>
                         {/*<li><a href="collapsible.html">Pay</a></li>*/}
                         <li>  <Link to="../Help"> Help</Link></li>
@@ -297,6 +299,7 @@ export function CustomerCreateOrDisplay() {
 
             <ul className="sidenav" id="mobile-demo">
                 {/*<li>  <Link to="../DisplayList"> Display Trips</Link></li>*/}
+                <li> <Link to="../"> Home</Link></li>
                 <li>  <Link to="../Pay"> Pay</Link></li>
                 {/*<li><a href="collapsible.html">Pay</a></li>*/}
                 <li>  <Link to="../Help"> Help</Link></li>
@@ -338,6 +341,7 @@ export function CustomerPickListsToDisplay() {
                         className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
                         {/*<li>  <Link to="../DisplayList"> Display Trips</Link></li>*/}
+                        <li> <Link to="../"> Home</Link></li>
                         <li>  <Link to="../Pay"> Pay</Link></li>
                         {/*<li><a href="collapsible.html">Pay</a></li>*/}
                         <li>  <Link to="../Help"> Help</Link></li>
@@ -347,6 +351,7 @@ export function CustomerPickListsToDisplay() {
 
             <ul className="sidenav" id="mobile-demo">
                 {/*<li>  <Link to="../DisplayList"> Display Trips</Link></li>*/}
+                <li> <Link to="../"> Home</Link></li>
                 <li>  <Link to="../Pay"> Pay</Link></li>
                 {/*<li><a href="collapsible.html">Pay</a></li>*/}
                 <li>  <Link to="../Help"> Help</Link></li>
@@ -392,6 +397,7 @@ export function CreateCustomerList() {
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
                         className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
+                        <li> <Link to="../"> Home</Link></li>
                         <li>  <Link to="../DisplayList"> Display Trips</Link></li>
                         <li>  <Link to="../Pay"> Pay</Link></li>
                         {/*<li><a href="collapsible.html">Pay</a></li>*/}
@@ -401,6 +407,7 @@ export function CreateCustomerList() {
             </nav>
 
             <ul className="sidenav" id="mobile-demo">
+                <li> <Link to="../"> Home</Link></li>
                 <li>  <Link to="../DisplayList"> Display Trips</Link></li>
                 <li>  <Link to="../Pay"> Pay</Link></li>
                 {/*<li><a href="collapsible.html">Pay</a></li>*/}
@@ -440,8 +447,9 @@ export function DisplayTravelerList() {
                     <ul className="right hide-on-med-and-down">
                         {/*<li>  <Link to="../Register"> Register</Link></li>*/}
                         {/*<li>  <Link to="../CreateCustomerList"> Pack Your Luggage</Link></li>*/}
-                        <li>  <Link to="../Pay"> Travel Guide</Link></li>
-                        <li>  <Link to="../Pay"> Weather</Link></li>
+                        <li> <Link to="../"> Home</Link></li>
+                        <li>  <a href="https://www.nytimes.com/guides/travel/how-to-pack-a-suitcase"> Travel Guide</a></li>
+                        <li>  <a href="https://www.accuweather.com/"> Weather</a></li>
                         <li>  <Link to="../Pay"> Pay</Link></li>
                         <li>  <Link to="../help"> Help</Link></li>
                     </ul>
@@ -451,7 +459,9 @@ export function DisplayTravelerList() {
             <ul className="sidenav" id="mobile-demo">
                 {/*<li>  <Link to="../Register"> Register</Link></li>*/}
                 {/*<li>  <Link to="../CreateCustomerList"> Pack Your Luggage</Link></li>*/}
-
+                <li> <Link to="../"> Home</Link></li>
+                <li>  <a href="https://www.nytimes.com/guides/travel/how-to-pack-a-suitcase"> Travel Guide</a></li>
+                <li>  <a href="https://www.accuweather.com/"> Weather</a></li>
                 <li>  <Link to="../Pay"> Pay</Link></li>
                 <li>  <Link to="../help"> Help</Link></li>
             </ul>
@@ -495,6 +505,7 @@ export function PayPage() {
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
                         className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
+                        <li> <Link to="../"> Home</Link></li>
                         <li>  <Link to="../Register"> Register</Link></li>
                         <li>  <Link to="../CreateCustomerList"> Pack Your Luggage</Link></li>
                         <li><Link to="../LoginAdminPage"> Administrator</Link></li>
@@ -504,10 +515,11 @@ export function PayPage() {
             </nav>
 
             <ul className="sidenav" id="mobile-demo">
-                <li> <Link to="../DisplayList"> Trips</Link></li>
+                <li> <Link to="../"> Home</Link></li>
+                <li> <Link to="../DisplayList"> My Travel List</Link></li>
                 <li><Link to="../Register">Register</Link></li>
-                <li><Link to="../LoginAdminPage"> Administrator Account </Link></li>
-                <li><Link to="../CreateCustomerList"> Create List  </Link> </li>
+                <li><Link to="../LoginAdminPage"> Administrator </Link></li>
+                <li><Link to="../CreateCustomerList"> Pack Your Luggage  </Link> </li>
             </ul>
 
 
@@ -542,6 +554,7 @@ export function LoginAdminPage() {
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
                         className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
+                        <li> <Link to="../"> Home</Link></li>
                         <li><Link to="../destination">Manage Destination</Link></li>
                         {/*<li><Link to="../LoginAdminPage"> Display Users </Link></li>*/}
                         <li><Link to="../help"> Help  </Link> </li>
@@ -550,6 +563,7 @@ export function LoginAdminPage() {
             </nav>
 
             <ul className="sidenav" id="mobile-demo">
+                <li> <Link to="../"> Home</Link></li>
                 <li><Link to="../destination">Manage Destination</Link></li>
                 {/*<li><Link to="../LoginAdminPage"> Display Users </Link></li>*/}
                 <li><Link to="../help"> Help  </Link> </li>
@@ -590,16 +604,19 @@ export function HelpPage() {
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
                         className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
+                        <li> <Link to="../"> Home</Link></li>
                         <li>  <Link to="../Register"> Register</Link></li>
-                        <li>  <Link to="../CreateCustomerList"> CreateCustomerList</Link></li>
-                        <li><Link to="../LoginAdminPage"> Administrator Account </Link></li>
-                        <li>  <Link to="../help"> Help</Link></li>
+                        <li>  <Link to="../CreateCustomerList"> Pack You Luggage</Link></li>
+                        <li> <Link to="../DisplayList"> My Travel List</Link></li>
+                        <li><Link to="../LoginAdminPage"> Administrator </Link></li>
+                        {/*<li>  <Link to="../help"> Help</Link></li>*/}
                     </ul>
                 </div>
             </nav>
 
             <ul className="sidenav" id="mobile-demo">
-                <li> <Link to="../DisplayList"> Trips</Link></li>
+                <li> <Link to="../"> Home</Link></li>
+                <li> <Link to="../DisplayList"> My Travel List</Link></li>
                 <li><Link to="../Register">Register</Link></li>
                 <li><Link to="../LoginAdminPage"> Administrator Account </Link></li>
                 <li><Link to="../CreateCustomerList"> Create List  </Link> </li>
@@ -640,6 +657,7 @@ export function DestinationPage() {
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i
                         className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
+                        <li> <Link to="../"> Home</Link></li>
                         {/*<li><Link to="../destination">Manage Destination</Link></li>*/}
                         <li><Link to="../LoginAdminPage"> Display Users </Link></li>
                         <li><Link to="../help"> Help  </Link> </li>
@@ -648,6 +666,7 @@ export function DestinationPage() {
             </nav>
 
             <ul className="sidenav" id="mobile-demo">
+                <li> <Link to="../"> Home</Link></li>
                 {/*<li><Link to="../destination">Manage Destination</Link></li>*/}
                 <li><Link to="../LoginAdminPage"> Display Users </Link></li>
                 <li><Link to="../help"> Help  </Link> </li>

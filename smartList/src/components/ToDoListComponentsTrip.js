@@ -794,9 +794,10 @@ export const ToDoListComponentsTrip = (props) => {
 
                     <p id="listOfItemsInToDoListComponent">
                         {/*Hi {props.dataCustomer.name}*/}
-                        {toDoListTrip.ireland === "1" ? "Ireland" : ""}
-                        {toDoListTrip.spain === true ? "Spain" : " "}
-                        {toDoListTrip.poland === true ? "Poland" : " "}
+                        {/*{toDoListTrip.ireland === "1" ? "Ireland" : ""}*/}
+                        {/*{toDoListTrip.spain === true ? "Spain" : " "}*/}
+                        {/*{toDoListTrip.poland === true ? "Poland" : " "}*/}
+                        {toDoListTrip.destination===0 ? toDoListTrip.description : toDoListTrip.destination}
                         {/*{toDoListTrip.name}<br/>*/}
                         {/*{toDoListTrip.destination}<br/>*/}
                         {/*{toDoListTrip.description}<br/>*/}
@@ -837,7 +838,7 @@ export const ToDoListComponentsTrip = (props) => {
                     <div className="col m10 s10">
                         <div className="card">
                             <div className="card-image">
-                                <img src={require("../photo/backgroundDocuments2.jpg")}/>
+                                <img src={require("../photo/backgroundElectronicEquipments2.jpg")}/>
                                 <span className="card-title">ELECTRONIC EQUIPMENT</span>
                             </div>
                             <div className="card-content">
@@ -1015,7 +1016,7 @@ export const ToDoListComponentsTrip = (props) => {
                     <div className="col m10 s10">
                         <div className="card">
                             <div className="card-image">
-                                <img src={require("../photo/backgroundDocuments2.jpg")}/>
+                                <img src={require("../photo/backgroundAccessories2.jpg")}/>
                                 <span className="card-title">ACCESSORIES</span>
                             </div>
                             <div className="card-content">
@@ -1156,7 +1157,7 @@ export const ToDoListComponentsTrip = (props) => {
                         <div className="col m10 s10">
                             <div className="card">
                                 <div className="card-image">
-                                    <img src={require("../photo/backgroundDocuments2.jpg")}/>
+                                    <img src={require("../photo/backgroundClothes2.jpg")}/>
                                     <span className="card-title">CLOTHES</span>
                                 </div>
                                 <div className="card-content">
@@ -1287,7 +1288,7 @@ export const ToDoListComponentsTrip = (props) => {
                         <div className="col m10 s10">
                             <div className="card">
                                 <div className="card-image">
-                                    <img src={require("../photo/backgroundDocuments2.jpg")}/>
+                                    <img src={require("../photo/backgroundCosmetics.jpg")}/>
                                     <span className="card-title">COSMETICS AND FIRST AID</span>
                                 </div>
                                 <div className="card-content">
