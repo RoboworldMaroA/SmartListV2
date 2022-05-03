@@ -110,9 +110,10 @@ const BeachList=({})=>{
     const [inputValue, setInputValue] = useState('');
 
     const [items, setItems] = useState([
-        {itemName: 'Bikini/Swimming suit', quantity: 1, isSelected: false, weight: 0.1},
-        {itemName: 'Beach Towel', quantity: 1, isSelected: false, weight: 0.02},
-        {itemName: 'Sandals', quantity: 1, isSelected: false, weight: 0.02},
+        {itemName: 'Bikini/Swimming suit', quantity: 1, isSelected: false, weight: 0.03},
+        {itemName: 'Beach Towel', quantity: 0, isSelected: false, weight: 0.03},
+        {itemName: 'Sandals', quantity: 1, isSelected: false, weight: 0.03},
+        {itemName: 'Bluetooth Speaker ', quantity: 0, isSelected: false, weight: 0.1},
         // {itemName: 'Charger', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'Camera Bag', quantity: 1, isSelected: false, weight: 0.02},
         // {itemName: 'House Key', quantity: 1, isSelected: false, weight: 0.02},

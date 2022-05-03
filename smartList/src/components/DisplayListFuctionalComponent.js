@@ -236,7 +236,7 @@ export const DisplayListFunctionalComponent = (props) =>{
 
                     {/*#################FIRST BUTTON#######################*/}
                     <div className="col s12 m6 l3">
-                <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus()} >  Display Trip 1 Details </button>
+                <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus()} >  Details Trip 1 </button>
                  {/*<div>*/}
                  {/*    {displayTripDetail*/}
                  {/*        ? tripData.map((TripData) => {*/}
@@ -269,7 +269,7 @@ export const DisplayListFunctionalComponent = (props) =>{
 
                     {/*#################  2 BUTTON#######################*/}
                         <div className="col s12 m6 l3">
-                <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus2()} >  Display Trip2 Details </button>
+                <button  className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus2()} > Details Trip 2  </button>
                 {/*<div>*/}
                 {/*    {displayTripDetail*/}
                 {/*        ? tripData.map((TripData) => {*/}
@@ -303,7 +303,7 @@ export const DisplayListFunctionalComponent = (props) =>{
 
                     {/*################# 3 BUTTON#######################*/}
                             <div className="col s12 m6 l3">
-                <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus3()} >  Display Trip3 Details </button>
+                <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus3()} >  Details Trip 3 </button>
                 {/*<div>*/}
                 {/*    {displayTripDetail*/}
                 {/*        ? tripData.map((TripData) => {*/}
@@ -337,7 +337,7 @@ export const DisplayListFunctionalComponent = (props) =>{
                     {/*################# 4 BUTTON#######################*/}
                                 <div className="col s12 m6 l3">
 
-                <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus4()} >  Display Trip 4 Details </button>
+                <button className="waves-effect waves-light btn #795548 brown "  onClick={()=> changeStatus4()} >  Details Trip 4 </button>
                 {/*<div>*/}
                 {/*    {displayTripDetail*/}
                 {/*        ? tripData.map((TripData) => {*/}

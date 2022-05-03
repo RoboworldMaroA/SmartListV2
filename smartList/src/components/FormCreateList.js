@@ -66,49 +66,49 @@ const AddCreateListDetail = ({props: props}, {setCreateListInfo: setCreateListIn
     //     const [tablet , setDrone] = useState(false);
 
 
-    // FOR TEST ONLY ALL TRUE
+
     const [adminPrivileges, setAdminPrivileges] = useState(false);
-    const [autumn, setAutumn] = useState(true);
-    const [beachListStatus, setBeachListStatus] = useState(true);
-    const [bus, setBus] = useState(true);
-    const [camcorder, setCamcorder] = useState(true);
-    const [camera, setCamera] = useState(true);
-    const [car, setCar] = useState(true);
+    const [autumn, setAutumn] = useState(false);
+    const [beachListStatus, setBeachListStatus] = useState(false);
+    const [bus, setBus] = useState(false);
+    const [camcorder, setCamcorder] = useState(false);
+    const [camera, setCamera] = useState(false);
+    const [car, setCar] = useState(false);
     const [departureDay, setDepartureDay] = useState("");
     const [description, setDescription] = useState('');
     const [ireland, setIreland] = useState(" ");
     const [listId, setListId] = useState('');
-    const [largeLuggage, setLargeLuggage] = useState(true);
-    const [mediumLuggage, setMediumLuggage] = useState(true);
-    const [smallLuggage, setSmallLuggage] = useState(true);
+    const [largeLuggage, setLargeLuggage] = useState(false);
+    const [mediumLuggage, setMediumLuggage] = useState(false);
+    const [smallLuggage, setSmallLuggage] = useState(false);
     // const [smartphone, setSmartphone] = useState(true);//it is drone
-    const [drone, setDrone] = useState(true);//it is drone
-    const [payStatus, setPayStatus] = useState(true);
+    const [drone, setDrone] = useState(false);//it is drone
+    const [payStatus, setPayStatus] = useState(false);
     const [returnDay, setReturnDay] = useState('');
     const [tripName, setTripName] = useState('');
     const [tripPassword, setTripPassword] = useState('');
     const [weatherId, setWeatherId] = useState('');
     //const [transport, setTransport] = useState();
 
-    const [ski, setSki] = useState(true);
-    const [trekking, setTrekking] = useState(true);
+    const [ski, setSki] = useState(false);
+    const [trekking, setTrekking] = useState(false);
     const [documentListStatus, setDocumentListStatus] = useState(true);
     const [essentialListStatus, setEssentialListStatus] = useState(true);
-    const [plane, setPlane] = useState(true);
+    const [plane, setPlane] = useState(false);
     const [poland, setPoland] = useState(false);
     const [spain, setSpain] = useState(false);
-    const [summer, setSummer] = useState(true);
-    const [winter, setWinter] = useState(true);
-    const [spring, setSpring] = useState(true);
-    const [train, setTrain] = useState(true);
+    const [summer, setSummer] = useState(false);
+    const [winter, setWinter] = useState(false);
+    const [spring, setSpring] = useState(false);
+    const [train, setTrain] = useState(false);
     const [id, setId] = useState('');
     const [destination, setDestination] = useState('');
     // const [displayListState , setDisplayListState] = useState(true);
     // const [displayListState , setDisplayListState] = useState(true);
 
     const [sex, setSex] = useState('');
-    const [laptop, setLaptop] = useState(true);
-    const [tablet, setTablet] = useState(true);
+    const [laptop, setLaptop] = useState(false);
+    const [tablet, setTablet] = useState(false);
 
 
     const [address, setAddress] = useState("");
@@ -919,7 +919,7 @@ const AddCreateListDetail = ({props: props}, {setCreateListInfo: setCreateListIn
                 <div className="row">
                     <div id="ButtonCreateListInFormCreateList" className="input-field col s10">
                         {/*<Link to="../DisplayList">*/}
-                        <button disabled={tripName.length === 0 && listId.length === 0}
+                        <button disabled={tripName.length === 0 || listId.length === 0 || destination.length===0}
                                 className="waves-effect waves-light btn #795548 brown " type="submit" name="action">
                             Generate List
                         </button>

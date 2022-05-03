@@ -216,7 +216,7 @@ import {UserContext} from "../UserContext";
                         <div className="input-field col s8">
                             <i className="material-icons prefix">phone</i>
 
-                            <input placeholder="Optional" value={phoneNumber} type="text"
+                            <input placeholder="Optional" value={phoneNumber} type="tel"
                                    onChange={(event => setPhoneNumber(event.target.value))}
                                    className="validate"/>
                             <label htmlFor="phoneNumber">Phone Number</label>

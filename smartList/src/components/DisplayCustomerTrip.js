@@ -70,6 +70,7 @@ export const DisplayCustomerTrip = ({item}) => {
                                     {/*<h2> Message : {value}  </h2>*/}
                                     <p>Details Trip ID : {item.id}</p>
                                     <p>Trip name : {item.tripName}</p>
+                                     <p>Destination : {item.destination}</p>
                                      {/*<p>Destination : {item.destination}</p>*/}
                                     {/*<p>Customer Id:  {item.customerId}  </p>*/}
                                     <p>Departure Day: {item.departureDay} </p>
@@ -78,7 +79,7 @@ export const DisplayCustomerTrip = ({item}) => {
                                     {/*<p>Destination: {item.destinationId}</p>*/}
                                     <p>List: {item.listId}</p>
                                     <p>Activity : {item.activity} </p>
-                                    <p>Sex: {item.sex==="male"?"male":"female"}</p>
+                                    {/*<p>Sex: {item.sex==="male"?"female":""}{item.sex!=="male"?"male":""}</p>*/}
                                     <p>Ski : {item.ski? "Yes" : "No"} </p>
                                     <p>Trekking : {item.trekking? "Yes" : "No"} </p>
                                     <p>Beach : { item.beachListStatus ? "Yes" : "No"} </p>
@@ -96,9 +97,9 @@ export const DisplayCustomerTrip = ({item}) => {
                                      <p>Train: {item.train ? "Yes" : "No"}</p>
                                      <p>Plane: {item.plane ? "Yes" : "No"}</p>
                                      <p>Car: {item.car ? "Yes" : "No"}</p>
-                                      <p>Ireland Status {item.ireland}</p>
-                                    <p>Spain Status {item.spain.toString()? "Yes" : "No"}</p>
-                                    <p>Poland Status {item.poland.toString()? "Yes" : "No"}</p>
+                                      <p>Ireland Status {item.ireland===0||item.ireland===" " ?"No" : "Yes"}</p>
+                                    <p>Spain Status {item.spain? "Yes" : "No"}</p>
+                                    <p>Poland Status {item.poland? "Yes" : "No"}</p>
 
                                 </span>
 
